@@ -3,9 +3,9 @@ import type {
   CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData,
 } from "./engine/types";
 import { PACKS, PLANNED_PACKS, getPack } from "./data/packs";
-import { sortedAreas, sortedBosses } from "./engine/pack";
+import { sortedBosses } from "./engine/pack";
 import {
-  createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
+  allAreas, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
 } from "./engine/run";
 import { teamCoverage } from "./engine/coverage";
 import { displayName, useSpeciesData } from "./data/pokemon";
@@ -28,7 +28,7 @@ export default function App() {
         <button className="brand" onClick={() => setActiveRunId(null)}>
           Run<span className="accent">Book</span>
         </button>
-        <span className="tagline">ROM hack run logger + boss prep</span>
+        <span className="tagline">Pokémon run logger + boss prep — base games & ROM hacks</span>
       </header>
       {activeRun ? (
         <RunView
@@ -69,31 +69,52 @@ function Home({
   const [packId, setPackId] = useState(PACKS[0].id);
   const [ruleset, setRuleset] = useState<Ruleset>("nuzlocke");
   const [name, setName] = useState("");
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const matches = (n: string) => !q || n.toLowerCase().includes(q);
+
+  const sections: { key: string; title: string; packs: GamePack[]; planned: typeof PLANNED_PACKS }[] = [
+    { key: "base", title: "Base games", packs: PACKS.filter((p) => p.category === "base" && matches(p.name)), planned: [] },
+    { key: "hack", title: "ROM hacks", packs: PACKS.filter((p) => p.category === "hack" && matches(p.name)), planned: PLANNED_PACKS.filter((p) => p.kind === "hack" && matches(p.name)) },
+    { key: "fangame", title: "Fan games", packs: PACKS.filter((p) => p.category === "fangame" && matches(p.name)), planned: PLANNED_PACKS.filter((p) => p.kind === "fangame" && matches(p.name)) },
+  ];
 
   return (
     <main className="home">
       <section className="panel">
         <h2>New run</h2>
-        <div className="picker">
-          {PACKS.map((pack) => (
-            <button
-              key={pack.id}
-              className={`pack-card ${pack.id === packId ? "selected" : ""}`}
-              onClick={() => setPackId(pack.id)}
-            >
-              <strong>{pack.name}</strong>
-              <span>
-                {pack.areas.length} areas · {pack.bosses.length} bosses · data: {pack.dataQuality}
-              </span>
-            </button>
-          ))}
-          {PLANNED_PACKS.map((p) => (
-            <div key={p.name} className="pack-card planned">
-              <strong>{p.name}</strong>
-              <span>Pack coming soon · Tier {p.tier}{p.kind === "fangame" ? " · fan game" : ""}</span>
+        <label className="pack-search">
+          Find a game
+          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search base games, ROM hacks, fan games…" />
+        </label>
+        {sections.map((section) => (
+          (section.packs.length > 0 || section.planned.length > 0) && (
+            <div key={section.key}>
+              <h3 className="picker-heading">{section.title}</h3>
+              <div className="picker">
+                {section.packs.map((pack) => (
+                  <button
+                    key={pack.id}
+                    className={`pack-card ${pack.id === packId ? "selected" : ""}`}
+                    onClick={() => setPackId(pack.id)}
+                  >
+                    <strong>{pack.name}</strong>
+                    <span>
+                      {pack.category === "base" ? `Gen ${pack.generation} · ` : ""}
+                      {pack.areas.length} areas · {pack.bosses.length} bosses · data: {pack.dataQuality}
+                    </span>
+                  </button>
+                ))}
+                {section.planned.map((p) => (
+                  <div key={p.name} className="pack-card planned">
+                    <strong>{p.name}</strong>
+                    <span>Pack coming soon · Tier {p.tier}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          )
+        ))}
         <div className="new-run-form">
           <label>
             Ruleset
@@ -268,8 +289,37 @@ function RunView({
 
 function EncountersTab({ run, pack, onChange }: { run: Run; pack: GamePack; onChange: (r: Run) => void }) {
   const [draft, setDraft] = useState<Record<string, { species: string; outcome: EncounterOutcome; level: number; nickname: string }>>({});
+  const [customName, setCustomName] = useState("");
+  const [customSpecies, setCustomSpecies] = useState("");
+  const [customLevel, setCustomLevel] = useState(5);
+  const areas = allAreas(run, pack);
 
   const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
+
+  const addCustomArea = () => {
+    const species = customSpecies
+      .split(",")
+      .map((s) => s.trim().toLowerCase().replace(/\s+/g, "-"))
+      .filter(Boolean);
+    if (!customName.trim() || species.length === 0) return;
+    const slug = customName.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    onChange({
+      ...run,
+      customAreas: [
+        ...(run.customAreas ?? []),
+        {
+          id: `custom-${slug}-${Date.now().toString(36)}`,
+          name: customName.trim(),
+          order: 100000 + (run.customAreas?.length ?? 0),
+          encounters: species.map((s) => ({
+            species: s, minLevel: customLevel, maxLevel: customLevel, methods: ["custom"],
+          })),
+        },
+      ],
+    });
+    setCustomName("");
+    setCustomSpecies("");
+  };
 
   const log = (areaId: string) => {
     const d = draft[areaId];
@@ -301,14 +351,26 @@ function EncountersTab({ run, pack, onChange }: { run: Run; pack: GamePack; onCh
 
   return (
     <section className="panel">
-      {sortedAreas(pack).map((area) => {
+      <div className="custom-area-form">
+        <strong>Add your own area</strong>
+        <span className="muted">For places the pack doesn't list — name it, add the species you can catch there (comma-separated), and log it like any other area.</span>
+        <div className="area-form">
+          <input value={customName} onChange={(e) => setCustomName(e.target.value)} placeholder="Area name (e.g. Safari Zone)" />
+          <input value={customSpecies} onChange={(e) => setCustomSpecies(e.target.value)} placeholder="Species slugs (e.g. nidoran-f, exeggcute)" />
+          <input type="number" min={1} max={100} value={customLevel} onChange={(e) => setCustomLevel(Number(e.target.value))} aria-label="Typical level" />
+          <button className="primary" onClick={addCustomArea} disabled={!customName.trim() || !customSpecies.trim()}>
+            Add area
+          </button>
+        </div>
+      </div>
+      {areas.map((area) => {
         const entry = logged(area.id);
         const d = draft[area.id] ?? { species: area.encounters[0]?.species ?? "", outcome: "caught" as EncounterOutcome, level: area.encounters[0]?.minLevel ?? 5, nickname: "" };
         const set = (patch: Partial<typeof d>) => setDraft((prev) => ({ ...prev, [area.id]: { ...d, ...patch } }));
         return (
           <div key={area.id} className="area-row">
             <div className="area-main">
-              <strong>{area.name}</strong>
+              <strong>{area.name}{area.id.startsWith("custom-") ? " · custom" : ""}</strong>
               <span className="muted pool">
                 {area.encounters.slice(0, 8).map((e) => displayName(e.species)).join(", ")}
                 {area.encounters.length > 8 ? ` +${area.encounters.length - 8} more` : ""}
@@ -349,7 +411,7 @@ function EncountersTab({ run, pack, onChange }: { run: Run; pack: GamePack; onCh
           </div>
         );
       })}
-      {pack.areas.length === 0 && <p className="muted">Encounter data for this pack is still being gathered.</p>}
+      {areas.length === 0 && <p className="muted">This pack has no encounter table yet — add your own areas above to start logging.</p>}
     </section>
   );
 }

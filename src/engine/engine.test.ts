@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GamePack, SpeciesData } from "./types";
 import { validatePack } from "./pack";
-import { createRun, currentLevelCap, isDupe, nextBoss, overCapMembers } from "./run";
+import { allAreas, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers } from "./run";
 import { teamCoverage } from "./coverage";
 import { effectiveness } from "./typeChart";
 
@@ -11,6 +11,7 @@ const fixturePack: GamePack = {
   version: "1.0",
   baseGame: "FireRed",
   generation: 3,
+  category: "hack",
   sourceDocs: [],
   dataQuality: "verified",
   areas: [
@@ -84,6 +85,16 @@ describe("run engine", () => {
       uid: "m1", species: "charizard", level: 20, status: "party", caughtAreaId: "route-1",
     }];
     expect(overCapMembers(run, fixturePack).map((m) => m.uid)).toEqual(["m1"]);
+  });
+
+  it("custom areas are appended after pack areas for logging", () => {
+    const run = createRun("fixture", "nuzlocke", "Test");
+    run.customAreas = [{
+      id: "custom-safari", name: "Safari Zone", order: 100000,
+      encounters: [{ species: "tauros", minLevel: 25, maxLevel: 25, methods: ["custom"] }],
+    }];
+    const areas = allAreas(run, fixturePack);
+    expect(areas.map((a) => a.id)).toEqual(["route-1", "custom-safari"]);
   });
 
   it("dupes clause: a species already caught counts as a dupe", () => {

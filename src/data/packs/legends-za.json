@@ -1,0 +1,476 @@
+{
+ "id": "legends-za",
+ "name": "Pokémon Legends: Z-A",
+ "version": "1.0",
+ "baseGame": "Legends: Z-A",
+ "generation": 9,
+ "category": "base",
+ "sourceDocs": [
+  "https://github.com/PokeAPI/pokeapi — data/v2/csv encounter tables (PokéAPI)",
+  "https://bulbapedia.bulbagarden.net/wiki/Rogue_Mega",
+  "https://gamerant.com/pokemon-legends-z-a-rogue-mega-evolutions-weaknesses/",
+  "https://www.theclick.gg/pokemon-legends-z-a-rogue-mega-evolutions/",
+  "https://www.fdaytalk.com/rogue-mega-tyranitar-weaknesses/",
+  "https://www.serebii.net/legendsz-a/mainmissions.shtml"
+ ],
+ "dataQuality": "partial",
+ "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. No encounter tables are available from PokéAPI for this game — use custom areas in the encounter log to track catches. Base-game boss list: the 16 story Rogue Mega Evolution battles (Main Missions 9-34), the six climax Rogue Mega gauntlet encounters of Main Mission 37 'Operation Protect Lumiose' (all Lv. 62, grouped by location), and the final Zygarde battle (Main Mission 42, Lv. 84, Complete Forme - fought in a similar style but not itself a Rogue Mega). Levels are the during-battle levels documented on Bulbapedia's Rogue Mega Evolution list, cross-checked against GameRant's per-mission level table. Rogue Megas arrive in batches of three that share a level (34 / 41 / 48 / 53 / 59) and can be tackled in any order within a batch. Rogue Mega Absol (Lv. 25) joins the player after its battle and is caught at Lv. 30. Each Rogue Mega is recorded as the base species with form 'mega'. Excluded: Z-A Royale promotion-match trainer bosses, regular trainer battles, and all Mega Dimension DLC Hyperspace Rogue Megas (Lv. 105+). Post-game rematch/simulator versions (Lv. 70) and Rogue Mega Rush (Lv. 100) are also not listed.",
+ "areas": [],
+ "bosses": [
+  {
+   "id": "rogue-mega-absol",
+   "name": "Rogue Mega Absol",
+   "location": "Jaune Sector 6",
+   "order": 10,
+   "levelCap": 25,
+   "team": [
+    {
+     "species": "absol",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-slowbro",
+   "name": "Rogue Mega Slowbro",
+   "location": "Aymlis Park",
+   "order": 20,
+   "levelCap": 34,
+   "team": [
+    {
+     "species": "slowbro",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-camerupt",
+   "name": "Rogue Mega Camerupt",
+   "location": "Jaune Sector 3",
+   "order": 30,
+   "levelCap": 34,
+   "team": [
+    {
+     "species": "camerupt",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-victreebel",
+   "name": "Rogue Mega Victreebel",
+   "location": "Magenta Sector 9",
+   "order": 40,
+   "levelCap": 34,
+   "team": [
+    {
+     "species": "victreebel",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-beedrill",
+   "name": "Rogue Mega Beedrill",
+   "location": "Vert Sector 5",
+   "order": 50,
+   "levelCap": 41,
+   "team": [
+    {
+     "species": "beedrill",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-hawlucha",
+   "name": "Rogue Mega Hawlucha",
+   "location": "Magenta Sector 3",
+   "order": 60,
+   "levelCap": 41,
+   "team": [
+    {
+     "species": "hawlucha",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-banette",
+   "name": "Rogue Mega Banette",
+   "location": "Jaune Sector 9",
+   "order": 70,
+   "levelCap": 41,
+   "team": [
+    {
+     "species": "banette",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-mawile",
+   "name": "Rogue Mega Mawile",
+   "location": "Magenta Sector 6",
+   "order": 80,
+   "levelCap": 48,
+   "team": [
+    {
+     "species": "mawile",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-barbaracle",
+   "name": "Rogue Mega Barbaracle",
+   "location": "Bleu Sector 5",
+   "order": 90,
+   "levelCap": 48,
+   "team": [
+    {
+     "species": "barbaracle",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-ampharos",
+   "name": "Rogue Mega Ampharos",
+   "location": "Rouge Sector 6",
+   "order": 100,
+   "levelCap": 48,
+   "team": [
+    {
+     "species": "ampharos",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-froslass",
+   "name": "Rogue Mega Froslass",
+   "location": "Aymlis Park",
+   "order": 110,
+   "levelCap": 53,
+   "team": [
+    {
+     "species": "froslass",
+     "level": 53,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-altaria",
+   "name": "Rogue Mega Altaria",
+   "location": "Magenta Sector 4",
+   "order": 120,
+   "levelCap": 53,
+   "team": [
+    {
+     "species": "altaria",
+     "level": 53,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-venusaur",
+   "name": "Rogue Mega Venusaur",
+   "location": "Jaune Sector 8",
+   "order": 130,
+   "levelCap": 53,
+   "team": [
+    {
+     "species": "venusaur",
+     "level": 53,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-dragonite",
+   "name": "Rogue Mega Dragonite",
+   "location": "Vert Sector 3",
+   "order": 140,
+   "levelCap": 59,
+   "team": [
+    {
+     "species": "dragonite",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-tyranitar",
+   "name": "Rogue Mega Tyranitar",
+   "location": "Jaune Sector 4",
+   "order": 150,
+   "levelCap": 59,
+   "team": [
+    {
+     "species": "tyranitar",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-starmie",
+   "name": "Rogue Mega Starmie",
+   "location": "Bleu Sector 9",
+   "order": 160,
+   "levelCap": 59,
+   "team": [
+    {
+     "species": "starmie",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-gauntlet-vernal-avenue",
+   "name": "Rogue Mega Gauntlet (Vernal Avenue)",
+   "location": "Vernal Avenue (Operation Protect Lumiose)",
+   "order": 170,
+   "levelCap": 62,
+   "team": [
+    {
+     "species": "gengar",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "heracross",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-gauntlet-vert-street",
+   "name": "Rogue Mega Gauntlet (Vert Street)",
+   "location": "Vert Street (Operation Protect Lumiose)",
+   "order": 180,
+   "levelCap": 62,
+   "team": [
+    {
+     "species": "kangaskhan",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "pidgeot",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "garchomp",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-gauntlet-jaune-street",
+   "name": "Rogue Mega Gauntlet (Jaune Street)",
+   "location": "Jaune Street (Operation Protect Lumiose)",
+   "order": 190,
+   "levelCap": 62,
+   "team": [
+    {
+     "species": "blastoise",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "steelix",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-gauntlet-jaune-sector-3",
+   "name": "Rogue Mega Gauntlet (Jaune Sector 3)",
+   "location": "Jaune Sector 3 (Operation Protect Lumiose)",
+   "order": 200,
+   "levelCap": 62,
+   "team": [
+    {
+     "species": "aggron",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "salamence",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-gauntlet-galerie-de-la-lune",
+   "name": "Rogue Mega Gauntlet (Galerie de la Lune)",
+   "location": "Galerie de la Lune (Operation Protect Lumiose)",
+   "order": 210,
+   "levelCap": 62,
+   "team": [
+    {
+     "species": "gardevoir",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "gallade",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "rogue-mega-gauntlet-magenta-sector-2",
+   "name": "Rogue Mega Gauntlet (Magenta Sector 2)",
+   "location": "Magenta Sector 2 (Operation Protect Lumiose)",
+   "order": 220,
+   "levelCap": 62,
+   "team": [
+    {
+     "species": "alakazam",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "aerodactyl",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    },
+    {
+     "species": "metagross",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "mega"
+    }
+   ]
+  },
+  {
+   "id": "zygarde-finale",
+   "name": "Zygarde (Final Battle)",
+   "location": "Wild Zone 20",
+   "order": 230,
+   "levelCap": 84,
+   "team": [
+    {
+     "species": "zygarde",
+     "level": 84,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "complete"
+    }
+   ]
+  }
+ ]
+}

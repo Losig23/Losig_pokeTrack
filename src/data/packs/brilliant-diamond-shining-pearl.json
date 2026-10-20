@@ -1,0 +1,504 @@
+{
+ "id": "brilliant-diamond-shining-pearl",
+ "name": "Pokémon Brilliant Diamond & Shining Pearl",
+ "version": "1.0",
+ "baseGame": "Brilliant Diamond / Shining Pearl",
+ "generation": 8,
+ "category": "base",
+ "sourceDocs": [
+  "https://github.com/PokeAPI/pokeapi — data/v2/csv encounter tables (PokéAPI)",
+  "https://attackofthefanboy.com/guides/pokemon-brilliant-diamond-and-shining-pearl-all-gym-leaders-and-their-pokemon/",
+  "https://attackofthefanboy.com/guides/pokemon-brilliant-diamond-and-shining-pearl-all-elite-four-trainers-and-their-pokemon/",
+  "https://www.nintendolife.com/guides/pokemon-brilliant-diamond-and-shining-pearl-how-to-beat-the-elite-four",
+  "https://game8.co/games/Pokemon-Brilliant-Diamond-Shining-Pearl/archives/350607",
+  "https://game8.co/games/Pokemon-Brilliant-Diamond-Shining-Pearl/archives/350633",
+  "https://www.rpgsite.net/feature/12008-pokemon-brilliant-diamond-shining-pearl-gym-leaders-guide-teams-weaknesses-strategy",
+  "https://www.gamerguides.com/pokemon-brilliant-diamond-and-shining-pearl/guide/walkthrough/mine-badge/how-to-defeat-gym-leader-byron"
+ ],
+ "dataQuality": "partial",
+ "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. No encounter tables are available from PokéAPI for this game — use custom areas in the encounter log to track catches. First-run teams only (postgame rematches with much higher levels are not included). Gym order and all teams/levels mirror Diamond & Pearl and were verified against BDSP-specific guides (Nintendo Life, Game8, RPG Site, GamerGuides, Attack of the Fanboy). One contested figure: Byron's Steelix is listed at Lv 35 by Attack of the Fanboy, but Lv 36 by Game8, GamerGuides, the GameFAQs BDSP FAQ and Diamond/Pearl parity -- 36 is used. BDSP's Elite Four famously use competitive movesets, held items, EVs and natures, but per this pack's format moves/abilities/items are left blank; the difficulty spike over the originals is in builds, not levels (e.g. Cynthia's Garchomp is Lv 66 as in D/P).",
+ "areas": [],
+ "bosses": [
+  {
+   "id": "roark",
+   "name": "Gym Leader Roark",
+   "location": "Oreburgh Gym",
+   "order": 10,
+   "levelCap": 14,
+   "team": [
+    {
+     "species": "geodude",
+     "level": 12,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "onix",
+     "level": 12,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "cranidos",
+     "level": 14,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "gardenia",
+   "name": "Gym Leader Gardenia",
+   "location": "Eterna Gym",
+   "order": 20,
+   "levelCap": 22,
+   "team": [
+    {
+     "species": "cherubi",
+     "level": 19,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "turtwig",
+     "level": 19,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roserade",
+     "level": 22,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "maylene",
+   "name": "Gym Leader Maylene",
+   "location": "Veilstone Gym",
+   "order": 30,
+   "levelCap": 30,
+   "team": [
+    {
+     "species": "meditite",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "machoke",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "lucario",
+     "level": 30,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "crasher-wake",
+   "name": "Gym Leader Crasher Wake",
+   "location": "Pastoria Gym",
+   "order": 40,
+   "levelCap": 30,
+   "team": [
+    {
+     "species": "gyarados",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "quagsire",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "floatzel",
+     "level": 30,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "fantina",
+   "name": "Gym Leader Fantina",
+   "location": "Hearthome Gym",
+   "order": 50,
+   "levelCap": 36,
+   "team": [
+    {
+     "species": "drifblim",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "gengar",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "mismagius",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "byron",
+   "name": "Gym Leader Byron",
+   "location": "Canalave Gym",
+   "order": 60,
+   "levelCap": 39,
+   "team": [
+    {
+     "species": "bronzor",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "steelix",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bastiodon",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "candice",
+   "name": "Gym Leader Candice",
+   "location": "Snowpoint Gym",
+   "order": 70,
+   "levelCap": 42,
+   "team": [
+    {
+     "species": "snover",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "sneasel",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "medicham",
+     "level": 40,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "abomasnow",
+     "level": 42,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "volkner",
+   "name": "Gym Leader Volkner",
+   "location": "Sunyshore Gym",
+   "order": 80,
+   "levelCap": 49,
+   "team": [
+    {
+     "species": "raichu",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "ambipom",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "octillery",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "luxray",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "aaron",
+   "name": "Elite Four Aaron",
+   "location": "Pokémon League",
+   "order": 90,
+   "levelCap": 57,
+   "team": [
+    {
+     "species": "dustox",
+     "level": 53,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "beautifly",
+     "level": 53,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "vespiquen",
+     "level": 54,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "heracross",
+     "level": 54,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "drapion",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "bertha",
+   "name": "Elite Four Bertha",
+   "location": "Pokémon League",
+   "order": 100,
+   "levelCap": 59,
+   "team": [
+    {
+     "species": "quagsire",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "sudowoodo",
+     "level": 56,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "golem",
+     "level": 56,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "whiscash",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "hippowdon",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "flint",
+   "name": "Elite Four Flint",
+   "location": "Pokémon League",
+   "order": 110,
+   "levelCap": 61,
+   "team": [
+    {
+     "species": "rapidash",
+     "level": 58,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "steelix",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "drifblim",
+     "level": 58,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "lopunny",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "infernape",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "lucian",
+   "name": "Elite Four Lucian",
+   "location": "Pokémon League",
+   "order": 120,
+   "levelCap": 63,
+   "team": [
+    {
+     "species": "mr-mime",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "girafarig",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "medicham",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "alakazam",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bronzong",
+     "level": 63,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "cynthia",
+   "name": "Champion Cynthia",
+   "location": "Pokémon League",
+   "order": 130,
+   "levelCap": 66,
+   "team": [
+    {
+     "species": "spiritomb",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roserade",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "gastrodon",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "lucario",
+     "level": 63,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "milotic",
+     "level": 63,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "garchomp",
+     "level": 66,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  }
+ ]
+}

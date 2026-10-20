@@ -1,13 +1,14 @@
-# RunBook — ROM Hack Run Logger (Losig_pokeTrack)
+# RunBook — Pokémon Run Logger (Losig_pokeTrack)
 
-A run logger for Pokémon **ROM hacks** — not mainline games — with boss preparation built on top of your logged run.
+A run logger for Pokémon **ROM hacks and mainline base games**, with boss preparation built on top of your logged run.
 
-Mainline trackers can't cover these games: boss teams, encounter tables, level caps, and even Pokémon stats differ per hack, and the data lives in community documentation. RunBook's answer is a **game-pack architecture**: the app engine is game-agnostic, and each hack is a single versioned JSON data file (areas, encounter pools, boss teams, per-hack overrides). Adding a game is a data contribution, not new code.
+ROM hacks are where trackers fall down: boss teams, encounter tables, level caps, and even Pokémon stats differ per hack, and the data lives in community documentation. RunBook's answer is a **game-pack architecture**: the app engine is game-agnostic, and each game is a single versioned JSON data file (areas, encounter pools, boss teams, per-hack overrides). Adding a game is a data contribution, not new code — which is how the mainline games slotted in alongside the hacks.
 
-## Features (Phase 1)
+## Features
 
+- **25 game packs**: 22 mainline base games (every generation, paired versions combined) + 3 ROM hacks, in a grouped, searchable picker
 - **Run logging** for three rulesets: casual playthrough, Nuzlocke, and Hardcore Nuzlocke (level-cap warnings)
-- **Encounter log** per area, in game order, with dupes-clause flagging
+- **Encounter log** per area, in game order, with dupes-clause flagging — plus **custom areas**: add your own area + species list when a pack has no table for a place
 - **Party / Box / Graveyard** roster management with a by-typing team coverage report (including "uncovered threats")
 - **Boss tracking**: next-boss card with the full team and level cap, defeat progress across the whole game
 - **Local-first**: runs persist in your browser (localStorage); no account, no backend
@@ -21,7 +22,9 @@ Mainline trackers can't cover these games: boss teams, encounter tables, level c
 
 ## Game packs
 
-Launch packs: **Radical Red**, **Unbound**, **Renegade Platinum**. Pack data is community-sourced from each hack's official documentation (sources are recorded inside each pack file) and is labelled with a data-quality level. Encounter and boss coverage grows pack by pack; the full list of planned packs is in `src/data/packs/index.ts`.
+**Base games (22):** Red & Blue, Yellow, Gold & Silver, Crystal, Ruby & Sapphire, Emerald, FireRed & LeafGreen, Diamond & Pearl, Platinum, HeartGold & SoulSilver, Black & White, Black 2 & White 2, X & Y, Omega Ruby & Alpha Sapphire, Sun & Moon, Ultra Sun & Ultra Moon, Let's Go, Sword & Shield, Brilliant Diamond & Shining Pearl, Legends: Arceus, Scarlet & Violet, Legends: Z-A. Encounter pools are generated from [PokéAPI](https://pokeapi.co)'s published data tables by `scripts/build_base_packs.py` (location-level, trades/raid/event entries excluded; PokéAPI has no encounter tables for BDSP, Legends: Arceus, or the Gen IX games — those packs are boss-data + custom areas for now). Boss teams are community-documented (Bulbapedia, Serebii, and guides — sources recorded inside each pack), species + level only; starter-dependent and version-exclusive variants are described in each pack's notes rather than silently picked.
+
+**ROM hack launch packs:** **Radical Red**, **Unbound**, **Renegade Platinum**, sourced from each hack's public documentation (recorded inside each pack file) and labelled with a data-quality level. More hacks are listed as planned in `src/data/packs/index.ts`.
 
 Want to contribute a pack? A pack is one JSON file matching the schema in `src/engine/types.ts`, validated by `validatePack` in `src/engine/pack.ts` (covered by tests). Open a PR with the file and its sources.
 
@@ -38,4 +41,4 @@ Species data (stats, types, sprites) comes from [PokéAPI](https://pokeapi.co) a
 
 ## Disclaimer
 
-Fan-made, non-commercial project. Pokémon and Pokémon character names are trademarks of Nintendo. This project hosts no ROMs and no patch files — get hacks from their official release pages and apply patches to a legally obtained base game.
+Fan-made, non-commercial project. Pokémon and Pokémon character names are trademarks of Nintendo. This project hosts no ROMs and no patch files — get hacks from their official release pages and apply patches to a legally obtained base game. Base-game data is factual game information via PokéAPI and community documentation.

@@ -35,12 +35,15 @@ export interface Boss {
   team: BossMon[];
 }
 
+export type PackCategory = "base" | "hack" | "fangame";
+
 export interface GamePack {
   id: string;
   name: string;
   version: string;
   baseGame: string;
   generation: number;
+  category: PackCategory;
   sourceDocs: string[];
   dataQuality: "verified" | "community" | "partial";
   notes?: string;
@@ -84,6 +87,8 @@ export interface Run {
   encounters: EncounterLogEntry[];
   team: CaughtMon[];
   defeatedBossIds: string[];
+  /** Areas the player added themselves (for packs without encounter tables). */
+  customAreas?: Area[];
 }
 
 export interface SpeciesData {

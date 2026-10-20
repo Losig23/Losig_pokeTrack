@@ -1,0 +1,190 @@
+{
+ "id": "legends-arceus",
+ "name": "Pokémon Legends: Arceus",
+ "version": "1.0",
+ "baseGame": "Legends: Arceus",
+ "generation": 8,
+ "category": "base",
+ "sourceDocs": [
+  "https://github.com/PokeAPI/pokeapi — data/v2/csv encounter tables (PokéAPI)",
+  "https://www.serebii.net/legendsarceus/noblepokemon.shtml",
+  "https://www.serebii.net/legendsarceus/legendary.shtml",
+  "https://www.serebii.net/legendsarceus/missions/seekingtheremainingplates.shtml",
+  "https://progameguides.com/pokemon-legends-arceus/where-to-find-ginkgo-guilds-volo-in-pokemon-legends-arceus-all-locations/"
+ ],
+ "dataQuality": "partial",
+ "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. No encounter tables are available from PokéAPI for this game — use custom areas in the encounter log to track catches. No gyms: bosses are the five frenzied Noble Pokemon (balm-throwing boss encounters, levels per Serebii), each a single-Pokemon entry in its Hisuian form where applicable. The Temple of Sinnoh climax is fought at Lv 65 against whichever of Dialga/Palkia matches the player's clan choice, in its Origin Forme; the entry uses Dialga (form: origin) as the representative. Giratina (Lv 70) is battled immediately AFTER Volo's team in the finale with no healing in between -- first in Altered Forme, then Origin Forme (the entry records origin); treat Giratina + Volo as a single eight-Pokemon gauntlet even though pack order lists Giratina before Volo. Giratina can later be caught at Lv 70 in Turnback Cave. Volo's Arcanine is the Hisuian form.",
+ "areas": [],
+ "bosses": [
+  {
+   "id": "kleavor",
+   "name": "Noble Kleavor",
+   "location": "Grandtree Arena",
+   "order": 10,
+   "levelCap": 18,
+   "team": [
+    {
+     "species": "kleavor",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "lilligant",
+   "name": "Noble Lilligant",
+   "location": "Brava Arena",
+   "order": 20,
+   "levelCap": 30,
+   "team": [
+    {
+     "species": "lilligant",
+     "level": 30,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "hisuian"
+    }
+   ]
+  },
+  {
+   "id": "arcanine",
+   "name": "Noble Arcanine",
+   "location": "Molten Arena",
+   "order": 30,
+   "levelCap": 36,
+   "team": [
+    {
+     "species": "arcanine",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "hisuian"
+    }
+   ]
+  },
+  {
+   "id": "electrode",
+   "name": "Noble Electrode",
+   "location": "Moonview Arena",
+   "order": 40,
+   "levelCap": 46,
+   "team": [
+    {
+     "species": "electrode",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "hisuian"
+    }
+   ]
+  },
+  {
+   "id": "avalugg",
+   "name": "Noble Avalugg",
+   "location": "Icepeak Arena",
+   "order": 50,
+   "levelCap": 56,
+   "team": [
+    {
+     "species": "avalugg",
+     "level": 56,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "hisuian"
+    }
+   ]
+  },
+  {
+   "id": "origin-dialga-palkia",
+   "name": "Origin Forme Dialga / Palkia",
+   "location": "Temple of Sinnoh",
+   "order": 60,
+   "levelCap": 65,
+   "team": [
+    {
+     "species": "dialga",
+     "level": 65,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "origin"
+    }
+   ]
+  },
+  {
+   "id": "giratina",
+   "name": "Giratina",
+   "location": "Temple of Sinnoh",
+   "order": 70,
+   "levelCap": 70,
+   "team": [
+    {
+     "species": "giratina",
+     "level": 70,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "origin"
+    }
+   ]
+  },
+  {
+   "id": "volo",
+   "name": "Pokémon Wielder Volo",
+   "location": "Temple of Sinnoh",
+   "order": 80,
+   "levelCap": 68,
+   "team": [
+    {
+     "species": "spiritomb",
+     "level": 68,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roserade",
+     "level": 68,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "togekiss",
+     "level": 68,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "arcanine",
+     "level": 68,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "hisuian"
+    },
+    {
+     "species": "lucario",
+     "level": 68,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "garchomp",
+     "level": 68,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  }
+ ]
+}

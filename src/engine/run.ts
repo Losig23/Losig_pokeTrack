@@ -1,5 +1,5 @@
-import type { Boss, GamePack, Ruleset, Run } from "./types";
-import { sortedBosses } from "./pack";
+import type { Area, Boss, GamePack, Ruleset, Run } from "./types";
+import { sortedAreas, sortedBosses } from "./pack";
 
 export function createRun(packId: string, ruleset: Ruleset, name: string, attempts = 1): Run {
   return {
@@ -13,7 +13,13 @@ export function createRun(packId: string, ruleset: Ruleset, name: string, attemp
     encounters: [],
     team: [],
     defeatedBossIds: [],
+    customAreas: [],
   };
+}
+
+/** All loggable areas for a run: the pack's areas (game order), then the player's custom areas. */
+export function allAreas(run: Run, pack: GamePack): Area[] {
+  return [...sortedAreas(pack), ...(run.customAreas ?? [])];
 }
 
 /** The next unbeaten boss in game order, or null when every boss is beaten. */

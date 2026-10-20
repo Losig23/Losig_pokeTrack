@@ -1,0 +1,2504 @@
+{
+ "id": "omega-ruby-alpha-sapphire",
+ "name": "Pokémon Omega Ruby & Alpha Sapphire",
+ "version": "1.0",
+ "baseGame": "Omega Ruby / Alpha Sapphire",
+ "generation": 6,
+ "category": "base",
+ "sourceDocs": [
+  "https://github.com/PokeAPI/pokeapi — data/v2/csv encounter tables (PokéAPI)",
+  "https://bulbapedia.bulbagarden.net/wiki/?title=Petalburg_Gym&oldid=3407108",
+  "https://bulbapedia.bulbagarden.net/wiki/?title=Winona&oldid=3455415",
+  "https://m.bulbapedia.bulbagarden.net/wiki/Wallace",
+  "https://bulbapedia.bulbagarden.net/wiki/?title=Sidney&oldid=3468169",
+  "https://bulbapedia.bulbagarden.net/wiki/Glacia",
+  "https://www.serebii.net/omegarubyalphasapphire/trainer/phoebe.shtml",
+  "https://www.thonky.com/pokemon-omega-ruby-alpha-sapphire/mossdeep-gym-liza-tate",
+  "http://www.thonky.com/pokemon-omega-ruby-alpha-sapphire/dewford-gym-brawly",
+  "https://twinfinite.net/guides/pokemon-omega-ruby-alpha-sapphire-gym-guide/3/"
+ ],
+ "dataQuality": "community",
+ "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. First-challenge teams for Pokémon Omega Ruby and Alpha Sapphire (ORAS levels differ from the original Ruby/Sapphire in several places — e.g. Roxanne 12/14 vs 14/15, Winona's team at 33/33/33/35, Tate & Liza at 45/45 — and were verified against ORAS-specific sources, not the Gen III originals). Tate & Liza is a double battle with one Pokémon each. Elite Four/Champion rematch teams (post-Delta Episode, Lv. 70+) are excluded. Steven's Metagross Mega Evolves (form: mega). Moves, abilities, and held items intentionally left empty per pack spec — species and levels verified against Bulbapedia trainer/gym pages, cross-checked with Serebii's Trainers' Eye catalogue and walkthrough guides.",
+ "areas": [
+  {
+   "id": "lavaridge-town",
+   "name": "Lavaridge Town",
+   "order": 10,
+   "encounters": [
+    {
+     "species": "kecleon",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "devon-scope"
+     ]
+    },
+    {
+     "species": "togepi",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift-egg"
+     ]
+    },
+    {
+     "species": "wynaut",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift-egg"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mossdeep-city",
+   "name": "Mossdeep City",
+   "order": 20,
+   "encounters": [
+    {
+     "species": "beldum",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-102",
+   "name": "Hoenn Route 102",
+   "order": 30,
+   "encounters": [
+    {
+     "species": "lotad",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "ralts",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "seedot",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-103",
+   "name": "Hoenn Route 103",
+   "order": 40,
+   "encounters": [
+    {
+     "species": "poochyena",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-104",
+   "name": "Hoenn Route 104",
+   "order": 50,
+   "encounters": [
+    {
+     "species": "taillow",
+     "minLevel": 3,
+     "maxLevel": 3,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "petalburg-woods",
+   "name": "Petalburg Woods",
+   "order": 60,
+   "encounters": [
+    {
+     "species": "shroomish",
+     "minLevel": 3,
+     "maxLevel": 3,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "wurmple",
+     "minLevel": 3,
+     "maxLevel": 3,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 3,
+     "maxLevel": 3,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-116",
+   "name": "Hoenn Route 116",
+   "order": 70,
+   "encounters": [
+    {
+     "species": "nincada",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "skitty",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-101",
+   "name": "Hoenn Route 101",
+   "order": 80,
+   "encounters": [
+    {
+     "species": "chikorita",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "chimchar",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "cyndaquil",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "mudkip",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "oshawott",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "piplup",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "poochyena",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "snivy",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "tepig",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "torchic",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "totodile",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "treecko",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "turtwig",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 2,
+     "maxLevel": 2,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rusturf-tunnel",
+   "name": "Rusturf Tunnel",
+   "order": 90,
+   "encounters": [
+    {
+     "species": "whismur",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "granite-cave",
+   "name": "Granite Cave",
+   "order": 100,
+   "encounters": [
+    {
+     "species": "aron",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "makuhita",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "mawile",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "sableye",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-110",
+   "name": "Hoenn Route 110",
+   "order": 110,
+   "encounters": [
+    {
+     "species": "magnemite",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "minun",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "plusle",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-117",
+   "name": "Hoenn Route 117",
+   "order": 120,
+   "encounters": [
+    {
+     "species": "marill",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "roselia",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fiery-path",
+   "name": "Fiery Path",
+   "order": 130,
+   "encounters": [
+    {
+     "species": "grimer",
+     "minLevel": 8,
+     "maxLevel": 8,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "koffing",
+     "minLevel": 8,
+     "maxLevel": 8,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "numel",
+     "minLevel": 8,
+     "maxLevel": 8,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "slugma",
+     "minLevel": 8,
+     "maxLevel": 8,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-112",
+   "name": "Hoenn Route 112",
+   "order": 140,
+   "encounters": [
+    {
+     "species": "machop",
+     "minLevel": 8,
+     "maxLevel": 8,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "numel",
+     "minLevel": 8,
+     "maxLevel": 8,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-113",
+   "name": "Hoenn Route 113",
+   "order": 150,
+   "encounters": [
+    {
+     "species": "skarmory",
+     "minLevel": 9,
+     "maxLevel": 9,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "spinda",
+     "minLevel": 9,
+     "maxLevel": 9,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-114",
+   "name": "Hoenn Route 114",
+   "order": 160,
+   "encounters": [
+    {
+     "species": "lotad",
+     "minLevel": 9,
+     "maxLevel": 9,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "seedot",
+     "minLevel": 9,
+     "maxLevel": 9,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "swablu",
+     "minLevel": 9,
+     "maxLevel": 9,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-115",
+   "name": "Hoenn Route 115",
+   "order": 170,
+   "encounters": [
+    {
+     "species": "swablu",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jagged-pass",
+   "name": "Jagged Pass",
+   "order": 180,
+   "encounters": [
+    {
+     "species": "machop",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "spoink",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-111",
+   "name": "Hoenn Route 111",
+   "order": 190,
+   "encounters": [
+    {
+     "species": "sandshrew",
+     "minLevel": 11,
+     "maxLevel": 11,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-118",
+   "name": "Hoenn Route 118",
+   "order": 200,
+   "encounters": [
+    {
+     "species": "electrike",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "kecleon",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "new-mauville",
+   "name": "New Mauville",
+   "order": 210,
+   "encounters": [
+    {
+     "species": "magnemite",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "voltorb",
+     "minLevel": 12,
+     "maxLevel": 25,
+     "methods": [
+      "horde",
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-120",
+   "name": "Hoenn Route 120",
+   "order": 220,
+   "encounters": [
+    {
+     "species": "kecleon",
+     "minLevel": 13,
+     "maxLevel": 30,
+     "methods": [
+      "devon-scope",
+      "horde"
+     ]
+    },
+    {
+     "species": "marill",
+     "minLevel": 13,
+     "maxLevel": 13,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 13,
+     "maxLevel": 13,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-121",
+   "name": "Hoenn Route 121",
+   "order": 230,
+   "encounters": [
+    {
+     "species": "kecleon",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "shuppet",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-123",
+   "name": "Hoenn Route 123",
+   "order": 240,
+   "encounters": [
+    {
+     "species": "kecleon",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "shuppet",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-safari-zone",
+   "name": "Hoenn Safari Zone",
+   "order": 250,
+   "encounters": [
+    {
+     "species": "doduo",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt-pyre",
+   "name": "Mt. Pyre",
+   "order": 260,
+   "encounters": [
+    {
+     "species": "meditite",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "shuppet",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shoal-cave",
+   "name": "Shoal Cave",
+   "order": 270,
+   "encounters": [
+    {
+     "species": "snorunt",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "spheal",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "seafloor-cavern",
+   "name": "Seafloor Cavern",
+   "order": 280,
+   "encounters": [
+    {
+     "species": "zubat",
+     "minLevel": 18,
+     "maxLevel": 18,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fallarbor-town",
+   "name": "Fallarbor Town",
+   "order": 290,
+   "encounters": [
+    {
+     "species": "pikachu",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-victory-road",
+   "name": "Hoenn Victory Road",
+   "order": 300,
+   "encounters": [
+    {
+     "species": "aron",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "loudred",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lilycove-city",
+   "name": "Lilycove City",
+   "order": 310,
+   "encounters": [
+    {
+     "species": "pikachu",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "meteor-falls",
+   "name": "Meteor Falls",
+   "order": 320,
+   "encounters": [
+    {
+     "species": "bagon",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 9,
+     "maxLevel": 20,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "slateport-city",
+   "name": "Slateport City",
+   "order": 330,
+   "encounters": [
+    {
+     "species": "pikachu",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "verdanturf-town",
+   "name": "Verdanturf Town",
+   "order": 340,
+   "encounters": [
+    {
+     "species": "pikachu",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sky-pillar",
+   "name": "Sky Pillar",
+   "order": 350,
+   "encounters": [
+    {
+     "species": "ariados",
+     "minLevel": 23,
+     "maxLevel": 23,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "deoxys",
+     "minLevel": 80,
+     "maxLevel": 80,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 23,
+     "maxLevel": 23,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "rayquaza",
+     "minLevel": 70,
+     "maxLevel": 70,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "swablu",
+     "minLevel": 23,
+     "maxLevel": 23,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-119",
+   "name": "Hoenn Route 119",
+   "order": 360,
+   "encounters": [
+    {
+     "species": "castform",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "kecleon",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "devon-scope"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "southern-island",
+   "name": "Southern Island",
+   "order": 370,
+   "encounters": [
+    {
+     "species": "latias",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift",
+      "static"
+     ]
+    },
+    {
+     "species": "latios",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift",
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mirage-spot-cave",
+   "name": "Mirage Spot Cave",
+   "order": 380,
+   "encounters": [
+    {
+     "species": "boldore",
+     "minLevel": 37,
+     "maxLevel": 37,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "cofagrigus",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ditto",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "excadrill",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 35,
+     "maxLevel": 38,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "klink",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "onix",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "slowpoke",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tynamo",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "unown",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mirage-spot-forest",
+   "name": "Mirage Spot Forest",
+   "order": 390,
+   "encounters": [
+    {
+     "species": "audino",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cherrim",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "forretress",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "glameow",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "happiny",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "kricketune",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "larvesta",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "minccino",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "petilil",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "purugly",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sunkern",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tangela",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mirage-spot-island",
+   "name": "Mirage Spot Island",
+   "order": 400,
+   "encounters": [
+    {
+     "species": "audino",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "binacle",
+     "minLevel": 37,
+     "maxLevel": 37,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "darmanitan",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ditto",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 38,
+     "maxLevel": 38,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "larvesta",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "maractus",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "munna",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "persian",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "porygon",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "purugly",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tangela",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "venomoth",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "xatu",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zebstrika",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mirage-spot-mountain",
+   "name": "Mirage Spot Mountain",
+   "order": 410,
+   "encounters": [
+    {
+     "species": "audino",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "crustle",
+     "minLevel": 37,
+     "maxLevel": 37,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "darmanitan",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "donphan",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "elekid",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "forretress",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "girafarig",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 35,
+     "maxLevel": 38,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "happiny",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "kricketune",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magby",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "munna",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "porygon",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rufflet",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "stantler",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tangela",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vullaby",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "xatu",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zebstrika",
+     "minLevel": 36,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ancient-tomb",
+   "name": "Ancient Tomb",
+   "order": 420,
+   "encounters": [
+    {
+     "species": "registeel",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "battle-resort",
+   "name": "Battle Resort",
+   "order": 430,
+   "encounters": [
+    {
+     "species": "camerupt",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "sharpedo",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "desert-ruins",
+   "name": "Desert Ruins",
+   "order": 440,
+   "encounters": [
+    {
+     "species": "regirock",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "team-aqua-hideout",
+   "name": "Team Aqua Hideout",
+   "order": 450,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "team-magma-hideout",
+   "name": "Team Magma Hideout",
+   "order": 460,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cave-of-origin",
+   "name": "Cave Of Origin",
+   "order": 470,
+   "encounters": [
+    {
+     "species": "groudon",
+     "minLevel": 45,
+     "maxLevel": 45,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "kyogre",
+     "minLevel": 45,
+     "maxLevel": 45,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 18,
+     "maxLevel": 18,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mossdeep-space-center",
+   "name": "Mossdeep Space Center",
+   "order": 480,
+   "encounters": [
+    {
+     "species": "kecleon",
+     "minLevel": 45,
+     "maxLevel": 45,
+     "methods": [
+      "devon-scope"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "crescent-isle",
+   "name": "Crescent Isle",
+   "order": 490,
+   "encounters": [
+    {
+     "species": "cresselia",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fabled-cave",
+   "name": "Fabled Cave",
+   "order": 500,
+   "encounters": [
+    {
+     "species": "reshiram",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "zekrom",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gnarled-den",
+   "name": "Gnarled Den",
+   "order": 510,
+   "encounters": [
+    {
+     "species": "kyurem",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "island-cave",
+   "name": "Island Cave",
+   "order": 520,
+   "encounters": [
+    {
+     "species": "regice",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "regigigas",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nameless-cavern",
+   "name": "Nameless Cavern",
+   "order": 530,
+   "encounters": [
+    {
+     "species": "azelf",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "mesprit",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "uxie",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pathless-plain",
+   "name": "Pathless Plain",
+   "order": 540,
+   "encounters": [
+    {
+     "species": "cobalion",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "terrakion",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "virizion",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scorched-slab",
+   "name": "Scorched Slab",
+   "order": 550,
+   "encounters": [
+    {
+     "species": "heatran",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 14,
+     "maxLevel": 14,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sea-mauville",
+   "name": "Sea Mauville",
+   "order": 560,
+   "encounters": [
+    {
+     "species": "ho-oh",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "lugia",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "spiritomb",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "soaring-in-the-sky",
+   "name": "Soaring In The Sky",
+   "order": 570,
+   "encounters": [
+    {
+     "species": "dialga",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "giratina",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "landorus",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "palkia",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "thundurus",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "tornadus",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "trackless-forest",
+   "name": "Trackless Forest",
+   "order": 580,
+   "encounters": [
+    {
+     "species": "entei",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "raikou",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "suicune",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  }
+ ],
+ "bosses": [
+  {
+   "id": "oras-roxanne",
+   "levelCap": 14,
+   "location": "Rustboro City Gym",
+   "name": "Gym Leader Roxanne",
+   "order": 10,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 12,
+     "moves": [],
+     "species": "geodude"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 14,
+     "moves": [],
+     "species": "nosepass"
+    }
+   ]
+  },
+  {
+   "id": "oras-brawly",
+   "levelCap": 16,
+   "location": "Dewford Town Gym",
+   "name": "Gym Leader Brawly",
+   "order": 20,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 14,
+     "moves": [],
+     "species": "machop"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 16,
+     "moves": [],
+     "species": "makuhita"
+    }
+   ]
+  },
+  {
+   "id": "oras-wattson",
+   "levelCap": 21,
+   "location": "Mauville City Gym",
+   "name": "Gym Leader Wattson",
+   "order": 30,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 19,
+     "moves": [],
+     "species": "magnemite"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 19,
+     "moves": [],
+     "species": "voltorb"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 21,
+     "moves": [],
+     "species": "magneton"
+    }
+   ]
+  },
+  {
+   "id": "oras-flannery",
+   "levelCap": 28,
+   "location": "Lavaridge Town Gym",
+   "name": "Gym Leader Flannery",
+   "order": 40,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 26,
+     "moves": [],
+     "species": "slugma"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 26,
+     "moves": [],
+     "species": "numel"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 28,
+     "moves": [],
+     "species": "torkoal"
+    }
+   ]
+  },
+  {
+   "id": "oras-norman",
+   "levelCap": 30,
+   "location": "Petalburg City Gym",
+   "name": "Gym Leader Norman",
+   "order": 50,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 28,
+     "moves": [],
+     "species": "slaking"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 28,
+     "moves": [],
+     "species": "vigoroth"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 30,
+     "moves": [],
+     "species": "slaking"
+    }
+   ]
+  },
+  {
+   "id": "oras-winona",
+   "levelCap": 35,
+   "location": "Fortree City Gym",
+   "name": "Gym Leader Winona",
+   "order": 60,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 33,
+     "moves": [],
+     "species": "swellow"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 33,
+     "moves": [],
+     "species": "pelipper"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 33,
+     "moves": [],
+     "species": "skarmory"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 35,
+     "moves": [],
+     "species": "altaria"
+    }
+   ]
+  },
+  {
+   "id": "oras-tate-and-liza",
+   "levelCap": 45,
+   "location": "Mossdeep City Gym",
+   "name": "Gym Leaders Tate & Liza",
+   "order": 70,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 45,
+     "moves": [],
+     "species": "lunatone"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 45,
+     "moves": [],
+     "species": "solrock"
+    }
+   ]
+  },
+  {
+   "id": "oras-wallace",
+   "levelCap": 46,
+   "location": "Sootopolis City Gym",
+   "name": "Gym Leader Wallace",
+   "order": 80,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 44,
+     "moves": [],
+     "species": "luvdisc"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 44,
+     "moves": [],
+     "species": "whiscash"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 44,
+     "moves": [],
+     "species": "sealeo"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 44,
+     "moves": [],
+     "species": "seaking"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 46,
+     "moves": [],
+     "species": "milotic"
+    }
+   ]
+  },
+  {
+   "id": "oras-sidney",
+   "levelCap": 52,
+   "location": "Pokémon League",
+   "name": "Elite Four Sidney",
+   "order": 90,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 50,
+     "moves": [],
+     "species": "mightyena"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 50,
+     "moves": [],
+     "species": "shiftry"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 50,
+     "moves": [],
+     "species": "cacturne"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 50,
+     "moves": [],
+     "species": "sharpedo"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 52,
+     "moves": [],
+     "species": "absol"
+    }
+   ]
+  },
+  {
+   "id": "oras-phoebe",
+   "levelCap": 53,
+   "location": "Pokémon League",
+   "name": "Elite Four Phoebe",
+   "order": 100,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 51,
+     "moves": [],
+     "species": "dusclops"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 51,
+     "moves": [],
+     "species": "banette"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 51,
+     "moves": [],
+     "species": "sableye"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 51,
+     "moves": [],
+     "species": "banette"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 53,
+     "moves": [],
+     "species": "dusknoir"
+    }
+   ]
+  },
+  {
+   "id": "oras-glacia",
+   "levelCap": 54,
+   "location": "Pokémon League",
+   "name": "Elite Four Glacia",
+   "order": 110,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 52,
+     "moves": [],
+     "species": "glalie"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 52,
+     "moves": [],
+     "species": "froslass"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 52,
+     "moves": [],
+     "species": "glalie"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 52,
+     "moves": [],
+     "species": "froslass"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 54,
+     "moves": [],
+     "species": "walrein"
+    }
+   ]
+  },
+  {
+   "id": "oras-drake",
+   "levelCap": 55,
+   "location": "Pokémon League",
+   "name": "Elite Four Drake",
+   "order": 120,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 53,
+     "moves": [],
+     "species": "altaria"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 53,
+     "moves": [],
+     "species": "flygon"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 53,
+     "moves": [],
+     "species": "kingdra"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 53,
+     "moves": [],
+     "species": "flygon"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 55,
+     "moves": [],
+     "species": "salamence"
+    }
+   ]
+  },
+  {
+   "id": "oras-steven",
+   "levelCap": 59,
+   "location": "Pokémon League",
+   "name": "Champion Steven",
+   "order": 130,
+   "team": [
+    {
+     "ability": null,
+     "item": null,
+     "level": 57,
+     "moves": [],
+     "species": "skarmory"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 57,
+     "moves": [],
+     "species": "claydol"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 57,
+     "moves": [],
+     "species": "aggron"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 57,
+     "moves": [],
+     "species": "cradily"
+    },
+    {
+     "ability": null,
+     "item": null,
+     "level": 57,
+     "moves": [],
+     "species": "armaldo"
+    },
+    {
+     "ability": null,
+     "form": "mega",
+     "item": null,
+     "level": 59,
+     "moves": [],
+     "species": "metagross"
+    }
+   ]
+  }
+ ]
+}

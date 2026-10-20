@@ -111,3 +111,8 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .boss-row:last-child { border-bottom: none; }
 .chip { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); border-radius: 999px; padding: 5px 12px; cursor: pointer; white-space: nowrap; }
 .chip.done { border-color: var(--accent); color: var(--accent); }
+
+.pack-search { max-width: 420px; margin-bottom: 6px; }
+.picker-heading { margin: 18px 0 8px; font-size: 15px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.custom-area-form { display: flex; flex-direction: column; gap: 6px; padding-bottom: 14px; margin-bottom: 6px; border-bottom: 1px solid var(--border); }
+.custom-area-form .area-form input { flex: 1; min-width: 180px; }

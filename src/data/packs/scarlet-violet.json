@@ -1,0 +1,879 @@
+{
+ "id": "scarlet-violet",
+ "name": "Pokémon Scarlet & Violet",
+ "version": "1.0",
+ "baseGame": "Scarlet / Violet",
+ "generation": 9,
+ "category": "base",
+ "sourceDocs": [
+  "https://github.com/PokeAPI/pokeapi — data/v2/csv encounter tables (PokéAPI)",
+  "https://game8.co/games/Pokemon-Scarlet-Violet/archives/384362",
+  "https://www.serebii.net/scarletviolet/gyms.shtml",
+  "https://www.serebii.net/scarletviolet/pathoflegends.shtml",
+  "https://www.dualshockers.com/pokemon-scarlet-violet-team-star-complete-guide/",
+  "https://www.dexerto.com/pokemon/pokemon-scarlet-violet-elite-four-champion-guide-1990127/",
+  "https://vgkami.com/pokemon-scarlet-violet-every-elite-four-team/",
+  "https://www.nintendolife.com/guides/pokemon-scarlet-and-violet-how-to-beat-the-elite-four-and-champion",
+  "https://samurai-gamers.com/pokemon-sv/montenevera-gym-walkthrough-and-guide/",
+  "https://m.bulbapedia.bulbagarden.net/wiki/Zero_Lab",
+  "https://screenrant.com/beat-ai-sada-pokemon-scarlet/"
+ ],
+ "dataQuality": "partial",
+ "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. No encounter tables are available from PokéAPI for this game — use custom areas in the encounter log to track catches. Bosses ordered by levelCap ascending = recommended play order across the three story paths. Version variants: the Quaking Earth Titan is Great Tusk in Scarlet / Iron Treads in Violet (same level 45, Asado Desert). The final professor boss shown is AI Sada (Scarlet); in Violet, AI Turo uses Iron Moth 66, Iron Bundle 66, Iron Hands 66, Iron Jugulis 66, Iron Thorns 66, Iron Valiant 67. After Sada's team, a scripted second phase pits the player's Koraidon against her Koraidon Lv. 72 (Turo: Miraidon Lv. 72) - not part of the listed team. Nemona's final team: only her five fixed members are listed, so levelCap 65 reflects those; her 6th slot is a Lv. 66 starter final evolution that is weak to the player's starter (player Sprigatito -> Quaquaval; Fuecoco -> Meowscarada; Quaxly -> Skeledirge), making her full-team ace level 66. Her Lycanroc is the Midday Form. The False Dragon Titan is one encounter fought as two sequential battles: Dondozo Lv. 56, then Tatsugiri Lv. 57. Team Star bosses end their teams with a Starmobile (a Revavroom variant, recorded via the form field). Atticus fields both a regular Revavroom Lv. 33 and the Navi Starmobile Lv. 32. Ryme's battle is a Double Battle; her Toxtricity is the Low Key Form. Not included in this boss list: the Starfall Street finale battles (Director Clavell Lv. 60-61 and Cassiopeia/Penny Lv. 62-63), Arven's Path of Legends finale battle, and all gym/E4 rematches.",
+ "areas": [],
+ "bosses": [
+  {
+   "id": "gym-katy",
+   "name": "Gym Leader Katy",
+   "location": "Cortondo Gym",
+   "order": 10,
+   "levelCap": 15,
+   "team": [
+    {
+     "species": "nymble",
+     "level": 14,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "tarountula",
+     "level": 14,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "teddiursa",
+     "level": 15,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "titan-klawf",
+   "name": "Stony Cliff Titan Klawf",
+   "location": "South Province (Area Three)",
+   "order": 20,
+   "levelCap": 16,
+   "team": [
+    {
+     "species": "klawf",
+     "level": 16,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "titan"
+    }
+   ]
+  },
+  {
+   "id": "gym-brassius",
+   "name": "Gym Leader Brassius",
+   "location": "Artazon Gym",
+   "order": 30,
+   "levelCap": 17,
+   "team": [
+    {
+     "species": "petilil",
+     "level": 16,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "smoliv",
+     "level": 16,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "sudowoodo",
+     "level": 17,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "titan-bombirdier",
+   "name": "Open Sky Titan Bombirdier",
+   "location": "West Province (Area One)",
+   "order": 40,
+   "levelCap": 20,
+   "team": [
+    {
+     "species": "bombirdier",
+     "level": 20,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "titan"
+    }
+   ]
+  },
+  {
+   "id": "team-star-giacomo",
+   "name": "Team Star Boss Giacomo (Segin Squad)",
+   "location": "Team Star Segin Squad Base, West Province (Area One)",
+   "order": 50,
+   "levelCap": 21,
+   "team": [
+    {
+     "species": "pawniard",
+     "level": 21,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "revavroom",
+     "level": 20,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "Segin Starmobile"
+    }
+   ]
+  },
+  {
+   "id": "gym-iono",
+   "name": "Gym Leader Iono",
+   "location": "Levincia Gym",
+   "order": 60,
+   "levelCap": 24,
+   "team": [
+    {
+     "species": "wattrel",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bellibolt",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "luxio",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "mismagius",
+     "level": 24,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "team-star-mela",
+   "name": "Team Star Boss Mela (Schedar Squad)",
+   "location": "Team Star Schedar Squad Base, East Province (Area One)",
+   "order": 70,
+   "levelCap": 27,
+   "team": [
+    {
+     "species": "torkoal",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "revavroom",
+     "level": 26,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "Schedar Starmobile"
+    }
+   ]
+  },
+  {
+   "id": "titan-orthworm",
+   "name": "Lurking Steel Titan Orthworm",
+   "location": "East Province (Area Three)",
+   "order": 80,
+   "levelCap": 29,
+   "team": [
+    {
+     "species": "orthworm",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "titan"
+    }
+   ]
+  },
+  {
+   "id": "gym-kofu",
+   "name": "Gym Leader Kofu",
+   "location": "Cascarrafa Gym",
+   "order": 90,
+   "levelCap": 30,
+   "team": [
+    {
+     "species": "veluza",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "wugtrio",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "crabominable",
+     "level": 30,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "team-star-atticus",
+   "name": "Team Star Boss Atticus (Navi Squad)",
+   "location": "Team Star Navi Squad Base, Tagtree Thicket",
+   "order": 100,
+   "levelCap": 33,
+   "team": [
+    {
+     "species": "skuntank",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "muk",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "revavroom",
+     "level": 33,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "revavroom",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "Navi Starmobile"
+    }
+   ]
+  },
+  {
+   "id": "gym-larry",
+   "name": "Gym Leader Larry",
+   "location": "Medali Gym",
+   "order": 110,
+   "levelCap": 36,
+   "team": [
+    {
+     "species": "komala",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "dudunsparce",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "staraptor",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "gym-ryme",
+   "name": "Gym Leader Ryme",
+   "location": "Montenevera Gym",
+   "order": 120,
+   "levelCap": 42,
+   "team": [
+    {
+     "species": "mimikyu",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "banette",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "houndstone",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "toxtricity-low-key",
+     "level": 42,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "gym-tulip",
+   "name": "Gym Leader Tulip",
+   "location": "Alfornada Gym",
+   "order": 130,
+   "levelCap": 45,
+   "team": [
+    {
+     "species": "farigiraf",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "gardevoir",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "espathra",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "florges",
+     "level": 45,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "titan-great-tusk",
+   "name": "Quaking Earth Titan Great Tusk",
+   "location": "Asado Desert",
+   "order": 140,
+   "levelCap": 45,
+   "team": [
+    {
+     "species": "great-tusk",
+     "level": 45,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "titan"
+    }
+   ]
+  },
+  {
+   "id": "gym-grusha",
+   "name": "Gym Leader Grusha",
+   "location": "Glaseado Gym",
+   "order": 150,
+   "levelCap": 48,
+   "team": [
+    {
+     "species": "frosmoth",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "beartic",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "cetitan",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "altaria",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "team-star-ortega",
+   "name": "Team Star Boss Ortega (Ruchbah Squad)",
+   "location": "Team Star Ruchbah Squad Base, North Province (Area Three)",
+   "order": 160,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "azumarill",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "wigglytuff",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "dachsbun",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "revavroom",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "Ruchbah Starmobile"
+    }
+   ]
+  },
+  {
+   "id": "team-star-eri",
+   "name": "Team Star Boss Eri (Caph Squad)",
+   "location": "Team Star Caph Squad Base, North Province (Area Two)",
+   "order": 170,
+   "levelCap": 56,
+   "team": [
+    {
+     "species": "toxicroak",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "annihilape",
+     "level": 56,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "passimian",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "lucario",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "revavroom",
+     "level": 56,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "Caph Starmobile"
+    }
+   ]
+  },
+  {
+   "id": "titan-false-dragon",
+   "name": "False Dragon Titan Dondozo & Tatsugiri",
+   "location": "Casseroya Lake",
+   "order": 180,
+   "levelCap": 57,
+   "team": [
+    {
+     "species": "dondozo",
+     "level": 56,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "titan"
+    },
+    {
+     "species": "tatsugiri",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "titan"
+    }
+   ]
+  },
+  {
+   "id": "elite-four-rika",
+   "name": "Elite Four Rika",
+   "location": "Pokemon League",
+   "order": 190,
+   "levelCap": 58,
+   "team": [
+    {
+     "species": "whiscash",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "camerupt",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "donphan",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "dugtrio",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "clodsire",
+     "level": 58,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "elite-four-poppy",
+   "name": "Elite Four Poppy",
+   "location": "Pokemon League",
+   "order": 200,
+   "levelCap": 59,
+   "team": [
+    {
+     "species": "copperajah",
+     "level": 58,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "magnezone",
+     "level": 58,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bronzong",
+     "level": 58,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "corviknight",
+     "level": 58,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "tinkaton",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "elite-four-larry",
+   "name": "Elite Four Larry",
+   "location": "Pokemon League",
+   "order": 210,
+   "levelCap": 60,
+   "team": [
+    {
+     "species": "tropius",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "staraptor",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "altaria",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "oricorio-pom-pom",
+     "level": 59,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "flamigo",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "elite-four-hassel",
+   "name": "Elite Four Hassel",
+   "location": "Pokemon League",
+   "order": 220,
+   "levelCap": 61,
+   "team": [
+    {
+     "species": "noivern",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "haxorus",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "dragalge",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "flapple",
+     "level": 60,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "baxcalibur",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "top-champion-geeta",
+   "name": "Top Champion Geeta",
+   "location": "Pokemon League",
+   "order": 230,
+   "levelCap": 62,
+   "team": [
+    {
+     "species": "espathra",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "gogoat",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "veluza",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "avalugg",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "kingambit",
+     "level": 61,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "glimmora",
+     "level": 62,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-nemona-final",
+   "name": "Champion Nemona (Final Battle)",
+   "location": "Mesagoza",
+   "order": 240,
+   "levelCap": 65,
+   "team": [
+    {
+     "species": "lycanroc",
+     "level": 65,
+     "ability": null,
+     "item": null,
+     "moves": [],
+     "form": "midday"
+    },
+    {
+     "species": "goodra",
+     "level": 65,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "dudunsparce",
+     "level": 65,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "orthworm",
+     "level": 65,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "pawmot",
+     "level": 65,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "ai-professor-sada",
+   "name": "AI Professor Sada",
+   "location": "Zero Lab, Area Zero",
+   "order": 250,
+   "levelCap": 67,
+   "team": [
+    {
+     "species": "slither-wing",
+     "level": 66,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "scream-tail",
+     "level": 66,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "brute-bonnet",
+     "level": 66,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "flutter-mane",
+     "level": 66,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "sandy-shocks",
+     "level": 66,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roaring-moon",
+     "level": 67,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  }
+ ]
+}

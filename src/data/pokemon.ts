@@ -67,6 +67,12 @@ const SLUG_ALIASES: Record<string, string> = {
   dudunsparce: "dudunsparce-two-segment",
   squawkabilly: "squawkabilly-green-plumage",
   pyroar: "pyroar-male", // PokéAPI has no bare "pyroar" pokemon entry, only its forms
+  frillish: "frillish-male",
+  jellicent: "jellicent-male",
+  lycanroc: "lycanroc-midday",
+  meowstic: "meowstic-male",
+  morpeko: "morpeko-full-belly",
+  zygarde: "zygarde-50",
 };
 
 export async function fetchSpecies(slug: string): Promise<SpeciesData | null> {
