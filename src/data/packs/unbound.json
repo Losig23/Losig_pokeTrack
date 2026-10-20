@@ -1,0 +1,8319 @@
+{
+  "id": "unbound",
+  "name": "Pokémon Unbound",
+  "version": "2.1.1",
+  "baseGame": "FireRed",
+  "generation": 7,
+  "sourceDocs": [
+    "https://unboundwiki.com/gyms/",
+    "https://unboundwiki.com/elite-four/",
+    "https://github.com/ydarissep/Unbound-Pokedex/blob/main/src/locations/encounters.json",
+    "https://www.scribd.com/document/632822201/Pokemon-Unbound-Location-Guide-v2-1-0-xlsx"
+  ],
+  "dataQuality": "partial",
+  "notes": "Boss teams: all 8 gym leaders use the Difficult (default) difficulty tables from unboundwiki.com, including levels, held items and moves as listed there (that wiki does not list abilities for gym leaders, so ability is null). Elite Four and Champion (Jax) teams are the only ones unboundwiki currently documents, and it documents them for Vanilla difficulty only, with levels listed \"at cap\" (the League scales to the player team; cap is Lv. 76) — abilities, items and moves are included as listed. Title Defense battles are excluded. Encounters: species pools with min/max levels per method (grass/surf/fishing/rock-smash) for the main-story areas of Borrius, extracted from game encounter data via the open-source Unbound-Pokedex project and cross-checked against the official Location Guide v2.1.0 (which lists the same pools without levels). Sub-floors/sub-maps of a location are merged into one area; day/night grass pools are merged into a single grass pool. Area order approximates main-story progression. Swarm, DexNav, special/static, raid and gift encounters are NOT included. The KBT Expressway encounter table could not be reliably matched to a named map in the extracted game data, so that corridor is omitted. Post-game-only maps (e.g. Battle Frontier, Cube Corp interiors) and maps whose internal names could not be matched to a location are omitted. Boss levels in Unbound scale with the player party within limits; the levels recorded here are the documented base/cap values.",
+  "areas": [
+    {
+      "id": "route-1",
+      "name": "Route 1",
+      "order": 10,
+      "encounters": [
+        {
+          "species": "snorunt",
+          "minLevel": 7,
+          "maxLevel": 9,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "vanillite",
+          "minLevel": 7,
+          "maxLevel": 9,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "delibird",
+          "minLevel": 8,
+          "maxLevel": 9,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "minior",
+          "minLevel": 9,
+          "maxLevel": 10,
+          "methods": [
+            "grass"
+          ],
+          "form": "Shield"
+        }
+      ]
+    },
+    {
+      "id": "icicle-cave",
+      "name": "Icicle Cave",
+      "order": 20,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seel",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cloyster",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "makuhita",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "roggenrola",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sandshrew",
+          "minLevel": 8,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "smoochum",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "spheal",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "zubat",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "bergmite",
+          "minLevel": 9,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "drilbur",
+          "minLevel": 9,
+          "maxLevel": 10,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "mawile",
+          "minLevel": 9,
+          "maxLevel": 10,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "swinub",
+          "minLevel": 9,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "golbat",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hariyama",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "jynx",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sealeo",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "avalugg",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "boldore",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "piloswine",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "bergmite",
+          "minLevel": 20,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "roggenrola",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "boldore",
+          "minLevel": 25,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "avalugg",
+          "minLevel": 37,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "shuckle",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "seel",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "spheal",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "sealeo",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "lapras",
+          "minLevel": 40,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-2",
+      "name": "Route 2",
+      "order": 30,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "staryu",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "starmie",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "azurill",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "electrike",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "inkay",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "minccino",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "patrat",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pikipek",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "stufful",
+          "minLevel": 8,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hoothoot",
+          "minLevel": 9,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "rattata",
+          "minLevel": 9,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "riolu",
+          "minLevel": 9,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "scraggy",
+          "minLevel": 9,
+          "maxLevel": 11,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "krabby",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ],
+          "form": "Red-Striped"
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flower-paradise",
+      "name": "Flower Paradise",
+      "order": 40,
+      "encounters": [
+        {
+          "species": "combee",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "comfey",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "cutiefly",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "flabebe",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ],
+          "form": "Orange Flower"
+        },
+        {
+          "species": "flabebe",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "flabebe",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ],
+          "form": "White Flower"
+        },
+        {
+          "species": "oricorio",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ],
+          "form": "Pom-Pom Style"
+        },
+        {
+          "species": "oricorio",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ],
+          "form": "Baile Style"
+        },
+        {
+          "species": "oricorio",
+          "minLevel": 10,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ],
+          "form": "Sensu Style"
+        },
+        {
+          "species": "pansage",
+          "minLevel": 10,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pansear",
+          "minLevel": 10,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "cutiefly",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "flabebe",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ],
+          "form": "Yellow Flower"
+        },
+        {
+          "species": "flabebe",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ],
+          "form": "Blue Flower"
+        },
+        {
+          "species": "flabebe",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ],
+          "form": "White Flower"
+        },
+        {
+          "species": "oricorio",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ],
+          "form": "Pa'u Style"
+        },
+        {
+          "species": "combee",
+          "minLevel": 10,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "oricorio",
+          "minLevel": 10,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ],
+          "form": "Sensu Style"
+        },
+        {
+          "species": "panpour",
+          "minLevel": 10,
+          "maxLevel": 12,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-3",
+      "name": "Route 3",
+      "order": 50,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "krabby",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "staryu",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cloyster",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "kingler",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bidoof",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "buizel",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "cherubi",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "dewpider",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "shellos",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "slowpoke",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "surskit",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "wingull",
+          "minLevel": 9,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "poliwag",
+          "minLevel": 10,
+          "maxLevel": 12,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "araquanid",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dresco-town",
+      "name": "Dresco Town",
+      "order": 60,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "staryu",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "starmie",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ],
+          "form": "Red-Striped"
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grim-woods",
+      "name": "Grim Woods",
+      "order": 70,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "barboach",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "whiscash",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "caterpie",
+          "minLevel": 12,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pumpkaboo",
+          "minLevel": 13,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "seedot",
+          "minLevel": 13,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "weedle",
+          "minLevel": 13,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "duskull",
+          "minLevel": 14,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gastly",
+          "minLevel": 14,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "phantump",
+          "minLevel": 14,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "shuppet",
+          "minLevel": 14,
+          "maxLevel": 16,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "surskit",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "masquerain",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-4",
+      "name": "Route 4",
+      "order": 80,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "corphish",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "staryu",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "crawdaunt",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "starmie",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "budew",
+          "minLevel": 14,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ekans",
+          "minLevel": 14,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lillipup",
+          "minLevel": 14,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "mankey",
+          "minLevel": 14,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "numel",
+          "minLevel": 14,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ralts",
+          "minLevel": 14,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "starly",
+          "minLevel": 14,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hoothoot",
+          "minLevel": 15,
+          "maxLevel": 17,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ],
+          "form": "Red-Striped"
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cinder-volcano",
+      "name": "Cinder Volcano",
+      "order": 90,
+      "encounters": [
+        {
+          "species": "geodude",
+          "minLevel": 15,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "numel",
+          "minLevel": 15,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "salandit",
+          "minLevel": 15,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "slugma",
+          "minLevel": 15,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 15,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "drilbur",
+          "minLevel": 16,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "magby",
+          "minLevel": 16,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "torkoal",
+          "minLevel": 16,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "camerupt",
+          "minLevel": 35,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 35,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "excadrill",
+          "minLevel": 36,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "heatmor",
+          "minLevel": 36,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "magmar",
+          "minLevel": 36,
+          "maxLevel": 38,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 20,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "shuckle",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "slugma",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "magcargo",
+          "minLevel": 40,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "slugma",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "magcargo",
+          "minLevel": 40,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-5",
+      "name": "Route 5",
+      "order": 100,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "corphish",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "staryu",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "crawdaunt",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "starmie",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "murkrow",
+          "minLevel": 15,
+          "maxLevel": 19,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "nidoran-f",
+          "minLevel": 15,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "nidoran-m",
+          "minLevel": 15,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "purrloin",
+          "minLevel": 15,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "taillow",
+          "minLevel": 15,
+          "maxLevel": 18,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "growlithe",
+          "minLevel": 16,
+          "maxLevel": 19,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "houndour",
+          "minLevel": 16,
+          "maxLevel": 19,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lickitung",
+          "minLevel": 16,
+          "maxLevel": 19,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ditto",
+          "minLevel": 17,
+          "maxLevel": 19,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "venonat",
+          "minLevel": 17,
+          "maxLevel": 19,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "yanma",
+          "minLevel": 17,
+          "maxLevel": 19,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ],
+          "form": "Red-Striped"
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valley-cave",
+      "name": "Valley Cave",
+      "order": 110,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "finneon",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lumineon",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "aron",
+          "minLevel": 19,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "nosepass",
+          "minLevel": 19,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "phanpy",
+          "minLevel": 19,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 19,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gligar",
+          "minLevel": 20,
+          "maxLevel": 21,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "noibat",
+          "minLevel": 20,
+          "maxLevel": 21,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "nosepass",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "finneon",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tehl-town",
+      "name": "Tehl Town",
+      "order": 120,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "goldeen",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wishiwashi",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bruxish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seaking",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "azumarill",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-6",
+      "name": "Route 6",
+      "order": 130,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "goldeen",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seaking",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bunnelby",
+          "minLevel": 20,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "deerling",
+          "minLevel": 20,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "kricketot",
+          "minLevel": 20,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ledyba",
+          "minLevel": 20,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "shinx",
+          "minLevel": 20,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "spinarak",
+          "minLevel": 20,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sunkern",
+          "minLevel": 20,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ariados",
+          "minLevel": 22,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ledian",
+          "minLevel": 22,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "luxio",
+          "minLevel": 22,
+          "maxLevel": 22,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frost-mountain",
+      "name": "Frost Mountain",
+      "order": 140,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seel",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cloyster",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "aron",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "bronzor",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "cryogonal",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "nosepass",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "onix",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "roggenrola",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sneasel",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 21,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "seel",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "spheal",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "sealeo",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "lapras",
+          "minLevel": 40,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-7",
+      "name": "Route 7",
+      "order": 150,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "goldeen",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seaking",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "abra",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "buneary",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "doduo",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "drowzee",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "espurr",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hoothoot",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "mareep",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "rattata",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "shinx",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "yungoos",
+          "minLevel": 21,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gumshoos",
+          "minLevel": 23,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "luxio",
+          "minLevel": 23,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "raticate",
+          "minLevel": 23,
+          "maxLevel": 23,
+          "methods": [
+            "grass"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-8",
+      "name": "Route 8",
+      "order": 160,
+      "encounters": [
+        {
+          "species": "cubchoo",
+          "minLevel": 22,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "deerling",
+          "minLevel": 22,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ],
+          "form": "Winter"
+        },
+        {
+          "species": "flaaffy",
+          "minLevel": 22,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sneasel",
+          "minLevel": 22,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "snorunt",
+          "minLevel": 22,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "snover",
+          "minLevel": 22,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "minior",
+          "minLevel": 23,
+          "maxLevel": 25,
+          "methods": [
+            "grass"
+          ],
+          "form": "Shield"
+        },
+        {
+          "species": "minior",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ],
+          "form": "Shield"
+        },
+        {
+          "species": "roggenrola",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-9",
+      "name": "Route 9",
+      "order": 170,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "goldeen",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wishiwashi",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bruxish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seaking",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "deerling",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ],
+          "form": "Autumn"
+        },
+        {
+          "species": "grubbin",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "shroomish",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "spearow",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "skorupi",
+          "minLevel": 29,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "audino",
+          "minLevel": 30,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "surskit",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "azumarill",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "masquerain",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fallshore-city",
+      "name": "Fallshore City",
+      "order": 180,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "carvanha",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "luvdisc",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "sharpedo",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "pyukumuku",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "autl-woods",
+      "name": "Autl Woods",
+      "order": 190,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "goldeen",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wishiwashi",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bruxish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seaking",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "deerling",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ],
+          "form": "Autumn"
+        },
+        {
+          "species": "grubbin",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "shroomish",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "spearow",
+          "minLevel": 27,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "skorupi",
+          "minLevel": 29,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "audino",
+          "minLevel": 30,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "surskit",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "azumarill",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "masquerain",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-10",
+      "name": "Route 10",
+      "order": 200,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wishiwashi",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bruxish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lotad",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "tympole",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "linoone",
+          "minLevel": 27,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "goomy",
+          "minLevel": 28,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lombre",
+          "minLevel": 28,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "palpitoad",
+          "minLevel": 28,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ditto",
+          "minLevel": 29,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lombre",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "palpitoad",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "surskit",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "masquerain",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "auburn-waterway",
+      "name": "Auburn Waterway",
+      "order": 210,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "goldeen",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wishiwashi",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bruxish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seaking",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lotad",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "tympole",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "linoone",
+          "minLevel": 27,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "goomy",
+          "minLevel": 28,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lombre",
+          "minLevel": 28,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "palpitoad",
+          "minLevel": 28,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ditto",
+          "minLevel": 29,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lombre",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "palpitoad",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "surskit",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "masquerain",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-11",
+      "name": "Route 11",
+      "order": 220,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "barboach",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "luvdisc",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "whiscash",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "exeggcute",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gulpin",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "meditite",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "noctowl",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "spoink",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "swablu",
+          "minLevel": 26,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "togedemaru",
+          "minLevel": 27,
+          "maxLevel": 29,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ],
+          "form": "Red-Striped"
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epidimy-town",
+      "name": "Epidimy Town",
+      "order": 230,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "barboach",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "luvdisc",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "whiscash",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 25,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "finneon",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "lumineon",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cliff-cave",
+      "name": "Cliff Cave",
+      "order": 240,
+      "encounters": [
+        {
+          "species": "geodude",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "golbat",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "machop",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "misdreavus",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "onix",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "quagsire",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "wooper",
+          "minLevel": 26,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "machoke",
+          "minLevel": 28,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "steelix",
+          "minLevel": 29,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-12",
+      "name": "Route 12",
+      "order": 250,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "carvanha",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wailmer",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "sharpedo",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wailord",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "fletchling",
+          "minLevel": 29,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hoothoot",
+          "minLevel": 29,
+          "maxLevel": 32,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "deerling",
+          "minLevel": 33,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ],
+          "form": "Summer"
+        },
+        {
+          "species": "fletchinder",
+          "minLevel": 33,
+          "maxLevel": 33,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gothita",
+          "minLevel": 33,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "mienfoo",
+          "minLevel": 33,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ponyta",
+          "minLevel": 33,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "rockruff",
+          "minLevel": 33,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "snubbull",
+          "minLevel": 33,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "solosis",
+          "minLevel": 33,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "noctowl",
+          "minLevel": 34,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "dedenne",
+          "minLevel": 35,
+          "maxLevel": 36,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 25,
+          "maxLevel": 30,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "great-desert",
+      "name": "Great Desert",
+      "order": 260,
+      "encounters": [
+        {
+          "species": "cacnea",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "darumaka",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "dwebble",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hippowdon",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "krokorok",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sandslash",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "vibrava",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "maractus",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 30,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "dwebble",
+          "minLevel": 30,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 30,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-13",
+      "name": "Route 13",
+      "order": 270,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "clauncher",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "skrelp",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "clawitzer",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "dragalge",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "krabby",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "kingler",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "alomomola",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dehara-city",
+      "name": "Dehara City",
+      "order": 280,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "staryu",
+          "minLevel": 10,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwag",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwhirl",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "starmie",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "pyukumuku",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-14",
+      "name": "Route 14",
+      "order": 290,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "carvanha",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "luvdisc",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wailmer",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cloyster",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "sharpedo",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wailord",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bellsprout",
+          "minLevel": 25,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "oddish",
+          "minLevel": 25,
+          "maxLevel": 30,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "slowpoke",
+          "minLevel": 36,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "bibarel",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "floatzel",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gastrodon",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gloom",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "weepinbell",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "krabby",
+          "minLevel": 20,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "kingler",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantine",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gurun-town",
+      "name": "Gurun Town",
+      "order": 300,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "kingdra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantine",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vivill-town",
+      "name": "Vivill Town",
+      "order": 310,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cloyster",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 37,
+          "maxLevel": 42,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 37,
+          "maxLevel": 42,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 40,
+          "maxLevel": 42,
+          "methods": [
+            "surf"
+          ],
+          "form": "Red-Striped"
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 40,
+          "maxLevel": 42,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vivill-woods",
+      "name": "Vivill Woods",
+      "order": 320,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "barboach",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "whiscash",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "caterpie",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "scatterbug",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "weedle",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "wurmple",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "cottonee",
+          "minLevel": 38,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "petilil",
+          "minLevel": 38,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "cascoon",
+          "minLevel": 39,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "kakuna",
+          "minLevel": 39,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "metapod",
+          "minLevel": 39,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "silcoon",
+          "minLevel": 39,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "spewpa",
+          "minLevel": 39,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "swadloon",
+          "minLevel": 39,
+          "maxLevel": 41,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 36,
+          "maxLevel": 41,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "surskit",
+          "minLevel": 36,
+          "maxLevel": 41,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "masquerain",
+          "minLevel": 39,
+          "maxLevel": 41,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cootes-bog",
+      "name": "Cootes Bog",
+      "order": 330,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwag",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "barboach",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwhirl",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "politoed",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "whiscash",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "croagunk",
+          "minLevel": 48,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "carnivine",
+          "minLevel": 49,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gloom",
+          "minLevel": 49,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "quagsire",
+          "minLevel": 49,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "weepinbell",
+          "minLevel": 49,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sliggoo",
+          "minLevel": 50,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "drapion",
+          "minLevel": 51,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "toxicroak",
+          "minLevel": 52,
+          "maxLevel": 52,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "quagsire",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "stunfisk",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "gastrodon",
+          "minLevel": 49,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ],
+          "form": "East Sea"
+        },
+        {
+          "species": "sliggoo",
+          "minLevel": 49,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "distortion-world",
+      "name": "Distortion World",
+      "order": 340,
+      "encounters": [
+        {
+          "species": "giratina",
+          "minLevel": 0,
+          "maxLevel": 0,
+          "methods": [
+            "grass"
+          ],
+          "form": "Origin"
+        }
+      ]
+    },
+    {
+      "id": "route-15",
+      "name": "Route 15",
+      "order": 350,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cloyster",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ],
+          "form": "Red-Striped"
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-16",
+      "name": "Route 16",
+      "order": 360,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pancham",
+          "minLevel": 44,
+          "maxLevel": 47,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "chatot",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "girafarig",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pawniard",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sawk",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "tangela",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "throh",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "krabby",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "kingler",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 42,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 42,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 44,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "antisis-sewers",
+      "name": "Antisis Sewers",
+      "order": 370,
+      "encounters": [
+        {
+          "species": "grimer",
+          "minLevel": 10,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "muk",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golbat",
+          "minLevel": 45,
+          "maxLevel": 48,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "grimer",
+          "minLevel": 45,
+          "maxLevel": 48,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "koffing",
+          "minLevel": 45,
+          "maxLevel": 48,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "raticate",
+          "minLevel": 45,
+          "maxLevel": 48,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "muk",
+          "minLevel": 47,
+          "maxLevel": 48,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "weezing",
+          "minLevel": 47,
+          "maxLevel": 48,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "grimer",
+          "minLevel": 45,
+          "maxLevel": 48,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golbat",
+          "minLevel": 48,
+          "maxLevel": 48,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "muk",
+          "minLevel": 48,
+          "maxLevel": 48,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "antisis-city",
+      "name": "Antisis City",
+      "order": 380,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 42,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 42,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 44,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-17",
+      "name": "Route 17",
+      "order": 390,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lapras",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bagon",
+          "minLevel": 40,
+          "maxLevel": 45,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "noctowl",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "pidgeotto",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "skiploom",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "tropius",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "seviper",
+          "minLevel": 48,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "zangoose",
+          "minLevel": 48,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 30,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 30,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "krabby",
+          "minLevel": 30,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 35,
+          "maxLevel": 45,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "kingler",
+          "minLevel": 35,
+          "maxLevel": 45,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 48,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "underwater-route-17",
+      "name": "Underwater (Route 17)",
+      "order": 400,
+      "encounters": [
+        {
+          "species": "carvanha",
+          "minLevel": 35,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "chinchou",
+          "minLevel": 35,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "clamperl",
+          "minLevel": 35,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 35,
+          "maxLevel": 60,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lanturn",
+          "minLevel": 40,
+          "maxLevel": 60,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sharpedo",
+          "minLevel": 40,
+          "maxLevel": 60,
+          "methods": [
+            "grass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thundercap-mountain",
+      "name": "Thundercap Mountain",
+      "order": 410,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "chinchou",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lanturn",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cubone",
+          "minLevel": 27,
+          "maxLevel": 34,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "elekid",
+          "minLevel": 27,
+          "maxLevel": 34,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "klink",
+          "minLevel": 27,
+          "maxLevel": 34,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "magnemite",
+          "minLevel": 27,
+          "maxLevel": 34,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "nosepass",
+          "minLevel": 27,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "tynamo",
+          "minLevel": 27,
+          "maxLevel": 34,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "electabuzz",
+          "minLevel": 30,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "magneton",
+          "minLevel": 30,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "timburr",
+          "minLevel": 31,
+          "maxLevel": 34,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "eelektrik",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "klang",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marowak",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 20,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "nosepass",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 25,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "krabby",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "kingler",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "shuckle",
+          "minLevel": 35,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "chinchou",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "stunfisk",
+          "minLevel": 35,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tynamo",
+          "minLevel": 35,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "lanturn",
+          "minLevel": 40,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 42,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 42,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 44,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "eelektrik",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 45,
+          "maxLevel": 47,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "route-18",
+      "name": "Route 18",
+      "order": 420,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "kingdra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "persian",
+          "minLevel": 50,
+          "maxLevel": 57,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "bouffalant",
+          "minLevel": 53,
+          "maxLevel": 57,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "farfetchd",
+          "minLevel": 53,
+          "maxLevel": 57,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "happiny",
+          "minLevel": 53,
+          "maxLevel": 57,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "noctowl",
+          "minLevel": 53,
+          "maxLevel": 57,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "skuntank",
+          "minLevel": 53,
+          "maxLevel": 57,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sudowoodo",
+          "minLevel": 53,
+          "maxLevel": 57,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "binacle",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "krabby",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "kingler",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantine",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seaport-city",
+      "name": "Seaport City",
+      "order": 430,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "corsola",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "remoraid",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lapras",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "octillery",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantyke",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 48,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "polder-town",
+      "name": "Polder Town",
+      "order": 440,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwag",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "barboach",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwhirl",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "politoed",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "whiscash",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "palpitoad",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "stunfisk",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "gastrodon",
+          "minLevel": 49,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ],
+          "form": "East Sea"
+        },
+        {
+          "species": "sliggoo",
+          "minLevel": 49,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tarmigan-town",
+      "name": "Tarmigan Town",
+      "order": 450,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwag",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwhirl",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "poliwag",
+          "minLevel": 25,
+          "maxLevel": 30,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "slowpoke",
+          "minLevel": 25,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "poliwhirl",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "politoed",
+          "minLevel": 40,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crystal-peak",
+      "name": "Crystal Peak",
+      "order": 460,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "finneon",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lumineon",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "qwilfish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "noibat",
+          "minLevel": 49,
+          "maxLevel": 54,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "onix",
+          "minLevel": 49,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "rufflet",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "steelix",
+          "minLevel": 49,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "vullaby",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 49,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "absol",
+          "minLevel": 50,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "drifblim",
+          "minLevel": 50,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "loudred",
+          "minLevel": 50,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "skarmory",
+          "minLevel": 50,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "zweilous",
+          "minLevel": 50,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "noivern",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "onix",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 50,
+          "maxLevel": 53,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "dragonair",
+          "minLevel": 49,
+          "maxLevel": 65,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "gastrodon",
+          "minLevel": 49,
+          "maxLevel": 65,
+          "methods": [
+            "surf"
+          ],
+          "form": "East Sea"
+        },
+        {
+          "species": "golduck",
+          "minLevel": 49,
+          "maxLevel": 65,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "magnolia-fields",
+      "name": "Magnolia Fields",
+      "order": 470,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wailmer",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "qwilfish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "wailord",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "furfrou",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "gogoat",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "mudsdale",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "noctowl",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "tranquill",
+          "minLevel": 49,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "miltank",
+          "minLevel": 50,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "tauros",
+          "minLevel": 50,
+          "maxLevel": 53,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "frillish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "jellicent",
+          "minLevel": 49,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "redwood-forest",
+      "name": "Redwood Forest",
+      "order": 480,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "barboach",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "whiscash",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "ariados",
+          "minLevel": 55,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ledian",
+          "minLevel": 55,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "ursaring",
+          "minLevel": 55,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "vigoroth",
+          "minLevel": 55,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "heracross",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "komala",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "oranguru",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "passimian",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "aipom",
+          "minLevel": 10,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pineco",
+          "minLevel": 10,
+          "maxLevel": 30,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "heracross",
+          "minLevel": 50,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pinsir",
+          "minLevel": 50,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "scyther",
+          "minLevel": 50,
+          "maxLevel": 50,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 55,
+          "maxLevel": 65,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "masquerain",
+          "minLevel": 55,
+          "maxLevel": 65,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frozen-forest",
+      "name": "Frozen Forest",
+      "order": 490,
+      "encounters": [
+        {
+          "species": "cubchoo",
+          "minLevel": 23,
+          "maxLevel": 26,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sneasel",
+          "minLevel": 23,
+          "maxLevel": 26,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "snover",
+          "minLevel": 23,
+          "maxLevel": 26,
+          "methods": [
+            "grass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lost-tunnel",
+      "name": "Lost Tunnel",
+      "order": 500,
+      "encounters": [
+        {
+          "species": "diglett",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lairon",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "dugtrio",
+          "minLevel": 40,
+          "maxLevel": 40,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 30,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rift-cave",
+      "name": "Rift Cave",
+      "order": 510,
+      "encounters": [
+        {
+          "species": "bronzong",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "chimecho",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "dusclops",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "golbat",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "golurk",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "haunter",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tomb-of-borrius",
+      "name": "Tomb of Borrius",
+      "order": 520,
+      "encounters": [
+        {
+          "species": "unown",
+          "minLevel": 5,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sigilyph",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ruins-of-void",
+      "name": "Ruins of Void",
+      "order": 530,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "horsea",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "kingdra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seadra",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "baltoy",
+          "minLevel": 34,
+          "maxLevel": 37,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "duskull",
+          "minLevel": 34,
+          "maxLevel": 37,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "yamask",
+          "minLevel": 34,
+          "maxLevel": 37,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "bronzong",
+          "minLevel": 35,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lunatone",
+          "minLevel": 35,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sableye",
+          "minLevel": 35,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "solrock",
+          "minLevel": 35,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "cofagrigus",
+          "minLevel": 37,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "dusclops",
+          "minLevel": 37,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sigilyph",
+          "minLevel": 37,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "claydol",
+          "minLevel": 60,
+          "maxLevel": 65,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "baltoy",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "geodude",
+          "minLevel": 25,
+          "maxLevel": 35,
+          "methods": [
+            "rock-smash"
+          ]
+        },
+        {
+          "species": "pelipper",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacool",
+          "minLevel": 35,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "mantine",
+          "minLevel": 37,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "tentacruel",
+          "minLevel": 38,
+          "maxLevel": 40,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "icy-hole",
+      "name": "Icy Hole",
+      "order": 540,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seel",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "cloyster",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golbat",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hariyama",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "jynx",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sealeo",
+          "minLevel": 47,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "avalugg",
+          "minLevel": 48,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "boldore",
+          "minLevel": 48,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "piloswine",
+          "minLevel": 48,
+          "maxLevel": 50,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "sealeo",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "lapras",
+          "minLevel": 50,
+          "maxLevel": 50,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "victory-road",
+      "name": "Victory Road",
+      "order": 550,
+      "encounters": [
+        {
+          "species": "magikarp",
+          "minLevel": 10,
+          "maxLevel": 15,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "finneon",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "luvdisc",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "psyduck",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "seel",
+          "minLevel": 20,
+          "maxLevel": 25,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "shellder",
+          "minLevel": 20,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "bruxish",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "golduck",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "lumineon",
+          "minLevel": 45,
+          "maxLevel": 50,
+          "methods": [
+            "fishing"
+          ]
+        },
+        {
+          "species": "jigglypuff",
+          "minLevel": 54,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "roselia",
+          "minLevel": 54,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 54,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "boldore",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "camerupt",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "chansey",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "drampa",
+          "minLevel": 55,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "druddigon",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "durant",
+          "minLevel": 55,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "excadrill",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "golbat",
+          "minLevel": 55,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "graveler",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "heatmor",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "lurantis",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "magcargo",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "magmar",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "salazzle",
+          "minLevel": 55,
+          "maxLevel": 58,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "turtonator",
+          "minLevel": 55,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "abomasnow",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "avalugg",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "beartic",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "glalie",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hakamo-o",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "hariyama",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "jynx",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "minior",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ],
+          "form": "Shield"
+        },
+        {
+          "species": "piloswine",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "sealeo",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "vanillish",
+          "minLevel": 56,
+          "maxLevel": 59,
+          "methods": [
+            "grass"
+          ]
+        },
+        {
+          "species": "marill",
+          "minLevel": 45,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "woobat",
+          "minLevel": 45,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "azumarill",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "basculin",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ],
+          "form": "Blue-Striped"
+        },
+        {
+          "species": "dewgong",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "floatzel",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "golbat",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "lapras",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "lumineon",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "magcargo",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        },
+        {
+          "species": "sealeo",
+          "minLevel": 50,
+          "maxLevel": 55,
+          "methods": [
+            "surf"
+          ]
+        }
+      ]
+    }
+  ],
+  "bosses": [
+    {
+      "id": "mirskle",
+      "name": "Gym Leader Mirskle",
+      "location": "Dresco Town Gym",
+      "order": 10,
+      "levelCap": 21,
+      "team": [
+        {
+          "species": "floette",
+          "level": 21,
+          "ability": null,
+          "item": "Grass Gem",
+          "moves": [
+            "Fairy Wind",
+            "Razor Leaf",
+            "Grass Knot",
+            "Echoed Voice"
+          ]
+        },
+        {
+          "species": "gloom",
+          "level": 20,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Acid",
+            "Mega Drain",
+            "Sweet Scent",
+            "Sleep Powder"
+          ]
+        },
+        {
+          "species": "weedle",
+          "level": 18,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Bug Bite",
+            "Electroweb",
+            "Poison Sting",
+            "String Shot"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vega",
+      "name": "Gym Leader Véga",
+      "location": "Crater Town Gym",
+      "order": 20,
+      "levelCap": 27,
+      "team": [
+        {
+          "species": "liepard",
+          "level": 26,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Thief",
+            "Fury Swipes",
+            "Fake Out",
+            "Pursuit"
+          ]
+        },
+        {
+          "species": "absol",
+          "level": 27,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Thief",
+            "Slash",
+            "Feint",
+            "Pursuit"
+          ]
+        },
+        {
+          "species": "sneasel",
+          "level": 25,
+          "ability": null,
+          "item": "Dark Gem",
+          "moves": [
+            "Thief",
+            "Icy Wind",
+            "Metal Claw",
+            "Fake Out"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alice",
+      "name": "Gym Leader Alice",
+      "location": "Blizzard City Gym",
+      "order": 30,
+      "levelCap": 33,
+      "team": [
+        {
+          "species": "dodrio",
+          "level": 32,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Aerial Ace",
+            "Double Hit",
+            "Steel Wing",
+            "Quick Attack"
+          ]
+        },
+        {
+          "species": "gliscor",
+          "level": 31,
+          "ability": null,
+          "item": "Flying Gem",
+          "moves": [
+            "Bulldoze",
+            "Acrobatics",
+            "Knock Off",
+            "Fire Fang"
+          ]
+        },
+        {
+          "species": "crobat",
+          "level": 32,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Venoshock",
+            "Aerial Ace",
+            "Bite",
+            "Toxic"
+          ]
+        },
+        {
+          "species": "pinsir",
+          "level": 33,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Bug Bite",
+            "Brick Break",
+            "Double Hit",
+            "Rock Tomb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mel",
+      "name": "Gym Leader Mel",
+      "location": "Fallshore City Gym",
+      "order": 40,
+      "levelCap": 37,
+      "team": [
+        {
+          "species": "bewear",
+          "level": 36,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Facade",
+            "Low Sweep",
+            "Payback",
+            "Brutal Swing"
+          ]
+        },
+        {
+          "species": "heliolisk",
+          "level": 37,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Swift",
+            "Parabolic Charge",
+            "Bulldoze",
+            "Thunder Wave"
+          ]
+        },
+        {
+          "species": "miltank",
+          "level": 36,
+          "ability": null,
+          "item": "Sitrus Berry",
+          "moves": [
+            "Facade",
+            "Fire Punch",
+            "Zen Headbutt",
+            "Milk Drink"
+          ]
+        },
+        {
+          "species": "lopunny",
+          "level": 37,
+          "ability": null,
+          "item": "Lopunnite",
+          "moves": [
+            "Facade",
+            "Double Kick",
+            "Low Kick",
+            "Fake Out"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "galavan",
+      "name": "Gym Leader Galavan",
+      "location": "Dehara City Gym",
+      "order": 50,
+      "levelCap": 46,
+      "team": [
+        {
+          "species": "golem",
+          "level": 46,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Rock Slide",
+            "Thunder Punch",
+            "Bulldoze",
+            "Steamroller"
+          ],
+          "form": "Alolan"
+        },
+        {
+          "species": "magneton",
+          "level": 44,
+          "ability": null,
+          "item": "Eviolite",
+          "moves": [
+            "Discharge",
+            "Flash Cannon",
+            "Tri Attack",
+            "Volt Switch"
+          ]
+        },
+        {
+          "species": "eelektross",
+          "level": 45,
+          "ability": null,
+          "item": "Electric Gem",
+          "moves": [
+            "Thunderbolt",
+            "Crunch",
+            "Giga Drain",
+            "Dragon Claw"
+          ]
+        },
+        {
+          "species": "manectric",
+          "level": 46,
+          "ability": null,
+          "item": "Manectite",
+          "moves": [
+            "Discharge",
+            "Flamethrower",
+            "Ice Fang",
+            "Volt Switch"
+          ],
+          "form": "Mega"
+        },
+        {
+          "species": "lanturn",
+          "level": 45,
+          "ability": null,
+          "item": "Sitrus Berry",
+          "moves": [
+            "Thunderbolt",
+            "Scald",
+            "Signal Beam",
+            "Thunder Wave"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "big-mo",
+      "name": "Gym Leader Big Mo",
+      "location": "Antisis City Gym",
+      "order": 60,
+      "levelCap": 53,
+      "team": [
+        {
+          "species": "conkeldurr",
+          "level": 52,
+          "ability": null,
+          "item": "Protective Pads",
+          "moves": [
+            "Drain Punch",
+            "Stone Edge",
+            "Chip Away",
+            "Bulk Up"
+          ]
+        },
+        {
+          "species": "pangoro",
+          "level": 52,
+          "ability": null,
+          "item": "Fighting Gem",
+          "moves": [
+            "Crunch",
+            "Drain Punch",
+            "Rock Slide",
+            "Bullet Punch"
+          ]
+        },
+        {
+          "species": "mienshao",
+          "level": 53,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Drain Punch",
+            "Aura Sphere",
+            "Knock Off",
+            "Acrobatics"
+          ]
+        },
+        {
+          "species": "hariyama",
+          "level": 52,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Revenge",
+            "Knock Off",
+            "Heavy Slam",
+            "Fake Out"
+          ]
+        },
+        {
+          "species": "lucario",
+          "level": 53,
+          "ability": null,
+          "item": "Lucarionite",
+          "moves": [
+            "Aura Sphere",
+            "Metal Claw",
+            "Dragon Pulse",
+            "Blaze Kick"
+          ],
+          "form": "Mega"
+        }
+      ]
+    },
+    {
+      "id": "tessy",
+      "name": "Gym Leader Tessy",
+      "location": "Polder Town Gym",
+      "order": 70,
+      "levelCap": 58,
+      "team": [
+        {
+          "species": "toxapex",
+          "level": 56,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Toxic Spikes",
+            "Knock Off",
+            "Haze",
+            "Recover"
+          ]
+        },
+        {
+          "species": "armaldo",
+          "level": 57,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Aqua Tail",
+            "X-Scissor",
+            "Bulldoze",
+            "Accelerock"
+          ]
+        },
+        {
+          "species": "kingdra",
+          "level": 58,
+          "ability": null,
+          "item": "Scope Lens",
+          "moves": [
+            "Snipe Shot",
+            "Dragon Pulse",
+            "Focus Energy",
+            "Agility"
+          ]
+        },
+        {
+          "species": "seismitoad",
+          "level": 57,
+          "ability": null,
+          "item": "Water Gem",
+          "moves": [
+            "Muddy Water",
+            "Earthquake",
+            "Drain Punch",
+            "Stealth Rock"
+          ]
+        },
+        {
+          "species": "gyarados",
+          "level": 58,
+          "ability": null,
+          "item": "Gyaradosite",
+          "moves": [
+            "Waterfall",
+            "Dragon Dance",
+            "Bulldoze",
+            "Ice Fang"
+          ],
+          "form": "Mega"
+        }
+      ]
+    },
+    {
+      "id": "benjamin",
+      "name": "Gym Leader Benjamin",
+      "location": "Redwood Village Gym",
+      "order": 80,
+      "levelCap": 62,
+      "team": [
+        {
+          "species": "araquanid",
+          "level": 61,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Liquidation",
+            "Leech Fang",
+            "Mirror Coat",
+            "Sticky Web"
+          ]
+        },
+        {
+          "species": "forretress",
+          "level": 62,
+          "ability": null,
+          "item": "Eviolite",
+          "moves": [
+            "Gyro Ball",
+            "Counter",
+            "Toxic Spikes",
+            "Stealth Rock"
+          ]
+        },
+        {
+          "species": "drapion",
+          "level": 61,
+          "ability": null,
+          "item": "Bug Gem",
+          "moves": [
+            "Cross Poison",
+            "Night Slash",
+            "Pin Missile",
+            "Agility"
+          ]
+        },
+        {
+          "species": "butterfree",
+          "level": 62,
+          "ability": null,
+          "item": null,
+          "moves": [
+            "Bug Buzz",
+            "Hurricane",
+            "Sleep Powder",
+            "Quiver Dance"
+          ]
+        },
+        {
+          "species": "scizor",
+          "level": 62,
+          "ability": null,
+          "item": "Scizorite",
+          "moves": [
+            "X-Scissor",
+            "Bullet Punch",
+            "Wing Attack",
+            "Agility"
+          ],
+          "form": "Mega"
+        }
+      ]
+    },
+    {
+      "id": "moleman",
+      "name": "Elite Four Moleman",
+      "location": "Pokémon League",
+      "order": 90,
+      "levelCap": 76,
+      "team": [
+        {
+          "species": "excadrill",
+          "level": 74,
+          "ability": "Sand Rush",
+          "item": null,
+          "moves": [
+            "Earthquake",
+            "Iron head",
+            "Rock Slide",
+            "Protect"
+          ]
+        },
+        {
+          "species": "flygon",
+          "level": 76,
+          "ability": "Levitate",
+          "item": "Ground Gem",
+          "moves": [
+            "Dragon Pulse",
+            "Earth Power",
+            "Heat Wave",
+            "Boomburst"
+          ]
+        },
+        {
+          "species": "sandslash",
+          "level": 76,
+          "ability": "Sand Rush",
+          "item": null,
+          "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Leech Fang",
+            "Protect"
+          ]
+        },
+        {
+          "species": "quagsire",
+          "level": 74,
+          "ability": "Water Absorb",
+          "item": "Sitrus Berry",
+          "moves": [
+            "Muddy Water",
+            "Recover",
+            "Yawn",
+            "Protect"
+          ]
+        },
+        {
+          "species": "gliscor",
+          "level": 75,
+          "ability": "Sand Veil",
+          "item": null,
+          "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Acrobatics",
+            "Roost"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elias",
+      "name": "Elite Four Elias",
+      "location": "Pokémon League",
+      "order": 100,
+      "levelCap": 76,
+      "team": [
+        {
+          "species": "mimikyu",
+          "level": 74,
+          "ability": "Disguise",
+          "item": null,
+          "moves": [
+            "Shadow Claw",
+            "Play Rough",
+            "Shadow Sneak",
+            "Swords Dance"
+          ]
+        },
+        {
+          "species": "aegislash",
+          "level": 75,
+          "ability": "Stance Change",
+          "item": null,
+          "moves": [
+            "Shadow Claw",
+            "Sacred Sword",
+            "King’s Shield",
+            "Swords Dance"
+          ]
+        },
+        {
+          "species": "trevenant",
+          "level": 75,
+          "ability": "Harvest",
+          "item": "Sitrus Berry",
+          "moves": [
+            "Poltergeist",
+            "Horn Leech",
+            "Leech Seed",
+            "Will-O-Wisp"
+          ]
+        },
+        {
+          "species": "chandelure",
+          "level": 76,
+          "ability": "Flash Fire",
+          "item": null,
+          "moves": [
+            "Shadow Ball",
+            "Flamethrower",
+            "Energy Ball",
+            "Calm Mind"
+          ]
+        },
+        {
+          "species": "banette",
+          "level": 76,
+          "ability": "Insomnia/Frisk – Prankster",
+          "item": "Banettite",
+          "moves": [
+            "Poltergeist",
+            "Sucker Punch",
+            "Will-O-Wisp",
+            "Skitter Smack"
+          ],
+          "form": "Mega"
+        }
+      ]
+    },
+    {
+      "id": "arabella",
+      "name": "Elite Four Arabella",
+      "location": "Pokémon League",
+      "order": 110,
+      "levelCap": 76,
+      "team": [
+        {
+          "species": "ribombee",
+          "level": 75,
+          "ability": "Shield Dust",
+          "item": "Focus Sash",
+          "moves": [
+            "Moonblast",
+            "Reflect",
+            "Light Screen",
+            "Sticky Web"
+          ]
+        },
+        {
+          "species": "sylveon",
+          "level": 75,
+          "ability": "Cute Charm",
+          "item": null,
+          "moves": [
+            "Moonblast",
+            "Mystical Fire",
+            "Psyshock",
+            "Calm Mind"
+          ]
+        },
+        {
+          "species": "togekiss",
+          "level": 75,
+          "ability": "Serene Grace",
+          "item": null,
+          "moves": [
+            "Air Slash",
+            "Moonblast",
+            "Aura Sphere",
+            "Wish"
+          ]
+        },
+        {
+          "species": "azumarill",
+          "level": 76,
+          "ability": "Huge Power",
+          "item": null,
+          "moves": [
+            "Aqua Tail",
+            "Play Rough",
+            "Superpower",
+            "Aqua Jet"
+          ]
+        },
+        {
+          "species": "mawile",
+          "level": 76,
+          "ability": "Intimidate – Huge Power",
+          "item": "Mawilite",
+          "moves": [
+            "Iron Head",
+            "Play Rough",
+            "Sucker Punch",
+            "Swords Dance"
+          ],
+          "form": "Mega"
+        }
+      ]
+    },
+    {
+      "id": "penny",
+      "name": "Elite Four Penny",
+      "location": "Pokémon League",
+      "order": 120,
+      "levelCap": 76,
+      "team": [
+        {
+          "species": "goodra",
+          "level": 74,
+          "ability": "Sap Sipper",
+          "item": null,
+          "moves": [
+            "Dragon Breath",
+            "Muddy Water",
+            "Thunderbolt",
+            "Sludge Bomb"
+          ]
+        },
+        {
+          "species": "tyrantrum",
+          "level": 75,
+          "ability": "Rock Head",
+          "item": null,
+          "moves": [
+            "Dragon Claw",
+            "Head Smash",
+            "Crunch",
+            "Fire Fang"
+          ]
+        },
+        {
+          "species": "kommo-o",
+          "level": 75,
+          "ability": "Bulletproof",
+          "item": null,
+          "moves": [
+            "Clanging Scales",
+            "Aura Sphere",
+            "Hyper Voice",
+            "Protect"
+          ]
+        },
+        {
+          "species": "hydreigon",
+          "level": 76,
+          "ability": "Levitate",
+          "item": "Roseli Berry",
+          "moves": [
+            "Dragon Breath",
+            "Dark Pulse",
+            "Charge Beam",
+            "Tailwind"
+          ]
+        },
+        {
+          "species": "sceptile",
+          "level": 76,
+          "ability": "Overgrow – Technician",
+          "item": "Sceptilite",
+          "moves": [
+            "Dragon Pulse",
+            "Giga Drain",
+            "Rock Slide",
+            "Protect"
+          ],
+          "form": "Mega"
+        }
+      ]
+    },
+    {
+      "id": "jax",
+      "name": "Champion Jax",
+      "location": "Pokémon League",
+      "order": 130,
+      "levelCap": 76,
+      "team": [
+        {
+          "species": "salamence",
+          "level": 76,
+          "ability": "Intimidate – Aerilate",
+          "item": "Salamencite",
+          "moves": [
+            "Dragon Claw",
+            "Hyper Voice",
+            "Flamethrower",
+            "Steel Wing"
+          ],
+          "form": "Mega"
+        },
+        {
+          "species": "hitmontop",
+          "level": 74,
+          "ability": "Intimidate",
+          "item": "Sitrus Berry",
+          "moves": [
+            "Close Combat",
+            "Fake Out",
+            "Helping Hand",
+            "Wide Guard"
+          ]
+        },
+        {
+          "species": "magnezone",
+          "level": 75,
+          "ability": "Sturdy",
+          "item": "Air Balloon",
+          "moves": [
+            "Thunderbolt",
+            "Flash Cannon",
+            "Volt Switch",
+            "Protect"
+          ]
+        },
+        {
+          "species": "gastrodon",
+          "level": 74,
+          "ability": "Storm Drain",
+          "item": "Rindo Berry",
+          "moves": [
+            "Muddy Water",
+            "Earth Power",
+            "Icy Wind",
+            "Protect"
+          ]
+        },
+        {
+          "species": "pyroar",
+          "level": 76,
+          "ability": "Unnerve",
+          "item": "Fire Gem",
+          "moves": [
+            "Heat Wave",
+            "Hyper Voice",
+            "Scorching Sands",
+            "Protect"
+          ]
+        },
+        {
+          "species": "staraptor",
+          "level": 75,
+          "ability": "Intimidate",
+          "item": "Eject Pack",
+          "moves": [
+            "Brave Bird",
+            "Close Combat",
+            "U-turn",
+            "Protect"
+          ]
+        }
+      ]
+    }
+  ]
+}

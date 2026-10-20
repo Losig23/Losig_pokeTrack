@@ -1,0 +1,434 @@
+import { useMemo, useState } from "react";
+import type {
+  CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData,
+} from "./engine/types";
+import { PACKS, PLANNED_PACKS, getPack } from "./data/packs";
+import { sortedAreas, sortedBosses } from "./engine/pack";
+import {
+  createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
+} from "./engine/run";
+import { teamCoverage } from "./engine/coverage";
+import { displayName, useSpeciesData } from "./data/pokemon";
+import { useRuns } from "./store";
+
+const RULESET_LABELS: Record<Ruleset, string> = {
+  casual: "Casual playthrough",
+  nuzlocke: "Nuzlocke",
+  hardcore: "Hardcore Nuzlocke",
+};
+
+export default function App() {
+  const { runs, addRun, updateRun, deleteRun } = useRuns();
+  const [activeRunId, setActiveRunId] = useState<string | null>(null);
+  const activeRun = runs.find((r) => r.id === activeRunId) ?? null;
+
+  return (
+    <div className="app">
+      <header className="topbar">
+        <button className="brand" onClick={() => setActiveRunId(null)}>
+          Run<span className="accent">Book</span>
+        </button>
+        <span className="tagline">ROM hack run logger + boss prep</span>
+      </header>
+      {activeRun ? (
+        <RunView
+          run={activeRun}
+          onChange={updateRun}
+          onBack={() => setActiveRunId(null)}
+          onDelete={() => {
+            deleteRun(activeRun.id);
+            setActiveRunId(null);
+          }}
+        />
+      ) : (
+        <Home
+          runs={runs}
+          onOpen={setActiveRunId}
+          onCreate={(packId, ruleset, name) => {
+            const run = createRun(packId, ruleset, name);
+            addRun(run);
+            setActiveRunId(run.id);
+          }}
+        />
+      )}
+      <footer className="footer">
+        Fan-made, non-commercial tracker. Pokémon © Nintendo / Game Freak / Creatures Inc.
+        Pack data is community-sourced — check each pack's sources. No ROMs or patches are hosted here.
+      </footer>
+    </div>
+  );
+}
+
+function Home({
+  runs, onOpen, onCreate,
+}: {
+  runs: Run[];
+  onOpen: (id: string) => void;
+  onCreate: (packId: string, ruleset: Ruleset, name: string) => void;
+}) {
+  const [packId, setPackId] = useState(PACKS[0].id);
+  const [ruleset, setRuleset] = useState<Ruleset>("nuzlocke");
+  const [name, setName] = useState("");
+
+  return (
+    <main className="home">
+      <section className="panel">
+        <h2>New run</h2>
+        <div className="picker">
+          {PACKS.map((pack) => (
+            <button
+              key={pack.id}
+              className={`pack-card ${pack.id === packId ? "selected" : ""}`}
+              onClick={() => setPackId(pack.id)}
+            >
+              <strong>{pack.name}</strong>
+              <span>
+                {pack.areas.length} areas · {pack.bosses.length} bosses · data: {pack.dataQuality}
+              </span>
+            </button>
+          ))}
+          {PLANNED_PACKS.map((p) => (
+            <div key={p.name} className="pack-card planned">
+              <strong>{p.name}</strong>
+              <span>Pack coming soon · Tier {p.tier}{p.kind === "fangame" ? " · fan game" : ""}</span>
+            </div>
+          ))}
+        </div>
+        <div className="new-run-form">
+          <label>
+            Ruleset
+            <select value={ruleset} onChange={(e) => setRuleset(e.target.value as Ruleset)}>
+              {Object.entries(RULESET_LABELS).map(([value, label]) => (
+                <option key={value} value={value}>{label}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Run name
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder={`${getPack(packId)?.name ?? "Run"} — Attempt 1`}
+            />
+          </label>
+          <button
+            className="primary"
+            onClick={() =>
+              onCreate(packId, ruleset, name.trim() || `${getPack(packId)?.name} — Attempt 1`)
+            }
+          >
+            Start run
+          </button>
+        </div>
+      </section>
+
+      <section className="panel">
+        <h2>My runs</h2>
+        {runs.length === 0 && <p className="muted">No runs yet. Start one above.</p>}
+        <div className="run-list">
+          {runs.map((run) => {
+            const pack = getPack(run.packId);
+            return (
+              <button key={run.id} className="run-card" onClick={() => onOpen(run.id)}>
+                <strong>{run.name}</strong>
+                <span>{pack?.name} · {RULESET_LABELS[run.ruleset]} · {run.status}</span>
+                <span>
+                  {pack ? `${progressPercent(run, pack)}% bosses` : ""} · {run.team.length} Pokémon logged
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+type Tab = "encounters" | "roster" | "bosses";
+
+function RunView({
+  run, onChange, onBack, onDelete,
+}: {
+  run: Run;
+  onChange: (run: Run) => void;
+  onBack: () => void;
+  onDelete: () => void;
+}) {
+  const pack = getPack(run.packId) as GamePack;
+  const [tab, setTab] = useState<Tab>("encounters");
+  const upcoming = nextBoss(run, pack);
+  const cap = currentLevelCap(run, pack);
+  const overCap = run.ruleset === "hardcore" ? overCapMembers(run, pack) : [];
+
+  const bossSlugs = useMemo(
+    () => pack.bosses.flatMap((b) => b.team.map((m) => m.species)),
+    [pack],
+  );
+  const teamSlugs = useMemo(() => run.team.map((m) => m.species), [run.team]);
+  const species = useSpeciesData([...bossSlugs, ...teamSlugs]);
+  const sprite = (slug: string) => species[slug]?.sprite;
+
+  const toggleBoss = (bossId: string) =>
+    onChange({
+      ...run,
+      defeatedBossIds: run.defeatedBossIds.includes(bossId)
+        ? run.defeatedBossIds.filter((id) => id !== bossId)
+        : [...run.defeatedBossIds, bossId],
+    });
+
+  return (
+    <main className="run-view">
+      <div className="run-head">
+        <button className="ghost" onClick={onBack}>← All runs</button>
+        <div>
+          <h2>{run.name}</h2>
+          <p className="muted">
+            {pack.name} · {RULESET_LABELS[run.ruleset]} · Attempt {run.attempts} · {run.status}
+            {pack.notes ? <> · Pack: {pack.notes}</> : null}
+          </p>
+        </div>
+        <div className="run-head-actions">
+          <select
+            value={run.status}
+            onChange={(e) => onChange({ ...run, status: e.target.value as Run["status"] })}
+          >
+            <option value="in-progress">In progress</option>
+            <option value="won">Won</option>
+            <option value="wiped">Wiped</option>
+          </select>
+          <button className="ghost danger" onClick={onDelete}>Delete run</button>
+        </div>
+      </div>
+
+      <div className="progress">
+        <div className="progress-bar" style={{ width: `${progressPercent(run, pack)}%` }} />
+        <span>{progressPercent(run, pack)}% of bosses defeated</span>
+      </div>
+
+      {upcoming && (
+        <section className="panel next-boss">
+          <h3>Next boss: {upcoming.name}</h3>
+          <p className="muted">
+            {upcoming.location} · Level cap {upcoming.levelCap}
+            {cap !== null && run.ruleset !== "casual" ? ` · Your cap: ${cap}` : ""}
+          </p>
+          <div className="boss-team">
+            {upcoming.team.map((mon, i) => (
+              <div key={i} className="boss-mon">
+                {sprite(mon.species)
+                  ? <img src={sprite(mon.species)} alt={mon.species} width={56} height={56} />
+                  : <div className="sprite-placeholder" />}
+                <span>{displayName(mon.species)}{mon.form ? ` (${mon.form})` : ""}</span>
+                <span className="muted">Lv {mon.level}</span>
+                {mon.ability && <span className="muted">{displayName(mon.ability)}</span>}
+              </div>
+            ))}
+          </div>
+          <button className="primary" onClick={() => toggleBoss(upcoming.id)}>Mark defeated</button>
+          {overCap.length > 0 && (
+            <p className="warning">
+              Hardcore: over the level cap — {overCap.map((m) => `${m.nickname || displayName(m.species)} (Lv ${m.level})`).join(", ")}
+            </p>
+          )}
+        </section>
+      )}
+
+      <nav className="tabs">
+        {(["encounters", "roster", "bosses"] as Tab[]).map((t) => (
+          <button key={t} className={tab === t ? "tab active" : "tab"} onClick={() => setTab(t)}>
+            {t === "encounters" ? "Encounters" : t === "roster" ? "Party & Box" : "Bosses"}
+          </button>
+        ))}
+      </nav>
+
+      {tab === "encounters" && <EncountersTab run={run} pack={pack} onChange={onChange} />}
+      {tab === "roster" && <RosterTab run={run} species={species} onChange={onChange} />}
+      {tab === "bosses" && (
+        <section className="panel">
+          {sortedBosses(pack).map((boss) => (
+            <div key={boss.id} className="boss-row">
+              <div>
+                <strong>{boss.name}</strong>
+                <span className="muted"> · {boss.location} · cap {boss.levelCap} · {boss.team.map((m) => displayName(m.species)).join(", ")}</span>
+              </div>
+              <button
+                className={run.defeatedBossIds.includes(boss.id) ? "chip done" : "chip"}
+                onClick={() => toggleBoss(boss.id)}
+              >
+                {run.defeatedBossIds.includes(boss.id) ? "Defeated ✓" : "Mark defeated"}
+              </button>
+            </div>
+          ))}
+          {pack.bosses.length === 0 && <p className="muted">Boss data for this pack is still being gathered.</p>}
+        </section>
+      )}
+    </main>
+  );
+}
+
+function EncountersTab({ run, pack, onChange }: { run: Run; pack: GamePack; onChange: (r: Run) => void }) {
+  const [draft, setDraft] = useState<Record<string, { species: string; outcome: EncounterOutcome; level: number; nickname: string }>>({});
+
+  const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
+
+  const log = (areaId: string) => {
+    const d = draft[areaId];
+    if (!d?.species) return;
+    let team = run.team;
+    let monUid: string | undefined;
+    if (d.outcome === "caught") {
+      const partyCount = run.team.filter((m) => m.status === "party").length;
+      const mon: CaughtMon = {
+        uid: `mon-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+        species: d.species,
+        nickname: d.nickname || undefined,
+        level: d.level || 5,
+        status: partyCount < 6 ? "party" : "box",
+        caughtAreaId: areaId,
+      };
+      monUid = mon.uid;
+      team = [...team, mon];
+    }
+    onChange({
+      ...run,
+      team,
+      encounters: [
+        ...run.encounters.filter((e) => e.areaId !== areaId),
+        { areaId, outcome: d.outcome, species: d.species, monUid },
+      ],
+    });
+  };
+
+  return (
+    <section className="panel">
+      {sortedAreas(pack).map((area) => {
+        const entry = logged(area.id);
+        const d = draft[area.id] ?? { species: area.encounters[0]?.species ?? "", outcome: "caught" as EncounterOutcome, level: area.encounters[0]?.minLevel ?? 5, nickname: "" };
+        const set = (patch: Partial<typeof d>) => setDraft((prev) => ({ ...prev, [area.id]: { ...d, ...patch } }));
+        return (
+          <div key={area.id} className="area-row">
+            <div className="area-main">
+              <strong>{area.name}</strong>
+              <span className="muted pool">
+                {area.encounters.slice(0, 8).map((e) => displayName(e.species)).join(", ")}
+                {area.encounters.length > 8 ? ` +${area.encounters.length - 8} more` : ""}
+              </span>
+              {entry && (
+                <span className={`outcome outcome-${entry.outcome}`}>
+                  {entry.outcome}: {entry.species ? displayName(entry.species) : ""}
+                  {entry.outcome === "caught" && entry.species && isDupe({ ...run, team: run.team.filter((m) => m.uid !== entry.monUid) }, entry.species)
+                    ? " · dupes clause applies"
+                    : ""}
+                </span>
+              )}
+            </div>
+            <div className="area-form">
+              <select value={d.species} onChange={(e) => set({ species: e.target.value })}>
+                {area.encounters.map((e) => (
+                  <option key={e.species + (e.form ?? "")} value={e.species}>
+                    {displayName(e.species)}{e.form ? ` (${e.form})` : ""} · Lv {e.minLevel}–{e.maxLevel}
+                  </option>
+                ))}
+              </select>
+              <select value={d.outcome} onChange={(e) => set({ outcome: e.target.value as EncounterOutcome })}>
+                <option value="caught">Caught</option>
+                <option value="missed">Missed</option>
+                <option value="fainted">Fainted</option>
+                <option value="skipped">Skipped</option>
+              </select>
+              {d.outcome === "caught" && (
+                <>
+                  <input type="number" min={1} max={100} value={d.level} onChange={(e) => set({ level: Number(e.target.value) })} aria-label="Level" />
+                  <input value={d.nickname} onChange={(e) => set({ nickname: e.target.value })} placeholder="Nickname" />
+                </>
+              )}
+              <button className="primary" onClick={() => log(area.id)} disabled={!d.species}>
+                {entry ? "Update" : "Log"}
+              </button>
+            </div>
+          </div>
+        );
+      })}
+      {pack.areas.length === 0 && <p className="muted">Encounter data for this pack is still being gathered.</p>}
+    </section>
+  );
+}
+
+function RosterTab({
+  run, species, onChange,
+}: {
+  run: Run;
+  species: Record<string, SpeciesData>;
+  onChange: (r: Run) => void;
+}) {
+  const party = run.team.filter((m) => m.status === "party");
+  const partyData = party
+    .map((m) => species[m.species])
+    .filter((s): s is SpeciesData => Boolean(s));
+  const coverage = partyData.length ? teamCoverage(partyData) : null;
+
+  const setStatus = (uid: string, status: MonStatus) =>
+    onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, status } : m)) });
+  const setLevel = (uid: string, level: number) =>
+    onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, level } : m)) });
+  const remove = (uid: string) =>
+    onChange({
+      ...run,
+      team: run.team.filter((m) => m.uid !== uid),
+      encounters: run.encounters.map((e) => (e.monUid === uid ? { ...e, monUid: undefined } : e)),
+    });
+
+  const column = (title: string, status: MonStatus) => (
+    <div className="roster-col">
+      <h4>{title}</h4>
+      {run.team.filter((m) => m.status === status).map((mon) => (
+        <div key={mon.uid} className="mon-card">
+          {species[mon.species]?.sprite
+            ? <img src={species[mon.species].sprite} alt={mon.species} width={48} height={48} />
+            : <div className="sprite-placeholder small" />}
+          <div className="mon-info">
+            <strong>{mon.nickname || displayName(mon.species)}</strong>
+            <span className="muted">{displayName(mon.species)} · Lv {mon.level}</span>
+          </div>
+          <input
+            type="number" min={1} max={100} value={mon.level}
+            onChange={(e) => setLevel(mon.uid, Number(e.target.value))} aria-label="Level"
+          />
+          <select value={mon.status} onChange={(e) => setStatus(mon.uid, e.target.value as MonStatus)}>
+            <option value="party">Party</option>
+            <option value="box">Box</option>
+            <option value="graveyard">Graveyard</option>
+          </select>
+          <button className="ghost danger" onClick={() => remove(mon.uid)}>✕</button>
+        </div>
+      ))}
+      {run.team.filter((m) => m.status === status).length === 0 && <p className="muted">Empty</p>}
+    </div>
+  );
+
+  return (
+    <section className="panel">
+      <div className="roster-grid">
+        {column("Party", "party")}
+        {column("Box", "box")}
+        {column("Graveyard", "graveyard")}
+      </div>
+      {coverage && (
+        <div className="coverage">
+          <h4>Party coverage (by typing)</h4>
+          <p>
+            Offensive coverage: {Object.values(coverage.offensive).filter(Boolean).length} / 18 types
+          </p>
+          {coverage.uncoveredThreats.length > 0 ? (
+            <p className="warning">
+              Uncovered threats: {coverage.uncoveredThreats.join(", ")} — a party member is weak to these
+              and nobody resists them.
+            </p>
+          ) : (
+            <p className="muted">No uncovered threats by typing. Boss-prep counter analysis arrives in Phase 2.</p>
+          )}
+        </div>
+      )}
+    </section>
+  );
+}
