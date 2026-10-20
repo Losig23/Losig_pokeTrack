@@ -8,10 +8,11 @@
     "https://www.scribd.com/document/998177881/Radical-Red",
     "https://romprofessor.com/radical-red/what-are-the-elite-four-and-champion-teams-in-pokemon-radical-red/",
     "https://www.pokeporto.com/pokemon-radical-red-pokemon-locations/",
-    "https://www.pokecommunity.com/threads/pok%C3%A9mon-radical-red-version-4-1-released-gen-9-dlc-pokemon-character-customization-now-available.437688/"
+    "https://www.pokecommunity.com/threads/pok%C3%A9mon-radical-red-version-4-1-released-gen-9-dlc-pokemon-character-customization-now-available.437688/",
+    "https://radicalredtracker.com/"
   ],
   "dataQuality": "partial",
-  "notes": "Boss teams are the DEFAULT (Normal) difficulty first-time teams from the official 'Default Mode Bosses v4.1 (with EVs)' documentation, read via a public Scribd text export of that sheet (the original Google Drive/Docs files were not used). Gym teams for Brock and Misty are complete (4 Pokemon each, as documented). For Lt. Surge, Erika, Sabrina, Koga, Blaine and Clair the sheet's text rendering truncates the 5th team member's name to a single letter, so each of those teams lists only the 4 fully readable members; the omitted 5th member was not guessed. Lt. Surge's levelCap (33) is the highest level among his captured members; the in-game level cap for that fight is 34, held by the unresolved 5th member. Sabrina's fight is a doubles battle and Blaine's is fought in permanent sun, per the sheet. A few of Sabrina's move assignments were reconstructed from a garbled text rendering and may be imperfect. Elite Four members each have two documented team variants; the first-listed variant is used (Lorelei: her rain team). Lorelei's battles are doubles. The Champion's team depends on the rival's starter: the Koraidon variant (rival started with Squirtle) is used here; in the other variants Miraidon replaces Koraidon with the rest of the team unchanged. Rematch teams, Johto leaders, rival/Rocket/miniboss fights and postgame bosses from the same documentation are NOT included. Encounters come from PokePorto's locations page: day and night pools are merged into one pool per area, Mt. Moon's three floors are merged (identical level ranges), and cosmetic variants (Burmy cloaks, Deerling seasons, Pumpkaboo sizes, Minior cores) are collapsed to the base species. Encounter coverage runs from Route 1 through Route 7 (the approach to Celadon City / 4th gym) and stops there; Celadon City itself, Pokemon Tower, and all later areas are not included. The PokePorto page does not state which game version its tables reflect, so encounter data may lag v4.1 slightly.",
+  "notes": "Boss teams are the DEFAULT (Normal) difficulty first-time teams from the official 'Default Mode Bosses v4.1 (with EVs)' documentation, read via a public Scribd text export of that sheet (the original Google Drive/Docs files were not used). Brock and Misty run 4-Pokemon teams, as documented. Lt. Surge and Erika run 5; Sabrina (doubles), Koga, Blaine and Clair run 6. The members the Scribd text rendering truncated were completed from radicalredtracker.com, a public mirror of the official 4.1 docs whose Default-mode teams were cross-checked member-by-member against the pack before use: Lt. Surge's 5th is Mega Manectric (Lv 34, the fight's level cap), Erika's 5th is Hisuian Electrode, Sabrina adds Ursaluna and Mega Gardevoir (Lv 59, her level cap), Koga adds Iron Valiant and Mega Toxtricity, Blaine adds Ogerpon-Hearthflame and Mega Charizard Y, Clair adds Gouging Fire and Naganadel. One transcription fix from that cross-check: Sabrina's Hatterene holds Psychic Seed and her Indeedee (the Psychic Surge setter) holds Terrain Extender — the Scribd export had them swapped. Left as originally transcribed where the sources disagree: Lt. Surge's Bellibolt/Pawmot (Ice Punch vs Thunder Wave) and Blaine's Slither Wing/Typhlosion item assignments. Sabrina's fight is a doubles battle and Blaine's is fought in permanent sun, per the sheet. Elite Four members each have two documented team variants; the first-listed variant is used (Lorelei: her rain team). Lorelei's battles are doubles. The Champion's team depends on the rival's starter: the Koraidon variant (rival started with Squirtle) is used here; in the other variants Miraidon replaces Koraidon with the rest of the team unchanged. Rematch teams, Johto leaders, rival/Rocket/miniboss fights and postgame bosses from the same documentation are NOT included. Encounters come from PokePorto's locations page: day and night pools are merged into one pool per area, Mt. Moon's three floors are merged (identical level ranges), and cosmetic variants (Burmy cloaks, Deerling seasons, Pumpkaboo sizes, Minior cores) are collapsed to the base species. Encounter coverage runs from Route 1 through Route 7 (the approach to Celadon City / 4th gym) and stops there; Celadon City itself, Pokemon Tower, and all later areas are not included. The PokePorto page does not state which game version its tables reflect, so encounter data may lag v4.1 slightly.",
   "areas": [
     { "id": "route-1", "name": "Route 1", "order": 10, "encounters": [
       { "species": "bidoof", "minLevel": 2, "maxLevel": 4, "methods": ["grass"] },
@@ -418,41 +419,51 @@
       { "species": "starmie", "level": 27, "ability": "Analytic", "item": "Sitrus Berry", "moves": ["Psyshock", "Water Pulse", "Recover", "Aurora Beam"] },
       { "species": "clodsire", "level": 26, "ability": "Water Absorb", "item": "Iapapa Berry", "moves": ["Poison Jab", "Bulldoze", "Rock Tomb", "Recover"] }
     ]},
-    { "id": "lt-surge", "name": "Gym Leader Lt. Surge", "location": "Vermilion City Gym", "order": 30, "levelCap": 33, "team": [
+    { "id": "lt-surge", "name": "Gym Leader Lt. Surge", "location": "Vermilion City Gym", "order": 30, "levelCap": 34, "team": [
       { "species": "pincurchin", "level": 32, "ability": "Electric Surge", "item": "Terrain Extender", "moves": ["Volt Switch", "Scald", "Discharge", "Hidden Power Ice"] },
       { "species": "vikavolt", "level": 33, "ability": "Levitate", "item": "Occa Berry", "moves": ["Volt Switch", "Bug Buzz", "Roost", "Mud Shot"] },
       { "species": "bellibolt", "level": 33, "ability": "Electromorphosis", "item": "Shuca Berry", "moves": ["Parabolic Charge", "Muddy Water", "Ice Punch", "Hidden Power Grass"] },
-      { "species": "pawmot", "level": 33, "ability": "Iron Fist", "item": "Focus Sash", "moves": ["Drain Punch", "Thunder Punch", "Thunder Wave", "Mach Punch"] }
+      { "species": "pawmot", "level": 33, "ability": "Iron Fist", "item": "Focus Sash", "moves": ["Drain Punch", "Thunder Punch", "Thunder Wave", "Mach Punch"] },
+      { "species": "manectric", "form": "Mega", "level": 34, "ability": "Intimidate", "item": "Manectite", "moves": ["Charge Beam", "Volt Switch", "Flame Burst", "Hidden Power Grass"] }
     ]},
     { "id": "erika", "name": "Gym Leader Erika", "location": "Celadon City Gym", "order": 40, "levelCap": 44, "team": [
       { "species": "rillaboom", "level": 43, "ability": "Grassy Surge", "item": "Terrain Extender", "moves": ["Grassy Glide", "U-Turn", "High Horsepower", "Drain Punch"] },
       { "species": "meowscarada", "level": 43, "ability": "Protean", "item": "Focus Sash", "moves": ["Flower Trick", "Knock Off", "U-Turn", "Triple Axel"] },
       { "species": "venusaur", "form": "Mega", "level": 44, "ability": "Thick Fat", "item": "Venusaurite", "moves": ["Giga Drain", "Sludge Bomb", "Sleep Powder", "Earth Power"] },
-      { "species": "meganium", "level": 44, "ability": "Triage", "item": "Grassy Seed", "moves": ["Ancient Power", "Giga Drain", "Dazzling Gleam", "Hidden Power Fire"] }
+      { "species": "meganium", "level": 44, "ability": "Triage", "item": "Grassy Seed", "moves": ["Ancient Power", "Giga Drain", "Dazzling Gleam", "Hidden Power Fire"] },
+      { "species": "electrode", "form": "Hisui", "level": 44, "ability": "Reckless", "item": "Life Orb", "moves": ["Thunderbolt", "Chloroblast", "Hidden Power Ice", "Explosion"] }
     ]},
-    { "id": "sabrina", "name": "Gym Leader Sabrina", "location": "Saffron City Gym", "order": 50, "levelCap": 58, "team": [
-      { "species": "hatterene", "level": 57, "ability": "Magic Bounce", "item": "Terrain Extender", "moves": ["Trick Room", "Expanding Force", "Draining Kiss", "Mystical Fire"] },
-      { "species": "indeedee", "form": "Female", "level": 57, "ability": "Psychic Surge", "item": "Psychic Seed", "moves": ["Expanding Force", "Hyper Voice", "Mystical Fire", "Shadow Ball"] },
+    { "id": "sabrina", "name": "Gym Leader Sabrina", "location": "Saffron City Gym", "order": 50, "levelCap": 59, "team": [
+      { "species": "hatterene", "level": 57, "ability": "Magic Bounce", "item": "Psychic Seed", "moves": ["Trick Room", "Expanding Force", "Draining Kiss", "Mystical Fire"] },
+      { "species": "indeedee", "form": "Female", "level": 57, "ability": "Psychic Surge", "item": "Terrain Extender", "moves": ["Expanding Force", "Hyper Voice", "Mystical Fire", "Shadow Ball"] },
       { "species": "brute-bonnet", "level": 58, "ability": "Protosynthesis", "item": "Booster Energy", "moves": ["Knock Off", "Leaf Blade", "Close Combat", "Spore"] },
-      { "species": "porygon2", "level": 58, "ability": "Trace", "item": "Eviolite", "moves": ["Trick Room", "Teleport", "Ice Beam", "Thunderbolt"] }
+      { "species": "porygon2", "level": 58, "ability": "Trace", "item": "Eviolite", "moves": ["Trick Room", "Teleport", "Ice Beam", "Thunderbolt"] },
+      { "species": "ursaluna", "level": 59, "ability": "Guts", "item": "Flame Orb", "moves": ["Protect", "High Horsepower", "Facade", "Crunch"] },
+      { "species": "gardevoir", "form": "Mega", "level": 59, "ability": "Pixilate", "item": "Gardevoirite", "moves": ["Hyper Voice", "Expanding Force", "Shadow Ball", "Trick Room"] }
     ]},
     { "id": "koga", "name": "Gym Leader Koga", "location": "Fuchsia City Gym", "order": 60, "levelCap": 68, "team": [
       { "species": "swellow", "level": 67, "ability": "Aerilate", "item": "Choice Specs", "moves": ["Boomburst", "U-Turn"] },
       { "species": "accelgor", "level": 68, "ability": "Sheer Force", "item": "Life Orb", "moves": ["Bug Buzz", "U-Turn", "Focus Blast", "Sludge Bomb"] },
       { "species": "greninja", "level": 68, "ability": "Battle Bond", "item": "Life Orb", "moves": ["Hydro Pump", "Water Shuriken", "Dark Pulse", "Ice Beam"] },
-      { "species": "drapion", "level": 68, "ability": "Sniper", "item": "Choice Scarf", "moves": ["Wicked Blow", "Cross Poison"] }
+      { "species": "drapion", "level": 68, "ability": "Sniper", "item": "Choice Scarf", "moves": ["Wicked Blow", "Cross Poison"] },
+      { "species": "iron-valiant", "level": 68, "ability": "Quark Drive", "item": "Booster Energy", "moves": ["Close Combat", "Spirit Break", "Knock Off", "Liquidation"] },
+      { "species": "toxtricity", "form": "Mega", "level": 68, "ability": "Punk Rock", "item": "Toxtricitite", "moves": ["Boomburst", "Overdrive", "Sludge Bomb", "Hidden Power Grass"] }
     ]},
     { "id": "blaine", "name": "Gym Leader Blaine", "location": "Cinnabar Island Gym", "order": 70, "levelCap": 76, "team": [
       { "species": "armarouge", "level": 75, "ability": "Mega Launcher", "item": "Focus Sash", "moves": ["Armor Cannon", "Psyshock", "Aura Sphere", "Energy Ball"] },
       { "species": "slither-wing", "level": 76, "ability": "Protosynthesis", "item": "Heavy-Duty Boots", "moves": ["First Impression", "U-Turn", "Close Combat", "Flare Blitz"] },
       { "species": "exeggutor", "level": 76, "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Growth", "Giga Drain", "Psyshock", "Weather Ball"] },
-      { "species": "typhlosion", "level": 76, "ability": "Blazing Soul", "item": "Lum Berry", "moves": ["Eruption", "Flamethrower", "Hidden Power Grass", "Focus Blast"] }
+      { "species": "typhlosion", "level": 76, "ability": "Blazing Soul", "item": "Lum Berry", "moves": ["Eruption", "Flamethrower", "Hidden Power Grass", "Focus Blast"] },
+      { "species": "ogerpon", "form": "Hearthflame", "level": 76, "ability": "Mold Breaker", "item": "Hearthflame Mask", "moves": ["Ivy Cudgel", "Horn Leech", "Knock Off", "U-Turn"] },
+      { "species": "charizard", "form": "Mega Y", "level": 76, "ability": "Drought", "item": "Charizardite Y", "moves": ["Flamethrower", "Air Slash", "Solar Beam", "Dragon Pulse"] }
     ]},
     { "id": "clair", "name": "Gym Leader Clair", "location": "Viridian City Gym", "order": 80, "levelCap": 81, "team": [
       { "species": "aerodactyl", "level": 80, "ability": "Unnerve", "item": "Focus Sash", "moves": ["Stealth Rock", "Stone Edge", "Earthquake", "Taunt"] },
       { "species": "roaring-moon", "level": 81, "ability": "Protosynthesis", "item": "Booster Energy", "moves": ["Dragon Dance", "Crunch", "Earthquake", "Iron Head"] },
       { "species": "dragonite", "level": 80, "ability": "Multiscale", "item": "Weakness Policy", "moves": ["Extreme Speed", "Dragon Dance", "Fire Punch", "Dual Wingbeat"] },
-      { "species": "magearna", "level": 81, "ability": "Soul-Heart", "item": "Leftovers", "moves": ["Shift Gear", "Fleur Cannon", "Flash Cannon", "Aura Sphere"] }
+      { "species": "magearna", "level": 81, "ability": "Soul-Heart", "item": "Leftovers", "moves": ["Shift Gear", "Fleur Cannon", "Flash Cannon", "Aura Sphere"] },
+      { "species": "gouging-fire", "level": 81, "ability": "Protosynthesis", "item": "Booster Energy", "moves": ["Dragon Dance", "Flare Blitz", "Earthquake", "Dragon Claw"] },
+      { "species": "naganadel", "level": 81, "ability": "Beast Boost", "item": "Life Orb", "moves": ["Flamethrower", "Nasty Plot", "Sludge Wave", "Draco Meteor"] }
     ]},
     { "id": "lorelei", "name": "Elite Four Lorelei", "location": "Indigo Plateau", "order": 90, "levelCap": 85, "team": [
       { "species": "politoed", "level": 85, "ability": "Drizzle", "item": "Damp Rock", "moves": ["Flip Turn", "Scald", "Haze", "Rain Dance"] },
