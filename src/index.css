@@ -210,8 +210,6 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .party-slot img { width: 42px; height: 42px; }
 .continue-banner { font-size: 15px; font-weight: 600; margin: 2px 0 10px; }
 .continue-banner .accent { color: var(--blue); }
-.timeline-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.timeline-fold-actions { display: flex; gap: 8px; }
 .segment-head {
   display: flex; align-items: center; gap: 10px; padding: 8px 0 2px;
 }
@@ -247,8 +245,25 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 }
 .area-main { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .area-main .pool { line-height: 1.45; overflow-wrap: anywhere; }
-.area-form { display: grid; grid-template-columns: 218px 116px 62px 176px 76px; gap: 8px; align-items: center; }
-.area-form > * { min-width: 0; }
+.area-form { display: grid; grid-template-columns: 218px 116px 62px 176px 76px auto; gap: 8px; align-items: center; }
+.area-form > * { min-width: 0; height: 38px; box-sizing: border-box; }
+.area-row.compact { display: flex; align-items: center; gap: 10px; }
+.area-row.compact > strong, .area-row.compact > .outcome, .area-row.compact > .muted { opacity: 0.55; }
+.area-row.compact .outcome { font-size: 13px; }
+.row-toggle {
+  background: none; border: none; color: var(--blue); cursor: pointer;
+  font-size: 14px; padding: 2px 4px; line-height: 1;
+}
+.row-edit { margin-left: auto; }
+.row-fold { padding: 0 10px; }
+.boss-ace.trainer { object-fit: cover; object-position: top center; }
+.mon-species-line { display: flex; align-items: center; gap: 2px; }
+.species-input {
+  background: transparent; border: 1px solid transparent; border-radius: 6px;
+  padding: 2px 5px; font: inherit; font-size: 12.5px; color: var(--muted); width: 108px;
+}
+.species-input:hover { border-color: var(--border-soft); }
+.species-input:focus { border-color: var(--violet); color: var(--text); outline: none; }
 .outcome { font-size: 12px; font-weight: 600; }
 .outcome-caught { color: var(--green); }
 .outcome-missed, .outcome-fainted { color: var(--danger); }

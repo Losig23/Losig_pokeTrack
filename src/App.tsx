@@ -364,12 +364,7 @@ function RunView({
       {upcoming && (
         <section className="panel next-boss">
           <div className="boss-card-head">
-            {(() => {
-              const ace = upcoming.team.reduce((a, b) => (b.level > a.level ? b : a), upcoming.team[0]);
-              return ace && species[ace.species]?.sprite
-                ? <img className="boss-ace" src={species[ace.species].sprite} alt={ace.species} width={48} height={48} />
-                : <div className="sprite-placeholder small" />;
-            })()}
+            <BossPortrait boss={upcoming} species={species} size={48} />
             <button className="boss-name" onClick={() => setNextBossOpen((v) => !v)}>
               Next boss: {upcoming.name} <span className="chev">{nextBossOpen ? "▾" : "▸"}</span>
             </button>
@@ -444,6 +439,42 @@ function BossTeamGrid({ boss, species }: { boss: Boss; species: Record<string, S
   );
 }
 
+/**
+ * The boss's own trainer portrait (public Showdown trainer sprite set,
+ * keyed by the boss's first name). Bosses that aren't trainers (Totems,
+ * Rogue Megas) or have no portrait fall back to their ace's sprite.
+ */
+const TRAINER_SLUG_ALIASES: Record<string, string> = { lt: "ltsurge", crasher: "crasherwake" };
+
+function trainerSlug(name: string): string {
+  const cleaned = name
+    .replace(/^(gym leader|elite four|champion|kahuna|island kahuna|trial captain|captain|leader|frontier brain|pokémon trainer|pokemon trainer|trainer|rival|professor|boss)\s+/i, "")
+    .trim();
+  const first = (cleaned.split(/\s+/)[0] ?? "").toLowerCase().replace(/[^a-z0-9-]/g, "");
+  return TRAINER_SLUG_ALIASES[first] ?? first;
+}
+
+function BossPortrait({ boss, species, size }: { boss: Boss; species: Record<string, SpeciesData>; size: number }) {
+  const [failed, setFailed] = useState(false);
+  const slug = trainerSlug(boss.name);
+  if (slug && !failed) {
+    return (
+      <img
+        className="boss-ace trainer"
+        src={`https://play.pokemonshowdown.com/sprites/trainers/${slug}.png`}
+        alt={boss.name}
+        width={size}
+        height={size}
+        onError={() => setFailed(true)}
+      />
+    );
+  }
+  const ace = boss.team.reduce((a, b) => (b.level > a.level ? b : a), boss.team[0]);
+  return ace && species[ace.species]?.sprite
+    ? <img className="boss-ace" src={species[ace.species].sprite} alt={ace.species} width={size} height={size} />
+    : <div className="sprite-placeholder small" />;
+}
+
 /** Cap-first boss card: name + location + level cap; click the name to reveal the team. */
 function BossCard({
   boss, species, defeated, onToggleBoss,
@@ -454,13 +485,10 @@ function BossCard({
   onToggleBoss: (bossId: string) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const ace = boss.team.reduce((a, b) => (b.level > a.level ? b : a), boss.team[0]);
   return (
     <div className={`boss-card ${defeated ? "defeated" : ""}`}>
       <div className="boss-card-head">
-        {ace && species[ace.species]?.sprite
-          ? <img className="boss-ace" src={species[ace.species].sprite} alt={ace.species} width={44} height={44} />
-          : <div className="sprite-placeholder small" />}
+        <BossPortrait boss={boss} species={species} size={44} />
         <button className="boss-name" onClick={() => setOpen((v) => !v)}>
           {boss.name} <span className="chev">{open ? "▾" : "▸"}</span>
         </button>
@@ -487,6 +515,7 @@ function TimelineTab({
   onToggleBoss: (bossId: string) => void;
 }) {
   const [draft, setDraft] = useState<Record<string, AreaDraft>>({});
+  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [formOpen, setFormOpen] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customSpecies, setCustomSpecies] = useState("");
@@ -514,9 +543,23 @@ function TimelineTab({
   const log = (areaId: string) => {
     const d = draft[areaId];
     if (!d?.species) return;
+    const existing = logged(areaId);
     let team = run.team;
     let monUid: string | undefined;
-    if (d.outcome === "caught") {
+    if (existing?.monUid && team.some((m) => m.uid === existing.monUid)) {
+      // Re-logging an area updates the SAME Pokémon in place (or removes
+      // it if the outcome is no longer a catch), never a duplicate.
+      if (d.outcome === "caught") {
+        monUid = existing.monUid;
+        team = team.map((m) =>
+          m.uid === monUid
+            ? { ...m, species: d.species, level: d.level || m.level, nickname: d.nickname || undefined }
+            : m,
+        );
+      } else {
+        team = team.filter((m) => m.uid !== existing.monUid);
+      }
+    } else if (d.outcome === "caught") {
       const partyCount = run.team.filter((m) => m.status === "party").length;
       const mon: CaughtMon = {
         uid: `mon-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
@@ -567,14 +610,46 @@ function TimelineTab({
 
   const areaRow = (area: Area) => {
     const entry = logged(area.id);
+    // The row reflects the encounter AS IT IS NOW: the linked Pokémon's
+    // current species/level/nickname (evolutions included), falling back
+    // to what was recorded at catch time.
+    const mon = entry?.monUid ? run.team.find((m) => m.uid === entry.monUid) : undefined;
+    const shownSpecies = mon?.species ?? entry?.species;
+    const dupes = entry?.outcome === "caught" && shownSpecies
+      ? isDupe({ ...run, team: run.team.filter((m) => m.uid !== entry.monUid) }, shownSpecies)
+      : false;
+    const toggleRow = (open: boolean) =>
+      setExpandedRows((prev) => {
+        const next = new Set(prev);
+        if (open) next.add(area.id); else next.delete(area.id);
+        return next;
+      });
+
+    if (entry && !expandedRows.has(area.id)) {
+      return (
+        <div key={area.id} className="area-row logged compact">
+          <button className="row-toggle" onClick={() => toggleRow(true)} aria-label={`Edit encounter for ${area.name}`}>▸</button>
+          <strong>{area.name}</strong>
+          <span className={`outcome outcome-${entry.outcome}`}>
+            {entry.outcome}: {shownSpecies ? displayName(shownSpecies) : ""}
+            {mon?.nickname ? ` “${mon.nickname}”` : ""}
+            {dupes ? " · dupes clause applies" : ""}
+          </span>
+          {mon && <span className="muted">Lv {mon.level} · {mon.status}</span>}
+          <button className="ghost row-edit" onClick={() => toggleRow(true)}>Edit</button>
+        </div>
+      );
+    }
+
     const d: AreaDraft = draft[area.id] ?? {
-      species: area.encounters[0]?.species ?? "",
-      outcome: "caught",
-      level: area.encounters[0]?.minLevel ?? 5,
-      nickname: "",
+      species: shownSpecies ?? area.encounters[0]?.species ?? "",
+      outcome: entry?.outcome ?? "caught",
+      level: mon?.level ?? area.encounters[0]?.minLevel ?? 5,
+      nickname: mon?.nickname ?? "",
     };
     const set = (patch: Partial<AreaDraft>) =>
       setDraft((prev) => ({ ...prev, [area.id]: { ...d, ...patch } }));
+    const inPool = area.encounters.some((e) => e.species === d.species);
     return (
       <div key={area.id} className={`area-row ${entry ? "logged" : ""}`}>
         <div className="area-main">
@@ -585,18 +660,19 @@ function TimelineTab({
           </span>
           {entry && (
             <span className={`outcome outcome-${entry.outcome}`}>
-              {entry.outcome}: {entry.species ? displayName(entry.species) : ""}
-              {entry.outcome === "caught" && entry.species && isDupe({ ...run, team: run.team.filter((m) => m.uid !== entry.monUid) }, entry.species)
-                ? " · dupes clause applies"
-                : ""}
+              {entry.outcome}: {shownSpecies ? displayName(shownSpecies) : ""}
+              {dupes ? " · dupes clause applies" : ""}
             </span>
           )}
         </div>
         <div className="area-form">
           <select value={d.species} onChange={(e) => set({ species: e.target.value })}>
+            {!inPool && d.species && (
+              <option value={d.species}>{displayName(d.species)} (current)</option>
+            )}
             {area.encounters.map((e) => (
               <option key={e.species + (e.form ?? "")} value={e.species}>
-                {displayName(e.species)}{e.form ? ` (${e.form})` : ""} · Lv {e.minLevel}–{e.maxLevel}
+                {displayName(e.species)}{e.form ? ` (${e.form})` : ""}
               </option>
             ))}
           </select>
@@ -617,9 +693,16 @@ function TimelineTab({
               <span />
             </>
           )}
-          <button className="primary" onClick={() => log(area.id)} disabled={!d.species}>
+          <button
+            className="primary"
+            onClick={() => { log(area.id); if (entry) toggleRow(false); }}
+            disabled={!d.species}
+          >
             {entry ? "Update" : "Log"}
           </button>
+          {entry && (
+            <button className="ghost row-fold" onClick={() => toggleRow(false)} title="Collapse this encounter">▾</button>
+          )}
         </div>
       </div>
     );
@@ -638,22 +721,13 @@ function TimelineTab({
     if (key in foldOverride) return foldOverride[key];
     return g.bosses.some((b) => run.defeatedBossIds.includes(b.id));
   };
-  const setAllFolds = (folded: boolean) =>
-    setFoldOverride(Object.fromEntries(groups.map((g) => [groupKey(g), folded])));
-
   return (
     <section className="panel timeline">
-      <div className="timeline-top">
-        {nextArea ? (
-          <p className="continue-banner">Continue at <span className="accent">{nextArea.name}</span> →</p>
-        ) : nextUndefeated ? (
-          <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
-        ) : <span />}
-        <div className="timeline-fold-actions">
-          <button className="ghost" onClick={() => setAllFolds(true)}>Collapse all</button>
-          <button className="ghost" onClick={() => setAllFolds(false)}>Expand all</button>
-        </div>
-      </div>
+      {nextArea ? (
+        <p className="continue-banner">Continue at <span className="accent">{nextArea.name}</span> →</p>
+      ) : nextUndefeated ? (
+        <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
+      ) : null}
       {groups.map((g, gi) => {
         const folded = isFolded(g);
         const loggedCount = g.areas.filter((a) => logged(a.id)).length;
@@ -779,8 +853,21 @@ function RosterTab({
                 onChange={(e) => patchMon(mon.uid, { nickname: e.target.value || undefined })}
                 aria-label="Nickname"
               />
-              <span className="muted">
-                {displayName(mon.species)} · Lv {mon.level}{mon.nature ? ` · ${mon.nature}` : ""}
+              <span className="muted mon-species-line">
+                <input
+                  className="species-input"
+                  key={mon.species}
+                  defaultValue={mon.species}
+                  title="Species — edit this when it evolves; the route encounter updates too"
+                  aria-label="Species"
+                  onBlur={(e) => {
+                    const slug = e.target.value.trim().toLowerCase().replace(/\s+/g, "-");
+                    if (slug && slug !== mon.species) patchMon(mon.uid, { species: slug });
+                    else e.target.value = mon.species;
+                  }}
+                  onKeyDown={(e) => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); }}
+                />
+                {" "}· Lv {mon.level}{mon.nature ? ` · ${mon.nature}` : ""}
               </span>
             </div>
             <input
@@ -1118,7 +1205,6 @@ function RoutesTab({ run, pack }: { run: Run; pack: GamePack }) {
             {area.encounters.map((e, i) => (
               <div key={e.species + (e.form ?? "") + i} className="pool-row">
                 <span className="pool-name">{displayName(e.species)}{e.form ? ` (${e.form})` : ""}</span>
-                <span className="muted">Lv {e.minLevel}–{e.maxLevel}</span>
                 <span className="pool-methods">{e.methods.map((m) => m.replace(/-/g, " ")).join(", ")}</span>
               </div>
             ))}
