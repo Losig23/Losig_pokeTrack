@@ -13,7 +13,7 @@ ROM hacks are where trackers fall down: boss teams, encounter tables, level caps
 - **Party / Box / Graveyard** roster management with a by-typing team coverage report (including "uncovered threats")
 - **Boss tracking, cap-first**: boss cards show the level cap up front; click a boss's name to reveal its team only when you want it. Defeat progress across the whole game
 - **Local-first**: runs persist in your browser (localStorage); no account, no backend. **Export/Import backup** (JSON) is on the My runs panel — the data lives in your browser, so it survives the dev server stopping, but it is per-browser/per-origin: use the backup to move runs or keep them safe
-- Desktop-first UI (phone pass planned), dark theme with neon-green pop highlights
+- Desktop-first UI (phone pass planned); black-first neon theme (purple/blue/pink highlights, green reserved for success states). The home screen shows your runs first, then collapsible game categories — base games grouped by generation
 
 ## Roadmap
 

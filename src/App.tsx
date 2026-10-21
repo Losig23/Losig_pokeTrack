@@ -74,15 +74,58 @@ function Home({
   const [name, setName] = useState("");
   const [query, setQuery] = useState("");
   const [importMsg, setImportMsg] = useState("");
+  const [openCats, setOpenCats] = useState<Record<string, boolean>>({ base: true, hack: true, fangame: false });
+  const [closedGens, setClosedGens] = useState<Set<number>>(new Set());
   const fileRef = useRef<HTMLInputElement>(null);
   const q = query.trim().toLowerCase();
   const matches = (n: string) => !q || n.toLowerCase().includes(q);
 
-  const sections: { key: string; title: string; packs: GamePack[]; planned: typeof PLANNED_PACKS }[] = [
-    { key: "base", title: "Base games", packs: PACKS.filter((p) => p.category === "base" && matches(p.name)), planned: [] },
-    { key: "hack", title: "ROM hacks", packs: PACKS.filter((p) => p.category === "hack" && matches(p.name)), planned: PLANNED_PACKS.filter((p) => p.kind === "hack" && matches(p.name)) },
-    { key: "fangame", title: "Fan games", packs: PACKS.filter((p) => p.category === "fangame" && matches(p.name)), planned: PLANNED_PACKS.filter((p) => p.kind === "fangame" && matches(p.name)) },
+  const basePacks = PACKS.filter((p) => p.category === "base" && matches(p.name));
+  const hackPacks = PACKS.filter((p) => p.category === "hack" && matches(p.name));
+  const fanPacks = PACKS.filter((p) => p.category === "fangame" && matches(p.name));
+  const hackPlanned = PLANNED_PACKS.filter((p) => p.kind === "hack" && matches(p.name));
+  const fanPlanned = PLANNED_PACKS.filter((p) => p.kind === "fangame" && matches(p.name));
+  const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+  const baseGens = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    .map((gen) => ({ gen, packs: basePacks.filter((p) => p.generation === gen) }))
+    .filter((g) => g.packs.length > 0);
+  const categories = [
+    { key: "base", title: "Base games", hasContent: basePacks.length > 0, count: `${basePacks.length} games` },
+    { key: "hack", title: "ROM hacks", hasContent: hackPacks.length + hackPlanned.length > 0, count: `${hackPacks.length} playable · ${hackPlanned.length} planned` },
+    { key: "fangame", title: "Fan games", hasContent: fanPacks.length + fanPlanned.length > 0, count: `${fanPlanned.length} planned` },
   ];
+  const statusRank = (r: Run) => (r.status === "in-progress" ? 0 : r.status === "won" ? 1 : 2);
+  const sortedRuns = [...runs].sort(
+    (a, b) => statusRank(a) - statusRank(b) || b.createdAt.localeCompare(a.createdAt),
+  );
+  const ongoingCount = runs.filter((r) => r.status === "in-progress").length;
+
+  const packCard = (pack: GamePack) => (
+    <button
+      key={pack.id}
+      className={`pack-card ${pack.id === packId ? "selected" : ""}`}
+      onClick={() => setPackId(pack.id)}
+    >
+      <strong>{pack.name}</strong>
+      <span>
+        {pack.category === "base" ? `Gen ${pack.generation} · ` : ""}
+        {pack.areas.length} areas · {pack.bosses.length} bosses · data: {pack.dataQuality}
+      </span>
+    </button>
+  );
+  const plannedCard = (p: (typeof PLANNED_PACKS)[number]) => (
+    <div key={p.name} className="pack-card planned">
+      <strong>{p.name}</strong>
+      <span>Pack coming soon · Tier {p.tier}</span>
+    </div>
+  );
+  const toggleGen = (gen: number) =>
+    setClosedGens((prev) => {
+      const next = new Set(prev);
+      if (next.has(gen)) next.delete(gen);
+      else next.add(gen);
+      return next;
+    });
 
   const doExport = () => {
     const blob = new Blob([exportRunsJson(runs)], { type: "application/json" });
@@ -107,39 +150,85 @@ function Home({
   return (
     <main className="home">
       <section className="panel">
+        <div className="runs-head">
+          <h2>My runs</h2>
+          <div className="runs-actions">
+            <button className="ghost" onClick={doExport} disabled={runs.length === 0}>Export backup</button>
+            <button className="ghost" onClick={() => fileRef.current?.click()}>Import backup</button>
+            <input
+              ref={fileRef}
+              type="file"
+              accept="application/json"
+              style={{ display: "none" }}
+              onChange={(e) => {
+                const f = e.target.files?.[0];
+                if (f) void doImport(f);
+                e.target.value = "";
+              }}
+            />
+          </div>
+        </div>
+        <p className="muted">
+          {runs.length === 0
+            ? "No runs yet. Start one below."
+            : `${ongoingCount} ongoing · ${runs.length} total — ongoing runs first.`}
+        </p>
+        {importMsg && <p className="muted">{importMsg}</p>}
+        <div className="run-list">
+          {sortedRuns.map((run) => {
+            const pack = getPack(run.packId);
+            return (
+              <button key={run.id} className="run-card" onClick={() => onOpen(run.id)}>
+                <strong>{run.name}</strong>
+                <span>{pack?.name} · {RULESET_LABELS[run.ruleset]} · {run.status}</span>
+                <span>
+                  {pack ? `${progressPercent(run, pack)}% bosses` : ""} · {run.team.length} Pokémon logged
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="panel">
         <h2>New run</h2>
         <label className="pack-search">
           Find a game
           <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search base games, ROM hacks, fan games…" />
         </label>
-        {sections.map((section) => (
-          (section.packs.length > 0 || section.planned.length > 0) && (
-            <div key={section.key}>
-              <h3 className="picker-heading">{section.title}</h3>
-              <div className="picker">
-                {section.packs.map((pack) => (
-                  <button
-                    key={pack.id}
-                    className={`pack-card ${pack.id === packId ? "selected" : ""}`}
-                    onClick={() => setPackId(pack.id)}
-                  >
-                    <strong>{pack.name}</strong>
-                    <span>
-                      {pack.category === "base" ? `Gen ${pack.generation} · ` : ""}
-                      {pack.areas.length} areas · {pack.bosses.length} bosses · data: {pack.dataQuality}
-                    </span>
-                  </button>
-                ))}
-                {section.planned.map((p) => (
-                  <div key={p.name} className="pack-card planned">
-                    <strong>{p.name}</strong>
-                    <span>Pack coming soon · Tier {p.tier}</span>
+        {categories.map((cat) => {
+          if (!cat.hasContent) return null;
+          const open = q ? true : openCats[cat.key];
+          return (
+            <div key={cat.key} className={`category cat-${cat.key}`}>
+              <button
+                className="cat-toggle"
+                onClick={() => setOpenCats((p) => ({ ...p, [cat.key]: !p[cat.key] }))}
+              >
+                <span className="chev">{open ? "▾" : "▸"}</span> {cat.title}
+                <span className="muted">{cat.count}</span>
+              </button>
+              {open && cat.key === "base" && baseGens.map(({ gen, packs }) => {
+                const gOpen = q ? true : !closedGens.has(gen);
+                return (
+                  <div key={gen} className="gen-group">
+                    <button className="gen-toggle" onClick={() => toggleGen(gen)}>
+                      <span className="chev">{gOpen ? "▾" : "▸"}</span> Generation {ROMAN[gen - 1]}
+                      <span className="muted">{packs.length} game{packs.length === 1 ? "" : "s"}</span>
+                    </button>
+                    {gOpen && <div className="picker">{packs.map(packCard)}</div>}
                   </div>
-                ))}
-              </div>
+                );
+              })}
+              {open && cat.key === "hack" && (
+                <div className="picker">{hackPacks.map(packCard)}{hackPlanned.map(plannedCard)}</div>
+              )}
+              {open && cat.key === "fangame" && (
+                <div className="picker">{fanPacks.map(packCard)}{fanPlanned.map(plannedCard)}</div>
+              )}
             </div>
-          )
-        ))}
+          );
+        })}
         <div className="new-run-form">
           <label>
             Ruleset
@@ -165,43 +254,6 @@ function Home({
           >
             Start run
           </button>
-        </div>
-      </section>
-
-      <section className="panel">
-        <div className="runs-head">
-          <h2>My runs</h2>
-          <div className="runs-actions">
-            <button className="ghost" onClick={doExport} disabled={runs.length === 0}>Export backup</button>
-            <button className="ghost" onClick={() => fileRef.current?.click()}>Import backup</button>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="application/json"
-              style={{ display: "none" }}
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                if (f) void doImport(f);
-                e.target.value = "";
-              }}
-            />
-          </div>
-        </div>
-        {importMsg && <p className="muted">{importMsg}</p>}
-        {runs.length === 0 && <p className="muted">No runs yet. Start one above.</p>}
-        <div className="run-list">
-          {runs.map((run) => {
-            const pack = getPack(run.packId);
-            return (
-              <button key={run.id} className="run-card" onClick={() => onOpen(run.id)}>
-                <strong>{run.name}</strong>
-                <span>{pack?.name} · {RULESET_LABELS[run.ruleset]} · {run.status}</span>
-                <span>
-                  {pack ? `${progressPercent(run, pack)}% bosses` : ""} · {run.team.length} Pokémon logged
-                </span>
-              </button>
-            );
-          })}
         </div>
       </section>
     </main>
