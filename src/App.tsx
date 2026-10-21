@@ -268,7 +268,7 @@ function Home({
   );
 }
 
-type Tab = "timeline" | "roster" | "prep" | "bosses";
+type Tab = "timeline" | "routes" | "roster" | "prep" | "bosses";
 
 function RunView({
   run, onChange, onBack, onDelete,
@@ -345,9 +345,31 @@ function RunView({
         <span>{progressPercent(run, pack)}% of bosses defeated</span>
       </div>
 
+      <div className="party-strip">
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const mon = run.team.filter((m) => m.status === "party")[i];
+          return (
+            <div key={i} className={`party-slot ${mon ? "" : "empty"}`} title={mon ? `${mon.nickname || displayName(mon.species)} · Lv ${mon.level}` : "Empty slot"}>
+              {mon && species[mon.species]?.sprite
+                ? <img src={species[mon.species].sprite} alt={mon.species} />
+                : null}
+            </div>
+          );
+        })}
+        <span className="muted">
+          Party {run.team.filter((m) => m.status === "party").length}/6 · Box {run.team.filter((m) => m.status === "box").length} · Graveyard {run.team.filter((m) => m.status === "graveyard").length}
+        </span>
+      </div>
+
       {upcoming && (
         <section className="panel next-boss">
           <div className="boss-card-head">
+            {(() => {
+              const ace = upcoming.team.reduce((a, b) => (b.level > a.level ? b : a), upcoming.team[0]);
+              return ace && species[ace.species]?.sprite
+                ? <img className="boss-ace" src={species[ace.species].sprite} alt={ace.species} width={48} height={48} />
+                : <div className="sprite-placeholder small" />;
+            })()}
             <button className="boss-name" onClick={() => setNextBossOpen((v) => !v)}>
               Next boss: {upcoming.name} <span className="chev">{nextBossOpen ? "▾" : "▸"}</span>
             </button>
@@ -369,9 +391,9 @@ function RunView({
       )}
 
       <nav className="tabs">
-        {(["timeline", "roster", "prep", "bosses"] as Tab[]).map((t) => (
+        {(["timeline", "routes", "roster", "prep", "bosses"] as Tab[]).map((t) => (
           <button key={t} className={tab === t ? "tab active" : "tab"} onClick={() => setTab(t)}>
-            {t === "timeline" ? "Timeline" : t === "roster" ? "Party & Box" : t === "prep" ? "Boss Prep" : "Bosses"}
+            {t === "timeline" ? "Timeline" : t === "routes" ? "Routes" : t === "roster" ? "Party & Box" : t === "prep" ? "Boss Prep" : "Bosses"}
           </button>
         ))}
       </nav>
@@ -379,6 +401,7 @@ function RunView({
       {tab === "timeline" && (
         <TimelineTab run={run} pack={pack} species={species} onChange={onChange} onToggleBoss={toggleBoss} />
       )}
+      {tab === "routes" && <RoutesTab run={run} pack={pack} />}
       {tab === "roster" && <RosterTab run={run} species={species} onChange={onChange} />}
       {tab === "prep" && <PrepTab run={run} pack={pack} species={species} />}
       {tab === "bosses" && (
@@ -431,9 +454,13 @@ function BossCard({
   onToggleBoss: (bossId: string) => void;
 }) {
   const [open, setOpen] = useState(false);
+  const ace = boss.team.reduce((a, b) => (b.level > a.level ? b : a), boss.team[0]);
   return (
     <div className={`boss-card ${defeated ? "defeated" : ""}`}>
       <div className="boss-card-head">
+        {ace && species[ace.species]?.sprite
+          ? <img className="boss-ace" src={species[ace.species].sprite} alt={ace.species} width={44} height={44} />
+          : <div className="sprite-placeholder small" />}
         <button className="boss-name" onClick={() => setOpen((v) => !v)}>
           {boss.name} <span className="chev">{open ? "▾" : "▸"}</span>
         </button>
@@ -468,6 +495,19 @@ function TimelineTab({
   const packAreas = sortedAreas(pack);
   const customAreas = run.customAreas ?? [];
   const { segments, trailing } = bossSegments(pack, packAreas);
+  // Bosses sharing an order slot are variants of one checkpoint (the
+  // Striaton trio by starter, Drayden/Iris by version, Bea/Allister…):
+  // render them as one group instead of separate timeline stops.
+  const groups: { areas: Area[]; bosses: Boss[] }[] = [];
+  for (const seg of segments) {
+    const last = groups[groups.length - 1];
+    if (last && last.bosses[0].order === seg.boss.order) {
+      last.areas.push(...seg.areas);
+      last.bosses.push(seg.boss);
+    } else {
+      groups.push({ areas: [...seg.areas], bosses: [seg.boss] });
+    }
+  }
 
   const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
 
@@ -536,7 +576,7 @@ function TimelineTab({
     const set = (patch: Partial<AreaDraft>) =>
       setDraft((prev) => ({ ...prev, [area.id]: { ...d, ...patch } }));
     return (
-      <div key={area.id} className="area-row">
+      <div key={area.id} className={`area-row ${entry ? "logged" : ""}`}>
         <div className="area-main">
           <strong>{area.name}</strong>
           <span className="muted pool">
@@ -585,17 +625,40 @@ function TimelineTab({
     );
   };
 
+  const nextArea = [...packAreas, ...customAreas].find((a) => !logged(a.id));
+  const nextUndefeated = sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id));
+
   return (
     <section className="panel timeline">
-      {segments.map(({ boss, areas }) => (
-        <div key={boss.id} className="segment">
-          {areas.map(areaRow)}
-          <BossCard
-            boss={boss}
-            species={species}
-            defeated={run.defeatedBossIds.includes(boss.id)}
-            onToggleBoss={onToggleBoss}
-          />
+      {nextArea ? (
+        <p className="continue-banner">Continue at <span className="accent">{nextArea.name}</span> →</p>
+      ) : nextUndefeated ? (
+        <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
+      ) : null}
+      {groups.map((g, gi) => (
+        <div key={gi} className="segment">
+          {g.areas.map(areaRow)}
+          {g.bosses.length === 1 ? (
+            <BossCard
+              boss={g.bosses[0]}
+              species={species}
+              defeated={run.defeatedBossIds.includes(g.bosses[0].id)}
+              onToggleBoss={onToggleBoss}
+            />
+          ) : (
+            <div className="variant-group">
+              <span className="variant-label">You fight one of these — depends on your version / starter</span>
+              {g.bosses.map((b) => (
+                <BossCard
+                  key={b.id}
+                  boss={b}
+                  species={species}
+                  defeated={run.defeatedBossIds.includes(b.id)}
+                  onToggleBoss={onToggleBoss}
+                />
+              ))}
+            </div>
+          )}
         </div>
       ))}
       {segments.length === 0 && packAreas.map(areaRow)}
@@ -674,7 +737,13 @@ function RosterTab({
               ? <img src={species[mon.species].sprite} alt={mon.species} width={48} height={48} />
               : <div className="sprite-placeholder small" />}
             <div className="mon-info">
-              <strong>{mon.nickname || displayName(mon.species)}</strong>
+              <input
+                className="nickname-input"
+                value={mon.nickname ?? ""}
+                placeholder={displayName(mon.species)}
+                onChange={(e) => patchMon(mon.uid, { nickname: e.target.value || undefined })}
+                aria-label="Nickname"
+              />
               <span className="muted">
                 {displayName(mon.species)} · Lv {mon.level}{mon.nature ? ` · ${mon.nature}` : ""}
               </span>
@@ -983,6 +1052,45 @@ function PrepTab({
           {report.checklist.map((line, i) => <li key={i}>{line}</li>)}
         </ul>
       </div>
+    </section>
+  );
+}
+
+/**
+ * Routes: a clean, read-only reference of every area's encounter table —
+ * species, level range, and how it's encountered. Searchable by area or
+ * species. Logging lives in the Timeline; this tab is the data view.
+ */
+function RoutesTab({ run, pack }: { run: Run; pack: GamePack }) {
+  const [q, setQ] = useState("");
+  const query = q.trim().toLowerCase();
+  const areas = [...sortedAreas(pack), ...(run.customAreas ?? [])].filter(
+    (a) =>
+      !query ||
+      a.name.toLowerCase().includes(query) ||
+      a.encounters.some((e) => e.species.includes(query)),
+  );
+  return (
+    <section className="panel">
+      <label className="pack-search">
+        Find an area or species
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search routes, caves, species…" />
+      </label>
+      {areas.map((area) => (
+        <div key={area.id} className="route-block">
+          <h4>{area.name}{area.id.startsWith("custom-") ? " · custom" : ""}</h4>
+          <div className="pool-grid">
+            {area.encounters.map((e, i) => (
+              <div key={e.species + (e.form ?? "") + i} className="pool-row">
+                <span className="pool-name">{displayName(e.species)}{e.form ? ` (${e.form})` : ""}</span>
+                <span className="muted">Lv {e.minLevel}–{e.maxLevel}</span>
+                <span className="pool-methods">{e.methods.map((m) => m.replace(/-/g, " ")).join(", ")}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+      {areas.length === 0 && <p className="muted">No areas match that search.</p>}
     </section>
   );
 }

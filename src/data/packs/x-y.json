@@ -84,9 +84,96 @@
    ]
   },
   {
+   "id": "santalune-forest",
+   "name": "Santalune Forest",
+   "order": 20,
+   "encounters": [
+    {
+     "species": "caterpie",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "fletchling",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "kakuna",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "metapod",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "panpour",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pansage",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pansear",
+     "minLevel": 4,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pikachu",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "scatterbug",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "weedle",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "kalos-route-3",
    "name": "Kalos Route 3",
-   "order": 20,
+   "order": 30,
    "encounters": [
     {
      "species": "azurill",
@@ -214,93 +301,6 @@
      "maxLevel": 35,
      "methods": [
       "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "santalune-forest",
-   "name": "Santalune Forest",
-   "order": 30,
-   "encounters": [
-    {
-     "species": "caterpie",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "fletchling",
-     "minLevel": 4,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "kakuna",
-     "minLevel": 4,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "metapod",
-     "minLevel": 4,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "panpour",
-     "minLevel": 4,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pansage",
-     "minLevel": 4,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pansear",
-     "minLevel": 4,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pikachu",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "scatterbug",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "weedle",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "walk"
      ]
     }
    ]
@@ -487,112 +487,9 @@
    ]
   },
   {
-   "id": "connecting-cave",
-   "name": "Connecting Cave",
-   "order": 60,
-   "encounters": [
-    {
-     "species": "axew",
-     "minLevel": 8,
-     "maxLevel": 15,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    },
-    {
-     "species": "meditite",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "whismur",
-     "minLevel": 7,
-     "maxLevel": 15,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 8,
-     "maxLevel": 15,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kalos-route-4",
-   "name": "Kalos Route 4",
-   "order": 70,
-   "encounters": [
-    {
-     "species": "budew",
-     "minLevel": 8,
-     "maxLevel": 8,
-     "methods": [
-      "red-flowers",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "combee",
-     "minLevel": 6,
-     "maxLevel": 8,
-     "methods": [
-      "red-flowers",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "flabebe",
-     "minLevel": 6,
-     "maxLevel": 8,
-     "methods": [
-      "red-flowers",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "ledyba",
-     "minLevel": 6,
-     "maxLevel": 8,
-     "methods": [
-      "red-flowers",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "ralts",
-     "minLevel": 8,
-     "maxLevel": 8,
-     "methods": [
-      "red-flowers",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "skitty",
-     "minLevel": 8,
-     "maxLevel": 8,
-     "methods": [
-      "red-flowers",
-      "yellow-flowers"
-     ]
-    }
-   ]
-  },
-  {
    "id": "kalos-route-5",
    "name": "Kalos Route 5",
-   "order": 80,
+   "order": 60,
    "encounters": [
     {
      "species": "abra",
@@ -689,103 +586,104 @@
    ]
   },
   {
-   "id": "lumiose-city",
-   "name": "Lumiose City",
-   "order": 90,
+   "id": "connecting-cave",
+   "name": "Connecting Cave",
+   "order": 70,
    "encounters": [
     {
-     "species": "bulbasaur",
-     "minLevel": 10,
-     "maxLevel": 10,
+     "species": "axew",
+     "minLevel": 8,
+     "maxLevel": 15,
      "methods": [
-      "gift"
+      "horde",
+      "walk"
      ]
     },
     {
-     "species": "charmander",
-     "minLevel": 10,
-     "maxLevel": 10,
+     "species": "meditite",
+     "minLevel": 13,
+     "maxLevel": 15,
      "methods": [
-      "gift"
+      "walk"
      ]
     },
     {
-     "species": "squirtle",
-     "minLevel": 10,
-     "maxLevel": 10,
+     "species": "whismur",
+     "minLevel": 7,
+     "maxLevel": 15,
      "methods": [
-      "gift"
+      "horde",
+      "walk"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 8,
+     "maxLevel": 15,
+     "methods": [
+      "horde",
+      "walk"
      ]
     }
    ]
   },
   {
-   "id": "kalos-route-6",
-   "name": "Kalos Route 6",
-   "order": 100,
+   "id": "kalos-route-4",
+   "name": "Kalos Route 4",
+   "order": 80,
    "encounters": [
     {
-     "species": "audino",
-     "minLevel": 10,
-     "maxLevel": 12,
+     "species": "budew",
+     "minLevel": 8,
+     "maxLevel": 8,
      "methods": [
-      "rustling-bush-ambush"
+      "red-flowers",
+      "yellow-flowers"
      ]
     },
     {
-     "species": "espurr",
-     "minLevel": 11,
-     "maxLevel": 12,
+     "species": "combee",
+     "minLevel": 6,
+     "maxLevel": 8,
      "methods": [
-      "rough-terrain"
+      "red-flowers",
+      "yellow-flowers"
      ]
     },
     {
-     "species": "honedge",
-     "minLevel": 11,
-     "maxLevel": 12,
+     "species": "flabebe",
+     "minLevel": 6,
+     "maxLevel": 8,
      "methods": [
-      "rough-terrain"
+      "red-flowers",
+      "yellow-flowers"
      ]
     },
     {
-     "species": "kecleon",
-     "minLevel": 11,
-     "maxLevel": 12,
+     "species": "ledyba",
+     "minLevel": 6,
+     "maxLevel": 8,
      "methods": [
-      "rough-terrain"
+      "red-flowers",
+      "yellow-flowers"
      ]
     },
     {
-     "species": "nincada",
-     "minLevel": 12,
-     "maxLevel": 12,
+     "species": "ralts",
+     "minLevel": 8,
+     "maxLevel": 8,
      "methods": [
-      "rough-terrain"
+      "red-flowers",
+      "yellow-flowers"
      ]
     },
     {
-     "species": "oddish",
-     "minLevel": 10,
-     "maxLevel": 12,
+     "species": "skitty",
+     "minLevel": 8,
+     "maxLevel": 8,
      "methods": [
-      "rough-terrain"
-     ]
-    },
-    {
-     "species": "sentret",
-     "minLevel": 10,
-     "maxLevel": 11,
-     "methods": [
-      "rough-terrain"
-     ]
-    },
-    {
-     "species": "venipede",
-     "minLevel": 10,
-     "maxLevel": 12,
-     "methods": [
-      "rustling-bush-ambush"
+      "red-flowers",
+      "yellow-flowers"
      ]
     }
    ]
@@ -793,7 +691,7 @@
   {
    "id": "kalos-route-7",
    "name": "Kalos Route 7",
-   "order": 110,
+   "order": 90,
    "encounters": [
     {
      "species": "croagunk",
@@ -915,7 +813,7 @@
   {
    "id": "kalos-route-8",
    "name": "Kalos Route 8",
-   "order": 120,
+   "order": 100,
    "encounters": [
     {
      "species": "absol",
@@ -1122,199 +1020,103 @@
    ]
   },
   {
-   "id": "kalos-berry-fields",
-   "name": "Kalos Berry Fields",
-   "order": 130,
+   "id": "lumiose-city",
+   "name": "Lumiose City",
+   "order": 110,
    "encounters": [
     {
-     "species": "burmy",
-     "minLevel": 14,
-     "maxLevel": 15,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "combee",
-     "minLevel": 14,
-     "maxLevel": 15,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "illumise",
-     "minLevel": 14,
-     "maxLevel": 15,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "ledyba",
-     "minLevel": 14,
-     "maxLevel": 15,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "spewpa",
-     "minLevel": 14,
-     "maxLevel": 15,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "volbeat",
-     "minLevel": 14,
-     "maxLevel": 15,
-     "methods": [
-      "berry-trees"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kalos-route-9",
-   "name": "Kalos Route 9",
-   "order": 140,
-   "encounters": [
-    {
-     "species": "helioptile",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "rough-terrain"
-     ]
-    },
-    {
-     "species": "hippopotas",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "rough-terrain"
-     ]
-    },
-    {
-     "species": "sandile",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "rough-terrain"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "glittering-cave",
-   "name": "Glittering Cave",
-   "order": 150,
-   "encounters": [
-    {
-     "species": "amaura",
-     "minLevel": 20,
-     "maxLevel": 20,
+     "species": "bulbasaur",
+     "minLevel": 10,
+     "maxLevel": 10,
      "methods": [
       "gift"
      ]
     },
     {
-     "species": "cubone",
-     "minLevel": 15,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dwebble",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "rock-smash"
-     ]
-    },
-    {
-     "species": "ferroseed",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "ceiling-ambush"
-     ]
-    },
-    {
-     "species": "kangaskhan",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "lunatone",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machop",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mawile",
-     "minLevel": 15,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "onix",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "rock-smash",
-      "walk"
-     ]
-    },
-    {
-     "species": "rhyhorn",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "solrock",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tyrunt",
-     "minLevel": 20,
-     "maxLevel": 20,
+     "species": "charmander",
+     "minLevel": 10,
+     "maxLevel": 10,
      "methods": [
       "gift"
      ]
     },
     {
-     "species": "woobat",
-     "minLevel": 15,
-     "maxLevel": 17,
+     "species": "squirtle",
+     "minLevel": 10,
+     "maxLevel": 10,
      "methods": [
-      "ceiling-ambush"
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kalos-route-6",
+   "name": "Kalos Route 6",
+   "order": 120,
+   "encounters": [
+    {
+     "species": "audino",
+     "minLevel": 10,
+     "maxLevel": 12,
+     "methods": [
+      "rustling-bush-ambush"
+     ]
+    },
+    {
+     "species": "espurr",
+     "minLevel": 11,
+     "maxLevel": 12,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "honedge",
+     "minLevel": 11,
+     "maxLevel": 12,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "kecleon",
+     "minLevel": 11,
+     "maxLevel": 12,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "nincada",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 10,
+     "maxLevel": 12,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "sentret",
+     "minLevel": 10,
+     "maxLevel": 11,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "venipede",
+     "minLevel": 10,
+     "maxLevel": 12,
+     "methods": [
+      "rustling-bush-ambush"
      ]
     }
    ]
@@ -1322,7 +1124,7 @@
   {
    "id": "kalos-route-10",
    "name": "Kalos Route 10",
-   "order": 160,
+   "order": 130,
    "encounters": [
     {
      "species": "eevee",
@@ -1419,7 +1221,7 @@
   {
    "id": "kalos-route-11",
    "name": "Kalos Route 11",
-   "order": 170,
+   "order": 140,
    "encounters": [
     {
      "species": "chingling",
@@ -1523,7 +1325,7 @@
   {
    "id": "reflection-cave",
    "name": "Reflection Cave",
-   "order": 180,
+   "order": 150,
    "encounters": [
     {
      "species": "carbink",
@@ -1610,9 +1412,201 @@
    ]
   },
   {
+   "id": "azure-bay",
+   "name": "Azure Bay",
+   "order": 160,
+   "encounters": [
+    {
+     "species": "alomomola",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "binacle",
+     "minLevel": 23,
+     "maxLevel": 25,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "chatot",
+     "minLevel": 25,
+     "maxLevel": 27,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "chinchou",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "dwebble",
+     "minLevel": 23,
+     "maxLevel": 25,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "exeggcute",
+     "minLevel": 14,
+     "maxLevel": 26,
+     "methods": [
+      "horde",
+      "walk"
+     ]
+    },
+    {
+     "species": "inkay",
+     "minLevel": 26,
+     "maxLevel": 27,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "lanturn",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "lapras",
+     "minLevel": 27,
+     "maxLevel": 27,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "luvdisc",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "mantyke",
+     "minLevel": 27,
+     "maxLevel": 27,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "slowpoke",
+     "minLevel": 13,
+     "maxLevel": 27,
+     "methods": [
+      "horde",
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 25,
+     "maxLevel": 27,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 13,
+     "maxLevel": 13,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kalos-berry-fields",
+   "name": "Kalos Berry Fields",
+   "order": 170,
+   "encounters": [
+    {
+     "species": "burmy",
+     "minLevel": 14,
+     "maxLevel": 15,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "combee",
+     "minLevel": 14,
+     "maxLevel": 15,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "illumise",
+     "minLevel": 14,
+     "maxLevel": 15,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "ledyba",
+     "minLevel": 14,
+     "maxLevel": 15,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "spewpa",
+     "minLevel": 14,
+     "maxLevel": 15,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "volbeat",
+     "minLevel": 14,
+     "maxLevel": 15,
+     "methods": [
+      "berry-trees"
+     ]
+    }
+   ]
+  },
+  {
    "id": "kalos-route-12",
    "name": "Kalos Route 12",
-   "order": 190,
+   "order": 180,
    "encounters": [
     {
      "species": "binacle",
@@ -1804,9 +1798,728 @@
    ]
   },
   {
+   "id": "kalos-route-9",
+   "name": "Kalos Route 9",
+   "order": 190,
+   "encounters": [
+    {
+     "species": "helioptile",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "hippopotas",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "sandile",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "rough-terrain"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "glittering-cave",
+   "name": "Glittering Cave",
+   "order": 200,
+   "encounters": [
+    {
+     "species": "amaura",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "cubone",
+     "minLevel": 15,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dwebble",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "ferroseed",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "ceiling-ambush"
+     ]
+    },
+    {
+     "species": "kangaskhan",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "lunatone",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machop",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mawile",
+     "minLevel": 15,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "onix",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "rock-smash",
+      "walk"
+     ]
+    },
+    {
+     "species": "rhyhorn",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "solrock",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tyrunt",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "woobat",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "ceiling-ambush"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kalos-route-14",
+   "name": "Kalos Route 14",
+   "order": 210,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 25,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "bellsprout",
+     "minLevel": 16,
+     "maxLevel": 16,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "carnivine",
+     "minLevel": 30,
+     "maxLevel": 32,
+     "methods": [
+      "rough-terrain",
+      "walk"
+     ]
+    },
+    {
+     "species": "ekans",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "goomy",
+     "minLevel": 30,
+     "maxLevel": 32,
+     "methods": [
+      "rough-terrain",
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "haunter",
+     "minLevel": 31,
+     "maxLevel": 31,
+     "methods": [
+      "rough-terrain",
+      "walk"
+     ]
+    },
+    {
+     "species": "karrablast",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "rough-terrain",
+      "walk"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "quagsire",
+     "minLevel": 30,
+     "maxLevel": 32,
+     "methods": [
+      "rough-terrain",
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "shelmet",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "rough-terrain",
+      "walk"
+     ]
+    },
+    {
+     "species": "skorupi",
+     "minLevel": 16,
+     "maxLevel": 31,
+     "methods": [
+      "horde",
+      "walk"
+     ]
+    },
+    {
+     "species": "stunfisk",
+     "minLevel": 30,
+     "maxLevel": 32,
+     "methods": [
+      "rough-terrain",
+      "surf"
+     ]
+    },
+    {
+     "species": "weepinbell",
+     "minLevel": 31,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kalos-route-15",
+   "name": "Kalos Route 15",
+   "order": 220,
+   "encounters": [
+    {
+     "species": "basculin",
+     "minLevel": 25,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "floatzel",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "foongus",
+     "minLevel": 18,
+     "maxLevel": 35,
+     "methods": [
+      "horde",
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "klefki",
+     "minLevel": 19,
+     "maxLevel": 36,
+     "methods": [
+      "horde",
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "liepard",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "lombre",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "mightyena",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "murkrow",
+     "minLevel": 18,
+     "maxLevel": 18,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "pawniard",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 25,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "skorupi",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "watchog",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kalos-route-16",
+   "name": "Kalos Route 16",
+   "order": 230,
+   "encounters": [
+    {
+     "species": "basculin",
+     "minLevel": 25,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "floatzel",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "surf",
+      "yellow-flowers"
+     ]
+    },
+    {
+     "species": "foongus",
+     "minLevel": 18,
+     "maxLevel": 36,
+     "methods": [
+      "horde",
+      "rough-terrain",
+      "yellow-flowers"
+     ]
+    },
+    {
+     "species": "klefki",
+     "minLevel": 19,
+     "maxLevel": 36,
+     "methods": [
+      "horde",
+      "rough-terrain",
+      "yellow-flowers"
+     ]
+    },
+    {
+     "species": "lombre",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "murkrow",
+     "minLevel": 18,
+     "maxLevel": 18,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "phantump",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "rough-terrain",
+      "yellow-flowers"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 25,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pumpkaboo",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "rough-terrain"
+     ]
+    },
+    {
+     "species": "skorupi",
+     "minLevel": 34,
+     "maxLevel": 35,
+     "methods": [
+      "yellow-flowers"
+     ]
+    },
+    {
+     "species": "weepinbell",
+     "minLevel": 35,
+     "maxLevel": 36,
+     "methods": [
+      "yellow-flowers"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kalos-route-18",
+   "name": "Kalos Route 18",
+   "order": 240,
+   "encounters": [
+    {
+     "species": "durant",
+     "minLevel": 23,
+     "maxLevel": 46,
+     "methods": [
+      "horde",
+      "red-flowers",
+      "rustling-bush-ambush",
+      "walk"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 23,
+     "maxLevel": 23,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "red-flowers",
+      "rock-smash",
+      "walk"
+     ]
+    },
+    {
+     "species": "gurdurr",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "heatmor",
+     "minLevel": 23,
+     "maxLevel": 46,
+     "methods": [
+      "horde",
+      "red-flowers",
+      "rustling-bush-ambush",
+      "walk"
+     ]
+    },
+    {
+     "species": "lairon",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "pupitar",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "sandslash",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "shuckle",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "torkoal",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "terminus-cave",
+   "name": "Terminus Cave",
+   "order": 250,
+   "encounters": [
+    {
+     "species": "ariados",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "ceiling-ambush"
+     ]
+    },
+    {
+     "species": "aron",
+     "minLevel": 24,
+     "maxLevel": 24,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "durant",
+     "minLevel": 23,
+     "maxLevel": 46,
+     "methods": [
+      "horde",
+      "walk"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 23,
+     "maxLevel": 23,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "rock-smash",
+      "walk"
+     ]
+    },
+    {
+     "species": "lairon",
+     "minLevel": 45,
+     "maxLevel": 46,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "larvitar",
+     "minLevel": 24,
+     "maxLevel": 24,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "noibat",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "ceiling-ambush"
+     ]
+    },
+    {
+     "species": "pupitar",
+     "minLevel": 45,
+     "maxLevel": 46,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandslash",
+     "minLevel": 45,
+     "maxLevel": 46,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shuckle",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "zygarde",
+     "minLevel": 70,
+     "maxLevel": 70,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
    "id": "ambrette-town",
    "name": "Ambrette Town",
-   "order": 200,
+   "order": 260,
    "encounters": [
     {
      "species": "binacle",
@@ -1907,146 +2620,9 @@
    ]
   },
   {
-   "id": "azure-bay",
-   "name": "Azure Bay",
-   "order": 210,
-   "encounters": [
-    {
-     "species": "alomomola",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "binacle",
-     "minLevel": 23,
-     "maxLevel": 25,
-     "methods": [
-      "rock-smash"
-     ]
-    },
-    {
-     "species": "chatot",
-     "minLevel": 25,
-     "maxLevel": 27,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "chinchou",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "dwebble",
-     "minLevel": 23,
-     "maxLevel": 25,
-     "methods": [
-      "rock-smash"
-     ]
-    },
-    {
-     "species": "exeggcute",
-     "minLevel": 14,
-     "maxLevel": 26,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    },
-    {
-     "species": "inkay",
-     "minLevel": 26,
-     "maxLevel": 27,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "lanturn",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "lapras",
-     "minLevel": 27,
-     "maxLevel": 27,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "luvdisc",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "mantyke",
-     "minLevel": 27,
-     "maxLevel": 27,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "slowpoke",
-     "minLevel": 13,
-     "maxLevel": 27,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 25,
-     "maxLevel": 27,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 13,
-     "maxLevel": 13,
-     "methods": [
-      "horde"
-     ]
-    }
-   ]
-  },
-  {
    "id": "cyllage-city",
    "name": "Cyllage City",
-   "order": 220,
+   "order": 270,
    "encounters": [
     {
      "species": "binacle",
@@ -2157,7 +2733,7 @@
   {
    "id": "laverre-city",
    "name": "Laverre City",
-   "order": 230,
+   "order": 280,
    "encounters": [
     {
      "species": "basculin",
@@ -2188,9 +2764,87 @@
    ]
   },
   {
+   "id": "kalos-route-20",
+   "name": "Kalos Route 20",
+   "order": 290,
+   "encounters": [
+    {
+     "species": "amoonguss",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "foongus",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "gothorita",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "jigglypuff",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "noctowl",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "sudowoodo",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "trevenant",
+     "minLevel": 25,
+     "maxLevel": 50,
+     "methods": [
+      "horde",
+      "red-flowers",
+      "walk"
+     ]
+    },
+    {
+     "species": "zoroark",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "red-flowers",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "kalos-route-13",
    "name": "Kalos Route 13",
-   "order": 240,
+   "order": 300,
    "encounters": [
     {
      "species": "dugtrio",
@@ -2240,7 +2894,7 @@
   {
    "id": "shalour-city",
    "name": "Shalour City",
-   "order": 250,
+   "order": 310,
    "encounters": [
     {
      "species": "alomomola",
@@ -2309,9 +2963,176 @@
    ]
   },
   {
+   "id": "kalos-victory-road",
+   "name": "Kalos Victory Road",
+   "order": 320,
+   "encounters": [
+    {
+     "species": "ariados",
+     "minLevel": 58,
+     "maxLevel": 59,
+     "methods": [
+      "ceiling-ambush"
+     ]
+    },
+    {
+     "species": "basculin",
+     "minLevel": 45,
+     "maxLevel": 55,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "druddigon",
+     "minLevel": 58,
+     "maxLevel": 59,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 57,
+     "maxLevel": 59,
+     "methods": [
+      "sky-ambush"
+     ]
+    },
+    {
+     "species": "floatzel",
+     "minLevel": 29,
+     "maxLevel": 59,
+     "methods": [
+      "horde",
+      "surf"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 28,
+     "maxLevel": 28,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 29,
+     "maxLevel": 59,
+     "methods": [
+      "ceiling-ambush",
+      "horde",
+      "rock-smash",
+      "walk"
+     ]
+    },
+    {
+     "species": "gurdurr",
+     "minLevel": 57,
+     "maxLevel": 59,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "haunter",
+     "minLevel": 58,
+     "maxLevel": 58,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "hydreigon",
+     "minLevel": 59,
+     "maxLevel": 59,
+     "methods": [
+      "sky-ambush"
+     ]
+    },
+    {
+     "species": "lickitung",
+     "minLevel": 30,
+     "maxLevel": 59,
+     "methods": [
+      "horde",
+      "walk"
+     ]
+    },
+    {
+     "species": "lombre",
+     "minLevel": 57,
+     "maxLevel": 59,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "noibat",
+     "minLevel": 57,
+     "maxLevel": 59,
+     "methods": [
+      "ceiling-ambush"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 45,
+     "maxLevel": 59,
+     "methods": [
+      "good-rod",
+      "super-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "poliwrath",
+     "minLevel": 60,
+     "maxLevel": 60,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "shuckle",
+     "minLevel": 57,
+     "maxLevel": 59,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "skarmory",
+     "minLevel": 57,
+     "maxLevel": 59,
+     "methods": [
+      "sky-ambush"
+     ]
+    },
+    {
+     "species": "zweilous",
+     "minLevel": 59,
+     "maxLevel": 59,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "friend-safari",
    "name": "Friend Safari",
-   "order": 260,
+   "order": 330,
    "encounters": [
     {
      "species": "abra",
@@ -3828,147 +4649,9 @@
    ]
   },
   {
-   "id": "kalos-route-14",
-   "name": "Kalos Route 14",
-   "order": 270,
-   "encounters": [
-    {
-     "species": "barboach",
-     "minLevel": 25,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "bellsprout",
-     "minLevel": 16,
-     "maxLevel": 16,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "carnivine",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "rough-terrain",
-      "walk"
-     ]
-    },
-    {
-     "species": "ekans",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "goomy",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "rough-terrain",
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "haunter",
-     "minLevel": 31,
-     "maxLevel": 31,
-     "methods": [
-      "rough-terrain",
-      "walk"
-     ]
-    },
-    {
-     "species": "karrablast",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "rough-terrain",
-      "walk"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "quagsire",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "rough-terrain",
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "shelmet",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "rough-terrain",
-      "walk"
-     ]
-    },
-    {
-     "species": "skorupi",
-     "minLevel": 16,
-     "maxLevel": 31,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    },
-    {
-     "species": "stunfisk",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "rough-terrain",
-      "surf"
-     ]
-    },
-    {
-     "species": "weepinbell",
-     "minLevel": 31,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "whiscash",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
    "id": "tower-of-mastery",
    "name": "Tower Of Mastery",
-   "order": 280,
+   "order": 340,
    "encounters": [
     {
      "species": "lucario",
@@ -3981,242 +4664,9 @@
    ]
   },
   {
-   "id": "kalos-route-15",
-   "name": "Kalos Route 15",
-   "order": 290,
-   "encounters": [
-    {
-     "species": "basculin",
-     "minLevel": 25,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "floatzel",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "foongus",
-     "minLevel": 18,
-     "maxLevel": 35,
-     "methods": [
-      "horde",
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "klefki",
-     "minLevel": 19,
-     "maxLevel": 36,
-     "methods": [
-      "horde",
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "liepard",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "lombre",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "mightyena",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "murkrow",
-     "minLevel": 18,
-     "maxLevel": 18,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "pawniard",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 25,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "skorupi",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "watchog",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kalos-route-16",
-   "name": "Kalos Route 16",
-   "order": 300,
-   "encounters": [
-    {
-     "species": "basculin",
-     "minLevel": 25,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "floatzel",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "surf",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "foongus",
-     "minLevel": 18,
-     "maxLevel": 36,
-     "methods": [
-      "horde",
-      "rough-terrain",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "klefki",
-     "minLevel": 19,
-     "maxLevel": 36,
-     "methods": [
-      "horde",
-      "rough-terrain",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "lombre",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "murkrow",
-     "minLevel": 18,
-     "maxLevel": 18,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "phantump",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "rough-terrain",
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 25,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pumpkaboo",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "rough-terrain"
-     ]
-    },
-    {
-     "species": "skorupi",
-     "minLevel": 34,
-     "maxLevel": 35,
-     "methods": [
-      "yellow-flowers"
-     ]
-    },
-    {
-     "species": "weepinbell",
-     "minLevel": 35,
-     "maxLevel": 36,
-     "methods": [
-      "yellow-flowers"
-     ]
-    }
-   ]
-  },
-  {
    "id": "couriway-town",
    "name": "Couriway Town",
-   "order": 310,
+   "order": 350,
    "encounters": [
     {
      "species": "basculin",
@@ -4265,7 +4715,7 @@
   {
    "id": "parfum-palace",
    "name": "Parfum Palace",
-   "order": 320,
+   "order": 360,
    "encounters": [
     {
      "species": "corphish",
@@ -4320,7 +4770,7 @@
   {
    "id": "lost-hotel",
    "name": "Lost Hotel",
-   "order": 330,
+   "order": 370,
    "encounters": [
     {
      "species": "electrode",
@@ -4391,7 +4841,7 @@
   {
    "id": "kalos-route-17",
    "name": "Kalos Route 17",
-   "order": 340,
+   "order": 380,
    "encounters": [
     {
      "species": "abomasnow",
@@ -4430,7 +4880,7 @@
   {
    "id": "frost-cavern",
    "name": "Frost Cavern",
-   "order": 350,
+   "order": 390,
    "encounters": [
     {
      "species": "basculin",
@@ -4544,7 +4994,7 @@
   {
    "id": "kalos-route-21",
    "name": "Kalos Route 21",
-   "order": 360,
+   "order": 400,
    "encounters": [
     {
      "species": "altaria",
@@ -4655,214 +5105,9 @@
    ]
   },
   {
-   "id": "kalos-route-18",
-   "name": "Kalos Route 18",
-   "order": 370,
-   "encounters": [
-    {
-     "species": "durant",
-     "minLevel": 23,
-     "maxLevel": 46,
-     "methods": [
-      "horde",
-      "red-flowers",
-      "rustling-bush-ambush",
-      "walk"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 23,
-     "maxLevel": 23,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "red-flowers",
-      "rock-smash",
-      "walk"
-     ]
-    },
-    {
-     "species": "gurdurr",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "heatmor",
-     "minLevel": 23,
-     "maxLevel": 46,
-     "methods": [
-      "horde",
-      "red-flowers",
-      "rustling-bush-ambush",
-      "walk"
-     ]
-    },
-    {
-     "species": "lairon",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "pupitar",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "sandslash",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "shuckle",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "rock-smash"
-     ]
-    },
-    {
-     "species": "torkoal",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "terminus-cave",
-   "name": "Terminus Cave",
-   "order": 380,
-   "encounters": [
-    {
-     "species": "ariados",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "ceiling-ambush"
-     ]
-    },
-    {
-     "species": "aron",
-     "minLevel": 24,
-     "maxLevel": 24,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "durant",
-     "minLevel": 23,
-     "maxLevel": 46,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 23,
-     "maxLevel": 23,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "rock-smash",
-      "walk"
-     ]
-    },
-    {
-     "species": "lairon",
-     "minLevel": 45,
-     "maxLevel": 46,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "larvitar",
-     "minLevel": 24,
-     "maxLevel": 24,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "noibat",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "ceiling-ambush"
-     ]
-    },
-    {
-     "species": "pupitar",
-     "minLevel": 45,
-     "maxLevel": 46,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sandslash",
-     "minLevel": 45,
-     "maxLevel": 46,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shuckle",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "rock-smash"
-     ]
-    },
-    {
-     "species": "zygarde",
-     "minLevel": 70,
-     "maxLevel": 70,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
    "id": "kalos-route-19",
    "name": "Kalos Route 19",
-   "order": 390,
+   "order": 410,
    "encounters": [
     {
      "species": "arbok",
@@ -5016,7 +5261,7 @@
   {
    "id": "pokemon-village",
    "name": "Pokemon Village",
-   "order": 400,
+   "order": 420,
    "encounters": [
     {
      "species": "amoonguss",
@@ -5136,87 +5381,9 @@
    ]
   },
   {
-   "id": "kalos-route-20",
-   "name": "Kalos Route 20",
-   "order": 410,
-   "encounters": [
-    {
-     "species": "amoonguss",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "foongus",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "gothorita",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "jigglypuff",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "noctowl",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "sudowoodo",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "trevenant",
-     "minLevel": 25,
-     "maxLevel": 50,
-     "methods": [
-      "horde",
-      "red-flowers",
-      "walk"
-     ]
-    },
-    {
-     "species": "zoroark",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "red-flowers",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "team-flare-secret-hq",
    "name": "Team Flare Secret Hq",
-   "order": 420,
+   "order": 430,
    "encounters": [
     {
      "species": "xerneas",
@@ -5232,173 +5399,6 @@
      "maxLevel": 50,
      "methods": [
       "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kalos-victory-road",
-   "name": "Kalos Victory Road",
-   "order": 430,
-   "encounters": [
-    {
-     "species": "ariados",
-     "minLevel": 58,
-     "maxLevel": 59,
-     "methods": [
-      "ceiling-ambush"
-     ]
-    },
-    {
-     "species": "basculin",
-     "minLevel": 45,
-     "maxLevel": 55,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "druddigon",
-     "minLevel": 58,
-     "maxLevel": 59,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 57,
-     "maxLevel": 59,
-     "methods": [
-      "sky-ambush"
-     ]
-    },
-    {
-     "species": "floatzel",
-     "minLevel": 29,
-     "maxLevel": 59,
-     "methods": [
-      "horde",
-      "surf"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 28,
-     "maxLevel": 28,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 29,
-     "maxLevel": 59,
-     "methods": [
-      "ceiling-ambush",
-      "horde",
-      "rock-smash",
-      "walk"
-     ]
-    },
-    {
-     "species": "gurdurr",
-     "minLevel": 57,
-     "maxLevel": 59,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "haunter",
-     "minLevel": 58,
-     "maxLevel": 58,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "hydreigon",
-     "minLevel": 59,
-     "maxLevel": 59,
-     "methods": [
-      "sky-ambush"
-     ]
-    },
-    {
-     "species": "lickitung",
-     "minLevel": 30,
-     "maxLevel": 59,
-     "methods": [
-      "horde",
-      "walk"
-     ]
-    },
-    {
-     "species": "lombre",
-     "minLevel": 57,
-     "maxLevel": 59,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "noibat",
-     "minLevel": 57,
-     "maxLevel": 59,
-     "methods": [
-      "ceiling-ambush"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 45,
-     "maxLevel": 59,
-     "methods": [
-      "good-rod",
-      "super-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "poliwrath",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "shuckle",
-     "minLevel": 57,
-     "maxLevel": 59,
-     "methods": [
-      "rock-smash"
-     ]
-    },
-    {
-     "species": "skarmory",
-     "minLevel": 57,
-     "maxLevel": 59,
-     "methods": [
-      "sky-ambush"
-     ]
-    },
-    {
-     "species": "zweilous",
-     "minLevel": 59,
-     "maxLevel": 59,
-     "methods": [
-      "walk"
      ]
     }
    ]

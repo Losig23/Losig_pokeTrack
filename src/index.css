@@ -185,6 +185,38 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
   box-shadow: 0 0 12px rgba(168, 85, 247, 0.35), inset 0 0 8px rgba(168, 85, 247, 0.14);
 }
 .boss-card-head .chip { margin-left: auto; }
+.boss-ace { border-radius: 50%; background: rgba(168, 85, 247, 0.08); }
+.variant-group {
+  border: 1px dashed var(--border); border-radius: 12px; padding: 6px 12px 2px; margin: 12px 0;
+  background: rgba(56, 189, 248, 0.03);
+}
+.variant-group .boss-card { margin: 8px 0; }
+.variant-label { font-size: 12.5px; color: #7dd3fc; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+.area-row.logged .area-main { opacity: 0.45; }
+.nickname-input {
+  background: transparent; border: 1px solid transparent; border-radius: 7px;
+  padding: 3px 6px; font: inherit; font-weight: 700; color: var(--text); width: 100%; min-width: 90px;
+}
+.nickname-input:hover { border-color: var(--border-soft); }
+.nickname-input:focus { border-color: var(--violet); box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18); outline: none; }
+.nickname-input::placeholder { color: var(--text); opacity: 0.75; }
+
+.party-strip { display: flex; align-items: center; gap: 8px; margin: -6px 0 16px; }
+.party-slot {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border);
+  background: #0b0b14; display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.party-slot.empty { border-style: dashed; opacity: 0.45; }
+.party-slot img { width: 42px; height: 42px; }
+.continue-banner { font-size: 15px; font-weight: 600; margin: 2px 0 10px; }
+.continue-banner .accent { color: var(--blue); }
+
+.route-block { border-top: 1px solid var(--border-soft); padding: 12px 0 6px; }
+.route-block h4 { margin: 0 0 8px; }
+.pool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 4px 18px; }
+.pool-row { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; padding: 3px 0; }
+.pool-row .pool-name { font-weight: 600; }
+.pool-row .pool-methods { margin-left: auto; color: var(--muted); font-size: 12px; text-align: right; }
 .boss-list .boss-card:first-child { margin-top: 0; }
 .next-boss .boss-team { margin-top: 12px; }
 .boss-team { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0 4px; }

@@ -91,9 +91,137 @@
    ]
   },
   {
+   "id": "slumbering-weald",
+   "name": "Slumbering Weald",
+   "order": 20,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "blipbug",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "butterfree",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "corviknight",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "grubbin",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "hoothoot",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "munna",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "orbeetle",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "rookidee",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "skwovet",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "stunfisk",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "walk",
+      "wanderer"
+     ]
+    },
+    {
+     "species": "weezing",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 45,
+     "maxLevel": 47,
+     "methods": [
+      "bubbling-spots"
+     ]
+    }
+   ]
+  },
+  {
    "id": "galar-route-2",
    "name": "Galar Route 2",
-   "order": 20,
+   "order": 30,
    "encounters": [
     {
      "species": "arrokuda",
@@ -267,7 +395,7 @@
   {
    "id": "postwick",
    "name": "Postwick",
-   "order": 30,
+   "order": 40,
    "encounters": [
     {
      "species": "charmander",
@@ -306,7 +434,7 @@
   {
    "id": "rolling-fields",
    "name": "Rolling Fields",
-   "order": 40,
+   "order": 50,
    "encounters": [
     {
      "species": "baltoy",
@@ -722,7 +850,7 @@
   {
    "id": "west-lake-axewell",
    "name": "West Lake Axewell",
-   "order": 50,
+   "order": 60,
    "encounters": [
     {
      "species": "baltoy",
@@ -1121,7 +1249,7 @@
   {
    "id": "east-lake-axewell",
    "name": "East Lake Axewell",
-   "order": 60,
+   "order": 70,
    "encounters": [
     {
      "species": "baltoy",
@@ -1490,7 +1618,7 @@
   {
    "id": "galar-route-3",
    "name": "Galar Route 3",
-   "order": 70,
+   "order": 80,
    "encounters": [
     {
      "species": "cherubi",
@@ -1633,7 +1761,7 @@
   {
    "id": "meetup-spot",
    "name": "Meetup Spot",
-   "order": 80,
+   "order": 90,
    "encounters": [
     {
      "species": "eevee",
@@ -1656,7 +1784,7 @@
   {
    "id": "dappled-grove",
    "name": "Dappled Grove",
-   "order": 90,
+   "order": 100,
    "encounters": [
     {
      "species": "baltoy",
@@ -1975,7 +2103,7 @@
   {
    "id": "galar-mine",
    "name": "Galar Mine",
-   "order": 100,
+   "order": 110,
    "encounters": [
     {
      "species": "carkol",
@@ -2039,7 +2167,7 @@
   {
    "id": "south-lake-miloch",
    "name": "South Lake Miloch",
-   "order": 110,
+   "order": 120,
    "encounters": [
     {
      "species": "baltoy",
@@ -2474,7 +2602,7 @@
   {
    "id": "watchtower-ruins",
    "name": "Watchtower Ruins",
-   "order": 120,
+   "order": 130,
    "encounters": [
     {
      "species": "bounsweet",
@@ -2737,7 +2865,7 @@
   {
    "id": "wedgehurst",
    "name": "Wedgehurst",
-   "order": 130,
+   "order": 140,
    "encounters": [
     {
      "species": "slowpoke",
@@ -2752,7 +2880,7 @@
   {
    "id": "galar-route-4",
    "name": "Galar Route 4",
-   "order": 140,
+   "order": 150,
    "encounters": [
     {
      "species": "budew",
@@ -2896,7 +3024,7 @@
   {
    "id": "north-lake-miloch",
    "name": "North Lake Miloch",
-   "order": 150,
+   "order": 160,
    "encounters": [
     {
      "species": "baltoy",
@@ -3313,7 +3441,7 @@
   {
    "id": "galar-route-5",
    "name": "Galar Route 5",
-   "order": 160,
+   "order": 170,
    "encounters": [
     {
      "species": "applin",
@@ -3482,7 +3610,7 @@
   {
    "id": "galar-mine-no-2",
    "name": "Galar Mine No 2",
-   "order": 170,
+   "order": 180,
    "encounters": [
     {
      "species": "barboach",
@@ -3594,7 +3722,7 @@
   {
    "id": "hulbury",
    "name": "Hulbury",
-   "order": 180,
+   "order": 190,
    "encounters": [
     {
      "species": "arrokuda",
@@ -3641,7 +3769,7 @@
   {
    "id": "motostoke-outskirts",
    "name": "Motostoke Outskirts",
-   "order": 190,
+   "order": 200,
    "encounters": [
     {
      "species": "chewtle",
@@ -3752,7 +3880,7 @@
   {
    "id": "motostoke",
    "name": "Motostoke",
-   "order": 200,
+   "order": 210,
    "encounters": [
     {
      "species": "barboach",
@@ -3807,7 +3935,7 @@
   {
    "id": "bridge-field",
    "name": "Bridge Field",
-   "order": 210,
+   "order": 220,
    "encounters": [
     {
      "species": "baltoy",
@@ -4444,7 +4572,7 @@
   {
    "id": "giants-cap",
    "name": "Giants Cap",
-   "order": 220,
+   "order": 230,
    "encounters": [
     {
      "species": "aegislash",
@@ -5038,7 +5166,7 @@
   {
    "id": "giants-mirror",
    "name": "Giants Mirror",
-   "order": 230,
+   "order": 240,
    "encounters": [
     {
      "species": "abomasnow",
@@ -5749,7 +5877,7 @@
   {
    "id": "motostoke-riverbank",
    "name": "Motostoke Riverbank",
-   "order": 240,
+   "order": 250,
    "encounters": [
     {
      "species": "arrokuda",
@@ -6224,7 +6352,7 @@
   {
    "id": "stony-wilderness",
    "name": "Stony Wilderness",
-   "order": 250,
+   "order": 260,
    "encounters": [
     {
      "species": "applin",
@@ -6724,7 +6852,7 @@
   {
    "id": "galar-route-6",
    "name": "Galar Route 6",
-   "order": 260,
+   "order": 270,
    "encounters": [
     {
      "species": "arctovish",
@@ -6907,7 +7035,7 @@
   {
    "id": "hammerlocke-hills",
    "name": "Hammerlocke Hills",
-   "order": 270,
+   "order": 280,
    "encounters": [
     {
      "species": "abomasnow",
@@ -7319,7 +7447,7 @@
   {
    "id": "giants-seat",
    "name": "Giants Seat",
-   "order": 280,
+   "order": 290,
    "encounters": [
     {
      "species": "abomasnow",
@@ -7748,7 +7876,7 @@
   {
    "id": "glimwood-tangle",
    "name": "Glimwood Tangle",
-   "order": 290,
+   "order": 300,
    "encounters": [
     {
      "species": "hattrem",
@@ -7852,7 +7980,7 @@
   {
    "id": "axews-eye",
    "name": "Axews Eye",
-   "order": 300,
+   "order": 310,
    "encounters": [
     {
      "species": "abomasnow",
@@ -8165,7 +8293,7 @@
   {
    "id": "galar-route-7",
    "name": "Galar Route 7",
-   "order": 310,
+   "order": 320,
    "encounters": [
     {
      "species": "corviknight",
@@ -8277,7 +8405,7 @@
   {
    "id": "galar-route-8",
    "name": "Galar Route 8",
-   "order": 320,
+   "order": 330,
    "encounters": [
     {
      "species": "boldore",
@@ -8503,7 +8631,7 @@
   {
    "id": "galar-route-9",
    "name": "Galar Route 9",
-   "order": 330,
+   "order": 340,
    "encounters": [
     {
      "species": "barbaracle",
@@ -8759,7 +8887,7 @@
   {
    "id": "dusty-bowl",
    "name": "Dusty Bowl",
-   "order": 340,
+   "order": 350,
    "encounters": [
     {
      "species": "abomasnow",
@@ -9351,7 +9479,7 @@
   {
    "id": "galar-route-10",
    "name": "Galar Route 10",
-   "order": 350,
+   "order": 360,
    "encounters": [
     {
      "species": "abomasnow",
@@ -9486,152 +9614,9 @@
    ]
   },
   {
-   "id": "slumbering-weald",
-   "name": "Slumbering Weald",
-   "order": 360,
-   "encounters": [
-    {
-     "species": "barboach",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "blipbug",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "butterfree",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "corviknight",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "grubbin",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "hoothoot",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "munna",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "orbeetle",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "rookidee",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "skwovet",
-     "minLevel": 2,
-     "maxLevel": 3,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "stunfisk",
-     "minLevel": 45,
-     "maxLevel": 48,
-     "methods": [
-      "walk",
-      "wanderer"
-     ]
-    },
-    {
-     "species": "weezing",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "whiscash",
-     "minLevel": 45,
-     "maxLevel": 47,
-     "methods": [
-      "bubbling-spots"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-battle-tower",
-   "name": "Galar Battle Tower",
-   "order": 370,
-   "encounters": [
-    {
-     "species": "type-null",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
    "id": "lake-of-outrage",
    "name": "Lake Of Outrage",
-   "order": 380,
+   "order": 370,
    "encounters": [
     {
      "species": "abomasnow",
@@ -10499,6 +10484,21 @@
      "methods": [
       "overworld",
       "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-battle-tower",
+   "name": "Galar Battle Tower",
+   "order": 380,
+   "encounters": [
+    {
+     "species": "type-null",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "gift"
      ]
     }
    ]

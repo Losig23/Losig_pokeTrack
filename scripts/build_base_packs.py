@@ -160,14 +160,20 @@ def main() -> int:
                     {"species": sp, "minLevel": lo, "maxLevel": hi, "methods": sorted(method_set)}
                 )
 
-            def progression_key(loc: int) -> tuple[float, str]:
+            def progression_key(loc: int) -> tuple[float, float, str]:
+                # Story position is set by an area's EARLIEST encounters, not
+                # its median: post-game stragglers (e.g. BW Route 1's dark
+                # grass holds Lv 32+ evolved forms) otherwise drag starter
+                # routes to the end of the game. Min first, median tie-break.
                 entries = by_loc[loc]
                 walk_mins = sorted(
                     e["minLevel"] for e in entries if WALK_METHODS & set(e["methods"])
                 )
-                pool = walk_mins or sorted(e["minLevel"] for e in entries)
-                median = pool[len(pool) // 2] if pool else 999
-                return (median, location_ident.get(loc, ""))
+                if walk_mins:
+                    return (walk_mins[0], walk_mins[len(walk_mins) // 2], location_ident.get(loc, ""))
+                all_mins = sorted(e["minLevel"] for e in entries)
+                median = all_mins[len(all_mins) // 2] if all_mins else 999
+                return (median, median, location_ident.get(loc, ""))
 
             for i, loc in enumerate(sorted(by_loc, key=progression_key)):
                 ident = location_ident.get(loc, f"location-{loc}")
