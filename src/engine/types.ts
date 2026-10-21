@@ -52,6 +52,8 @@ export interface GamePack {
   pokemonOverrides?: Record<string, unknown>;
 }
 
+export type StatKey = "hp" | "attack" | "defense" | "specialAttack" | "specialDefense" | "speed";
+
 export type Ruleset = "casual" | "nuzlocke" | "hardcore";
 
 export type MonStatus = "party" | "box" | "graveyard";
@@ -65,6 +67,10 @@ export interface CaughtMon {
   level: number;
   nature?: string;
   ability?: string;
+  /** Effort values the player has recorded (0–252 per stat). */
+  evs?: Partial<Record<StatKey, number>>;
+  /** The stats as shown on the Pokémon's summary screen — IVs are derived from these. */
+  actualStats?: Partial<Record<StatKey, number>>;
   status: MonStatus;
   caughtAreaId: string;
 }

@@ -234,6 +234,21 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .mon-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .mon-info strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mon-card input[type="number"] { width: 60px; }
+.mon-wrap { margin-bottom: 8px; }
+.mon-wrap .mon-card { margin-bottom: 0; }
+.ghost.iv-active { border-color: var(--pink); color: #fbcfe8; box-shadow: 0 0 10px rgba(244, 114, 182, 0.3); }
+.iv-editor {
+  border: 1px solid var(--border-soft); border-top: none; border-radius: 0 0 11px 11px;
+  background: #08080f; padding: 12px; margin-bottom: 8px;
+}
+.iv-head { display: flex; align-items: end; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
+.iv-head .primary { margin-left: auto; }
+.iv-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.iv-cell { display: flex; flex-direction: column; gap: 5px; }
+.iv-stat-name { font-size: 12.5px; font-weight: 700; }
+.iv-result { font-size: 13px; font-weight: 700; color: var(--blue); }
+.iv-result.iv-bad { color: var(--danger); }
+.iv-note { margin: 10px 0 0; }
 .coverage { margin-top: 10px; border-top: 1px solid var(--border-soft); padding-top: 12px; }
 
 @media (max-width: 980px) {
@@ -241,4 +256,5 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
   .area-form { grid-template-columns: repeat(2, 1fr); }
   .custom-area-form .area-form { grid-template-columns: 1fr; }
   .roster-grid { grid-template-columns: 1fr; }
+  .iv-grid { grid-template-columns: repeat(2, 1fr); }
 }

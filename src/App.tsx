@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type {
-  Area, Boss, CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData,
+  Area, Boss, CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData, StatKey,
 } from "./engine/types";
 import { PACKS, PLANNED_PACKS, getPack } from "./data/packs";
 import { sortedAreas, sortedBosses } from "./engine/pack";
@@ -8,6 +8,7 @@ import {
   bossSegments, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
 } from "./engine/run";
 import { teamCoverage } from "./engine/coverage";
+import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
 import { displayName, useSpeciesData } from "./data/pokemon";
 import { exportRunsJson, parseRunsJson, useRuns } from "./store";
 
@@ -647,6 +648,9 @@ function RosterTab({
     .filter((s): s is SpeciesData => Boolean(s));
   const coverage = partyData.length ? teamCoverage(partyData) : null;
 
+  const [ivOpenUid, setIvOpenUid] = useState<string | null>(null);
+  const patchMon = (uid: string, patch: Partial<CaughtMon>) =>
+    onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, ...patch } : m)) });
   const setStatus = (uid: string, status: MonStatus) =>
     onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, status } : m)) });
   const setLevel = (uid: string, level: number) =>
@@ -662,24 +666,41 @@ function RosterTab({
     <div className="roster-col">
       <h4>{title}</h4>
       {run.team.filter((m) => m.status === status).map((mon) => (
-        <div key={mon.uid} className="mon-card">
-          {species[mon.species]?.sprite
-            ? <img src={species[mon.species].sprite} alt={mon.species} width={48} height={48} />
-            : <div className="sprite-placeholder small" />}
-          <div className="mon-info">
-            <strong>{mon.nickname || displayName(mon.species)}</strong>
-            <span className="muted">{displayName(mon.species)} · Lv {mon.level}</span>
+        <div key={mon.uid} className="mon-wrap">
+          <div className="mon-card">
+            {species[mon.species]?.sprite
+              ? <img src={species[mon.species].sprite} alt={mon.species} width={48} height={48} />
+              : <div className="sprite-placeholder small" />}
+            <div className="mon-info">
+              <strong>{mon.nickname || displayName(mon.species)}</strong>
+              <span className="muted">
+                {displayName(mon.species)} · Lv {mon.level}{mon.nature ? ` · ${mon.nature}` : ""}
+              </span>
+            </div>
+            <input
+              type="number" min={1} max={100} value={mon.level}
+              onChange={(e) => setLevel(mon.uid, Number(e.target.value))} aria-label="Level"
+            />
+            <select value={mon.status} onChange={(e) => setStatus(mon.uid, e.target.value as MonStatus)}>
+              <option value="party">Party</option>
+              <option value="box">Box</option>
+              <option value="graveyard">Graveyard</option>
+            </select>
+            <button
+              className={`ghost ${ivOpenUid === mon.uid ? "iv-active" : ""}`}
+              onClick={() => setIvOpenUid(ivOpenUid === mon.uid ? null : mon.uid)}
+            >
+              IV
+            </button>
+            <button className="ghost danger" onClick={() => remove(mon.uid)}>✕</button>
           </div>
-          <input
-            type="number" min={1} max={100} value={mon.level}
-            onChange={(e) => setLevel(mon.uid, Number(e.target.value))} aria-label="Level"
-          />
-          <select value={mon.status} onChange={(e) => setStatus(mon.uid, e.target.value as MonStatus)}>
-            <option value="party">Party</option>
-            <option value="box">Box</option>
-            <option value="graveyard">Graveyard</option>
-          </select>
-          <button className="ghost danger" onClick={() => remove(mon.uid)}>✕</button>
+          {ivOpenUid === mon.uid && species[mon.species] && (
+            <MonIvEditor
+              mon={mon}
+              data={species[mon.species]}
+              onSave={(patch) => patchMon(mon.uid, patch)}
+            />
+          )}
         </div>
       ))}
       {run.team.filter((m) => m.status === status).length === 0 && <p className="muted">Empty</p>}
@@ -710,5 +731,97 @@ function RosterTab({
         </div>
       )}
     </section>
+  );
+}
+
+/**
+ * Per-Pokémon IV checker: enter the nature, the stats exactly as the game
+ * shows them, and any EVs you know about (freshly caught = 0). The IV per
+ * stat is solved live; at low levels it's an honest range that narrows as
+ * the Pokémon levels up.
+ */
+function MonIvEditor({
+  mon, data, onSave,
+}: {
+  mon: CaughtMon;
+  data: SpeciesData;
+  onSave: (patch: Partial<CaughtMon>) => void;
+}) {
+  const [nature, setNature] = useState(mon.nature ?? "");
+  const [evs, setEvs] = useState<Record<StatKey, string>>(() =>
+    Object.fromEntries(STAT_KEYS.map((k) => [k, String(mon.evs?.[k] ?? "")])) as Record<StatKey, string>,
+  );
+  const [stats, setStats] = useState<Record<StatKey, string>>(() =>
+    Object.fromEntries(STAT_KEYS.map((k) => [k, String(mon.actualStats?.[k] ?? "")])) as Record<StatKey, string>,
+  );
+
+  const resultFor = (key: StatKey) => {
+    const observed = parseInt(stats[key], 10);
+    if (Number.isNaN(observed)) return null;
+    return ivRange(data.baseStats[key], mon.level, parseInt(evs[key], 10) || 0, observed, key, nature || undefined);
+  };
+
+  const save = () => {
+    const evOut: Partial<Record<StatKey, number>> = {};
+    const statOut: Partial<Record<StatKey, number>> = {};
+    for (const key of STAT_KEYS) {
+      const ev = parseInt(evs[key], 10);
+      if (!Number.isNaN(ev)) evOut[key] = Math.min(252, Math.max(0, ev));
+      const st = parseInt(stats[key], 10);
+      if (!Number.isNaN(st)) statOut[key] = st;
+    }
+    onSave({
+      nature: nature || undefined,
+      evs: Object.keys(evOut).length ? evOut : undefined,
+      actualStats: Object.keys(statOut).length ? statOut : undefined,
+    });
+  };
+
+  return (
+    <div className="iv-editor">
+      <div className="iv-head">
+        <label>
+          Nature
+          <select value={nature} onChange={(e) => setNature(e.target.value)}>
+            <option value="">Unknown</option>
+            {NATURES.map((nat) => (
+              <option key={nat.name} value={nat.name}>
+                {nat.name}
+                {nat.up ? ` (+${STAT_LABELS[nat.up]}, −${STAT_LABELS[nat.down as StatKey]})` : " (neutral)"}
+              </option>
+            ))}
+          </select>
+        </label>
+        <span className="muted">IVs solved at Lv {mon.level} — freshly caught Pokémon have 0 EVs.</span>
+        <button className="primary" onClick={save}>Save</button>
+      </div>
+      <div className="iv-grid">
+        {STAT_KEYS.map((key) => {
+          const result = resultFor(key);
+          const hasInput = stats[key] !== "";
+          return (
+            <div key={key} className="iv-cell">
+              <span className="iv-stat-name">{STAT_LABELS[key]} <span className="muted">base {data.baseStats[key]}</span></span>
+              <input
+                type="number" min={0} max={999} placeholder="Stat"
+                value={stats[key]} onChange={(e) => setStats((p) => ({ ...p, [key]: e.target.value }))}
+                aria-label={`${STAT_LABELS[key]} actual stat`}
+              />
+              <input
+                type="number" min={0} max={252} placeholder="EVs"
+                value={evs[key]} onChange={(e) => setEvs((p) => ({ ...p, [key]: e.target.value }))}
+                aria-label={`${STAT_LABELS[key]} EVs`}
+              />
+              <span className={`iv-result ${hasInput && !result ? "iv-bad" : ""}`}>
+                {!hasInput ? "IV —" : result ? `IV ${result.min === result.max ? result.min : `${result.min}–${result.max}`}` : "no match"}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+      <p className="muted iv-note">
+        "No match" means no IV produces that stat with this nature/EVs — usually a typo, the wrong nature, or untracked EVs from battles.
+      </p>
+    </div>
   );
 }

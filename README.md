@@ -10,7 +10,7 @@ ROM hacks are where trackers fall down: boss teams, encounter tables, level caps
 - **Run logging** for three rulesets: casual playthrough, Nuzlocke, and Hardcore Nuzlocke (level-cap warnings)
 - **Timeline view**: encounters grouped into the segment leading up to each boss, with a boss checkpoint card at the end of each segment — so you see everything you can catch before a fight, in order
 - **Encounter log** per area with dupes-clause flagging — plus **custom areas**: add your own area + species list when a pack has no table for a place (the **+** button in the timeline)
-- **Party / Box / Graveyard** roster management with a by-typing team coverage report (including "uncovered threats")
+- **Party / Box / Graveyard** roster management with a by-typing team coverage report (including "uncovered threats"), plus a per-Pokémon **IV checker**: enter its nature, the stats the game shows, and any EVs — the IV for each stat is solved live (a range at low levels, exact as it grows)
 - **Boss tracking, cap-first**: boss cards show the level cap up front; click a boss's name to reveal its team only when you want it. Defeat progress across the whole game
 - **Local-first**: runs persist in your browser (localStorage); no account, no backend. **Export/Import backup** (JSON) is on the My runs panel — the data lives in your browser, so it survives the dev server stopping, but it is per-browser/per-origin: use the backup to move runs or keep them safe
 - Desktop-first UI (phone pass planned); black-first neon theme (purple/blue/pink highlights, green reserved for success states). The home screen shows your runs first, then collapsible game categories — base games grouped by generation
