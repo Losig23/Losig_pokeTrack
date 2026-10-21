@@ -628,16 +628,50 @@ function TimelineTab({
   const nextArea = [...packAreas, ...customAreas].find((a) => !logged(a.id));
   const nextUndefeated = sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id));
 
+  // Segments fold so the timeline stays navigable: beaten segments fold
+  // automatically (for variant groups, beating any one variant counts),
+  // and the player can fold/expand any segment manually.
+  const [foldOverride, setFoldOverride] = useState<Record<string, boolean>>({});
+  const groupKey = (g: { bosses: Boss[] }) => g.bosses.map((b) => b.id).join("+");
+  const isFolded = (g: { areas: Area[]; bosses: Boss[] }) => {
+    const key = groupKey(g);
+    if (key in foldOverride) return foldOverride[key];
+    return g.bosses.some((b) => run.defeatedBossIds.includes(b.id));
+  };
+  const setAllFolds = (folded: boolean) =>
+    setFoldOverride(Object.fromEntries(groups.map((g) => [groupKey(g), folded])));
+
   return (
     <section className="panel timeline">
-      {nextArea ? (
-        <p className="continue-banner">Continue at <span className="accent">{nextArea.name}</span> →</p>
-      ) : nextUndefeated ? (
-        <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
-      ) : null}
-      {groups.map((g, gi) => (
+      <div className="timeline-top">
+        {nextArea ? (
+          <p className="continue-banner">Continue at <span className="accent">{nextArea.name}</span> →</p>
+        ) : nextUndefeated ? (
+          <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
+        ) : <span />}
+        <div className="timeline-fold-actions">
+          <button className="ghost" onClick={() => setAllFolds(true)}>Collapse all</button>
+          <button className="ghost" onClick={() => setAllFolds(false)}>Expand all</button>
+        </div>
+      </div>
+      {groups.map((g, gi) => {
+        const folded = isFolded(g);
+        const loggedCount = g.areas.filter((a) => logged(a.id)).length;
+        return (
         <div key={gi} className="segment">
-          {g.areas.map(areaRow)}
+          {g.areas.length > 0 && (
+            <div className="segment-head">
+              <button
+                className="segment-toggle"
+                onClick={() => setFoldOverride((p) => ({ ...p, [groupKey(g)]: !folded }))}
+              >
+                <span className="chev">{folded ? "▸" : "▾"}</span>
+                {" "}{g.areas.length} route{g.areas.length === 1 ? "" : "s"} before {g.bosses.map((b) => b.name).join(" / ")}
+              </button>
+              <span className="muted">{loggedCount}/{g.areas.length} logged</span>
+            </div>
+          )}
+          {!folded && g.areas.map(areaRow)}
           {g.bosses.length === 1 ? (
             <BossCard
               boss={g.bosses[0]}
@@ -660,7 +694,8 @@ function TimelineTab({
             </div>
           )}
         </div>
-      ))}
+        );
+      })}
       {segments.length === 0 && packAreas.map(areaRow)}
       {trailing.length > 0 && (
         <div className="segment">

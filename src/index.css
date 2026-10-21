@@ -210,6 +210,17 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .party-slot img { width: 42px; height: 42px; }
 .continue-banner { font-size: 15px; font-weight: 600; margin: 2px 0 10px; }
 .continue-banner .accent { color: var(--blue); }
+.timeline-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.timeline-fold-actions { display: flex; gap: 8px; }
+.segment-head {
+  display: flex; align-items: center; gap: 10px; padding: 8px 0 2px;
+}
+.segment-toggle {
+  background: none; border: none; color: var(--muted); cursor: pointer; padding: 2px 0;
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-align: left;
+}
+.segment-toggle .chev { color: var(--blue); }
+.segment-toggle:hover { color: var(--text); }
 
 .route-block { border-top: 1px solid var(--border-soft); padding: 12px 0 6px; }
 .route-block h4 { margin: 0 0 8px; }
