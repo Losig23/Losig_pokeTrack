@@ -142,6 +142,41 @@ export function useSpeciesData(slugs: string[]): Record<string, SpeciesData> {
   return map;
 }
 
+const MOVE_CACHE_PREFIX = "runbook-move-";
+
+/** Move slug → type name, from PokéAPI, cached like species data. Used by boss-prep trap detection. */
+export function useMoveTypes(slugs: string[]): Record<string, string> {
+  const [map, setMap] = useState<Record<string, string>>({});
+  const key = [...new Set(slugs)].sort().join(",");
+  useEffect(() => {
+    let cancelled = false;
+    const unique = key ? key.split(",") : [];
+    for (const slug of unique) {
+      try {
+        const cached = localStorage.getItem(MOVE_CACHE_PREFIX + slug);
+        if (cached) {
+          setMap((prev) => (prev[slug] ? prev : { ...prev, [slug]: cached }));
+          continue;
+        }
+      } catch { /* cache is best-effort */ }
+      void fetch(`https://pokeapi.co/api/v2/move/${slug}`)
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data: { type?: { name?: string } } | null) => {
+          const type = data?.type?.name;
+          if (!cancelled && type) {
+            try { localStorage.setItem(MOVE_CACHE_PREFIX + slug, type); } catch { /* best-effort */ }
+            setMap((prev) => ({ ...prev, [slug]: type }));
+          }
+        })
+        .catch(() => { /* move type unknown — trap detection just skips it */ });
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [key]);
+  return map;
+}
+
 export function displayName(slug: string): string {
   return slug
     .split("-")

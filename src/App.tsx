@@ -9,7 +9,8 @@ import {
 } from "./engine/run";
 import { teamCoverage } from "./engine/coverage";
 import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
-import { displayName, useSpeciesData } from "./data/pokemon";
+import { buildPrepReport, type PrepCandidate } from "./engine/prep";
+import { displayName, useMoveTypes, useSpeciesData } from "./data/pokemon";
 import { exportRunsJson, parseRunsJson, useRuns } from "./store";
 
 const RULESET_LABELS: Record<Ruleset, string> = {
@@ -267,7 +268,7 @@ function Home({
   );
 }
 
-type Tab = "timeline" | "roster" | "bosses";
+type Tab = "timeline" | "roster" | "prep" | "bosses";
 
 function RunView({
   run, onChange, onBack, onDelete,
@@ -368,9 +369,9 @@ function RunView({
       )}
 
       <nav className="tabs">
-        {(["timeline", "roster", "bosses"] as Tab[]).map((t) => (
+        {(["timeline", "roster", "prep", "bosses"] as Tab[]).map((t) => (
           <button key={t} className={tab === t ? "tab active" : "tab"} onClick={() => setTab(t)}>
-            {t === "timeline" ? "Timeline" : t === "roster" ? "Party & Box" : "Bosses"}
+            {t === "timeline" ? "Timeline" : t === "roster" ? "Party & Box" : t === "prep" ? "Boss Prep" : "Bosses"}
           </button>
         ))}
       </nav>
@@ -379,6 +380,7 @@ function RunView({
         <TimelineTab run={run} pack={pack} species={species} onChange={onChange} onToggleBoss={toggleBoss} />
       )}
       {tab === "roster" && <RosterTab run={run} species={species} onChange={onChange} />}
+      {tab === "prep" && <PrepTab run={run} pack={pack} species={species} />}
       {tab === "bosses" && (
         <section className="panel boss-list">
           {sortedBosses(pack).map((boss) => (
@@ -823,5 +825,164 @@ function MonIvEditor({
         "No match" means no IV produces that stat with this nature/EVs — usually a typo, the wrong nature, or untracked EVs from battles.
       </p>
     </div>
+  );
+}
+
+/**
+ * Boss Prep (Phase 2): counter scan of the logged party + box against a
+ * selected boss — checks, walls, outspeeds, trap picks, threat list, and
+ * an auto-generated prep checklist. Matchups are a STAB view by typing,
+ * refined by the boss's recorded moves for trap detection; speed compares
+ * estimated stats at each side's level (IV 15, neutral).
+ */
+function PrepTab({
+  run, pack, species,
+}: {
+  run: Run;
+  pack: GamePack;
+  species: Record<string, SpeciesData>;
+}) {
+  const upcoming = nextBoss(run, pack);
+  const [bossId, setBossId] = useState<string>(upcoming?.id ?? pack.bosses[0]?.id ?? "");
+  const boss = pack.bosses.find((b) => b.id === bossId) ?? upcoming ?? pack.bosses[0];
+
+  const segmentAreas = useMemo(() => {
+    if (!boss) return [];
+    const { segments } = bossSegments(pack, sortedAreas(pack));
+    return segments.find((s) => s.boss.id === boss.id)?.areas ?? [];
+  }, [pack, boss]);
+
+  const poolSlugs = useMemo(
+    () => [...new Set(segmentAreas.flatMap((a) => a.encounters.map((e) => e.species)))],
+    [segmentAreas],
+  );
+  const poolSpecies = useSpeciesData(poolSlugs);
+  const poolTypes = useMemo(() => {
+    const out: Record<string, string[]> = {};
+    for (const [slug, data] of Object.entries(poolSpecies)) out[slug] = data.types;
+    return out;
+  }, [poolSpecies]);
+
+  const moveTypes = useMoveTypes(boss ? boss.team.flatMap((m) => m.moves) : []);
+
+  const report = useMemo(() => {
+    if (!boss) return null;
+    return buildPrepReport({
+      boss,
+      roster: run.team.filter((m) => m.status !== "graveyard"),
+      species, moveTypes, segmentAreas, poolTypes,
+    });
+  }, [boss, run.team, species, moveTypes, segmentAreas, poolTypes]);
+
+  if (!boss || !report) {
+    return <section className="panel"><p className="muted">This pack has no boss data yet.</p></section>;
+  }
+
+  const candLine = (c: PrepCandidate) => (
+    <li key={c.mon.uid} className="prep-cand">
+      <strong>{c.mon.nickname || displayName(c.mon.species)}</strong>
+      <span className="muted">
+        {" "}({c.mon.status}, Lv {c.mon.level}) · hits ×{c.offense} · takes ×{c.defense}
+        {c.outspeeds ? " · outspeeds" : ` · slower (${c.estSpeed} vs ${c.bossEstSpeed})`}
+      </span>
+    </li>
+  );
+
+  return (
+    <section className="panel prep">
+      <div className="prep-head">
+        <label>
+          Prep for
+          <select value={boss.id} onChange={(e) => setBossId(e.target.value)}>
+            {sortedBosses(pack).map((b) => (
+              <option key={b.id} value={b.id}>
+                {b.name} — {b.location} (cap {b.levelCap}){run.defeatedBossIds.includes(b.id) ? " ✓" : ""}
+              </option>
+            ))}
+          </select>
+        </label>
+        <span className="cap-badge">Level cap {boss.levelCap}</span>
+      </div>
+      <BossTeamGrid boss={boss} species={species} />
+      <p className="muted">
+        Matchups use each side's own types (STAB view); traps also check the boss's recorded moves.
+        Speed is estimated at each Pokémon's level (IV 15, neutral nature). Damage calculation is v2.
+      </p>
+
+      {report.threats.length > 0 && (
+        <div className="prep-threats">
+          <strong>⚠ Threat list:</strong>{" "}
+          {report.threats.map((t) => displayName(t.bossMon.species) + (t.isAce ? " (ace)" : "")).join(", ")}
+          {" "}— nothing available resists {report.threats.length === 1 ? "it" : "them"}.
+        </div>
+      )}
+      {report.recommendedLead && (
+        <p className="prep-lead">
+          Suggested lead: <strong>{report.recommendedLead.mon.nickname || displayName(report.recommendedLead.mon.species)}</strong>
+          {" "}into {displayName(report.recommendedLead.against.species)}.
+        </p>
+      )}
+
+      {report.perMon.map((p) => (
+        <div key={p.bossMon.species + p.bossMon.level} className="prep-mon">
+          <div className="prep-mon-head">
+            {p.data?.sprite
+              ? <img src={p.data.sprite} alt={p.bossMon.species} width={44} height={44} />
+              : <div className="sprite-placeholder small" />}
+            <strong>{displayName(p.bossMon.species)}{p.bossMon.form ? ` (${p.bossMon.form})` : ""}</strong>
+            <span className="muted">
+              Lv {p.bossMon.level} · {p.data ? p.data.types.map(displayName).join(" / ") : "type data loading…"}
+              {p.isAce ? " · ACE" : ""}
+            </span>
+            {p.threat && <span className="threat-tag">THREAT</span>}
+          </div>
+          {p.checks.length > 0 && (
+            <>
+              <h5>✅ Checks</h5>
+              <ul className="prep-list">{p.checks.map(candLine)}</ul>
+            </>
+          )}
+          {p.walls.length > 0 && (
+            <>
+              <h5>🧱 Walls</h5>
+              <ul className="prep-list">{p.walls.map(candLine)}</ul>
+            </>
+          )}
+          {p.traps.length > 0 && (
+            <>
+              <h5>⚠ Trap picks</h5>
+              <ul className="prep-list">
+                {p.traps.map((c) => (
+                  <li key={c.mon.uid} className="prep-cand">
+                    <strong>{c.mon.nickname || displayName(c.mon.species)}</strong>
+                    <span className="muted"> ({c.mon.status}, Lv {c.mon.level}) — {c.trapReason}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {p.checks.length === 0 && p.walls.length === 0 && (
+            <p className="muted">
+              No clean answers on your roster.
+              {p.candidates.length > 0 && (
+                <> Least-bad: {p.candidates[0].mon.nickname || displayName(p.candidates[0].mon.species)} (takes ×{p.candidates[0].defense}).</>
+              )}
+            </p>
+          )}
+          {p.threat && p.catchSuggestions.length > 0 && (
+            <p className="prep-catch">
+              Catch before this fight: {p.catchSuggestions.map((s) => `${displayName(s.species)} (${s.areaName})`).join(", ")}.
+            </p>
+          )}
+        </div>
+      ))}
+
+      <div className="prep-checklist">
+        <h4>Prep checklist</h4>
+        <ul>
+          {report.checklist.map((line, i) => <li key={i}>{line}</li>)}
+        </ul>
+      </div>
+    </section>
   );
 }

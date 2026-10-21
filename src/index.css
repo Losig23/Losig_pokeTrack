@@ -251,6 +251,26 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .iv-note { margin: 10px 0 0; }
 .coverage { margin-top: 10px; border-top: 1px solid var(--border-soft); padding-top: 12px; }
 
+/* Boss Prep */
+.prep-head { display: flex; align-items: end; gap: 14px; flex-wrap: wrap; }
+.prep-threats {
+  border: 1px solid var(--warn); color: var(--warn); background: rgba(255, 211, 77, 0.07);
+  border-radius: 10px; padding: 10px 12px; margin: 12px 0; font-size: 14px;
+}
+.prep-lead { font-size: 15px; }
+.prep-mon { border-top: 1px solid var(--border-soft); padding: 14px 0 6px; }
+.prep-mon-head { display: flex; align-items: center; gap: 10px; }
+.prep-mon h5 { margin: 10px 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.threat-tag {
+  margin-left: auto; border: 1px solid var(--warn); color: var(--warn); border-radius: 999px;
+  font-size: 11px; font-weight: 800; padding: 3px 9px; letter-spacing: 0.06em;
+}
+.prep-list { list-style: none; margin: 0; padding: 0; }
+.prep-cand { padding: 3px 0; font-size: 14px; }
+.prep-catch { color: #7dd3fc; font-size: 14px; }
+.prep-checklist { border-top: 1px solid var(--border-soft); margin-top: 14px; padding-top: 12px; }
+.prep-checklist ul { margin: 6px 0 0; padding-left: 20px; line-height: 1.65; }
+
 @media (max-width: 980px) {
   .area-row { grid-template-columns: 1fr; row-gap: 8px; }
   .area-form { grid-template-columns: repeat(2, 1fr); }
