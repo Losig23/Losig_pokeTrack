@@ -38,6 +38,13 @@ export interface BossSegment {
  * the area list. Areas past the final boss come back as `trailing`.
  * This is an approximation of story order, not pack-exact data.
  */
+/** League bosses (Elite Four members + the Champion) receive no encounters:
+ *  by the time a run reaches the league, its catching is done — those areas
+ *  belong to the last pre-league boss's segment instead. Detected by name
+ *  because pack data doesn't carry a boss kind. Post-league bosses whose
+ *  names aren't league titles (Red, N, Ghetsis) still receive areas. */
+const LEAGUE_NAME = /^(elite four)\b|champion/i;
+
 export function bossSegments(
   pack: GamePack,
   areas: Area[],
@@ -47,15 +54,17 @@ export function bossSegments(
   const maxBossOrder = Math.max(...bosses.map((b) => b.order));
   const maxAreaOrder = Math.max(...areas.map((a) => a.order), 1);
   const segments: BossSegment[] = bosses.map((boss) => ({ boss, areas: [] }));
-  const trailing: Area[] = [];
-  let bi = 0;
+  const segmentOf = new Map(bosses.map((b, i) => [b.id, segments[i]]));
+  const receivers = bosses.filter((b) => !LEAGUE_NAME.test(b.name));
+  const pool = receivers.length > 0 ? receivers : bosses;
   for (const area of areas) {
     const frac = area.order / maxAreaOrder;
-    while (bi < bosses.length - 1 && bosses[bi].order / maxBossOrder < frac) bi++;
-    if (frac <= bosses[bi].order / maxBossOrder) segments[bi].areas.push(area);
-    else trailing.push(area);
+    const target =
+      pool.find((b) => b.order / maxBossOrder >= frac) ?? pool[pool.length - 1];
+    segmentOf.get(target.id)?.areas.push(area);
   }
-  return { segments, trailing };
+  // Nothing trails anymore: every area lands in some boss's segment.
+  return { segments, trailing: [] };
 }
 
 /** The next unbeaten boss in game order, or null when every boss is beaten. */

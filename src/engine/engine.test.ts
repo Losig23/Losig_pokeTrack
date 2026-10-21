@@ -106,6 +106,26 @@ describe("run engine", () => {
     expect(trailing).toEqual([]);
   });
 
+  it("elite four and champion segments receive no encounters", () => {
+    const pack: GamePack = {
+      ...fixturePack,
+      areas: [10, 20, 30, 40].map((order) => ({
+        id: `a${order}`, name: `Area ${order}`, order,
+        encounters: [{ species: "pidgey", minLevel: 2, maxLevel: 5, methods: ["grass"] }],
+      })),
+      bosses: [
+        { id: "g1", name: "Gym Leader One", location: "L1", order: 10, levelCap: 10, team: [{ species: "onix", level: 10, moves: [] }] },
+        { id: "e1", name: "Elite Four One", location: "League", order: 20, levelCap: 50, team: [{ species: "alakazam", level: 50, moves: [] }] },
+        { id: "c1", name: "Champion One", location: "League", order: 30, levelCap: 60, team: [{ species: "charizard", level: 60, moves: [] }] },
+      ],
+    };
+    const { segments } = bossSegments(pack, pack.areas);
+    // area fracs .25–1.0; the gym (frac .33) is the only receiver, so it takes all areas
+    expect(segments[0].areas).toHaveLength(4);
+    expect(segments[1].areas).toHaveLength(0);
+    expect(segments[2].areas).toHaveLength(0);
+  });
+
   it("custom areas are appended after pack areas for logging", () => {
     const run = createRun("fixture", "nuzlocke", "Test");
     run.customAreas = [{

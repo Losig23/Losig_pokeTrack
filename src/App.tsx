@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   Area, Boss, CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData,
 } from "./engine/types";
@@ -21,6 +21,12 @@ export default function App() {
   const { runs, addRun, updateRun, deleteRun, importRuns } = useRuns();
   const [activeRunId, setActiveRunId] = useState<string | null>(null);
   const activeRun = runs.find((r) => r.id === activeRunId) ?? null;
+
+  // Opening or starting a run starts at the top of the page, not wherever
+  // the previous view happened to be scrolled to.
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [activeRunId]);
 
   return (
     <div className="app">
@@ -192,6 +198,32 @@ function Home({
 
       <section className="panel">
         <h2>New run</h2>
+        <div className="new-run-form top">
+          <label>
+            Ruleset
+            <select value={ruleset} onChange={(e) => setRuleset(e.target.value as Ruleset)}>
+              {Object.entries(RULESET_LABELS).map(([value, label]) => (
+                <option key={value} value={value}>{label}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Run name
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder={`${getPack(packId)?.name ?? "Run"} — Attempt 1`}
+            />
+          </label>
+          <button
+            className="primary"
+            onClick={() =>
+              onCreate(packId, ruleset, name.trim() || `${getPack(packId)?.name} — Attempt 1`)
+            }
+          >
+            Start run
+          </button>
+        </div>
         <label className="pack-search">
           Find a game
           <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search base games, ROM hacks, fan games…" />
@@ -229,32 +261,6 @@ function Home({
             </div>
           );
         })}
-        <div className="new-run-form">
-          <label>
-            Ruleset
-            <select value={ruleset} onChange={(e) => setRuleset(e.target.value as Ruleset)}>
-              {Object.entries(RULESET_LABELS).map(([value, label]) => (
-                <option key={value} value={value}>{label}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Run name
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder={`${getPack(packId)?.name ?? "Run"} — Attempt 1`}
-            />
-          </label>
-          <button
-            className="primary"
-            onClick={() =>
-              onCreate(packId, ruleset, name.trim() || `${getPack(packId)?.name} — Attempt 1`)
-            }
-          >
-            Start run
-          </button>
-        </div>
       </section>
     </main>
   );
@@ -273,6 +279,7 @@ function RunView({
   const pack = getPack(run.packId) as GamePack;
   const [tab, setTab] = useState<Tab>("timeline");
   const [nextBossOpen, setNextBossOpen] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const upcoming = nextBoss(run, pack);
   const cap = currentLevelCap(run, pack);
   const overCap = run.ruleset === "hardcore" ? overCapMembers(run, pack) : [];
@@ -298,10 +305,25 @@ function RunView({
         <button className="ghost" onClick={onBack}>← All runs</button>
         <div>
           <h2>{run.name}</h2>
-          <p className="muted">
-            {pack.name} · {RULESET_LABELS[run.ruleset]} · Attempt {run.attempts} · {run.status}
-            {pack.notes ? <> · Pack: {pack.notes}</> : null}
-          </p>
+          <div className="meta-badges">
+            <span className="meta-badge ruleset">{RULESET_LABELS[run.ruleset]}</span>
+            <span className="meta-badge">{pack.name}</span>
+            <span className="meta-badge">Attempt {run.attempts}</span>
+            {cap !== null && run.ruleset !== "casual" && (
+              <span className="meta-badge">Current cap {cap}</span>
+            )}
+          </div>
+          <button className="pack-details-toggle" onClick={() => setDetailsOpen((v) => !v)}>
+            <span className="chev">{detailsOpen ? "▾" : "▸"}</span> Pack details
+          </button>
+          {detailsOpen && (
+            <div className="pack-details">
+              {pack.notes && <p className="muted">{pack.notes}</p>}
+              {pack.sourceDocs.length > 0 && (
+                <p className="muted">Sources: {pack.sourceDocs.join(" · ")}</p>
+              )}
+            </div>
+          )}
         </div>
         <div className="run-head-actions">
           <select
