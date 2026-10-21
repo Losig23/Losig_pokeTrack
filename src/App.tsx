@@ -1,15 +1,15 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import type {
-  CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData,
+  Area, Boss, CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData,
 } from "./engine/types";
 import { PACKS, PLANNED_PACKS, getPack } from "./data/packs";
-import { sortedBosses } from "./engine/pack";
+import { sortedAreas, sortedBosses } from "./engine/pack";
 import {
-  allAreas, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
+  bossSegments, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
 } from "./engine/run";
 import { teamCoverage } from "./engine/coverage";
 import { displayName, useSpeciesData } from "./data/pokemon";
-import { useRuns } from "./store";
+import { exportRunsJson, parseRunsJson, useRuns } from "./store";
 
 const RULESET_LABELS: Record<Ruleset, string> = {
   casual: "Casual playthrough",
@@ -18,7 +18,7 @@ const RULESET_LABELS: Record<Ruleset, string> = {
 };
 
 export default function App() {
-  const { runs, addRun, updateRun, deleteRun } = useRuns();
+  const { runs, addRun, updateRun, deleteRun, importRuns } = useRuns();
   const [activeRunId, setActiveRunId] = useState<string | null>(null);
   const activeRun = runs.find((r) => r.id === activeRunId) ?? null;
 
@@ -44,6 +44,7 @@ export default function App() {
         <Home
           runs={runs}
           onOpen={setActiveRunId}
+          onImport={importRuns}
           onCreate={(packId, ruleset, name) => {
             const run = createRun(packId, ruleset, name);
             addRun(run);
@@ -54,22 +55,26 @@ export default function App() {
       <footer className="footer">
         Fan-made, non-commercial tracker. Pokémon © Nintendo / Game Freak / Creatures Inc.
         Pack data is community-sourced — check each pack's sources. No ROMs or patches are hosted here.
+        Runs are saved in this browser's local storage — export a backup from My runs to keep them safe.
       </footer>
     </div>
   );
 }
 
 function Home({
-  runs, onOpen, onCreate,
+  runs, onOpen, onCreate, onImport,
 }: {
   runs: Run[];
   onOpen: (id: string) => void;
   onCreate: (packId: string, ruleset: Ruleset, name: string) => void;
+  onImport: (runs: Run[]) => void;
 }) {
   const [packId, setPackId] = useState(PACKS[0].id);
   const [ruleset, setRuleset] = useState<Ruleset>("nuzlocke");
   const [name, setName] = useState("");
   const [query, setQuery] = useState("");
+  const [importMsg, setImportMsg] = useState("");
+  const fileRef = useRef<HTMLInputElement>(null);
   const q = query.trim().toLowerCase();
   const matches = (n: string) => !q || n.toLowerCase().includes(q);
 
@@ -78,6 +83,26 @@ function Home({
     { key: "hack", title: "ROM hacks", packs: PACKS.filter((p) => p.category === "hack" && matches(p.name)), planned: PLANNED_PACKS.filter((p) => p.kind === "hack" && matches(p.name)) },
     { key: "fangame", title: "Fan games", packs: PACKS.filter((p) => p.category === "fangame" && matches(p.name)), planned: PLANNED_PACKS.filter((p) => p.kind === "fangame" && matches(p.name)) },
   ];
+
+  const doExport = () => {
+    const blob = new Blob([exportRunsJson(runs)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "runbook-runs.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const doImport = async (file: File) => {
+    const imported = parseRunsJson(await file.text());
+    if (imported.length === 0) {
+      setImportMsg("That file didn't contain any RunBook runs.");
+      return;
+    }
+    onImport(imported);
+    setImportMsg(`Imported ${imported.length} run${imported.length === 1 ? "" : "s"}.`);
+  };
 
   return (
     <main className="home">
@@ -144,7 +169,25 @@ function Home({
       </section>
 
       <section className="panel">
-        <h2>My runs</h2>
+        <div className="runs-head">
+          <h2>My runs</h2>
+          <div className="runs-actions">
+            <button className="ghost" onClick={doExport} disabled={runs.length === 0}>Export backup</button>
+            <button className="ghost" onClick={() => fileRef.current?.click()}>Import backup</button>
+            <input
+              ref={fileRef}
+              type="file"
+              accept="application/json"
+              style={{ display: "none" }}
+              onChange={(e) => {
+                const f = e.target.files?.[0];
+                if (f) void doImport(f);
+                e.target.value = "";
+              }}
+            />
+          </div>
+        </div>
+        {importMsg && <p className="muted">{importMsg}</p>}
         {runs.length === 0 && <p className="muted">No runs yet. Start one above.</p>}
         <div className="run-list">
           {runs.map((run) => {
@@ -165,7 +208,7 @@ function Home({
   );
 }
 
-type Tab = "encounters" | "roster" | "bosses";
+type Tab = "timeline" | "roster" | "bosses";
 
 function RunView({
   run, onChange, onBack, onDelete,
@@ -176,7 +219,8 @@ function RunView({
   onDelete: () => void;
 }) {
   const pack = getPack(run.packId) as GamePack;
-  const [tab, setTab] = useState<Tab>("encounters");
+  const [tab, setTab] = useState<Tab>("timeline");
+  const [nextBossOpen, setNextBossOpen] = useState(false);
   const upcoming = nextBoss(run, pack);
   const cap = currentLevelCap(run, pack);
   const overCap = run.ruleset === "hardcore" ? overCapMembers(run, pack) : [];
@@ -187,7 +231,6 @@ function RunView({
   );
   const teamSlugs = useMemo(() => run.team.map((m) => m.species), [run.team]);
   const species = useSpeciesData([...bossSlugs, ...teamSlugs]);
-  const sprite = (slug: string) => species[slug]?.sprite;
 
   const toggleBoss = (bossId: string) =>
     onChange({
@@ -228,23 +271,18 @@ function RunView({
 
       {upcoming && (
         <section className="panel next-boss">
-          <h3>Next boss: {upcoming.name}</h3>
-          <p className="muted">
-            {upcoming.location} · Level cap {upcoming.levelCap}
-            {cap !== null && run.ruleset !== "casual" ? ` · Your cap: ${cap}` : ""}
-          </p>
-          <div className="boss-team">
-            {upcoming.team.map((mon, i) => (
-              <div key={i} className="boss-mon">
-                {sprite(mon.species)
-                  ? <img src={sprite(mon.species)} alt={mon.species} width={56} height={56} />
-                  : <div className="sprite-placeholder" />}
-                <span>{displayName(mon.species)}{mon.form ? ` (${mon.form})` : ""}</span>
-                <span className="muted">Lv {mon.level}</span>
-                {mon.ability && <span className="muted">{displayName(mon.ability)}</span>}
-              </div>
-            ))}
+          <div className="boss-card-head">
+            <button className="boss-name" onClick={() => setNextBossOpen((v) => !v)}>
+              Next boss: {upcoming.name} <span className="chev">{nextBossOpen ? "▾" : "▸"}</span>
+            </button>
+            <span className="cap-badge">Level cap {upcoming.levelCap}</span>
           </div>
+          <p className="muted">
+            {upcoming.location}
+            {cap !== null && run.ruleset !== "casual" ? ` · Your cap: ${cap}` : ""}
+            {" · "}Click the boss name to peek at the team.
+          </p>
+          {nextBossOpen && <BossTeamGrid boss={upcoming} species={species} />}
           <button className="primary" onClick={() => toggleBoss(upcoming.id)}>Mark defeated</button>
           {overCap.length > 0 && (
             <p className="warning">
@@ -255,30 +293,27 @@ function RunView({
       )}
 
       <nav className="tabs">
-        {(["encounters", "roster", "bosses"] as Tab[]).map((t) => (
+        {(["timeline", "roster", "bosses"] as Tab[]).map((t) => (
           <button key={t} className={tab === t ? "tab active" : "tab"} onClick={() => setTab(t)}>
-            {t === "encounters" ? "Encounters" : t === "roster" ? "Party & Box" : "Bosses"}
+            {t === "timeline" ? "Timeline" : t === "roster" ? "Party & Box" : "Bosses"}
           </button>
         ))}
       </nav>
 
-      {tab === "encounters" && <EncountersTab run={run} pack={pack} onChange={onChange} />}
+      {tab === "timeline" && (
+        <TimelineTab run={run} pack={pack} species={species} onChange={onChange} onToggleBoss={toggleBoss} />
+      )}
       {tab === "roster" && <RosterTab run={run} species={species} onChange={onChange} />}
       {tab === "bosses" && (
-        <section className="panel">
+        <section className="panel boss-list">
           {sortedBosses(pack).map((boss) => (
-            <div key={boss.id} className="boss-row">
-              <div>
-                <strong>{boss.name}</strong>
-                <span className="muted"> · {boss.location} · cap {boss.levelCap} · {boss.team.map((m) => displayName(m.species)).join(", ")}</span>
-              </div>
-              <button
-                className={run.defeatedBossIds.includes(boss.id) ? "chip done" : "chip"}
-                onClick={() => toggleBoss(boss.id)}
-              >
-                {run.defeatedBossIds.includes(boss.id) ? "Defeated ✓" : "Mark defeated"}
-              </button>
-            </div>
+            <BossCard
+              key={boss.id}
+              boss={boss}
+              species={species}
+              defeated={run.defeatedBossIds.includes(boss.id)}
+              onToggleBoss={toggleBoss}
+            />
           ))}
           {pack.bosses.length === 0 && <p className="muted">Boss data for this pack is still being gathered.</p>}
         </section>
@@ -287,39 +322,77 @@ function RunView({
   );
 }
 
-function EncountersTab({ run, pack, onChange }: { run: Run; pack: GamePack; onChange: (r: Run) => void }) {
-  const [draft, setDraft] = useState<Record<string, { species: string; outcome: EncounterOutcome; level: number; nickname: string }>>({});
+/** A boss's team, shown only when the player expands the boss card. */
+function BossTeamGrid({ boss, species }: { boss: Boss; species: Record<string, SpeciesData> }) {
+  return (
+    <div className="boss-team">
+      {boss.team.map((mon, i) => (
+        <div key={i} className="boss-mon">
+          {species[mon.species]?.sprite
+            ? <img src={species[mon.species].sprite} alt={mon.species} width={56} height={56} />
+            : <div className="sprite-placeholder" />}
+          <span>{displayName(mon.species)}{mon.form ? ` (${mon.form})` : ""}</span>
+          <span className="muted">Lv {mon.level}</span>
+          {mon.ability && <span className="muted">{displayName(mon.ability)}</span>}
+          {mon.item && <span className="muted">🎒 {displayName(mon.item)}</span>}
+          {mon.moves.length > 0 && (
+            <span className="muted moves">{mon.moves.map(displayName).join(", ")}</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Cap-first boss card: name + location + level cap; click the name to reveal the team. */
+function BossCard({
+  boss, species, defeated, onToggleBoss,
+}: {
+  boss: Boss;
+  species: Record<string, SpeciesData>;
+  defeated: boolean;
+  onToggleBoss: (bossId: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`boss-card ${defeated ? "defeated" : ""}`}>
+      <div className="boss-card-head">
+        <button className="boss-name" onClick={() => setOpen((v) => !v)}>
+          {boss.name} <span className="chev">{open ? "▾" : "▸"}</span>
+        </button>
+        <span className="muted">{boss.location}</span>
+        <span className="cap-badge">Lv cap {boss.levelCap}</span>
+        <button className={defeated ? "chip done" : "chip"} onClick={() => onToggleBoss(boss.id)}>
+          {defeated ? "Defeated ✓" : "Mark defeated"}
+        </button>
+      </div>
+      {open && <BossTeamGrid boss={boss} species={species} />}
+    </div>
+  );
+}
+
+type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; nickname: string };
+
+function TimelineTab({
+  run, pack, species, onChange, onToggleBoss,
+}: {
+  run: Run;
+  pack: GamePack;
+  species: Record<string, SpeciesData>;
+  onChange: (r: Run) => void;
+  onToggleBoss: (bossId: string) => void;
+}) {
+  const [draft, setDraft] = useState<Record<string, AreaDraft>>({});
+  const [formOpen, setFormOpen] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customSpecies, setCustomSpecies] = useState("");
   const [customLevel, setCustomLevel] = useState(5);
-  const areas = allAreas(run, pack);
+
+  const packAreas = sortedAreas(pack);
+  const customAreas = run.customAreas ?? [];
+  const { segments, trailing } = bossSegments(pack, packAreas);
 
   const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
-
-  const addCustomArea = () => {
-    const species = customSpecies
-      .split(",")
-      .map((s) => s.trim().toLowerCase().replace(/\s+/g, "-"))
-      .filter(Boolean);
-    if (!customName.trim() || species.length === 0) return;
-    const slug = customName.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    onChange({
-      ...run,
-      customAreas: [
-        ...(run.customAreas ?? []),
-        {
-          id: `custom-${slug}-${Date.now().toString(36)}`,
-          name: customName.trim(),
-          order: 100000 + (run.customAreas?.length ?? 0),
-          encounters: species.map((s) => ({
-            species: s, minLevel: customLevel, maxLevel: customLevel, methods: ["custom"],
-          })),
-        },
-      ],
-    });
-    setCustomName("");
-    setCustomSpecies("");
-  };
 
   const log = (areaId: string) => {
     const d = draft[areaId];
@@ -349,69 +422,140 @@ function EncountersTab({ run, pack, onChange }: { run: Run; pack: GamePack; onCh
     });
   };
 
-  return (
-    <section className="panel">
-      <div className="custom-area-form">
-        <strong>Add your own area</strong>
-        <span className="muted">For places the pack doesn't list — name it, add the species you can catch there (comma-separated), and log it like any other area.</span>
+  const addCustomArea = () => {
+    const speciesList = customSpecies
+      .split(",")
+      .map((s) => s.trim().toLowerCase().replace(/\s+/g, "-"))
+      .filter(Boolean);
+    if (!customName.trim() || speciesList.length === 0) return;
+    const slug = customName.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    onChange({
+      ...run,
+      customAreas: [
+        ...customAreas,
+        {
+          id: `custom-${slug}-${Date.now().toString(36)}`,
+          name: customName.trim(),
+          order: 100000 + customAreas.length,
+          encounters: speciesList.map((s) => ({
+            species: s, minLevel: customLevel, maxLevel: customLevel, methods: ["custom"],
+          })),
+        },
+      ],
+    });
+    setCustomName("");
+    setCustomSpecies("");
+    setFormOpen(false);
+  };
+
+  const areaRow = (area: Area) => {
+    const entry = logged(area.id);
+    const d: AreaDraft = draft[area.id] ?? {
+      species: area.encounters[0]?.species ?? "",
+      outcome: "caught",
+      level: area.encounters[0]?.minLevel ?? 5,
+      nickname: "",
+    };
+    const set = (patch: Partial<AreaDraft>) =>
+      setDraft((prev) => ({ ...prev, [area.id]: { ...d, ...patch } }));
+    return (
+      <div key={area.id} className="area-row">
+        <div className="area-main">
+          <strong>{area.name}</strong>
+          <span className="muted pool">
+            {area.encounters.slice(0, 8).map((e) => displayName(e.species)).join(", ")}
+            {area.encounters.length > 8 ? ` +${area.encounters.length - 8} more` : ""}
+          </span>
+          {entry && (
+            <span className={`outcome outcome-${entry.outcome}`}>
+              {entry.outcome}: {entry.species ? displayName(entry.species) : ""}
+              {entry.outcome === "caught" && entry.species && isDupe({ ...run, team: run.team.filter((m) => m.uid !== entry.monUid) }, entry.species)
+                ? " · dupes clause applies"
+                : ""}
+            </span>
+          )}
+        </div>
         <div className="area-form">
-          <input value={customName} onChange={(e) => setCustomName(e.target.value)} placeholder="Area name (e.g. Safari Zone)" />
-          <input value={customSpecies} onChange={(e) => setCustomSpecies(e.target.value)} placeholder="Species slugs (e.g. nidoran-f, exeggcute)" />
-          <input type="number" min={1} max={100} value={customLevel} onChange={(e) => setCustomLevel(Number(e.target.value))} aria-label="Typical level" />
-          <button className="primary" onClick={addCustomArea} disabled={!customName.trim() || !customSpecies.trim()}>
-            Add area
+          <select value={d.species} onChange={(e) => set({ species: e.target.value })}>
+            {area.encounters.map((e) => (
+              <option key={e.species + (e.form ?? "")} value={e.species}>
+                {displayName(e.species)}{e.form ? ` (${e.form})` : ""} · Lv {e.minLevel}–{e.maxLevel}
+              </option>
+            ))}
+          </select>
+          <select value={d.outcome} onChange={(e) => set({ outcome: e.target.value as EncounterOutcome })}>
+            <option value="caught">Caught</option>
+            <option value="missed">Missed</option>
+            <option value="fainted">Fainted</option>
+            <option value="skipped">Skipped</option>
+          </select>
+          {d.outcome === "caught" ? (
+            <>
+              <input type="number" min={1} max={100} value={d.level} onChange={(e) => set({ level: Number(e.target.value) })} aria-label="Level" />
+              <input value={d.nickname} onChange={(e) => set({ nickname: e.target.value })} placeholder="Nickname" />
+            </>
+          ) : (
+            <>
+              <span />
+              <span />
+            </>
+          )}
+          <button className="primary" onClick={() => log(area.id)} disabled={!d.species}>
+            {entry ? "Update" : "Log"}
           </button>
         </div>
       </div>
-      {areas.map((area) => {
-        const entry = logged(area.id);
-        const d = draft[area.id] ?? { species: area.encounters[0]?.species ?? "", outcome: "caught" as EncounterOutcome, level: area.encounters[0]?.minLevel ?? 5, nickname: "" };
-        const set = (patch: Partial<typeof d>) => setDraft((prev) => ({ ...prev, [area.id]: { ...d, ...patch } }));
-        return (
-          <div key={area.id} className="area-row">
-            <div className="area-main">
-              <strong>{area.name}{area.id.startsWith("custom-") ? " · custom" : ""}</strong>
-              <span className="muted pool">
-                {area.encounters.slice(0, 8).map((e) => displayName(e.species)).join(", ")}
-                {area.encounters.length > 8 ? ` +${area.encounters.length - 8} more` : ""}
-              </span>
-              {entry && (
-                <span className={`outcome outcome-${entry.outcome}`}>
-                  {entry.outcome}: {entry.species ? displayName(entry.species) : ""}
-                  {entry.outcome === "caught" && entry.species && isDupe({ ...run, team: run.team.filter((m) => m.uid !== entry.monUid) }, entry.species)
-                    ? " · dupes clause applies"
-                    : ""}
-                </span>
-              )}
-            </div>
-            <div className="area-form">
-              <select value={d.species} onChange={(e) => set({ species: e.target.value })}>
-                {area.encounters.map((e) => (
-                  <option key={e.species + (e.form ?? "")} value={e.species}>
-                    {displayName(e.species)}{e.form ? ` (${e.form})` : ""} · Lv {e.minLevel}–{e.maxLevel}
-                  </option>
-                ))}
-              </select>
-              <select value={d.outcome} onChange={(e) => set({ outcome: e.target.value as EncounterOutcome })}>
-                <option value="caught">Caught</option>
-                <option value="missed">Missed</option>
-                <option value="fainted">Fainted</option>
-                <option value="skipped">Skipped</option>
-              </select>
-              {d.outcome === "caught" && (
-                <>
-                  <input type="number" min={1} max={100} value={d.level} onChange={(e) => set({ level: Number(e.target.value) })} aria-label="Level" />
-                  <input value={d.nickname} onChange={(e) => set({ nickname: e.target.value })} placeholder="Nickname" />
-                </>
-              )}
-              <button className="primary" onClick={() => log(area.id)} disabled={!d.species}>
-                {entry ? "Update" : "Log"}
-              </button>
-            </div>
+    );
+  };
+
+  return (
+    <section className="panel timeline">
+      {segments.map(({ boss, areas }) => (
+        <div key={boss.id} className="segment">
+          {areas.map(areaRow)}
+          <BossCard
+            boss={boss}
+            species={species}
+            defeated={run.defeatedBossIds.includes(boss.id)}
+            onToggleBoss={onToggleBoss}
+          />
+        </div>
+      ))}
+      {segments.length === 0 && packAreas.map(areaRow)}
+      {trailing.length > 0 && (
+        <div className="segment">
+          <h4 className="segment-heading">After the final boss</h4>
+          {trailing.map(areaRow)}
+        </div>
+      )}
+      {customAreas.length > 0 && (
+        <div className="segment">
+          <h4 className="segment-heading">Your custom areas</h4>
+          {customAreas.map(areaRow)}
+        </div>
+      )}
+      {packAreas.length === 0 && customAreas.length === 0 && (
+        <p className="muted">This pack has no encounter table yet — add your own areas with the + button below to start logging.</p>
+      )}
+      <div className="add-area-row">
+        <button className="add-area-btn" onClick={() => setFormOpen((v) => !v)} aria-label="Add your own area">
+          +
+        </button>
+        <span className="muted">Add your own area</span>
+      </div>
+      {formOpen && (
+        <div className="custom-area-form">
+          <span className="muted">For places the pack doesn't list — name it, add the species you can catch there (comma-separated), and log it like any other area.</span>
+          <div className="area-form">
+            <input value={customName} onChange={(e) => setCustomName(e.target.value)} placeholder="Area name (e.g. Safari Zone)" />
+            <input value={customSpecies} onChange={(e) => setCustomSpecies(e.target.value)} placeholder="Species slugs (e.g. nidoran-f, exeggcute)" />
+            <input type="number" min={1} max={100} value={customLevel} onChange={(e) => setCustomLevel(Number(e.target.value))} aria-label="Typical level" />
+            <button className="primary" onClick={addCustomArea} disabled={!customName.trim() || !customSpecies.trim()}>
+              Add area
+            </button>
           </div>
-        );
-      })}
-      {areas.length === 0 && <p className="muted">This pack has no encounter table yet — add your own areas above to start logging.</p>}
+        </div>
+      )}
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GamePack, SpeciesData } from "./types";
 import { validatePack } from "./pack";
-import { allAreas, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers } from "./run";
+import { allAreas, bossSegments, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers } from "./run";
 import { teamCoverage } from "./coverage";
 import { effectiveness } from "./typeChart";
 
@@ -85,6 +85,25 @@ describe("run engine", () => {
       uid: "m1", species: "charizard", level: 20, status: "party", caughtAreaId: "route-1",
     }];
     expect(overCapMembers(run, fixturePack).map((m) => m.uid)).toEqual(["m1"]);
+  });
+
+  it("boss segments group areas before each boss by relative progress", () => {
+    const pack: GamePack = {
+      ...fixturePack,
+      areas: [10, 20, 30, 40].map((order) => ({
+        id: `a${order}`, name: `Area ${order}`, order,
+        encounters: [{ species: "pidgey", minLevel: 2, maxLevel: 5, methods: ["grass"] }],
+      })),
+      bosses: [
+        { id: "b1", name: "Boss 1", location: "L1", order: 10, levelCap: 10, team: [{ species: "onix", level: 10, moves: [] }] },
+        { id: "b2", name: "Boss 2", location: "L2", order: 20, levelCap: 20, team: [{ species: "onix", level: 20, moves: [] }] },
+      ],
+    };
+    const { segments, trailing } = bossSegments(pack, pack.areas);
+    // area fracs .25/.5/.75/1 vs boss fracs .5/1 → first two areas lead to b1, rest to b2
+    expect(segments[0].areas.map((a) => a.id)).toEqual(["a10", "a20"]);
+    expect(segments[1].areas.map((a) => a.id)).toEqual(["a30", "a40"]);
+    expect(trailing).toEqual([]);
   });
 
   it("custom areas are appended after pack areas for logging", () => {

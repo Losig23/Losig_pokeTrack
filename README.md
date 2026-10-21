@@ -8,11 +8,12 @@ ROM hacks are where trackers fall down: boss teams, encounter tables, level caps
 
 - **25 game packs**: 22 mainline base games (every generation, paired versions combined) + 3 ROM hacks, in a grouped, searchable picker
 - **Run logging** for three rulesets: casual playthrough, Nuzlocke, and Hardcore Nuzlocke (level-cap warnings)
-- **Encounter log** per area, in game order, with dupes-clause flagging — plus **custom areas**: add your own area + species list when a pack has no table for a place
+- **Timeline view**: encounters grouped into the segment leading up to each boss, with a boss checkpoint card at the end of each segment — so you see everything you can catch before a fight, in order
+- **Encounter log** per area with dupes-clause flagging — plus **custom areas**: add your own area + species list when a pack has no table for a place (the **+** button in the timeline)
 - **Party / Box / Graveyard** roster management with a by-typing team coverage report (including "uncovered threats")
-- **Boss tracking**: next-boss card with the full team and level cap, defeat progress across the whole game
-- **Local-first**: runs persist in your browser (localStorage); no account, no backend
-- Desktop-first UI (phone pass planned)
+- **Boss tracking, cap-first**: boss cards show the level cap up front; click a boss's name to reveal its team only when you want it. Defeat progress across the whole game
+- **Local-first**: runs persist in your browser (localStorage); no account, no backend. **Export/Import backup** (JSON) is on the My runs panel — the data lives in your browser, so it survives the dev server stopping, but it is per-browser/per-origin: use the backup to move runs or keep them safe
+- Desktop-first UI (phone pass planned), dark theme with neon-green pop highlights
 
 ## Roadmap
 

@@ -22,6 +22,42 @@ export function allAreas(run: Run, pack: GamePack): Area[] {
   return [...sortedAreas(pack), ...(run.customAreas ?? [])];
 }
 
+export interface BossSegment {
+  boss: Boss;
+  areas: Area[];
+}
+
+/**
+ * Group areas into the segment leading up to each boss, so the encounter
+ * list reads as "everything you can catch before this fight".
+ *
+ * Pack area orders and boss orders use different scales (areas span the
+ * whole map, bosses span the boss list), so segments are assigned by
+ * relative progress: an area belongs to the first boss whose relative
+ * position in the boss list is at or past the area's relative position in
+ * the area list. Areas past the final boss come back as `trailing`.
+ * This is an approximation of story order, not pack-exact data.
+ */
+export function bossSegments(
+  pack: GamePack,
+  areas: Area[],
+): { segments: BossSegment[]; trailing: Area[] } {
+  const bosses = sortedBosses(pack);
+  if (bosses.length === 0) return { segments: [], trailing: areas };
+  const maxBossOrder = Math.max(...bosses.map((b) => b.order));
+  const maxAreaOrder = Math.max(...areas.map((a) => a.order), 1);
+  const segments: BossSegment[] = bosses.map((boss) => ({ boss, areas: [] }));
+  const trailing: Area[] = [];
+  let bi = 0;
+  for (const area of areas) {
+    const frac = area.order / maxAreaOrder;
+    while (bi < bosses.length - 1 && bosses[bi].order / maxBossOrder < frac) bi++;
+    if (frac <= bosses[bi].order / maxBossOrder) segments[bi].areas.push(area);
+    else trailing.push(area);
+  }
+  return { segments, trailing };
+}
+
 /** The next unbeaten boss in game order, or null when every boss is beaten. */
 export function nextBoss(run: Run, pack: GamePack): Boss | null {
   return sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id)) ?? null;
