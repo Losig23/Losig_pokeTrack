@@ -67,9 +67,40 @@ export function bossSegments(
   return { segments, trailing: [] };
 }
 
-/** The next unbeaten boss in game order, or null when every boss is beaten. */
+/**
+ * Bosses grouped into progression slots by their order value. Variants
+ * sharing a slot (the Striaton trio by starter, Drayden/Iris by version,
+ * Bea/Allister…) are ONE checkpoint — one badge: beating any variant
+ * clears the slot, and progression moves to the next slot.
+ */
+export function bossSlots(pack: GamePack): Boss[][] {
+  const byOrder = new Map<number, Boss[]>();
+  for (const boss of sortedBosses(pack)) {
+    const slot = byOrder.get(boss.order) ?? [];
+    slot.push(boss);
+    byOrder.set(boss.order, slot);
+  }
+  return [...byOrder.values()];
+}
+
+export function slotDefeated(run: Run, slot: Boss[]): boolean {
+  return slot.some((b) => run.defeatedBossIds.includes(b.id));
+}
+
+/** Checkpoints cleared (badges earned) out of total checkpoints. */
+export function checkpoints(run: Run, pack: GamePack): { done: number; total: number } {
+  const slots = bossSlots(pack);
+  return { done: slots.filter((s) => slotDefeated(run, s)).length, total: slots.length };
+}
+
+/** The next uncleared checkpoint's boss, or null when the run is complete. */
 export function nextBoss(run: Run, pack: GamePack): Boss | null {
-  return sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id)) ?? null;
+  for (const slot of bossSlots(pack)) {
+    if (!slotDefeated(run, slot)) {
+      return slot.find((b) => !run.defeatedBossIds.includes(b.id)) ?? slot[0];
+    }
+  }
+  return null;
 }
 
 /** Current level cap for the run: the next boss's ace (hardcore Nuzlocke rule). */
@@ -96,9 +127,9 @@ export function isDupe(run: Run, species: string): boolean {
   return caughtSpecies(run).has(species);
 }
 
-/** Run progress: defeated bosses out of total, as a percentage. */
+/** Run progress: checkpoints cleared out of total checkpoints, as a percentage. */
 export function progressPercent(run: Run, pack: GamePack): number {
-  if (!pack.bosses.length) return 0;
-  const done = pack.bosses.filter((b) => run.defeatedBossIds.includes(b.id)).length;
-  return Math.round((done / pack.bosses.length) * 100);
+  const { done, total } = checkpoints(run, pack);
+  if (!total) return 0;
+  return Math.round((done / total) * 100);
 }

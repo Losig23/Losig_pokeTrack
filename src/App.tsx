@@ -5,7 +5,7 @@ import type {
 import { PACKS, PLANNED_PACKS, getPack } from "./data/packs";
 import { sortedAreas, sortedBosses } from "./engine/pack";
 import {
-  bossSegments, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
+  bossSegments, bossSlots, checkpoints, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
 } from "./engine/run";
 import { teamCoverage } from "./engine/coverage";
 import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
@@ -311,6 +311,7 @@ function RunView({
             <span className="meta-badge ruleset">{RULESET_LABELS[run.ruleset]}</span>
             <span className="meta-badge">{pack.name}</span>
             <span className="meta-badge">Attempt {run.attempts}</span>
+            <span className="meta-badge">🏅 {checkpoints(run, pack).done}/{checkpoints(run, pack).total} checkpoints</span>
             {cap !== null && run.ruleset !== "casual" && (
               <span className="meta-badge">Current cap {cap}</span>
             )}
@@ -342,7 +343,7 @@ function RunView({
 
       <div className="progress">
         <div className="progress-bar" style={{ width: `${progressPercent(run, pack)}%` }} />
-        <span>{progressPercent(run, pack)}% of bosses defeated</span>
+        <span>{progressPercent(run, pack)}% of checkpoints cleared</span>
       </div>
 
       <div className="party-strip">
@@ -374,6 +375,12 @@ function RunView({
             {upcoming.location}
             {cap !== null && run.ruleset !== "casual" ? ` · Your cap: ${cap}` : ""}
             {" · "}Click the boss name to peek at the team.
+            {(() => {
+              const slot = bossSlots(pack).find((s) => s.some((b) => b.id === upcoming.id)) ?? [];
+              return slot.length > 1
+                ? ` This checkpoint has ${slot.length} variants (${slot.map((b) => b.name).join(", ")}) — beating any one earns it.`
+                : "";
+            })()}
           </p>
           {nextBossOpen && <BossTeamGrid boss={upcoming} species={species} />}
           <button className="primary" onClick={() => toggleBoss(upcoming.id)}>Mark defeated</button>
@@ -477,16 +484,18 @@ function BossPortrait({ boss, species, size }: { boss: Boss; species: Record<str
 
 /** Cap-first boss card: name + location + level cap; click the name to reveal the team. */
 function BossCard({
-  boss, species, defeated, onToggleBoss,
+  boss, species, defeated, onToggleBoss, slotCleared,
 }: {
   boss: Boss;
   species: Record<string, SpeciesData>;
   defeated: boolean;
   onToggleBoss: (bossId: string) => void;
+  /** A variant sibling was beaten instead: this checkpoint is already earned. */
+  slotCleared?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className={`boss-card ${defeated ? "defeated" : ""}`}>
+    <div className={`boss-card ${defeated ? "defeated" : ""} ${slotCleared && !defeated ? "dimmed" : ""}`}>
       <div className="boss-card-head">
         <BossPortrait boss={boss} species={species} size={44} />
         <button className="boss-name" onClick={() => setOpen((v) => !v)}>
@@ -494,11 +503,65 @@ function BossCard({
         </button>
         <span className="muted">{boss.location}</span>
         <span className="cap-badge">Lv cap {boss.levelCap}</span>
-        <button className={defeated ? "chip done" : "chip"} onClick={() => onToggleBoss(boss.id)}>
-          {defeated ? "Defeated ✓" : "Mark defeated"}
-        </button>
+        {slotCleared && !defeated ? (
+          <span className="chip done">Checkpoint cleared ✓</span>
+        ) : (
+          <button className={defeated ? "chip done" : "chip"} onClick={() => onToggleBoss(boss.id)}>
+            {defeated ? "Defeated ✓" : "Mark defeated"}
+          </button>
+        )}
       </div>
       {open && <BossTeamGrid boss={boss} species={species} />}
+    </div>
+  );
+}
+
+/**
+ * Picture-first species dropdown: native <select> popups can't render
+ * images, so this is a custom menu where each option shows the Pokémon's
+ * sprite next to its name.
+ */
+function SpeciesPicker({
+  options, value, species, onChange,
+}: {
+  options: { species: string; form?: string | null }[];
+  value: string;
+  species: Record<string, SpeciesData>;
+  onChange: (slug: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const selected = options.find((o) => o.species === value);
+  const spriteImg = (slug: string, size: number) =>
+    species[slug]?.sprite
+      ? <img src={species[slug].sprite} alt="" width={size} height={size} />
+      : <span className="sprite-dot" style={{ width: size, height: size }} />;
+  return (
+    <div className="species-picker">
+      <button type="button" className="picker-btn" onClick={() => setOpen((v) => !v)}>
+        {spriteImg(value, 30)}
+        <span className="picker-label">
+          {displayName(value)}{selected?.form ? ` (${selected.form})` : ""}
+        </span>
+        <span className="chev">{open ? "▾" : "▸"}</span>
+      </button>
+      {open && (
+        <>
+          <div className="picker-backdrop" onClick={() => setOpen(false)} />
+          <div className="picker-menu">
+            {options.map((o) => (
+              <button
+                key={o.species + (o.form ?? "")}
+                type="button"
+                className={`picker-option ${o.species === value ? "selected" : ""}`}
+                onClick={() => { onChange(o.species); setOpen(false); }}
+              >
+                {spriteImg(o.species, 36)}
+                <span>{displayName(o.species)}{o.form ? ` (${o.form})` : ""}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -523,6 +586,14 @@ function TimelineTab({
 
   const packAreas = sortedAreas(pack);
   const customAreas = run.customAreas ?? [];
+  // Sprites for every species in this pack's pools, for the picture picker
+  // (cached in localStorage by the hook, so repeat visits are instant).
+  const poolSlugs = useMemo(
+    () => [...new Set([...packAreas, ...customAreas].flatMap((a) => a.encounters.map((e) => e.species)))],
+    [pack, run.customAreas],
+  );
+  const poolSpecies = useSpeciesData(poolSlugs);
+  const allSpecies = useMemo(() => ({ ...species, ...poolSpecies }), [species, poolSpecies]);
   const { segments, trailing } = bossSegments(pack, packAreas);
   // Bosses sharing an order slot are variants of one checkpoint (the
   // Striaton trio by starter, Drayden/Iris by version, Bea/Allister…):
@@ -666,16 +737,26 @@ function TimelineTab({
           )}
         </div>
         <div className="area-form">
-          <select value={d.species} onChange={(e) => set({ species: e.target.value })}>
-            {!inPool && d.species && (
-              <option value={d.species}>{displayName(d.species)} (current)</option>
-            )}
-            {area.encounters.map((e) => (
-              <option key={e.species + (e.form ?? "")} value={e.species}>
-                {displayName(e.species)}{e.form ? ` (${e.form})` : ""}
-              </option>
-            ))}
-          </select>
+          {(() => {
+            const seen = new Set<string>();
+            const pickerOptions = area.encounters
+              .filter((e) => {
+                const k = e.species + "|" + (e.form ?? "");
+                if (seen.has(k)) return false;
+                seen.add(k);
+                return true;
+              })
+              .map((e) => ({ species: e.species, form: e.form }));
+            if (!inPool && d.species) pickerOptions.unshift({ species: d.species, form: "current" });
+            return (
+              <SpeciesPicker
+                options={pickerOptions}
+                value={d.species}
+                species={allSpecies}
+                onChange={(slug) => set({ species: slug })}
+              />
+            );
+          })()}
           <select value={d.outcome} onChange={(e) => set({ outcome: e.target.value as EncounterOutcome })}>
             <option value="caught">Caught</option>
             <option value="missed">Missed</option>
@@ -763,6 +844,7 @@ function TimelineTab({
                   species={species}
                   defeated={run.defeatedBossIds.includes(b.id)}
                   onToggleBoss={onToggleBoss}
+                  slotCleared={g.bosses.some((x) => run.defeatedBossIds.includes(x.id))}
                 />
               ))}
             </div>

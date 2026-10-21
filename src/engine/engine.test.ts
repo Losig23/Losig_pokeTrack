@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GamePack, SpeciesData } from "./types";
 import { validatePack } from "./pack";
-import { allAreas, bossSegments, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers } from "./run";
+import { allAreas, bossSegments, bossSlots, checkpoints, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent } from "./run";
 import { teamCoverage } from "./coverage";
 import { effectiveness } from "./typeChart";
 
@@ -70,6 +70,24 @@ describe("run engine", () => {
     expect(nextBoss(run, fixturePack)?.id).toBe("misty");
     run.defeatedBossIds = ["brock", "misty"];
     expect(nextBoss(run, fixturePack)).toBeNull();
+  });
+
+  it("variant bosses sharing an order slot are one checkpoint", () => {
+    const pack = structuredClone(fixturePack);
+    pack.bosses.push({
+      id: "brock-variant", name: "Gym Leader Brock (variant)", location: "Pewter Gym",
+      order: 20, levelCap: 14, team: [{ species: "onix", level: 14, moves: [] }],
+    });
+    expect(bossSlots(pack)).toHaveLength(2);
+    const run = createRun("fixture", "hardcore", "Test");
+    // Beating only the variant clears the slot: next up is Misty.
+    run.defeatedBossIds = ["brock-variant"];
+    expect(nextBoss(run, pack)?.id).toBe("misty");
+    expect(checkpoints(run, pack)).toEqual({ done: 1, total: 2 });
+    expect(progressPercent(run, pack)).toBe(50);
+    run.defeatedBossIds = ["brock", "brock-variant", "misty"];
+    expect(nextBoss(run, pack)).toBeNull();
+    expect(progressPercent(run, pack)).toBe(100);
   });
 
   it("level cap tracks the next boss ace", () => {
