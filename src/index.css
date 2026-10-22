@@ -323,8 +323,45 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .custom-area-form { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
 .custom-area-form .area-form { grid-template-columns: 220px 1fr 64px 110px; }
 
-.roster-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.roster-col h4 { margin-top: 0; }
+.roster-tabs { margin-bottom: 16px; }
+.party-list { display: flex; flex-direction: column; gap: 4px; max-width: 860px; }
+.party-list .mon-card { padding: 10px 12px; }
+.empty-slot {
+  display: flex; align-items: center; gap: 12px; padding: 13px 14px; margin-bottom: 8px;
+  border: 1.5px dashed var(--border); border-radius: 11px; color: var(--muted);
+}
+.empty-ball {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  border: 2px solid var(--border); position: relative; opacity: 0.6;
+  background: linear-gradient(180deg, transparent 46%, var(--border) 46%, var(--border) 54%, transparent 54%);
+}
+.pc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; }
+.pc-slot {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 12px 6px 9px; border-radius: 12px; cursor: pointer; font: inherit; color: var(--text);
+  border: 1px solid var(--border-soft);
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(168, 85, 247, 0.05)), #0a0a12;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+.pc-slot:hover { border-color: var(--blue); }
+.pc-slot.selected { border-color: var(--violet); box-shadow: 0 0 16px rgba(168, 85, 247, 0.35); }
+.pc-slot img { width: 54px; height: 54px; }
+.pc-slot-name { font-size: 12.5px; font-weight: 700; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pc-slot-sub { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.pc-hint { margin-top: 12px; }
+.box-detail { margin-top: 16px; max-width: 860px; }
+.graveyard-grid .pc-slot { background: #08080d; border-color: #23232c; }
+.graveyard-grid .pc-slot img { filter: grayscale(1); opacity: 0.5; }
+.graveyard-grid .pc-slot-name { color: #a3a3b8; }
+.graveyard-grid .pc-slot.selected { border-color: #6d6d84; box-shadow: 0 0 14px rgba(148, 148, 180, 0.25); }
+.grave-head { margin-top: 0; }
+.grave-detail {
+  margin-top: 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  border: 1px solid var(--border-soft); border-radius: 12px; padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02); max-width: 860px;
+}
+.grave-detail img { filter: grayscale(1); opacity: 0.6; }
+.grave-info { display: flex; flex-direction: column; flex: 1; min-width: 180px; }
 .mon-card {
   display: flex; align-items: center; gap: 8px; background: #0b0b14;
   border: 1px solid var(--border-soft); border-radius: 11px; padding: 8px; margin-bottom: 8px;
@@ -375,6 +412,6 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
   .area-row { grid-template-columns: 1fr; row-gap: 8px; }
   .area-form { grid-template-columns: repeat(2, 1fr); }
   .custom-area-form .area-form { grid-template-columns: 1fr; }
-  .roster-grid { grid-template-columns: 1fr; }
+
   .iv-grid { grid-template-columns: repeat(2, 1fr); }
 }

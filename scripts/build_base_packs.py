@@ -175,7 +175,28 @@ def main() -> int:
                 median = all_mins[len(all_mins) // 2] if all_mins else 999
                 return (median, median, location_ident.get(loc, ""))
 
-            for i, loc in enumerate(sorted(by_loc, key=progression_key)):
+            sorted_locs = sorted(by_loc, key=progression_key)
+            # Positional overrides: areas whose only encounters are gifts /
+            # events get a level-based position that can be flatly wrong
+            # (Castelia City's only pool entry is the Lv 10 event Zorua,
+            # which sorted the whole city in front of the second gym).
+            # Pin such areas right after the area the player passes through
+            # just before reaching them.
+            ORDER_AFTER = {
+                "black-white": {"castelia-city": "pinwheel-forest"},
+            }
+            for area_ident, anchor_ident in ORDER_AFTER.get(pack_id, {}).items():
+                area_loc = next(
+                    (l for l in sorted_locs if location_ident.get(l) == area_ident), None
+                )
+                anchor_loc = next(
+                    (l for l in sorted_locs if location_ident.get(l) == anchor_ident), None
+                )
+                if area_loc is not None and anchor_loc is not None and area_loc != anchor_loc:
+                    sorted_locs.remove(area_loc)
+                    sorted_locs.insert(sorted_locs.index(anchor_loc) + 1, area_loc)
+
+            for i, loc in enumerate(sorted_locs):
                 ident = location_ident.get(loc, f"location-{loc}")
                 areas.append({
                     "id": ident,

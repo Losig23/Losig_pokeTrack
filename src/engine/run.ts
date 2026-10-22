@@ -57,10 +57,22 @@ export function bossSegments(
   const segmentOf = new Map(bosses.map((b, i) => [b.id, segments[i]]));
   const receivers = bosses.filter((b) => !LEAGUE_NAME.test(b.name));
   const pool = receivers.length > 0 ? receivers : bosses;
+  // A gym's own city can never sit in an earlier segment: you arrive at
+  // the city when you arrive at its gym, whatever the encounter levels
+  // say (a lone low-level event Pokémon in that city — Castelia's Zorua —
+  // otherwise drags the whole city in front of the previous gym).
+  const cityKey = (s: string) =>
+    s
+      .replace(/\s+(gym|pokémon league|pokemon league)\b.*$/i, "")
+      .replace(/\s+city$/i, "")
+      .trim()
+      .toLowerCase();
   for (const area of areas) {
     const frac = area.order / maxAreaOrder;
-    const target =
+    let target =
       pool.find((b) => b.order / maxBossOrder >= frac) ?? pool[pool.length - 1];
+    const host = pool.find((b) => cityKey(b.location) === cityKey(area.name));
+    if (host && host.order > target.order) target = host;
     segmentOf.get(target.id)?.areas.push(area);
   }
   // Nothing trails anymore: every area lands in some boss's segment.

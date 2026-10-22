@@ -72,6 +72,18 @@ describe("run engine", () => {
     expect(nextBoss(run, fixturePack)).toBeNull();
   });
 
+  it("a gym's city is never segmented before its own gym", () => {
+    const pack = structuredClone(fixturePack);
+    pack.areas.push({
+      id: "cerulean-city", name: "Cerulean City", order: 1,
+      encounters: [{ species: "zorua", minLevel: 10, maxLevel: 10, methods: ["event"] }],
+    });
+    const { segments } = bossSegments(pack, pack.areas);
+    const segOf = (bossId: string) => segments.find((s) => s.boss.id === bossId);
+    expect(segOf("misty")?.areas.map((a) => a.id)).toContain("cerulean-city");
+    expect(segOf("brock")?.areas.map((a) => a.id)).not.toContain("cerulean-city");
+  });
+
   it("variant bosses sharing an order slot are one checkpoint", () => {
     const pack = structuredClone(fixturePack);
     pack.bosses.push({

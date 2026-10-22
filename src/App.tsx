@@ -405,7 +405,7 @@ function RunView({
         <TimelineTab run={run} pack={pack} species={species} onChange={onChange} onToggleBoss={toggleBoss} />
       )}
       {tab === "routes" && <RoutesTab run={run} pack={pack} />}
-      {tab === "roster" && <RosterTab run={run} species={species} onChange={onChange} />}
+      {tab === "roster" && <RosterTab run={run} pack={pack} species={species} onChange={onChange} />}
       {tab === "prep" && <PrepTab run={run} pack={pack} species={species} />}
       {tab === "bosses" && (
         <section className="panel boss-list">
@@ -938,21 +938,109 @@ function EvolvePanel({ mon, onEvolve }: { mon: CaughtMon; onEvolve: (species: st
   );
 }
 
+/**
+ * Full editor card for one Pokémon: nickname, species (evolution field),
+ * level, status, Evolve and IV panels. Used by the party list and by the
+ * box's selected-mon editor — one record, edited the same way everywhere.
+ */
+function MonEditorCard({
+  mon, data, onPatch, onStatus, onLevel, onRemove,
+}: {
+  mon: CaughtMon;
+  data: SpeciesData | undefined;
+  onPatch: (uid: string, patch: Partial<CaughtMon>) => void;
+  onStatus: (uid: string, status: MonStatus) => void;
+  onLevel: (uid: string, level: number) => void;
+  onRemove: (uid: string) => void;
+}) {
+  const [evoOpen, setEvoOpen] = useState(false);
+  const [ivOpen, setIvOpen] = useState(false);
+  return (
+    <div className="mon-wrap">
+      <div className="mon-card">
+        {data?.sprite
+          ? <img src={data.sprite} alt={mon.species} width={48} height={48} />
+          : <div className="sprite-placeholder small" />}
+        <div className="mon-info">
+          <input
+            className="nickname-input"
+            value={mon.nickname ?? ""}
+            placeholder={displayName(mon.species)}
+            onChange={(e) => onPatch(mon.uid, { nickname: e.target.value || undefined })}
+            aria-label="Nickname"
+          />
+          <span className="muted mon-species-line">
+            <input
+              className="species-input"
+              key={mon.species}
+              defaultValue={mon.species}
+              title="Species — edit this when it evolves; the route encounter updates too"
+              aria-label="Species"
+              onBlur={(e) => {
+                const slug = e.target.value.trim().toLowerCase().replace(/\s+/g, "-");
+                if (slug && slug !== mon.species) onPatch(mon.uid, { species: slug });
+                else e.target.value = mon.species;
+              }}
+              onKeyDown={(e) => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); }}
+            />
+            {" "}· Lv {mon.level}{mon.nature ? ` · ${mon.nature}` : ""}
+          </span>
+        </div>
+        <input
+          type="number" min={1} max={100} value={mon.level}
+          onChange={(e) => onLevel(mon.uid, Number(e.target.value))} aria-label="Level"
+        />
+        <select value={mon.status} onChange={(e) => onStatus(mon.uid, e.target.value as MonStatus)}>
+          <option value="party">Party</option>
+          <option value="box">Box</option>
+          <option value="graveyard">Graveyard</option>
+        </select>
+        <button className={`ghost ${evoOpen ? "iv-active" : ""}`} onClick={() => setEvoOpen((v) => !v)}>
+          Evolve
+        </button>
+        <button className={`ghost ${ivOpen ? "iv-active" : ""}`} onClick={() => setIvOpen((v) => !v)}>
+          IV
+        </button>
+        <button className="ghost danger" onClick={() => onRemove(mon.uid)}>✕</button>
+      </div>
+      {evoOpen && (
+        <EvolvePanel
+          mon={mon}
+          onEvolve={(slug) => {
+            onPatch(mon.uid, { species: slug });
+            setEvoOpen(false);
+          }}
+        />
+      )}
+      {ivOpen && data && (
+        <MonIvEditor mon={mon} data={data} onSave={(patch) => onPatch(mon.uid, patch)} />
+      )}
+    </div>
+  );
+}
+
 function RosterTab({
-  run, species, onChange,
+  run, pack, species, onChange,
 }: {
   run: Run;
+  pack: GamePack;
   species: Record<string, SpeciesData>;
   onChange: (r: Run) => void;
 }) {
-  const party = run.team.filter((m) => m.status === "party");
+  const [rosterTab, setRosterTab] = useState<MonStatus>("party");
+  const [selectedBoxUid, setSelectedBoxUid] = useState<string | null>(null);
+  const [selectedGraveUid, setSelectedGraveUid] = useState<string | null>(null);
+
+  const byStatus = (status: MonStatus) => run.team.filter((m) => m.status === status);
+  const party = byStatus("party");
+  const box = byStatus("box");
+  const graveyard = byStatus("graveyard");
+
   const partyData = party
     .map((m) => species[m.species])
     .filter((s): s is SpeciesData => Boolean(s));
   const coverage = partyData.length ? teamCoverage(partyData) : null;
 
-  const [ivOpenUid, setIvOpenUid] = useState<string | null>(null);
-  const [evoOpenUid, setEvoOpenUid] = useState<string | null>(null);
   const patchMon = (uid: string, patch: Partial<CaughtMon>) =>
     onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, ...patch } : m)) });
   const setStatus = (uid: string, status: MonStatus) =>
@@ -966,105 +1054,147 @@ function RosterTab({
       encounters: run.encounters.map((e) => (e.monUid === uid ? { ...e, monUid: undefined } : e)),
     });
 
-  const column = (title: string, status: MonStatus) => (
-    <div className="roster-col">
-      <h4>{title}</h4>
-      {run.team.filter((m) => m.status === status).map((mon) => (
-        <div key={mon.uid} className="mon-wrap">
-          <div className="mon-card">
-            {species[mon.species]?.sprite
-              ? <img src={species[mon.species].sprite} alt={mon.species} width={48} height={48} />
-              : <div className="sprite-placeholder small" />}
-            <div className="mon-info">
-              <input
-                className="nickname-input"
-                value={mon.nickname ?? ""}
-                placeholder={displayName(mon.species)}
-                onChange={(e) => patchMon(mon.uid, { nickname: e.target.value || undefined })}
-                aria-label="Nickname"
-              />
-              <span className="muted mon-species-line">
-                <input
-                  className="species-input"
-                  key={mon.species}
-                  defaultValue={mon.species}
-                  title="Species — edit this when it evolves; the route encounter updates too"
-                  aria-label="Species"
-                  onBlur={(e) => {
-                    const slug = e.target.value.trim().toLowerCase().replace(/\s+/g, "-");
-                    if (slug && slug !== mon.species) patchMon(mon.uid, { species: slug });
-                    else e.target.value = mon.species;
-                  }}
-                  onKeyDown={(e) => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); }}
-                />
-                {" "}· Lv {mon.level}{mon.nature ? ` · ${mon.nature}` : ""}
-              </span>
-            </div>
-            <input
-              type="number" min={1} max={100} value={mon.level}
-              onChange={(e) => setLevel(mon.uid, Number(e.target.value))} aria-label="Level"
-            />
-            <select value={mon.status} onChange={(e) => setStatus(mon.uid, e.target.value as MonStatus)}>
-              <option value="party">Party</option>
-              <option value="box">Box</option>
-              <option value="graveyard">Graveyard</option>
-            </select>
-            <button
-              className={`ghost ${evoOpenUid === mon.uid ? "iv-active" : ""}`}
-              onClick={() => setEvoOpenUid(evoOpenUid === mon.uid ? null : mon.uid)}
-            >
-              Evolve
-            </button>
-            <button
-              className={`ghost ${ivOpenUid === mon.uid ? "iv-active" : ""}`}
-              onClick={() => setIvOpenUid(ivOpenUid === mon.uid ? null : mon.uid)}
-            >
-              IV
-            </button>
-            <button className="ghost danger" onClick={() => remove(mon.uid)}>✕</button>
-          </div>
-          {evoOpenUid === mon.uid && (
-            <EvolvePanel
-              mon={mon}
-              onEvolve={(slug) => {
-                patchMon(mon.uid, { species: slug });
-                setEvoOpenUid(null);
-              }}
-            />
-          )}
-          {ivOpenUid === mon.uid && species[mon.species] && (
-            <MonIvEditor
-              mon={mon}
-              data={species[mon.species]}
-              onSave={(patch) => patchMon(mon.uid, patch)}
-            />
-          )}
-        </div>
-      ))}
-      {run.team.filter((m) => m.status === status).length === 0 && <p className="muted">Empty</p>}
-    </div>
+  const selectedBox = box.find((m) => m.uid === selectedBoxUid) ?? null;
+  const selectedGrave = graveyard.find((m) => m.uid === selectedGraveUid) ?? null;
+  const caughtAreaName = (mon: CaughtMon) => {
+    const area = [...sortedAreas(pack), ...(run.customAreas ?? [])].find((a) => a.id === mon.caughtAreaId);
+    return area?.name ?? null;
+  };
+
+  const pcTile = (
+    mon: CaughtMon,
+    selected: boolean,
+    onSelect: () => void,
+  ) => (
+    <button key={mon.uid} className={`pc-slot ${selected ? "selected" : ""}`} onClick={onSelect}>
+      {species[mon.species]?.sprite
+        ? <img src={species[mon.species].sprite} alt={mon.species} />
+        : <div className="sprite-placeholder small" />}
+      <span className="pc-slot-name">{mon.nickname || displayName(mon.species)}</span>
+      <span className="pc-slot-sub">{displayName(mon.species)} · Lv {mon.level}</span>
+    </button>
   );
 
   return (
     <section className="panel">
-      <div className="roster-grid">
-        {column("Party", "party")}
-        {column("Box", "box")}
-        {column("Graveyard", "graveyard")}
-      </div>
-      {coverage && (
-        <div className="coverage">
-          <h4>Party coverage (by typing)</h4>
-          <p>
-            Offensive coverage: {Object.values(coverage.offensive).filter(Boolean).length} / 18 types
+      <nav className="tabs roster-tabs">
+        {(["party", "box", "graveyard"] as MonStatus[]).map((s) => (
+          <button
+            key={s}
+            className={rosterTab === s ? "tab active" : "tab"}
+            onClick={() => setRosterTab(s)}
+          >
+            {s === "party" ? `Party (${party.length}/6)` : s === "box" ? `Box (${box.length})` : `Graveyard (${graveyard.length})`}
+          </button>
+        ))}
+      </nav>
+
+      {rosterTab === "party" && (
+        <>
+          <div className="party-list">
+            {party.map((mon) => (
+              <MonEditorCard
+                key={mon.uid}
+                mon={mon}
+                data={species[mon.species]}
+                onPatch={patchMon}
+                onStatus={setStatus}
+                onLevel={setLevel}
+                onRemove={remove}
+              />
+            ))}
+            {Array.from({ length: Math.max(0, 6 - party.length) }).map((_, i) => (
+              <div key={i} className="empty-slot">
+                <span className="empty-ball" />
+                <span>Empty party slot</span>
+              </div>
+            ))}
+          </div>
+          {coverage && (
+            <div className="coverage">
+              <h4>Party coverage (by typing)</h4>
+              <p>
+                Offensive coverage: {Object.values(coverage.offensive).filter(Boolean).length} / 18 types
+              </p>
+              {coverage.uncoveredThreats.length > 0 ? (
+                <p className="warning">
+                  Uncovered threats: {coverage.uncoveredThreats.join(", ")} — a party member is weak to these
+                  and nobody resists them.
+                </p>
+              ) : (
+                <p className="muted">No uncovered threats by typing.</p>
+              )}
+            </div>
+          )}
+        </>
+      )}
+
+      {rosterTab === "box" && (
+        <>
+          {box.length === 0 && <p className="muted">The box is empty. Caught Pokémon beyond a full party land here.</p>}
+          <div className="pc-grid">
+            {box.map((mon) => pcTile(mon, mon.uid === selectedBoxUid, () =>
+              setSelectedBoxUid(mon.uid === selectedBoxUid ? null : mon.uid)))}
+          </div>
+          {selectedBox && (
+            <div className="box-detail">
+              <MonEditorCard
+                mon={selectedBox}
+                data={species[selectedBox.species]}
+                onPatch={patchMon}
+                onStatus={setStatus}
+                onLevel={setLevel}
+                onRemove={remove}
+              />
+            </div>
+          )}
+          {box.length > 0 && !selectedBox && (
+            <p className="muted pc-hint">Select a Pokémon to manage it — move it to the party, evolve it, or check its IVs.</p>
+          )}
+        </>
+      )}
+
+      {rosterTab === "graveyard" && (
+        <div className="graveyard-view">
+          <p className="muted grave-head">
+            {graveyard.length === 0
+              ? "No fallen friends yet. May it stay that way."
+              : `Fallen — ${graveyard.length} ${graveyard.length === 1 ? "friend" : "friends"} remembered.`}
           </p>
-          {coverage.uncoveredThreats.length > 0 ? (
-            <p className="warning">
-              Uncovered threats: {coverage.uncoveredThreats.join(", ")} — a party member is weak to these
-              and nobody resists them.
-            </p>
-          ) : (
-            <p className="muted">No uncovered threats by typing. Boss-prep counter analysis arrives in Phase 2.</p>
+          <div className="pc-grid graveyard-grid">
+            {graveyard.map((mon) => (
+              <button
+                key={mon.uid}
+                className={`pc-slot ${mon.uid === selectedGraveUid ? "selected" : ""}`}
+                onClick={() => setSelectedGraveUid(mon.uid === selectedGraveUid ? null : mon.uid)}
+              >
+                {species[mon.species]?.sprite
+                  ? <img src={species[mon.species].sprite} alt={mon.species} />
+                  : <div className="sprite-placeholder small" />}
+                <span className="pc-slot-name">{mon.nickname || displayName(mon.species)}</span>
+              </button>
+            ))}
+          </div>
+          {selectedGrave && (
+            <div className="grave-detail">
+              {species[selectedGrave.species]?.sprite
+                ? <img src={species[selectedGrave.species].sprite} alt={selectedGrave.species} width={44} height={44} />
+                : <div className="sprite-placeholder small" />}
+              <div className="grave-info">
+                <strong>{selectedGrave.nickname || displayName(selectedGrave.species)}</strong>
+                <span className="muted">
+                  {displayName(selectedGrave.species)} · Lv {selectedGrave.level}
+                  {selectedGrave.nature ? ` · ${selectedGrave.nature}` : ""}
+                  {caughtAreaName(selectedGrave) ? ` · caught at ${caughtAreaName(selectedGrave)}` : ""}
+                </span>
+              </div>
+              <button className="ghost" onClick={() => setStatus(selectedGrave.uid, "box")}>
+                Return to box
+              </button>
+              <button className="ghost danger" onClick={() => { remove(selectedGrave.uid); setSelectedGraveUid(null); }}>
+                Delete
+              </button>
+            </div>
           )}
         </div>
       )}

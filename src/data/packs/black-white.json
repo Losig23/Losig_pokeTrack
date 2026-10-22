@@ -392,24 +392,9 @@
    ]
   },
   {
-   "id": "castelia-city",
-   "name": "Castelia City",
-   "order": 60,
-   "encounters": [
-    {
-     "species": "zorua",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
    "id": "wellspring-cave",
    "name": "Wellspring Cave",
-   "order": 70,
+   "order": 60,
    "encounters": [
     {
      "species": "basculin",
@@ -476,7 +461,7 @@
   {
    "id": "pinwheel-forest",
    "name": "Pinwheel Forest",
-   "order": 80,
+   "order": 70,
    "encounters": [
     {
      "species": "audino",
@@ -665,6 +650,21 @@
      "maxLevel": 24,
      "methods": [
       "dark-grass"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "castelia-city",
+   "name": "Castelia City",
+   "order": 80,
+   "encounters": [
+    {
+     "species": "zorua",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "gift"
      ]
     }
    ]
