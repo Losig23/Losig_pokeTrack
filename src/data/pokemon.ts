@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { SpeciesData } from "../engine/types";
+import { nextEvolutions, type ChainNode, type EvolutionOption } from "../engine/evolution";
 
 // Species data comes from PokéAPI at runtime and is cached in localStorage.
 // Game packs only store slugs, so packs stay small and hack-agnostic; a pack's
@@ -182,4 +183,56 @@ export function displayName(slug: string): string {
     .split("-")
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+}
+
+// --- Evolution lookups (PokéAPI species + evolution-chain endpoints) ---
+
+const EVO_CACHE_PREFIX = "runbook-evo-";
+
+interface PokeApiSpecies {
+  name: string;
+  evolution_chain: { url: string };
+}
+
+/**
+ * The direct next evolutions of a species, with trigger labels. Form
+ * slugs ("lycanroc-midday") resolve to their base species by trimming
+ * trailing segments until the species endpoint answers. Results —
+ * including "no evolutions" — are cached in localStorage. Species
+ * PokéAPI doesn't know (hack-originals) resolve to an empty list.
+ */
+export async function fetchEvolutions(slug: string): Promise<EvolutionOption[]> {
+  try {
+    const cached = localStorage.getItem(EVO_CACHE_PREFIX + slug);
+    if (cached) return JSON.parse(cached) as EvolutionOption[];
+  } catch { /* cache is best-effort */ }
+
+  let options: EvolutionOption[] = [];
+  try {
+    let candidate = slug;
+    let speciesJson: PokeApiSpecies | null = null;
+    while (candidate) {
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${candidate}`);
+      if (res.ok) {
+        speciesJson = (await res.json()) as PokeApiSpecies;
+        break;
+      }
+      const cut = candidate.lastIndexOf("-");
+      if (cut <= 0) break;
+      candidate = candidate.slice(0, cut);
+    }
+    if (speciesJson) {
+      const chainRes = await fetch(speciesJson.evolution_chain.url);
+      if (chainRes.ok) {
+        const chainJson = (await chainRes.json()) as { chain: ChainNode };
+        options = nextEvolutions(chainJson.chain, speciesJson.name);
+      }
+    }
+  } catch {
+    options = [];
+  }
+  try {
+    localStorage.setItem(EVO_CACHE_PREFIX + slug, JSON.stringify(options));
+  } catch { /* cache is best-effort */ }
+  return options;
 }

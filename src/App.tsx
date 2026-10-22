@@ -10,7 +10,8 @@ import {
 import { teamCoverage } from "./engine/coverage";
 import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
 import { buildPrepReport, type PrepCandidate } from "./engine/prep";
-import { displayName, useMoveTypes, useSpeciesData } from "./data/pokemon";
+import { displayName, fetchEvolutions, useMoveTypes, useSpeciesData } from "./data/pokemon";
+import type { EvolutionOption } from "./engine/evolution";
 import { exportRunsJson, parseRunsJson, useRuns } from "./store";
 
 const RULESET_LABELS: Record<Ruleset, string> = {
@@ -891,6 +892,52 @@ function TimelineTab({
   );
 }
 
+/**
+ * Evolution picker for one Pokémon: the real next forms from its
+ * evolution chain, with sprites and how each evolution triggers.
+ * Evolving patches the single mon record, so the party strip, box,
+ * boss prep, and the route encounter row all update at once.
+ */
+function EvolvePanel({ mon, onEvolve }: { mon: CaughtMon; onEvolve: (species: string) => void }) {
+  const [options, setOptions] = useState<EvolutionOption[] | null>(null);
+  useEffect(() => {
+    let live = true;
+    setOptions(null);
+    void fetchEvolutions(mon.species).then((o) => { if (live) setOptions(o); });
+    return () => { live = false; };
+  }, [mon.species]);
+  const optData = useSpeciesData(options?.map((o) => o.species) ?? []);
+
+  return (
+    <div className="evolve-panel">
+      {options === null && <p className="muted">Looking up evolutions…</p>}
+      {options !== null && options.length === 0 && (
+        <p className="muted">
+          {displayName(mon.species)} has no further evolution in the reference data
+          (final form, or a hack-original species). You can still set the species
+          manually in the field above.
+        </p>
+      )}
+      {options !== null && options.length > 0 && (
+        <>
+          <span className="muted">Evolve {mon.nickname || displayName(mon.species)} into:</span>
+          <div className="evolve-options">
+            {options.map((o) => (
+              <button key={o.species} className="evolve-option" onClick={() => onEvolve(o.species)}>
+                {optData[o.species]?.sprite
+                  ? <img src={optData[o.species].sprite} alt="" width={44} height={44} />
+                  : <span className="sprite-dot" style={{ width: 44, height: 44 }} />}
+                <span className="evolve-name">{displayName(o.species)}</span>
+                <span className="muted">{o.detail}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 function RosterTab({
   run, species, onChange,
 }: {
@@ -905,6 +952,7 @@ function RosterTab({
   const coverage = partyData.length ? teamCoverage(partyData) : null;
 
   const [ivOpenUid, setIvOpenUid] = useState<string | null>(null);
+  const [evoOpenUid, setEvoOpenUid] = useState<string | null>(null);
   const patchMon = (uid: string, patch: Partial<CaughtMon>) =>
     onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, ...patch } : m)) });
   const setStatus = (uid: string, status: MonStatus) =>
@@ -962,6 +1010,12 @@ function RosterTab({
               <option value="graveyard">Graveyard</option>
             </select>
             <button
+              className={`ghost ${evoOpenUid === mon.uid ? "iv-active" : ""}`}
+              onClick={() => setEvoOpenUid(evoOpenUid === mon.uid ? null : mon.uid)}
+            >
+              Evolve
+            </button>
+            <button
               className={`ghost ${ivOpenUid === mon.uid ? "iv-active" : ""}`}
               onClick={() => setIvOpenUid(ivOpenUid === mon.uid ? null : mon.uid)}
             >
@@ -969,6 +1023,15 @@ function RosterTab({
             </button>
             <button className="ghost danger" onClick={() => remove(mon.uid)}>✕</button>
           </div>
+          {evoOpenUid === mon.uid && (
+            <EvolvePanel
+              mon={mon}
+              onEvolve={(slug) => {
+                patchMon(mon.uid, { species: slug });
+                setEvoOpenUid(null);
+              }}
+            />
+          )}
           {ivOpenUid === mon.uid && species[mon.species] && (
             <MonIvEditor
               mon={mon}

@@ -285,6 +285,21 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .picker-option:hover { background: rgba(168, 85, 247, 0.12); }
 .picker-option.selected { background: rgba(168, 85, 247, 0.2); }
 .mon-species-line { display: flex; align-items: center; gap: 2px; }
+.evolve-panel {
+  border: 1px solid var(--border-soft); border-radius: 10px; padding: 10px 12px;
+  margin-top: 8px; background: rgba(56, 189, 248, 0.04);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.evolve-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.evolve-option {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  min-width: 104px; padding: 8px 10px; cursor: pointer;
+  background: #0b0b14; border: 1px solid var(--border-soft); border-radius: 10px; color: var(--text);
+  font: inherit;
+}
+.evolve-option:hover { border-color: var(--blue); box-shadow: 0 0 14px rgba(56, 189, 248, 0.25); }
+.evolve-option .evolve-name { font-weight: 700; }
+.evolve-option .muted { font-size: 12px; }
 .species-input {
   background: transparent; border: 1px solid transparent; border-radius: 6px;
   padding: 2px 5px; font: inherit; font-size: 12.5px; color: var(--muted); width: 108px;
