@@ -72,6 +72,20 @@ describe("run engine", () => {
     expect(nextBoss(run, fixturePack)).toBeNull();
   });
 
+  it("authored segment cutoffs replace estimation", () => {
+    const pack = structuredClone(fixturePack);
+    pack.areas = [10, 20, 30, 40].map((order, i) => ({
+      id: `a${i + 1}`, name: `Area ${i + 1}`, order,
+      encounters: [{ species: "pidgey", minLevel: 2, maxLevel: 5, methods: ["grass"] }],
+    }));
+    pack.bossAreaCutoffs = { brock: "a2" };
+    const { segments } = bossSegments(pack, pack.areas);
+    const segOf = (bossId: string) => segments.find((s) => s.boss.id === bossId);
+    expect(segOf("brock")?.areas.map((a) => a.id)).toEqual(["a1", "a2"]);
+    // Misty has no cutoff: she takes everything after Brock's boundary.
+    expect(segOf("misty")?.areas.map((a) => a.id)).toEqual(["a3", "a4"]);
+  });
+
   it("a gym's city is never segmented before its own gym", () => {
     const pack = structuredClone(fixturePack);
     pack.areas.push({

@@ -50,6 +50,14 @@ export interface GamePack {
   areas: Area[];
   bosses: Boss[];
   pokemonOverrides?: Record<string, unknown>;
+  /**
+   * Hand-authored segmentation: bossId -> the LAST area (by story order)
+   * whose encounters belong to that boss's timeline segment. When a pack
+   * carries any cutoffs, they replace the fraction/clamp heuristics —
+   * some games defeat estimation (hub cities visited long before their
+   * gym, e.g. Lumiose City in XY).
+   */
+  bossAreaCutoffs?: Record<string, string>;
 }
 
 export type StatKey = "hp" | "attack" | "defense" | "specialAttack" | "specialDefense" | "speed";

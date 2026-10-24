@@ -60,6 +60,24 @@ PACKS = [
 
 FIXUPS = {"ss": "S.S.", "mt": "Mt.", "jr": "Jr.", "mr": "Mr."}
 
+# Hand-authored timeline segmentation per pack: bossId -> the LAST area
+# (in story order) whose encounters belong to that boss's segment. Packs
+# listed here bypass the engine's estimation heuristics — needed when a
+# hub city is visited long before its gym (Lumiose City's encounters
+# happen on the first visit; Clemont is badge 5).
+SEGMENT_CUTOFFS = {
+    "x-y": {
+        "xy-viola": "kalos-route-3",
+        "xy-grant": "cyllage-city",
+        "xy-korrina": "shalour-city",
+        "xy-ramos": "azure-bay",
+        "xy-clemont": "kalos-route-13",
+        "xy-valerie": "laverre-city",
+        "xy-olympia": "kalos-route-17",
+        "xy-wulfric": "pokemon-village",
+    },
+}
+
 # Not wild/catchable encounters for run-logging purposes (in-game trades,
 # raid dens, event distributions, snag battles in side games, island scan).
 EXCLUDE_METHODS = {
@@ -220,6 +238,22 @@ def main() -> int:
                     "marvelous-bridge", "unova-route-17", "unova-route-18",
                     "p2-laboratory", "giant-chasm", "challengers-cave", "ns-castle",
                 ],
+                # Kalos: the starter gift in Aquacorde is the game's first
+                # encounter (gift rows carry no progression signal), so the
+                # chain leads with it.
+                "x-y": [
+                    "aquacorde-town", "kalos-route-2", "santalune-forest", "kalos-route-3",
+                    "kalos-route-22", "kalos-route-4", "lumiose-city", "kalos-route-5",
+                    "kalos-berry-fields", "kalos-route-6", "parfum-palace", "kalos-route-7",
+                    "connecting-cave", "kalos-route-8", "ambrette-town", "kalos-route-9",
+                    "glittering-cave", "cyllage-city", "kalos-route-10", "kalos-route-11",
+                    "reflection-cave", "shalour-city", "tower-of-mastery", "kalos-route-12",
+                    "azure-bay", "kalos-route-13", "kalos-route-14", "laverre-city",
+                    "kalos-route-15", "kalos-route-16", "lost-hotel", "frost-cavern",
+                    "kalos-route-17", "kalos-route-18", "terminus-cave", "couriway-town",
+                    "kalos-route-19", "kalos-route-20", "pokemon-village", "kalos-route-21",
+                    "kalos-victory-road", "friend-safari",
+                ],
             }
             chain = STORY_CHAINS.get(pack_id, [])
             for prev_ident, area_ident in zip(chain, chain[1:]):
@@ -267,6 +301,8 @@ def main() -> int:
             "areas": areas,
             "bosses": bosses,
         }
+        if pack_id in SEGMENT_CUTOFFS:
+            pack["bossAreaCutoffs"] = SEGMENT_CUTOFFS[pack_id]
         out = OUT_DIR / f"{pack_id}.json"
         out.write_text(json.dumps(pack, indent=1, ensure_ascii=False) + "\n")
         n_enc = sum(len(a["encounters"]) for a in areas)

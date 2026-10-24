@@ -57,6 +57,42 @@ export function bossSegments(
   const segmentOf = new Map(bosses.map((b, i) => [b.id, segments[i]]));
   const receivers = bosses.filter((b) => !LEAGUE_NAME.test(b.name));
   const pool = receivers.length > 0 ? receivers : bosses;
+
+  // Hand-authored cutoffs (pack.bossAreaCutoffs) replace estimation for
+  // the whole pack: segment boundaries are area indexes, interpolated
+  // between authored anchors for bosses without one.
+  const areaIndex = new Map(areas.map((a, i) => [a.id, i]));
+  const authored = pool
+    .map((b) => pack.bossAreaCutoffs?.[b.id])
+    .map((areaId) => (areaId ? areaIndex.get(areaId) : undefined));
+  if (authored.some((i) => i !== undefined)) {
+    const ends: number[] = new Array(pool.length).fill(-1);
+    const anchors: [number, number][] = [[-1, -1], ...authored
+      .map((idx, i) => [i, idx] as [number, number])
+      .filter(([, idx]) => idx !== undefined), [pool.length, areas.length - 1]];
+    for (let i = 0; i < pool.length; i++) {
+      if (authored[i] !== undefined) {
+        ends[i] = authored[i]!;
+      } else {
+        const prev = [...anchors].reverse().find(([bi]) => bi < i)!;
+        const next = anchors.find(([bi]) => bi > i)!;
+        const t = (i - prev[0]) / (next[0] - prev[0]);
+        ends[i] = Math.round(prev[1] + t * (next[1] - prev[1]));
+      }
+      if (i > 0) ends[i] = Math.max(ends[i], ends[i - 1]);
+      ends[i] = Math.min(ends[i], areas.length - 1);
+    }
+    pool.forEach((boss, i) => {
+      const from = (i === 0 ? -1 : ends[i - 1]) + 1;
+      const seg = segmentOf.get(boss.id);
+      for (let ai = from; ai <= ends[i]; ai++) seg?.areas.push(areas[ai]);
+      if (i === pool.length - 1) {
+        for (let ai = ends[i] + 1; ai < areas.length; ai++) seg?.areas.push(areas[ai]);
+      }
+    });
+    return { segments, trailing: [] };
+  }
+
   // A gym's own city can never sit in an earlier segment: you arrive at
   // the city when you arrive at its gym, whatever the encounter levels
   // say (a lone low-level event Pokémon in that city — Castelia's Zorua —

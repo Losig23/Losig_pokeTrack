@@ -28,6 +28,11 @@ export function validatePack(pack: GamePack): string[] {
     if (boss.levelCap !== ace)
       problems.push(`boss ${boss.id}: levelCap ${boss.levelCap} does not match ace level ${ace}`);
   }
+
+  for (const [bossId, areaId] of Object.entries(pack.bossAreaCutoffs ?? {})) {
+    if (!bossIds.has(bossId)) problems.push(`bossAreaCutoffs: unknown boss id: ${bossId}`);
+    if (!areaIds.has(areaId)) problems.push(`bossAreaCutoffs: unknown area id: ${areaId}`);
+  }
   return problems;
 }
 
