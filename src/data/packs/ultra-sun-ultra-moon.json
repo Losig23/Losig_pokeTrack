@@ -268,131 +268,9 @@
    ]
   },
   {
-   "id": "alola-route-2",
-   "name": "Alola Route 2",
-   "order": 40,
-   "encounters": [
-    {
-     "species": "abra",
-     "minLevel": 6,
-     "maxLevel": 9,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "crabrawler",
-     "minLevel": 8,
-     "maxLevel": 11,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "cutiefly",
-     "minLevel": 7,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "drowzee",
-     "minLevel": 6,
-     "maxLevel": 11,
-     "methods": [
-      "bubbling-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "dunsparce",
-     "minLevel": 7,
-     "maxLevel": 11,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "ekans",
-     "minLevel": 6,
-     "maxLevel": 11,
-     "methods": [
-      "bubbling-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "furfrou",
-     "minLevel": 6,
-     "maxLevel": 9,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "growlithe",
-     "minLevel": 7,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "makuhita",
-     "minLevel": 6,
-     "maxLevel": 11,
-     "methods": [
-      "bubbling-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "meowth",
-     "minLevel": 6,
-     "maxLevel": 9,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 6,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "smeargle",
-     "minLevel": 6,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "spearow",
-     "minLevel": 7,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "yungoos",
-     "minLevel": 6,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "hauoli-cemetery",
    "name": "Hauoli Cemetery",
-   "order": 50,
+   "order": 40,
    "encounters": [
     {
      "species": "drifloon",
@@ -431,7 +309,7 @@
   {
    "id": "hauoli-city",
    "name": "Hauoli City",
-   "order": 60,
+   "order": 50,
    "encounters": [
     {
      "species": "abra",
@@ -659,7 +537,7 @@
   {
    "id": "sandy-cave",
    "name": "Sandy Cave",
-   "order": 70,
+   "order": 60,
    "encounters": [
     {
      "species": "psyduck",
@@ -680,16 +558,123 @@
    ]
   },
   {
-   "id": "alola-berry-fields",
-   "name": "Alola Berry Fields",
-   "order": 80,
+   "id": "alola-route-2",
+   "name": "Alola Route 2",
+   "order": 70,
    "encounters": [
     {
+     "species": "abra",
+     "minLevel": 6,
+     "maxLevel": 9,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
      "species": "crabrawler",
+     "minLevel": 8,
+     "maxLevel": 11,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "cutiefly",
      "minLevel": 7,
      "maxLevel": 10,
      "methods": [
-      "berry-trees"
+      "walk"
+     ]
+    },
+    {
+     "species": "drowzee",
+     "minLevel": 6,
+     "maxLevel": 11,
+     "methods": [
+      "bubbling-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "dunsparce",
+     "minLevel": 7,
+     "maxLevel": 11,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "ekans",
+     "minLevel": 6,
+     "maxLevel": 11,
+     "methods": [
+      "bubbling-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "furfrou",
+     "minLevel": 6,
+     "maxLevel": 9,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "growlithe",
+     "minLevel": 7,
+     "maxLevel": 10,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "makuhita",
+     "minLevel": 6,
+     "maxLevel": 11,
+     "methods": [
+      "bubbling-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 6,
+     "maxLevel": 9,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 6,
+     "maxLevel": 10,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "smeargle",
+     "minLevel": 6,
+     "maxLevel": 10,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "spearow",
+     "minLevel": 7,
+     "maxLevel": 10,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "yungoos",
+     "minLevel": 6,
+     "maxLevel": 10,
+     "methods": [
+      "walk"
      ]
     }
    ]
@@ -697,7 +682,7 @@
   {
    "id": "verdant-cavern",
    "name": "Verdant Cavern",
-   "order": 90,
+   "order": 80,
    "encounters": [
     {
      "species": "diglett",
@@ -737,6 +722,21 @@
      "maxLevel": 11,
      "methods": [
       "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-berry-fields",
+   "name": "Alola Berry Fields",
+   "order": 90,
+   "encounters": [
+    {
+     "species": "crabrawler",
+     "minLevel": 7,
+     "maxLevel": 10,
+     "methods": [
+      "berry-trees"
      ]
     }
    ]
@@ -822,82 +822,9 @@
    ]
   },
   {
-   "id": "melemele-meadow",
-   "name": "Melemele Meadow",
-   "order": 110,
-   "encounters": [
-    {
-     "species": "butterfree",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "caterpie",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "cottonee",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "cutiefly",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "flabebe",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "metapod",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "oricorio",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "petilil",
-     "minLevel": 10,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "seaward-cave",
    "name": "Seaward Cave",
-   "order": 120,
+   "order": 110,
    "encounters": [
     {
      "species": "barboach",
@@ -998,345 +925,74 @@
    ]
   },
   {
-   "id": "alola-route-13",
-   "name": "Alola Route 13",
-   "order": 130,
+   "id": "melemele-meadow",
+   "name": "Melemele Meadow",
+   "order": 120,
    "encounters": [
     {
-     "species": "bruxish",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-9",
-   "name": "Alola Route 9",
-   "order": 140,
-   "encounters": [
-    {
-     "species": "corsola",
-     "minLevel": 10,
-     "maxLevel": 23,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "ditto",
-     "minLevel": 29,
-     "maxLevel": 29,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 23,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "luvdisc",
-     "minLevel": 10,
-     "maxLevel": 23,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 23,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "mareanie",
-     "minLevel": 10,
-     "maxLevel": 23,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 10,
-     "maxLevel": 23,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "melemele-sea",
-   "name": "Melemele Sea",
-   "order": 150,
-   "encounters": [
-    {
-     "species": "clamperl",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "corsola",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 15,
-     "maxLevel": 18,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gorebyss",
-     "minLevel": 10,
-     "maxLevel": 22,
+     "species": "butterfree",
+     "minLevel": 9,
+     "maxLevel": 12,
      "methods": [
       "sos",
-      "sos-from-bubbling-spot"
+      "walk"
      ]
     },
     {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 22,
+     "species": "caterpie",
+     "minLevel": 9,
+     "maxLevel": 12,
      "methods": [
       "sos",
-      "sos-from-bubbling-spot"
+      "walk"
      ]
     },
     {
-     "species": "huntail",
+     "species": "cottonee",
+     "minLevel": 9,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cutiefly",
+     "minLevel": 9,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "flabebe",
+     "minLevel": 9,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "metapod",
+     "minLevel": 9,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "oricorio",
+     "minLevel": 9,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "petilil",
      "minLevel": 10,
-     "maxLevel": 22,
+     "maxLevel": 12,
      "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "luvdisc",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "mantyke",
-     "minLevel": 15,
-     "maxLevel": 18,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "mareanie",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "sos",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 15,
-     "maxLevel": 18,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 15,
-     "maxLevel": 18,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "paniola-town",
-   "name": "Paniola Town",
-   "order": 160,
-   "encounters": [
-    {
-     "species": "barboach",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "whiscash",
-     "minLevel": 10,
-     "maxLevel": 22,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "seafolk-village",
-   "name": "Seafolk Village",
-   "order": 170,
-   "encounters": [
-    {
-     "species": "aerodactyl",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "dhelmise",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wailord",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
+      "walk"
      ]
     }
    ]
@@ -1344,7 +1000,7 @@
   {
    "id": "alola-route-4",
    "name": "Alola Route 4",
-   "order": 180,
+   "order": 130,
    "encounters": [
     {
      "species": "crabrawler",
@@ -1455,7 +1111,7 @@
   {
    "id": "ten-carat-hill",
    "name": "Ten Carat Hill",
-   "order": 190,
+   "order": 140,
    "encounters": [
     {
      "species": "carbink",
@@ -1534,7 +1190,7 @@
   {
    "id": "paniola-ranch",
    "name": "Paniola Ranch",
-   "order": 200,
+   "order": 150,
    "encounters": [
     {
      "species": "eevee",
@@ -1591,7 +1247,7 @@
   {
    "id": "alola-route-5",
    "name": "Alola Route 5",
-   "order": 210,
+   "order": 160,
    "encounters": [
     {
      "species": "butterfree",
@@ -1672,7 +1328,7 @@
   {
    "id": "alola-route-6",
    "name": "Alola Route 6",
-   "order": 220,
+   "order": 170,
    "encounters": [
     {
      "species": "eevee",
@@ -1783,7 +1439,7 @@
   {
    "id": "brooklet-hill",
    "name": "Brooklet Hill",
-   "order": 230,
+   "order": 180,
    "encounters": [
     {
      "species": "alomomola",
@@ -1939,7 +1595,7 @@
   {
    "id": "kalae-bay",
    "name": "Kalae Bay",
-   "order": 240,
+   "order": 190,
    "encounters": [
     {
      "species": "bagon",
@@ -2088,9 +1744,271 @@
    ]
   },
   {
+   "id": "melemele-sea",
+   "name": "Melemele Sea",
+   "order": 200,
+   "encounters": [
+    {
+     "species": "clamperl",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "corsola",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 15,
+     "maxLevel": 18,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gorebyss",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "huntail",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "luvdisc",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "mantyke",
+     "minLevel": 15,
+     "maxLevel": 18,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "mareanie",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "sos",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 15,
+     "maxLevel": 18,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 15,
+     "maxLevel": 18,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "paniola-town",
+   "name": "Paniola Town",
+   "order": 210,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 10,
+     "maxLevel": 22,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wela-volcano-park",
+   "name": "Wela Volcano Park",
+   "order": 220,
+   "encounters": [
+    {
+     "species": "cubone",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "fletchinder",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "fletchling",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "happiny",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "kangaskhan",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "sos",
+      "walk"
+     ]
+    },
+    {
+     "species": "magby",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magmar",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "salandit",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "salazzle",
+     "minLevel": 16,
+     "maxLevel": 19,
+     "methods": [
+      "sos"
+     ]
+    }
+   ]
+  },
+  {
    "id": "alola-route-7",
    "name": "Alola Route 7",
-   "order": 250,
+   "order": 230,
    "encounters": [
     {
      "species": "diglett",
@@ -2180,81 +2098,64 @@
    ]
   },
   {
-   "id": "wela-volcano-park",
-   "name": "Wela Volcano Park",
-   "order": 260,
+   "id": "alola-route-9",
+   "name": "Alola Route 9",
+   "order": 240,
    "encounters": [
     {
-     "species": "cubone",
-     "minLevel": 16,
-     "maxLevel": 19,
+     "species": "corsola",
+     "minLevel": 10,
+     "maxLevel": 23,
      "methods": [
-      "walk"
+      "super-rod"
      ]
     },
     {
-     "species": "fletchinder",
-     "minLevel": 16,
-     "maxLevel": 19,
+     "species": "ditto",
+     "minLevel": 29,
+     "maxLevel": 29,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 23,
      "methods": [
       "sos"
      ]
     },
     {
-     "species": "fletchling",
-     "minLevel": 16,
-     "maxLevel": 19,
+     "species": "luvdisc",
+     "minLevel": 10,
+     "maxLevel": 23,
      "methods": [
-      "walk"
+      "super-rod"
      ]
     },
     {
-     "species": "happiny",
-     "minLevel": 16,
-     "maxLevel": 19,
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 23,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "mareanie",
+     "minLevel": 10,
+     "maxLevel": 23,
      "methods": [
       "sos"
      ]
     },
     {
-     "species": "kangaskhan",
-     "minLevel": 16,
-     "maxLevel": 19,
+     "species": "wishiwashi",
+     "minLevel": 10,
+     "maxLevel": 23,
      "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "magby",
-     "minLevel": 16,
-     "maxLevel": 19,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magmar",
-     "minLevel": 16,
-     "maxLevel": 19,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "salandit",
-     "minLevel": 16,
-     "maxLevel": 19,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "salazzle",
-     "minLevel": 16,
-     "maxLevel": 19,
-     "methods": [
-      "sos"
+      "super-rod"
      ]
     }
    ]
@@ -2262,7 +2163,7 @@
   {
    "id": "alola-route-8",
    "name": "Alola Route 8",
-   "order": 270,
+   "order": 250,
    "encounters": [
     {
      "species": "amaura",
@@ -2500,7 +2401,7 @@
   {
    "id": "dividing-peak-tunnel",
    "name": "Dividing Peak Tunnel",
-   "order": 280,
+   "order": 260,
    "encounters": [
     {
      "species": "kecleon",
@@ -2523,7 +2424,7 @@
   {
    "id": "lush-jungle",
    "name": "Lush Jungle",
-   "order": 290,
+   "order": 270,
    "encounters": [
     {
      "species": "bonsly",
@@ -2743,7 +2644,7 @@
   {
    "id": "trainers-school",
    "name": "Trainers School",
-   "order": 300,
+   "order": 280,
    "encounters": [
     {
      "species": "drifloon",
@@ -2766,7 +2667,7 @@
   {
    "id": "digletts-tunnel",
    "name": "Digletts Tunnel",
-   "order": 310,
+   "order": 290,
    "encounters": [
     {
      "species": "diglett",
@@ -2806,7 +2707,7 @@
   {
    "id": "akala-outskirts",
    "name": "Akala Outskirts",
-   "order": 320,
+   "order": 300,
    "encounters": [
     {
      "species": "chinchou",
@@ -2914,7 +2815,7 @@
   {
    "id": "memorial-hill",
    "name": "Memorial Hill",
-   "order": 330,
+   "order": 310,
    "encounters": [
     {
      "species": "gastly",
@@ -2951,9 +2852,1944 @@
    ]
   },
   {
+   "id": "alola-route-13",
+   "name": "Alola Route 13",
+   "order": 320,
+   "encounters": [
+    {
+     "species": "bruxish",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hano-beach",
+   "name": "Hano Beach",
+   "order": 330,
+   "encounters": [
+    {
+     "species": "finneon",
+     "minLevel": 22,
+     "maxLevel": 25,
+     "methods": [
+      "sos",
+      "surf"
+     ]
+    },
+    {
+     "species": "pyukumuku",
+     "minLevel": 22,
+     "maxLevel": 25,
+     "methods": [
+      "sos",
+      "surf"
+     ]
+    },
+    {
+     "species": "sandygast",
+     "minLevel": 22,
+     "maxLevel": 25,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "starmie",
+     "minLevel": 22,
+     "maxLevel": 25,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 22,
+     "maxLevel": 25,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 22,
+     "maxLevel": 25,
+     "methods": [
+      "bubbling-spots",
+      "sos",
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 22,
+     "maxLevel": 25,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "malie-city",
+   "name": "Malie City",
+   "order": 340,
+   "encounters": [
+    {
+     "species": "grimer",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magnemite",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "minccino",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "trubbish",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "malie-garden",
+   "name": "Malie Garden",
+   "order": 350,
+   "encounters": [
+    {
+     "species": "araquanid",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ariados",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "basculin",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "castform",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "cottonee",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "bubbling-spots",
+      "sos",
+      "sos-from-bubbling-spot",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "ledian",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "masquerain",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "persian",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "petilil",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "politoed",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "sos",
+      "walk"
+     ]
+    },
+    {
+     "species": "poliwrath",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 25,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "seaking",
+     "minLevel": 10,
+     "maxLevel": 33,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-route-10",
+   "name": "Alola Route 10",
+   "order": 360,
+   "encounters": [
+    {
+     "species": "ariados",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "crabrawler",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "bubbling-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ledian",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pancham",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pangoro",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "pineco",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skarmory",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "bubbling-spots",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-route-11",
+   "name": "Alola Route 11",
+   "order": 370,
+   "encounters": [
+    {
+     "species": "ariados",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "komala",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ledian",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pancham",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pangoro",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "parasect",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shiinotic",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "toucannon",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "trumbeak",
+     "minLevel": 26,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mount-hokulani",
+   "name": "Mount Hokulani",
+   "order": 380,
+   "encounters": [
+    {
+     "species": "beldum",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "clefairy",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "cleffa",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ditto",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "electabuzz",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "elekid",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "elgyem",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "happiny",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "minior",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skarmory",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-route-12",
+   "name": "Alola Route 12",
+   "order": 390,
+   "encounters": [
+    {
+     "species": "graveler",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "houndoom",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "manectric",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mudbray",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mudsdale",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "torkoal",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "blush-mountain",
+   "name": "Blush Mountain",
+   "order": 400,
+   "encounters": [
+    {
+     "species": "charjabug",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dedenne",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos",
+      "walk"
+     ]
+    },
+    {
+     "species": "electabuzz",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "elekid",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "grubbin",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "happiny",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "mudbray",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mudsdale",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "togedemaru",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos",
+      "walk"
+     ]
+    },
+    {
+     "species": "torkoal",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "turtonator",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vikavolt",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "sos"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "konikoni-city",
+   "name": "Konikoni City",
+   "order": 410,
+   "encounters": [
+    {
+     "species": "ditto",
+     "minLevel": 29,
+     "maxLevel": 29,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "poni-breaker-coast",
+   "name": "Poni Breaker Coast",
+   "order": 420,
+   "encounters": [
+    {
+     "species": "carvanha",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "clawitzer",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "dragalge",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "gastrodon",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "lapras",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "relicanth",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "sharpedo",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wailord",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "wimpod",
+     "minLevel": 41,
+     "maxLevel": 44,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "seafolk-village",
+   "name": "Seafolk Village",
+   "order": 430,
+   "encounters": [
+    {
+     "species": "aerodactyl",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "dhelmise",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wailord",
+     "minLevel": 10,
+     "maxLevel": 49,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-route-14",
+   "name": "Alola Route 14",
+   "order": 440,
+   "encounters": [
+    {
+     "species": "absol",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bruxish",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "frillish",
+     "minLevel": 30,
+     "maxLevel": 34,
+     "methods": [
+      "static",
+      "surf"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandshrew",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "snorunt",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-route-15",
+   "name": "Alola Route 15",
+   "order": 450,
+   "encounters": [
+    {
+     "species": "bruxish",
+     "minLevel": 10,
+     "maxLevel": 40,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "clamperl",
+     "minLevel": 10,
+     "maxLevel": 40,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gorebyss",
+     "minLevel": 10,
+     "maxLevel": 40,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 40,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "huntail",
+     "minLevel": 10,
+     "maxLevel": 40,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 40,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 30,
+     "maxLevel": 35,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "porygon",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandygast",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "slowpoke",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 10,
+     "maxLevel": 40,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tapu-village",
+   "name": "Tapu Village",
+   "order": 460,
+   "encounters": [
+    {
+     "species": "absol",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bruxish",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "castform",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandshrew",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "snorunt",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vanillite",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 10,
+     "maxLevel": 39,
+     "methods": [
+      "bubbling-spots",
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mount-lanakila",
+   "name": "Mount Lanakila",
+   "order": 470,
+   "encounters": [
+    {
+     "species": "absol",
+     "minLevel": 30,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "castform",
+     "minLevel": 30,
+     "maxLevel": 45,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "drampa",
+     "minLevel": 48,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "glalie",
+     "minLevel": 47,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 48,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandshrew",
+     "minLevel": 30,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sneasel",
+     "minLevel": 47,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "snorunt",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vanillish",
+     "minLevel": 47,
+     "maxLevel": 50,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "vanillite",
+     "minLevel": 30,
+     "maxLevel": 33,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "vanilluxe",
+     "minLevel": 42,
+     "maxLevel": 45,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 30,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ulaula-beach",
+   "name": "Ulaula Beach",
+   "order": 480,
+   "encounters": [
+    {
+     "species": "crabrawler",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "berry-trees"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "thrifty-megamart",
+   "name": "Thrifty Megamart",
+   "order": 490,
+   "encounters": [
+    {
+     "species": "gengar",
+     "minLevel": 31,
+     "maxLevel": 34,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 31,
+     "maxLevel": 34,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "haunter",
+     "minLevel": 31,
+     "maxLevel": 34,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "klefki",
+     "minLevel": 31,
+     "maxLevel": 34,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mimikyu",
+     "minLevel": 31,
+     "maxLevel": 34,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shuppet",
+     "minLevel": 31,
+     "maxLevel": 34,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-route-16",
+   "name": "Alola Route 16",
+   "order": 500,
+   "encounters": [
+    {
+     "species": "crabrawler",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "scraggy",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "slowpoke",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zygarde",
+     "minLevel": 63,
+     "maxLevel": 63,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "haina-desert",
+   "name": "Haina Desert",
+   "order": 510,
+   "encounters": [
+    {
+     "species": "baltoy",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "castform",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "dugtrio",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "bubbling-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "gabite",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "golett",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "sos",
+      "sos-from-bubbling-spot"
+     ]
+    },
+    {
+     "species": "krokorok",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "bubbling-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "trapinch",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "bubbling-spots"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alola-route-17",
+   "name": "Alola Route 17",
+   "order": 520,
+   "encounters": [
+    {
+     "species": "ariados",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "sos",
+      "walk"
+     ]
+    },
+    {
+     "species": "bisharp",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "castform",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "crabrawler",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "sos",
+      "walk"
+     ]
+    },
+    {
+     "species": "goomy",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ledian",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pawniard",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "sos"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "scraggy",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skarmory",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ulaula-meadow",
+   "name": "Ulaula Meadow",
+   "order": 530,
+   "encounters": [
+    {
+     "species": "ariados",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cottonee",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "floette",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ledian",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "oricorio",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "petilil",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ribombee",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "heahea-beach",
+   "name": "Heahea Beach",
+   "order": 540,
+   "encounters": [
+    {
+     "species": "araquanid",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "gumshoos",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "kommo-o",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "lurantis",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "marowak",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "mimikyu",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "ribombee",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "salazzle",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "togedemaru",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "vikavolt",
+     "minLevel": 35,
+     "maxLevel": 35,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "heahea-city",
+   "name": "Heahea City",
+   "order": 550,
+   "encounters": [
+    {
+     "species": "pikachu",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
    "id": "poke-pelago",
    "name": "Poke Pelago",
-   "order": 340,
+   "order": 560,
    "encounters": [
     {
      "species": "banette",
@@ -3166,1718 +5002,9 @@
    ]
   },
   {
-   "id": "hano-beach",
-   "name": "Hano Beach",
-   "order": 350,
-   "encounters": [
-    {
-     "species": "finneon",
-     "minLevel": 22,
-     "maxLevel": 25,
-     "methods": [
-      "sos",
-      "surf"
-     ]
-    },
-    {
-     "species": "pyukumuku",
-     "minLevel": 22,
-     "maxLevel": 25,
-     "methods": [
-      "sos",
-      "surf"
-     ]
-    },
-    {
-     "species": "sandygast",
-     "minLevel": 22,
-     "maxLevel": 25,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "starmie",
-     "minLevel": 22,
-     "maxLevel": 25,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 22,
-     "maxLevel": 25,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 22,
-     "maxLevel": 25,
-     "methods": [
-      "bubbling-spots",
-      "sos",
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 22,
-     "maxLevel": 25,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "malie-city",
-   "name": "Malie City",
-   "order": 360,
-   "encounters": [
-    {
-     "species": "grimer",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magnemite",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "minccino",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "trubbish",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "malie-garden",
-   "name": "Malie Garden",
-   "order": 370,
-   "encounters": [
-    {
-     "species": "araquanid",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ariados",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "basculin",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "castform",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "cottonee",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "bubbling-spots",
-      "sos",
-      "sos-from-bubbling-spot",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "ledian",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "masquerain",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "meowth",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "persian",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "petilil",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "politoed",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "poliwrath",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 25,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "seaking",
-     "minLevel": 10,
-     "maxLevel": 33,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-10",
-   "name": "Alola Route 10",
-   "order": 380,
-   "encounters": [
-    {
-     "species": "ariados",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "crabrawler",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "bubbling-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ledian",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pancham",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pangoro",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "pineco",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skarmory",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "bubbling-spots",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-11",
-   "name": "Alola Route 11",
-   "order": 390,
-   "encounters": [
-    {
-     "species": "ariados",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "komala",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ledian",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pancham",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pangoro",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "parasect",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shiinotic",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "toucannon",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "trumbeak",
-     "minLevel": 26,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "mount-hokulani",
-   "name": "Mount Hokulani",
-   "order": 400,
-   "encounters": [
-    {
-     "species": "beldum",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "clefairy",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "cleffa",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ditto",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "electabuzz",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "elekid",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "elgyem",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "happiny",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "minior",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skarmory",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-12",
-   "name": "Alola Route 12",
-   "order": 410,
-   "encounters": [
-    {
-     "species": "graveler",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "houndoom",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "manectric",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mudbray",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mudsdale",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "torkoal",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "blush-mountain",
-   "name": "Blush Mountain",
-   "order": 420,
-   "encounters": [
-    {
-     "species": "charjabug",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dedenne",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "electabuzz",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "elekid",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "grubbin",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "happiny",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "mudbray",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mudsdale",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "togedemaru",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "torkoal",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "turtonator",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vikavolt",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "sos"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "konikoni-city",
-   "name": "Konikoni City",
-   "order": 430,
-   "encounters": [
-    {
-     "species": "ditto",
-     "minLevel": 29,
-     "maxLevel": 29,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "ulaula-beach",
-   "name": "Ulaula Beach",
-   "order": 440,
-   "encounters": [
-    {
-     "species": "crabrawler",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "berry-trees"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-14",
-   "name": "Alola Route 14",
-   "order": 450,
-   "encounters": [
-    {
-     "species": "absol",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "bruxish",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "frillish",
-     "minLevel": 30,
-     "maxLevel": 34,
-     "methods": [
-      "static",
-      "surf"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sandshrew",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "snorunt",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-15",
-   "name": "Alola Route 15",
-   "order": 460,
-   "encounters": [
-    {
-     "species": "bruxish",
-     "minLevel": 10,
-     "maxLevel": 40,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "clamperl",
-     "minLevel": 10,
-     "maxLevel": 40,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gorebyss",
-     "minLevel": 10,
-     "maxLevel": 40,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 40,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "huntail",
-     "minLevel": 10,
-     "maxLevel": 40,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 40,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 30,
-     "maxLevel": 35,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "porygon",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sandygast",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "slowpoke",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 10,
-     "maxLevel": 40,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "heahea-beach",
-   "name": "Heahea Beach",
-   "order": 470,
-   "encounters": [
-    {
-     "species": "araquanid",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "kommo-o",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "lurantis",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "marowak",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "mimikyu",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "ribombee",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "salazzle",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "togedemaru",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "vikavolt",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "mount-lanakila",
-   "name": "Mount Lanakila",
-   "order": 480,
-   "encounters": [
-    {
-     "species": "absol",
-     "minLevel": 30,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "castform",
-     "minLevel": 30,
-     "maxLevel": 45,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "drampa",
-     "minLevel": 48,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "glalie",
-     "minLevel": 47,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 48,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "necrozma",
-     "minLevel": 65,
-     "maxLevel": 65,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sandshrew",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sneasel",
-     "minLevel": 47,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "snorunt",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vanillish",
-     "minLevel": 47,
-     "maxLevel": 50,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "vanillite",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "vanilluxe",
-     "minLevel": 42,
-     "maxLevel": 45,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "tapu-village",
-   "name": "Tapu Village",
-   "order": 490,
-   "encounters": [
-    {
-     "species": "absol",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "bruxish",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "castform",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sandshrew",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "snorunt",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vanillite",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 10,
-     "maxLevel": 39,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "thrifty-megamart",
-   "name": "Thrifty Megamart",
-   "order": 500,
-   "encounters": [
-    {
-     "species": "gengar",
-     "minLevel": 31,
-     "maxLevel": 34,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 31,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "haunter",
-     "minLevel": 31,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "klefki",
-     "minLevel": 31,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mimikyu",
-     "minLevel": 31,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shuppet",
-     "minLevel": 31,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-16",
-   "name": "Alola Route 16",
-   "order": 510,
-   "encounters": [
-    {
-     "species": "crabrawler",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "scraggy",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "slowpoke",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "zygarde",
-     "minLevel": 63,
-     "maxLevel": 63,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "haina-desert",
-   "name": "Haina Desert",
-   "order": 520,
-   "encounters": [
-    {
-     "species": "baltoy",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "castform",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "dugtrio",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "bubbling-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "gabite",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "golett",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "krokorok",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "bubbling-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "trapinch",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "bubbling-spots"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "alola-route-17",
-   "name": "Alola Route 17",
-   "order": 530,
-   "encounters": [
-    {
-     "species": "ariados",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "bisharp",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "castform",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "crabrawler",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "sos",
-      "walk"
-     ]
-    },
-    {
-     "species": "goomy",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gumshoos",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ledian",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pawniard",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "sos"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "scraggy",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skarmory",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "ulaula-meadow",
-   "name": "Ulaula Meadow",
-   "order": 540,
-   "encounters": [
-    {
-     "species": "ariados",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "cottonee",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "floette",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ledian",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "oricorio",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "petilil",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ribombee",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "heahea-city",
-   "name": "Heahea City",
-   "order": 550,
-   "encounters": [
-    {
-     "species": "pikachu",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
    "id": "ultra-megalopolis",
    "name": "Ultra Megalopolis",
-   "order": 560,
+   "order": 570,
    "encounters": [
     {
      "species": "poipole",
@@ -4892,7 +5019,7 @@
   {
    "id": "ancient-poni-path",
    "name": "Ancient Poni Path",
-   "order": 570,
+   "order": 580,
    "encounters": [
     {
      "species": "carvanha",
@@ -5029,141 +5156,6 @@
      "methods": [
       "sos",
       "sos-from-bubbling-spot"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "poni-breaker-coast",
-   "name": "Poni Breaker Coast",
-   "order": 580,
-   "encounters": [
-    {
-     "species": "carvanha",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "clawitzer",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "dragalge",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "gastrodon",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "lapras",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "relicanth",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "sharpedo",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wailord",
-     "minLevel": 10,
-     "maxLevel": 49,
-     "methods": [
-      "bubbling-spots",
-      "sos",
-      "sos-from-bubbling-spot"
-     ]
-    },
-    {
-     "species": "wimpod",
-     "minLevel": 41,
-     "maxLevel": 44,
-     "methods": [
-      "static"
      ]
     }
    ]
@@ -5892,24 +5884,9 @@
    ]
   },
   {
-   "id": "poni-coast",
-   "name": "Poni Coast",
-   "order": 650,
-   "encounters": [
-    {
-     "species": "dugtrio",
-     "minLevel": 56,
-     "maxLevel": 59,
-     "methods": [
-      "bubbling-spots"
-     ]
-    }
-   ]
-  },
-  {
    "id": "resolution-cave",
    "name": "Resolution Cave",
-   "order": 660,
+   "order": 650,
    "encounters": [
     {
      "species": "crobat",
@@ -5951,13 +5928,20 @@
      "methods": [
       "walk"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "poni-coast",
+   "name": "Poni Coast",
+   "order": 660,
+   "encounters": [
     {
-     "species": "zygarde",
-     "minLevel": 60,
-     "maxLevel": 60,
+     "species": "dugtrio",
+     "minLevel": 56,
+     "maxLevel": 59,
      "methods": [
-      "static"
+      "bubbling-spots"
      ]
     }
    ]
@@ -6104,69 +6088,9 @@
    ]
   },
   {
-   "id": "ruins-of-abundance",
-   "name": "Ruins Of Abundance",
-   "order": 690,
-   "encounters": [
-    {
-     "species": "tapu-bulu",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "ruins-of-conflict",
-   "name": "Ruins Of Conflict",
-   "order": 700,
-   "encounters": [
-    {
-     "species": "tapu-koko",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "ruins-of-hope",
-   "name": "Ruins Of Hope",
-   "order": 710,
-   "encounters": [
-    {
-     "species": "tapu-fini",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "ruins-of-life",
-   "name": "Ruins Of Life",
-   "order": 720,
-   "encounters": [
-    {
-     "species": "tapu-lele",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
    "id": "team-rockets-castle",
    "name": "Team Rockets Castle",
-   "order": 730,
+   "order": 690,
    "encounters": [
     {
      "species": "electrode",
@@ -6181,24 +6105,8 @@
   {
    "id": "ultra-space",
    "name": "Ultra Space",
-   "order": 740,
+   "order": 700,
    "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "azelf",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
     {
      "species": "buzzwole",
      "minLevel": 60,
@@ -6216,71 +6124,7 @@
      ]
     },
     {
-     "species": "cobalion",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "cresselia",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "dialga",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "entei",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "giratina",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "groudon",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "guzzlord",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "heatran",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "ho-oh",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6296,87 +6140,7 @@
      ]
     },
     {
-     "species": "kyogre",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "kyurem",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "landorus",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "latias",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "latios",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "lugia",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "mesprit",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "mewtwo",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "nihilego",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "palkia",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6392,143 +6156,7 @@
      ]
     },
     {
-     "species": "raikou",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "rayquaza",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "regice",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "regigigas",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "regirock",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "registeel",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "reshiram",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "suicune",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "terrakion",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "thundurus",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "tornadus",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "uxie",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "virizion",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "xerneas",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "xurkitree",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "yveltal",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "zekrom",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6540,7 +6168,7 @@
   {
    "id": "ultra-space-wilds",
    "name": "Ultra Space Wilds",
-   "order": 750,
+   "order": 710,
    "encounters": [
     {
      "species": "abomasnow",
@@ -6559,23 +6187,7 @@
      ]
     },
     {
-     "species": "articuno",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "audino",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "azelf",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6591,31 +6203,7 @@
      ]
     },
     {
-     "species": "cobalion",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "cresselia",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "crustle",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "dialga",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6631,14 +6219,6 @@
      ]
     },
     {
-     "species": "entei",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "floatzel",
      "minLevel": 60,
      "maxLevel": 60,
@@ -6647,31 +6227,7 @@
      ]
     },
     {
-     "species": "giratina",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "groudon",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "grumpig",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "heatran",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6695,63 +6251,7 @@
      ]
     },
     {
-     "species": "ho-oh",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "kyogre",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "kyurem",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "landorus",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "latias",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "latios",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "lombre",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "lugia",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6775,30 +6275,6 @@
      ]
     },
     {
-     "species": "mesprit",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "mewtwo",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "nuzleaf",
      "minLevel": 60,
      "maxLevel": 60,
@@ -6807,71 +6283,7 @@
      ]
     },
     {
-     "species": "palkia",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "quagsire",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "raikou",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "rayquaza",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "regice",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "regigigas",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "regirock",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "registeel",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "reshiram",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [
@@ -6895,14 +6307,6 @@
      ]
     },
     {
-     "species": "suicune",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "swanna",
      "minLevel": 60,
      "maxLevel": 60,
@@ -6919,79 +6323,7 @@
      ]
     },
     {
-     "species": "terrakion",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "thundurus",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "tornadus",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "uxie",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "virizion",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "xerneas",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "yanmega",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "yveltal",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "zekrom",
      "minLevel": 60,
      "maxLevel": 60,
      "methods": [

@@ -689,55 +689,14 @@
    ]
   },
   {
-   "id": "new-mauville",
-   "name": "New Mauville",
+   "id": "scorched-slab",
+   "name": "Scorched Slab",
    "order": 210,
    "encounters": [
     {
-     "species": "magnemite",
-     "minLevel": 12,
-     "maxLevel": 12,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "voltorb",
-     "minLevel": 12,
-     "maxLevel": 25,
-     "methods": [
-      "horde",
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "hoenn-route-120",
-   "name": "Hoenn Route 120",
-   "order": 220,
-   "encounters": [
-    {
-     "species": "kecleon",
-     "minLevel": 13,
-     "maxLevel": 30,
-     "methods": [
-      "devon-scope",
-      "horde"
-     ]
-    },
-    {
-     "species": "marill",
-     "minLevel": 13,
-     "maxLevel": 13,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 13,
-     "maxLevel": 13,
+     "species": "zubat",
+     "minLevel": 14,
+     "maxLevel": 14,
      "methods": [
       "horde"
      ]
@@ -747,7 +706,7 @@
   {
    "id": "hoenn-route-121",
    "name": "Hoenn Route 121",
-   "order": 230,
+   "order": 220,
    "encounters": [
     {
      "species": "kecleon",
@@ -778,7 +737,7 @@
   {
    "id": "hoenn-route-123",
    "name": "Hoenn Route 123",
-   "order": 240,
+   "order": 230,
    "encounters": [
     {
      "species": "kecleon",
@@ -809,7 +768,7 @@
   {
    "id": "hoenn-safari-zone",
    "name": "Hoenn Safari Zone",
-   "order": 250,
+   "order": 240,
    "encounters": [
     {
      "species": "doduo",
@@ -840,7 +799,7 @@
   {
    "id": "mt-pyre",
    "name": "Mt. Pyre",
-   "order": 260,
+   "order": 250,
    "encounters": [
     {
      "species": "meditite",
@@ -871,7 +830,7 @@
   {
    "id": "shoal-cave",
    "name": "Shoal Cave",
-   "order": 270,
+   "order": 260,
    "encounters": [
     {
      "species": "snorunt",
@@ -893,6 +852,21 @@
      "species": "zubat",
      "minLevel": 17,
      "maxLevel": 17,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cave-of-origin",
+   "name": "Cave Of Origin",
+   "order": 270,
+   "encounters": [
+    {
+     "species": "zubat",
+     "minLevel": 18,
+     "maxLevel": 18,
      "methods": [
       "horde"
      ]
@@ -1058,14 +1032,6 @@
      ]
     },
     {
-     "species": "rayquaza",
-     "minLevel": 70,
-     "maxLevel": 70,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "swablu",
      "minLevel": 23,
      "maxLevel": 23,
@@ -1076,9 +1042,33 @@
    ]
   },
   {
+   "id": "new-mauville",
+   "name": "New Mauville",
+   "order": 360,
+   "encounters": [
+    {
+     "species": "magnemite",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "voltorb",
+     "minLevel": 12,
+     "maxLevel": 25,
+     "methods": [
+      "horde",
+      "static"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-119",
    "name": "Hoenn Route 119",
-   "order": 360,
+   "order": 370,
    "encounters": [
     {
      "species": "castform",
@@ -1107,17 +1097,48 @@
    ]
   },
   {
+   "id": "hoenn-route-120",
+   "name": "Hoenn Route 120",
+   "order": 380,
+   "encounters": [
+    {
+     "species": "kecleon",
+     "minLevel": 13,
+     "maxLevel": 30,
+     "methods": [
+      "devon-scope",
+      "horde"
+     ]
+    },
+    {
+     "species": "marill",
+     "minLevel": 13,
+     "maxLevel": 13,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 13,
+     "maxLevel": 13,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
    "id": "southern-island",
    "name": "Southern Island",
-   "order": 370,
+   "order": 390,
    "encounters": [
     {
      "species": "latias",
      "minLevel": 30,
      "maxLevel": 30,
      "methods": [
-      "gift",
-      "static"
+      "gift"
      ]
     },
     {
@@ -1125,8 +1146,7 @@
      "minLevel": 30,
      "maxLevel": 30,
      "methods": [
-      "gift",
-      "static"
+      "gift"
      ]
     }
    ]
@@ -1134,7 +1154,7 @@
   {
    "id": "mirage-spot-cave",
    "name": "Mirage Spot Cave",
-   "order": 380,
+   "order": 400,
    "encounters": [
     {
      "species": "boldore",
@@ -1221,7 +1241,7 @@
   {
    "id": "mirage-spot-forest",
    "name": "Mirage Spot Forest",
-   "order": 390,
+   "order": 410,
    "encounters": [
     {
      "species": "audino",
@@ -1340,7 +1360,7 @@
   {
    "id": "mirage-spot-island",
    "name": "Mirage Spot Island",
-   "order": 400,
+   "order": 420,
    "encounters": [
     {
      "species": "audino",
@@ -1467,7 +1487,7 @@
   {
    "id": "mirage-spot-mountain",
    "name": "Mirage Spot Mountain",
-   "order": 410,
+   "order": 430,
    "encounters": [
     {
      "species": "audino",
@@ -1624,24 +1644,9 @@
    ]
   },
   {
-   "id": "ancient-tomb",
-   "name": "Ancient Tomb",
-   "order": 420,
-   "encounters": [
-    {
-     "species": "registeel",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
    "id": "battle-resort",
    "name": "Battle Resort",
-   "order": 430,
+   "order": 440,
    "encounters": [
     {
      "species": "camerupt",
@@ -1657,21 +1662,6 @@
      "maxLevel": 40,
      "methods": [
       "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "desert-ruins",
-   "name": "Desert Ruins",
-   "order": 440,
-   "encounters": [
-    {
-     "species": "regirock",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "static"
      ]
     }
    ]
@@ -1707,40 +1697,9 @@
    ]
   },
   {
-   "id": "cave-of-origin",
-   "name": "Cave Of Origin",
-   "order": 470,
-   "encounters": [
-    {
-     "species": "groudon",
-     "minLevel": 45,
-     "maxLevel": 45,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "kyogre",
-     "minLevel": 45,
-     "maxLevel": 45,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 18,
-     "maxLevel": 18,
-     "methods": [
-      "horde"
-     ]
-    }
-   ]
-  },
-  {
    "id": "mossdeep-space-center",
    "name": "Mossdeep Space Center",
-   "order": 480,
+   "order": 470,
    "encounters": [
     {
      "species": "kecleon",
@@ -1753,275 +1712,12 @@
    ]
   },
   {
-   "id": "crescent-isle",
-   "name": "Crescent Isle",
-   "order": 490,
-   "encounters": [
-    {
-     "species": "cresselia",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "fabled-cave",
-   "name": "Fabled Cave",
-   "order": 500,
-   "encounters": [
-    {
-     "species": "reshiram",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "zekrom",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "gnarled-den",
-   "name": "Gnarled Den",
-   "order": 510,
-   "encounters": [
-    {
-     "species": "kyurem",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "island-cave",
-   "name": "Island Cave",
-   "order": 520,
-   "encounters": [
-    {
-     "species": "regice",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "regigigas",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "nameless-cavern",
-   "name": "Nameless Cavern",
-   "order": 530,
-   "encounters": [
-    {
-     "species": "azelf",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "mesprit",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "uxie",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "pathless-plain",
-   "name": "Pathless Plain",
-   "order": 540,
-   "encounters": [
-    {
-     "species": "cobalion",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "terrakion",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "virizion",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "scorched-slab",
-   "name": "Scorched Slab",
-   "order": 550,
-   "encounters": [
-    {
-     "species": "heatran",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 14,
-     "maxLevel": 14,
-     "methods": [
-      "horde"
-     ]
-    }
-   ]
-  },
-  {
    "id": "sea-mauville",
    "name": "Sea Mauville",
-   "order": 560,
+   "order": 480,
    "encounters": [
-    {
-     "species": "ho-oh",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "lugia",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
     {
      "species": "spiritomb",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "soaring-in-the-sky",
-   "name": "Soaring In The Sky",
-   "order": 570,
-   "encounters": [
-    {
-     "species": "dialga",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "giratina",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "landorus",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "palkia",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "thundurus",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "tornadus",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "trackless-forest",
-   "name": "Trackless Forest",
-   "order": 580,
-   "encounters": [
-    {
-     "species": "entei",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "raikou",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "suicune",
      "minLevel": 50,
      "maxLevel": 50,
      "methods": [

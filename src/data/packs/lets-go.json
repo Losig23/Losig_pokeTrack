@@ -25,784 +25,9 @@
  "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. All teams are the first (story) battles from Bulbapedia's Let's Go party data (game = PE), not the post-game rematches; Let's Go teams/levels differ from Generation I. Giovanni's entry is his Viridian Gym battle (his third encounter), not the earlier Team Rocket Hideout or Silph Co. fights. Champion Trace's team differs by version only in the final slot: recorded here is the Let's Go, Pikachu! variant with Jolteon (Lv 57); in Let's Go, Eevee! that slot is Raichu (Lv 57) and the rest of the team is identical. Trace Mega Evolves his Pidgeot; it is recorded as plain 'pidgeot' because the boss schema has no form field. Agatha legitimately fields two Gengar (Lv 53 and Lv 54). Moves, abilities and items are intentionally left blank.",
  "areas": [
   {
-   "id": "kanto-route-1",
-   "name": "Kanto Route 1",
-   "order": 10,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "bellsprout",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "pidgeot",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgeotto",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld",
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-route-16",
-   "name": "Kanto Route 16",
-   "order": 20,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "chansey",
-     "minLevel": 31,
-     "maxLevel": 36,
-     "methods": [
-      "overworld-special"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "dodrio",
-     "minLevel": 31,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "doduo",
-     "minLevel": 31,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "pidgeot",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgeotto",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld",
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld",
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 31,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 31,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "snorlax",
-     "minLevel": 34,
-     "maxLevel": 34,
-     "methods": [
-      "pokeflute"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-route-2",
-   "name": "Kanto Route 2",
-   "order": 30,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "bellsprout",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "caterpie",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "pidgeot",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgeotto",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld",
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "weedle",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-route-22",
-   "name": "Kanto Route 22",
-   "order": 40,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "nidoran-f",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "nidoran-m",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "spearow",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld",
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-route-3",
-   "name": "Kanto Route 3",
-   "order": 50,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "charmander",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld-special"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "ekans",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "mankey",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "sandshrew",
-     "minLevel": 3,
-     "maxLevel": 8,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "spearow",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld",
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-sea-route-19",
-   "name": "Kanto Sea Route 19",
-   "order": 60,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "lapras",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water-special"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "pidgeot",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgeotto",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "starmie",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-sea-route-20",
-   "name": "Kanto Sea Route 20",
-   "order": 70,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "lapras",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water-special"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "pidgeot",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgeotto",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
    "id": "viridian-forest",
    "name": "Viridian Forest",
-   "order": 80,
+   "order": 10,
    "encounters": [
     {
      "species": "beedrill",
@@ -895,9 +120,32 @@
    ]
   },
   {
+   "id": "pallet-town",
+   "name": "Pallet Town",
+   "order": 20,
+   "encounters": [
+    {
+     "species": "eevee",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "pikachu",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
    "id": "mt-moon",
    "name": "Mt. Moon",
-   "order": 90,
+   "order": 30,
    "encounters": [
     {
      "species": "chansey",
@@ -958,184 +206,9 @@
    ]
   },
   {
-   "id": "pallet-town",
-   "name": "Pallet Town",
-   "order": 100,
-   "encounters": [
-    {
-     "species": "eevee",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "pikachu",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-route-24",
-   "name": "Kanto Route 24",
-   "order": 110,
-   "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "bellsprout",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "charizard",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "charmander",
-     "minLevel": 14,
-     "maxLevel": 14,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "dragonite",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "meowth",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "moltres",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "pidgeot",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgeotto",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld",
-      "overworld-flying"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "squirtle",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld-special"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "venonat",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 3,
-     "maxLevel": 56,
-     "methods": [
-      "overworld-flying-special"
-     ]
-    }
-   ]
-  },
-  {
    "id": "kanto-route-4",
    "name": "Kanto Route 4",
-   "order": 120,
+   "order": 40,
    "encounters": [
     {
      "species": "articuno",
@@ -1272,7 +345,7 @@
   {
    "id": "kanto-route-25",
    "name": "Kanto Route 25",
-   "order": 130,
+   "order": 50,
    "encounters": [
     {
      "species": "articuno",
@@ -1414,9 +487,24 @@
    ]
   },
   {
+   "id": "cerulean-city",
+   "name": "Cerulean City",
+   "order": 60,
+   "encounters": [
+    {
+     "species": "bulbasaur",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
    "id": "kanto-route-5",
    "name": "Kanto Route 5",
-   "order": 140,
+   "order": 70,
    "encounters": [
     {
      "species": "abra",
@@ -1497,7 +585,7 @@
   {
    "id": "kanto-route-6",
    "name": "Kanto Route 6",
-   "order": 150,
+   "order": 80,
    "encounters": [
     {
      "species": "abra",
@@ -1648,16 +736,153 @@
    ]
   },
   {
-   "id": "cerulean-city",
-   "name": "Cerulean City",
-   "order": 160,
+   "id": "kanto-route-24",
+   "name": "Kanto Route 24",
+   "order": 90,
    "encounters": [
     {
-     "species": "bulbasaur",
-     "minLevel": 12,
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "bellsprout",
+     "minLevel": 7,
      "maxLevel": 12,
      "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "charmander",
+     "minLevel": 14,
+     "maxLevel": 14,
+     "methods": [
       "gift"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "pidgeot",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld",
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "squirtle",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld-special"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "venonat",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
      ]
     }
    ]
@@ -1665,7 +890,7 @@
   {
    "id": "digletts-cave",
    "name": "Digletts Cave",
-   "order": 170,
+   "order": 100,
    "encounters": [
     {
      "species": "chansey",
@@ -1704,7 +929,7 @@
   {
    "id": "kanto-route-11",
    "name": "Kanto Route 11",
-   "order": 180,
+   "order": 110,
    "encounters": [
     {
      "species": "articuno",
@@ -1857,7 +1082,7 @@
   {
    "id": "kanto-route-9",
    "name": "Kanto Route 9",
-   "order": 190,
+   "order": 120,
    "encounters": [
     {
      "species": "articuno",
@@ -1978,7 +1203,7 @@
   {
    "id": "kanto-route-10",
    "name": "Kanto Route 10",
-   "order": 200,
+   "order": 130,
    "encounters": [
     {
      "species": "articuno",
@@ -2147,7 +1372,7 @@
   {
    "id": "rock-tunnel",
    "name": "Rock Tunnel",
-   "order": 210,
+   "order": 140,
    "encounters": [
     {
      "species": "charmander",
@@ -2234,7 +1459,7 @@
   {
    "id": "kanto-route-7",
    "name": "Kanto Route 7",
-   "order": 220,
+   "order": 150,
    "encounters": [
     {
      "species": "abra",
@@ -2387,7 +1612,7 @@
   {
    "id": "kanto-route-8",
    "name": "Kanto Route 8",
-   "order": 230,
+   "order": 160,
    "encounters": [
     {
      "species": "abra",
@@ -2538,9 +1763,663 @@
    ]
   },
   {
+   "id": "kanto-route-1",
+   "name": "Kanto Route 1",
+   "order": 170,
+   "encounters": [
+    {
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "bellsprout",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "pidgeot",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld",
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-route-2",
+   "name": "Kanto Route 2",
+   "order": 180,
+   "encounters": [
+    {
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "bellsprout",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "caterpie",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "pidgeot",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld",
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "weedle",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-route-22",
+   "name": "Kanto Route 22",
+   "order": 190,
+   "encounters": [
+    {
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "nidoran-f",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "nidoran-m",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "spearow",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld",
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-route-3",
+   "name": "Kanto Route 3",
+   "order": 200,
+   "encounters": [
+    {
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "charmander",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld-special"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "ekans",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "mankey",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "sandshrew",
+     "minLevel": 3,
+     "maxLevel": 8,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "spearow",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld",
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-sea-route-19",
+   "name": "Kanto Sea Route 19",
+   "order": 210,
+   "encounters": [
+    {
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "lapras",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water-special"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "pidgeot",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "starmie",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-sea-route-20",
+   "name": "Kanto Sea Route 20",
+   "order": 220,
+   "encounters": [
+    {
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "lapras",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water-special"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "pidgeot",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    }
+   ]
+  },
+  {
    "id": "pokemon-tower",
    "name": "Pokemon Tower",
-   "order": 240,
+   "order": 230,
    "encounters": [
     {
      "species": "chansey",
@@ -2595,7 +2474,7 @@
   {
    "id": "saffron-city",
    "name": "Saffron City",
-   "order": 250,
+   "order": 240,
    "encounters": [
     {
      "species": "hitmonchan",
@@ -2617,6 +2496,37 @@
      "species": "porygon",
      "minLevel": 36,
      "maxLevel": 36,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vermilion-city",
+   "name": "Vermilion City",
+   "order": 250,
+   "encounters": [
+    {
+     "species": "arcanine",
+     "minLevel": 32,
+     "maxLevel": 32,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "persian",
+     "minLevel": 32,
+     "maxLevel": 32,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "squirtle",
+     "minLevel": 16,
+     "maxLevel": 16,
      "methods": [
       "gift"
      ]
@@ -2809,32 +2719,122 @@
    ]
   },
   {
-   "id": "vermilion-city",
-   "name": "Vermilion City",
+   "id": "kanto-route-16",
+   "name": "Kanto Route 16",
    "order": 270,
    "encounters": [
     {
-     "species": "arcanine",
-     "minLevel": 32,
-     "maxLevel": 32,
+     "species": "articuno",
+     "minLevel": 3,
+     "maxLevel": 56,
      "methods": [
-      "gift"
+      "overworld-flying-special"
      ]
     },
     {
-     "species": "persian",
-     "minLevel": 32,
-     "maxLevel": 32,
+     "species": "chansey",
+     "minLevel": 31,
+     "maxLevel": 36,
      "methods": [
-      "gift"
+      "overworld-special"
      ]
     },
     {
-     "species": "squirtle",
-     "minLevel": 16,
-     "maxLevel": 16,
+     "species": "charizard",
+     "minLevel": 3,
+     "maxLevel": 56,
      "methods": [
-      "gift"
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "dodrio",
+     "minLevel": 31,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "doduo",
+     "minLevel": 31,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "dragonite",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "moltres",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
+     ]
+    },
+    {
+     "species": "pidgeot",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld",
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld",
+      "overworld-flying"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 31,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 31,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "snorlax",
+     "minLevel": 34,
+     "maxLevel": 34,
+     "methods": [
+      "pokeflute"
+     ]
+    },
+    {
+     "species": "zapdos",
+     "minLevel": 3,
+     "maxLevel": 56,
+     "methods": [
+      "overworld-flying-special"
      ]
     }
    ]
@@ -3705,14 +3705,6 @@
      "methods": [
       "overworld"
      ]
-    },
-    {
-     "species": "zapdos",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
     }
    ]
   },
@@ -3993,14 +3985,6 @@
    "name": "Seafoam Islands",
    "order": 360,
    "encounters": [
-    {
-     "species": "articuno",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
     {
      "species": "cloyster",
      "minLevel": 39,
@@ -4338,14 +4322,6 @@
      ]
     },
     {
-     "species": "moltres",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
      "species": "onix",
      "minLevel": 41,
      "maxLevel": 46,
@@ -4477,14 +4453,6 @@
      "maxLevel": 56,
      "methods": [
       "overworld-water"
-     ]
-    },
-    {
-     "species": "mewtwo",
-     "minLevel": 70,
-     "maxLevel": 70,
-     "methods": [
-      "static"
      ]
     },
     {

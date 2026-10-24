@@ -121,6 +121,11 @@ def main() -> int:
     location_ident = {int(l["id"]): l["identifier"] for l in locations}
     species_by_pokemon = {int(p["id"]): int(p["species_id"]) for p in pokemon}
     species_ident = {int(s["id"]): s["identifier"] for s in species}
+    # Legendary only: mythical statics include legitimate one-off
+    # encounters (Victini at Liberty Garden) that runs may count.
+    legendary_species = {
+        s["identifier"] for s in species if s.get("is_legendary") == "1"
+    }
 
     # Boss data gathered separately (one file per generation, keyed by pack id)
     boss_data: dict[str, dict] = {}
@@ -134,6 +139,11 @@ def main() -> int:
             vset = versions_by_vg.get(vg_id[vg_ident], set())
             # (location_id, species) -> [min, max, {methods}] (merged across methods)
             agg: dict[tuple[int, str], list] = {}
+            # Raw per-row levels for progression ranking: merged per-species
+            # ranges mix methods (a species' Surf range drags its walking
+            # range down), so ranking must read the un-merged rows.
+            land_mins: dict[int, list[int]] = {}
+            row_mids: dict[int, list[float]] = {}
             for row in encounters:
                 if int(row["version_id"]) not in vset:
                     continue
@@ -146,6 +156,16 @@ def main() -> int:
                 sp = species_ident.get(species_by_pokemon.get(int(row["pokemon_id"]), -1))
                 if not sp:
                     continue
+                # Scripted legendary/mythical fights are not route
+                # encounters — and the source data dumps roaming-legendary
+                # statics on an unnamed area that otherwise surfaces as a
+                # junk cross-game location in every pack.
+                if method == "static" and sp in legendary_species:
+                    continue
+                lo_r, hi_r = int(row["min_level"]), int(row["max_level"])
+                if method in WALK_METHODS:
+                    land_mins.setdefault(loc, []).append(lo_r)
+                row_mids.setdefault(loc, []).append((lo_r + hi_r) / 2)
                 key = (loc, sp)
                 lo, hi = int(row["min_level"]), int(row["max_level"])
                 if key in agg:
@@ -161,36 +181,53 @@ def main() -> int:
                 )
 
             def progression_key(loc: int) -> tuple[float, float, str]:
-                # Story position is set by an area's EARLIEST encounters, not
-                # its median: post-game stragglers (e.g. BW Route 1's dark
-                # grass holds Lv 32+ evolved forms) otherwise drag starter
-                # routes to the end of the game. Min first, median tie-break.
-                entries = by_loc[loc]
-                walk_mins = sorted(
-                    e["minLevel"] for e in entries if WALK_METHODS & set(e["methods"])
-                )
-                if walk_mins:
-                    return (walk_mins[0], walk_mins[len(walk_mins) // 2], location_ident.get(loc, ""))
-                all_mins = sorted(e["minLevel"] for e in entries)
-                median = all_mins[len(all_mins) // 2] if all_mins else 999
+                # Story position is set by an area's EARLIEST LAND
+                # encounters (raw per-method rows — merged ranges mix Surf
+                # levels into walking ranges and poison the ranking):
+                # post-game stragglers (BW Route 1's dark-grass Lv 32+
+                # forms) otherwise drag starter routes to the end, and
+                # water tables (Lv 5 fishing ranges even in endgame areas)
+                # drag late areas to the front. Areas with no land rows
+                # (water-only, gift-only cities) rank by their rows'
+                # median level midpoint instead.
+                land = sorted(land_mins.get(loc, []))
+                if land:
+                    return (land[0], land[len(land) // 2], location_ident.get(loc, ""))
+                mids = sorted(row_mids.get(loc, []))
+                median = mids[len(mids) // 2] if mids else 999
                 return (median, median, location_ident.get(loc, ""))
 
             sorted_locs = sorted(by_loc, key=progression_key)
-            # Positional overrides: areas whose only encounters are gifts /
-            # events get a level-based position that can be flatly wrong
-            # (Castelia City's only pool entry is the Lv 10 event Zorua,
-            # which sorted the whole city in front of the second gym).
-            # Pin such areas right after the area the player passes through
-            # just before reaching them.
-            ORDER_AFTER = {
-                "black-white": {"castelia-city": "pinwheel-forest"},
+            # Story-progression chains: level heuristics still misplace
+            # areas that unlock via HMs or events, so packs with a chain
+            # get their main route pinned to the order the game actually
+            # unfolds (each entry placed immediately after the previous).
+            # Unlisted areas keep their heuristic positions.
+            STORY_CHAINS = {
+                "black-white": [
+                    "nuvema-town", "unova-route-1", "unova-route-2", "striaton-city",
+                    "dreamyard", "unova-route-3", "wellspring-cave", "nacrene-city",
+                    "pinwheel-forest", "castelia-city", "liberty-garden", "unova-route-4",
+                    "desert-resort", "relic-castle", "unova-route-16", "lostlorn-forest",
+                    "unova-route-5", "driftveil-drawbridge", "driftveil-city",
+                    "cold-storage", "unova-route-6", "chargestone-cave", "mistralton-cave",
+                    "unova-route-7", "celestial-tower", "twist-mountain", "icirrus-city",
+                    "dragonspiral-tower", "unova-route-8", "moor-of-icirrus",
+                    "unova-route-9", "unova-route-10", "unova-victory-road",
+                    "trial-chamber", "guidance-chamber", "unova-route-11",
+                    "village-bridge", "unova-route-12", "unova-route-13", "undella-town",
+                    "undella-bay", "unova-route-14", "abundant-shrine", "unova-route-15",
+                    "marvelous-bridge", "unova-route-17", "unova-route-18",
+                    "p2-laboratory", "giant-chasm", "challengers-cave", "ns-castle",
+                ],
             }
-            for area_ident, anchor_ident in ORDER_AFTER.get(pack_id, {}).items():
+            chain = STORY_CHAINS.get(pack_id, [])
+            for prev_ident, area_ident in zip(chain, chain[1:]):
                 area_loc = next(
                     (l for l in sorted_locs if location_ident.get(l) == area_ident), None
                 )
                 anchor_loc = next(
-                    (l for l in sorted_locs if location_ident.get(l) == anchor_ident), None
+                    (l for l in sorted_locs if location_ident.get(l) == prev_ident), None
                 )
                 if area_loc is not None and anchor_loc is not None and area_loc != anchor_loc:
                     sorted_locs.remove(area_loc)
