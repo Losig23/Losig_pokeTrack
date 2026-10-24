@@ -107,7 +107,12 @@ function Home({
   const sortedRuns = [...runs].sort(
     (a, b) => statusRank(a) - statusRank(b) || b.createdAt.localeCompare(a.createdAt),
   );
-  const ongoingCount = runs.filter((r) => r.status === "in-progress").length;
+  const [runsTab, setRunsTab] = useState<"open" | "won" | "wiped">("open");
+  const runsByTab = {
+    open: sortedRuns.filter((r) => r.status === "in-progress"),
+    won: sortedRuns.filter((r) => r.status === "won"),
+    wiped: sortedRuns.filter((r) => r.status === "wiped"),
+  };
 
   const packCard = (pack: GamePack) => (
     <button
@@ -177,26 +182,49 @@ function Home({
             />
           </div>
         </div>
-        <p className="muted">
-          {runs.length === 0
-            ? "No runs yet. Start one below."
-            : `${ongoingCount} ongoing · ${runs.length} total — ongoing runs first.`}
-        </p>
-        {importMsg && <p className="muted">{importMsg}</p>}
-        <div className="run-list">
-          {sortedRuns.map((run) => {
-            const pack = getPack(run.packId);
-            return (
-              <button key={run.id} className="run-card" onClick={() => onOpen(run.id)}>
-                <strong>{run.name}</strong>
-                <span>{pack?.name} · {RULESET_LABELS[run.ruleset]} · {run.status}</span>
-                <span>
-                  {pack ? `${progressPercent(run, pack)}% bosses` : ""} · {run.team.length} Pokémon logged
-                </span>
+        {runs.length === 0 ? (
+          <p className="muted">No runs yet. Start one below.</p>
+        ) : (
+          <>
+            <nav className="tabs runs-tabs">
+              <button className={runsTab === "open" ? "tab active" : "tab"} onClick={() => setRunsTab("open")}>
+                Open ({runsByTab.open.length})
               </button>
-            );
-          })}
-        </div>
+              {runsByTab.won.length > 0 && (
+                <button className={runsTab === "won" ? "tab active" : "tab"} onClick={() => setRunsTab("won")}>
+                  Won ({runsByTab.won.length})
+                </button>
+              )}
+              <button className={runsTab === "wiped" ? "tab active" : "tab"} onClick={() => setRunsTab("wiped")}>
+                Wiped ({runsByTab.wiped.length})
+              </button>
+            </nav>
+            {importMsg && <p className="muted">{importMsg}</p>}
+            <div className="run-list">
+              {runsByTab[runsTab].map((run) => {
+                const pack = getPack(run.packId);
+                return (
+                  <button key={run.id} className="run-card" onClick={() => onOpen(run.id)}>
+                    <strong>{run.name}</strong>
+                    <span>{pack?.name} · {RULESET_LABELS[run.ruleset]} · {run.status}</span>
+                    <span>
+                      {pack ? `${progressPercent(run, pack)}% checkpoints` : ""} · {run.team.length} Pokémon logged
+                    </span>
+                  </button>
+                );
+              })}
+              {runsByTab[runsTab].length === 0 && (
+                <p className="muted">
+                  {runsTab === "open"
+                    ? "No open runs. Start one below."
+                    : runsTab === "wiped"
+                      ? "No wiped runs. May it stay that way."
+                      : "No won runs yet."}
+                </p>
+              )}
+            </div>
+          </>
+        )}
       </section>
 
       <section className="panel">

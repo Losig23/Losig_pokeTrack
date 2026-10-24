@@ -324,6 +324,7 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .custom-area-form .area-form { grid-template-columns: 220px 1fr 64px 110px; }
 
 .roster-tabs { margin-bottom: 16px; }
+.runs-tabs { margin: 4px 0 14px; }
 .party-list { display: flex; flex-direction: column; gap: 4px; max-width: 860px; }
 .party-list .mon-card { padding: 10px 12px; }
 .empty-slot {
