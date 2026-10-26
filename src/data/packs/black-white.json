@@ -5248,5 +5248,19 @@
     }
    ]
   }
- ]
+ ],
+ "bossAreaCutoffs": {
+  "cilan": "striaton-city",
+  "chili": "striaton-city",
+  "cress": "striaton-city",
+  "lenora": "nacrene-city",
+  "burgh": "castelia-city",
+  "elesa": "unova-route-5",
+  "clay": "unova-route-6",
+  "skyla": "mistralton-cave",
+  "brycen": "icirrus-city",
+  "drayden": "unova-route-9",
+  "iris": "unova-route-9",
+  "n": "marvelous-bridge"
+ }
 }

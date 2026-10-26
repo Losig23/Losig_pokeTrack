@@ -17,9 +17,73 @@
  "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. Species + levels only; moves/abilities/items intentionally left empty (Gen I has no abilities/held items). Champion Blue's team varies by the player's starter: this pack uses the variant where the player chose Bulbasaur, so Blue's starter is Charmander -> Charizard (Lv 65 ace), with Exeggutor Lv 61 and Gyarados Lv 63 completing the team. The other variants swap in Venusaur (player chose Charmander) or Blastoise (player chose Squirtle) as the Lv 65 ace. Champion levels cross-checked against the official Nintendo Power Player's Guide (Pidgeot 61 / Alakazam 59 / Rhydon 61 / variant pair 61+63 / starter 65).",
  "areas": [
   {
+   "id": "pallet-town",
+   "name": "Pallet Town",
+   "order": 10,
+   "encounters": [
+    {
+     "species": "bulbasaur",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "charmander",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "squirtle",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
    "id": "kanto-route-1",
    "name": "Kanto Route 1",
-   "order": 10,
+   "order": 20,
    "encounters": [
     {
      "species": "pidgey",
@@ -40,17 +104,16 @@
    ]
   },
   {
-   "id": "kanto-route-22",
-   "name": "Kanto Route 22",
-   "order": 20,
+   "id": "viridian-city",
+   "name": "Viridian City",
+   "order": 30,
    "encounters": [
     {
      "species": "goldeen",
      "minLevel": 10,
-     "maxLevel": 15,
+     "maxLevel": 10,
      "methods": [
-      "good-rod",
-      "super-rod"
+      "good-rod"
      ]
     },
     {
@@ -59,22 +122,6 @@
      "maxLevel": 5,
      "methods": [
       "old-rod"
-     ]
-    },
-    {
-     "species": "nidoran-f",
-     "minLevel": 2,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "nidoran-m",
-     "minLevel": 2,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
      ]
     },
     {
@@ -87,19 +134,11 @@
      ]
     },
     {
-     "species": "rattata",
-     "minLevel": 2,
-     "maxLevel": 4,
+     "species": "tentacool",
+     "minLevel": 15,
+     "maxLevel": 15,
      "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "spearow",
-     "minLevel": 3,
-     "maxLevel": 5,
-     "methods": [
-      "walk"
+      "super-rod"
      ]
     }
    ]
@@ -107,7 +146,7 @@
   {
    "id": "kanto-route-2",
    "name": "Kanto Route 2",
-   "order": 30,
+   "order": 40,
    "encounters": [
     {
      "species": "caterpie",
@@ -146,7 +185,7 @@
   {
    "id": "viridian-forest",
    "name": "Viridian Forest",
-   "order": 40,
+   "order": 50,
    "encounters": [
     {
      "species": "caterpie",
@@ -193,7 +232,7 @@
   {
    "id": "kanto-route-3",
    "name": "Kanto Route 3",
-   "order": 50,
+   "order": 60,
    "encounters": [
     {
      "species": "jigglypuff",
@@ -232,7 +271,7 @@
   {
    "id": "mt-moon",
    "name": "Mt. Moon",
-   "order": 60,
+   "order": 70,
    "encounters": [
     {
      "species": "clefairy",
@@ -271,7 +310,7 @@
   {
    "id": "kanto-route-4",
    "name": "Kanto Route 4",
-   "order": 70,
+   "order": 80,
    "encounters": [
     {
      "species": "ekans",
@@ -316,9 +355,57 @@
    ]
   },
   {
+   "id": "cerulean-city",
+   "name": "Cerulean City",
+   "order": 90,
+   "encounters": [
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "krabby",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
    "id": "kanto-route-24",
    "name": "Kanto Route 24",
-   "order": 80,
+   "order": 100,
    "encounters": [
     {
      "species": "abra",
@@ -430,7 +517,7 @@
   {
    "id": "kanto-route-25",
    "name": "Kanto Route 25",
-   "order": 90,
+   "order": 110,
    "encounters": [
     {
      "species": "abra",
@@ -540,9 +627,190 @@
    ]
   },
   {
+   "id": "kanto-route-5",
+   "name": "Kanto Route 5",
+   "order": 120,
+   "encounters": [
+    {
+     "species": "bellsprout",
+     "minLevel": 13,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mankey",
+     "minLevel": 10,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 10,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 13,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 13,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-route-6",
+   "name": "Kanto Route 6",
+   "order": 130,
+   "encounters": [
+    {
+     "species": "bellsprout",
+     "minLevel": 13,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "krabby",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "mankey",
+     "minLevel": 10,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 10,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 13,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 13,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vermilion-city",
+   "name": "Vermilion City",
+   "order": 140,
+   "encounters": [
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "krabby",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
    "id": "kanto-route-11",
    "name": "Kanto Route 11",
-   "order": 100,
+   "order": 150,
    "encounters": [
     {
      "species": "drowzee",
@@ -619,46 +887,22 @@
    ]
   },
   {
-   "id": "kanto-route-5",
-   "name": "Kanto Route 5",
-   "order": 110,
+   "id": "digletts-cave",
+   "name": "Digletts Cave",
+   "order": 160,
    "encounters": [
     {
-     "species": "bellsprout",
-     "minLevel": 13,
-     "maxLevel": 16,
+     "species": "diglett",
+     "minLevel": 15,
+     "maxLevel": 22,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "mankey",
-     "minLevel": 10,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "meowth",
-     "minLevel": 10,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 13,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 13,
-     "maxLevel": 16,
+     "species": "dugtrio",
+     "minLevel": 29,
+     "maxLevel": 31,
      "methods": [
       "walk"
      ]
@@ -666,88 +910,40 @@
    ]
   },
   {
-   "id": "kanto-route-6",
-   "name": "Kanto Route 6",
-   "order": 120,
+   "id": "kanto-route-9",
+   "name": "Kanto Route 9",
+   "order": 170,
    "encounters": [
     {
-     "species": "bellsprout",
+     "species": "ekans",
+     "minLevel": 11,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 14,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandshrew",
+     "minLevel": 11,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "spearow",
      "minLevel": 13,
-     "maxLevel": 16,
+     "maxLevel": 17,
      "methods": [
       "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "krabby",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "mankey",
-     "minLevel": 10,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "meowth",
-     "minLevel": 10,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 13,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 13,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
      ]
     }
    ]
@@ -755,7 +951,7 @@
   {
    "id": "kanto-route-10",
    "name": "Kanto Route 10",
-   "order": 130,
+   "order": 180,
    "encounters": [
     {
      "species": "ekans",
@@ -832,39 +1028,64 @@
    ]
   },
   {
-   "id": "kanto-route-9",
-   "name": "Kanto Route 9",
-   "order": 140,
+   "id": "kanto-power-plant",
+   "name": "Kanto Power Plant",
+   "order": 190,
    "encounters": [
     {
-     "species": "ekans",
-     "minLevel": 11,
-     "maxLevel": 17,
+     "species": "electabuzz",
+     "minLevel": 33,
+     "maxLevel": 36,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "rattata",
-     "minLevel": 14,
-     "maxLevel": 17,
+     "species": "electrode",
+     "minLevel": 43,
+     "maxLevel": 43,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "magnemite",
+     "minLevel": 21,
+     "maxLevel": 23,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "sandshrew",
-     "minLevel": 11,
-     "maxLevel": 17,
+     "species": "magneton",
+     "minLevel": 32,
+     "maxLevel": 35,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "spearow",
-     "minLevel": 13,
-     "maxLevel": 17,
+     "species": "pikachu",
+     "minLevel": 20,
+     "maxLevel": 24,
      "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "raichu",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "voltorb",
+     "minLevel": 21,
+     "maxLevel": 40,
+     "methods": [
+      "static",
       "walk"
      ]
     }
@@ -873,7 +1094,7 @@
   {
    "id": "rock-tunnel",
    "name": "Rock Tunnel",
-   "order": 150,
+   "order": 200,
    "encounters": [
     {
      "species": "geodude",
@@ -910,465 +1131,9 @@
    ]
   },
   {
-   "id": "cerulean-city",
-   "name": "Cerulean City",
-   "order": 160,
-   "encounters": [
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "krabby",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "cinnabar-island",
-   "name": "Cinnabar Island",
-   "order": 170,
-   "encounters": [
-    {
-     "species": "aerodactyl",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "kabuto",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "omanyte",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "fuchsia-city",
-   "name": "Fuchsia City",
-   "order": 180,
-   "encounters": [
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "krabby",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "old-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "seaking",
-     "minLevel": 23,
-     "maxLevel": 23,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-sea-route-19",
-   "name": "Kanto Sea Route 19",
-   "order": 190,
-   "encounters": [
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-sea-route-20",
-   "name": "Kanto Sea Route 20",
-   "order": 200,
-   "encounters": [
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "pallet-town",
-   "name": "Pallet Town",
-   "order": 210,
-   "encounters": [
-    {
-     "species": "bulbasaur",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "charmander",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "squirtle",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "vermilion-city",
-   "name": "Vermilion City",
-   "order": 220,
-   "encounters": [
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "krabby",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "viridian-city",
-   "name": "Viridian City",
-   "order": 230,
-   "encounters": [
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
    "id": "kanto-route-8",
    "name": "Kanto Route 8",
-   "order": 240,
+   "order": 210,
    "encounters": [
     {
      "species": "ekans",
@@ -1429,22 +1194,62 @@
    ]
   },
   {
-   "id": "digletts-cave",
-   "name": "Digletts Cave",
-   "order": 250,
+   "id": "kanto-route-7",
+   "name": "Kanto Route 7",
+   "order": 220,
    "encounters": [
     {
-     "species": "diglett",
-     "minLevel": 15,
+     "species": "bellsprout",
+     "minLevel": 19,
      "maxLevel": 22,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "dugtrio",
-     "minLevel": 29,
-     "maxLevel": 31,
+     "species": "growlithe",
+     "minLevel": 18,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mankey",
+     "minLevel": 17,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 17,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 19,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 19,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 18,
+     "maxLevel": 20,
      "methods": [
       "walk"
      ]
@@ -1454,7 +1259,7 @@
   {
    "id": "celadon-city",
    "name": "Celadon City",
-   "order": 260,
+   "order": 230,
    "encounters": [
     {
      "species": "abra",
@@ -1571,72 +1376,9 @@
    ]
   },
   {
-   "id": "kanto-route-7",
-   "name": "Kanto Route 7",
-   "order": 270,
-   "encounters": [
-    {
-     "species": "bellsprout",
-     "minLevel": 19,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "growlithe",
-     "minLevel": 18,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mankey",
-     "minLevel": 17,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "meowth",
-     "minLevel": 17,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 19,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 19,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 18,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "kanto-route-16",
    "name": "Kanto Route 16",
-   "order": 280,
+   "order": 240,
    "encounters": [
     {
      "species": "doduo",
@@ -1681,104 +1423,9 @@
    ]
   },
   {
-   "id": "pokemon-tower",
-   "name": "Pokemon Tower",
-   "order": 290,
-   "encounters": [
-    {
-     "species": "cubone",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gastly",
-     "minLevel": 18,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "haunter",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-power-plant",
-   "name": "Kanto Power Plant",
-   "order": 300,
-   "encounters": [
-    {
-     "species": "electabuzz",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "electrode",
-     "minLevel": 43,
-     "maxLevel": 43,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "magnemite",
-     "minLevel": 21,
-     "maxLevel": 23,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magneton",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pikachu",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "raichu",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "voltorb",
-     "minLevel": 21,
-     "maxLevel": 40,
-     "methods": [
-      "static",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "kanto-route-17",
    "name": "Kanto Route 17",
-   "order": 310,
+   "order": 250,
    "encounters": [
     {
      "species": "doduo",
@@ -1859,7 +1506,7 @@
   {
    "id": "kanto-route-18",
    "name": "Kanto Route 18",
-   "order": 320,
+   "order": 260,
    "encounters": [
     {
      "species": "doduo",
@@ -1938,9 +1585,9 @@
    ]
   },
   {
-   "id": "kanto-sea-route-21",
-   "name": "Kanto Sea Route 21",
-   "order": 330,
+   "id": "fuchsia-city",
+   "name": "Fuchsia City",
+   "order": 270,
    "encounters": [
     {
      "species": "goldeen",
@@ -1949,167 +1596,23 @@
      "methods": [
       "good-rod",
       "super-rod"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pidgeotto",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 21,
-     "maxLevel": 23,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 21,
-     "maxLevel": 23,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "tangela",
-     "minLevel": 28,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "seafoam-islands",
-   "name": "Seafoam Islands",
-   "order": 340,
-   "encounters": [
-    {
-     "species": "dewgong",
-     "minLevel": 37,
-     "maxLevel": 38,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 29,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 15,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 37,
-     "maxLevel": 39,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 15,
-     "maxLevel": 33,
-     "methods": [
-      "super-rod",
-      "walk"
-     ]
-    },
-    {
-     "species": "kingler",
-     "minLevel": 37,
-     "maxLevel": 39,
-     "methods": [
-      "walk"
      ]
     },
     {
      "species": "krabby",
-     "minLevel": 28,
-     "maxLevel": 33,
+     "minLevel": 15,
+     "maxLevel": 15,
      "methods": [
-      "walk"
+      "super-rod"
      ]
     },
     {
      "species": "magikarp",
      "minLevel": 5,
-     "maxLevel": 5,
+     "maxLevel": 15,
      "methods": [
-      "old-rod"
+      "old-rod",
+      "super-rod"
      ]
     },
     {
@@ -2121,69 +1624,11 @@
      ]
     },
     {
-     "species": "psyduck",
-     "minLevel": 28,
-     "maxLevel": 33,
+     "species": "seaking",
+     "minLevel": 23,
+     "maxLevel": 23,
      "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "seadra",
-     "minLevel": 37,
-     "maxLevel": 39,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "seel",
-     "minLevel": 28,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 15,
-     "maxLevel": 33,
-     "methods": [
-      "super-rod",
-      "walk"
-     ]
-    },
-    {
-     "species": "slowbro",
-     "minLevel": 37,
-     "maxLevel": 39,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "slowpoke",
-     "minLevel": 28,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 15,
-     "maxLevel": 33,
-     "methods": [
-      "super-rod",
-      "walk"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 21,
-     "maxLevel": 21,
-     "methods": [
-      "walk"
+      "super-rod"
      ]
     }
    ]
@@ -2191,7 +1636,7 @@
   {
    "id": "kanto-safari-zone",
    "name": "Kanto Safari Zone",
-   "order": 350,
+   "order": 280,
    "encounters": [
     {
      "species": "chansey",
@@ -2380,9 +1825,9 @@
    ]
   },
   {
-   "id": "kanto-route-12",
-   "name": "Kanto Route 12",
-   "order": 360,
+   "id": "kanto-route-15",
+   "name": "Kanto Route 15",
+   "order": 290,
    "encounters": [
     {
      "species": "bellsprout",
@@ -2393,37 +1838,19 @@
      ]
     },
     {
-     "species": "gloom",
-     "minLevel": 28,
-     "maxLevel": 30,
+     "species": "ditto",
+     "minLevel": 26,
+     "maxLevel": 26,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 15,
+     "species": "gloom",
+     "minLevel": 30,
+     "maxLevel": 30,
      "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "krabby",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "old-rod",
-      "super-rod"
+      "walk"
      ]
     },
     {
@@ -2435,35 +1862,90 @@
      ]
     },
     {
-     "species": "pidgey",
-     "minLevel": 23,
-     "maxLevel": 27,
+     "species": "pidgeotto",
+     "minLevel": 28,
+     "maxLevel": 30,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "poliwag",
-     "minLevel": 10,
-     "maxLevel": 10,
+     "species": "pidgey",
+     "minLevel": 23,
+     "maxLevel": 23,
      "methods": [
-      "good-rod"
+      "walk"
      ]
     },
     {
-     "species": "snorlax",
+     "species": "venonat",
+     "minLevel": 26,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "weepinbell",
      "minLevel": 30,
      "maxLevel": 30,
      "methods": [
-      "pokeflute"
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-route-14",
+   "name": "Kanto Route 14",
+   "order": 300,
+   "encounters": [
+    {
+     "species": "bellsprout",
+     "minLevel": 22,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
      ]
     },
     {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 5,
+     "species": "ditto",
+     "minLevel": 23,
+     "maxLevel": 23,
      "methods": [
-      "super-rod"
+      "walk"
+     ]
+    },
+    {
+     "species": "gloom",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 22,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 26,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
      ]
     },
     {
@@ -2476,7 +1958,7 @@
     },
     {
      "species": "weepinbell",
-     "minLevel": 28,
+     "minLevel": 30,
      "maxLevel": 30,
      "methods": [
       "walk"
@@ -2487,7 +1969,7 @@
   {
    "id": "kanto-route-13",
    "name": "Kanto Route 13",
-   "order": 370,
+   "order": 310,
    "encounters": [
     {
      "species": "bellsprout",
@@ -2590,9 +2072,9 @@
    ]
   },
   {
-   "id": "kanto-route-14",
-   "name": "Kanto Route 14",
-   "order": 380,
+   "id": "kanto-route-12",
+   "name": "Kanto Route 12",
+   "order": 320,
    "encounters": [
     {
      "species": "bellsprout",
@@ -2603,19 +2085,37 @@
      ]
     },
     {
-     "species": "ditto",
-     "minLevel": 23,
-     "maxLevel": 23,
+     "species": "gloom",
+     "minLevel": 28,
+     "maxLevel": 30,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "gloom",
-     "minLevel": 30,
-     "maxLevel": 30,
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
      "methods": [
-      "walk"
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "krabby",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "old-rod",
+      "super-rod"
      ]
     },
     {
@@ -2627,19 +2127,35 @@
      ]
     },
     {
-     "species": "pidgeotto",
-     "minLevel": 28,
-     "maxLevel": 30,
+     "species": "pidgey",
+     "minLevel": 23,
+     "maxLevel": 27,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "pidgey",
-     "minLevel": 26,
-     "maxLevel": 26,
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
      "methods": [
-      "walk"
+      "good-rod"
+     ]
+    },
+    {
+     "species": "snorlax",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "pokeflute"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "super-rod"
      ]
     },
     {
@@ -2652,158 +2168,665 @@
     },
     {
      "species": "weepinbell",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "kanto-route-15",
-   "name": "Kanto Route 15",
-   "order": 390,
-   "encounters": [
-    {
-     "species": "bellsprout",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ditto",
-     "minLevel": 26,
-     "maxLevel": 26,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gloom",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pidgeotto",
      "minLevel": 28,
      "maxLevel": 30,
      "methods": [
       "walk"
      ]
-    },
-    {
-     "species": "pidgey",
-     "minLevel": 23,
-     "maxLevel": 23,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "venonat",
-     "minLevel": 26,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "weepinbell",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
     }
    ]
   },
   {
-   "id": "kanto-victory-road-2",
-   "name": "Kanto Victory Road 2",
-   "order": 400,
+   "id": "pokemon-tower",
+   "name": "Pokemon Tower",
+   "order": 330,
    "encounters": [
     {
-     "species": "geodude",
-     "minLevel": 24,
-     "maxLevel": 26,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 40,
-     "maxLevel": 41,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 41,
-     "maxLevel": 43,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machoke",
-     "minLevel": 41,
-     "maxLevel": 45,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machop",
-     "minLevel": 22,
+     "species": "cubone",
+     "minLevel": 20,
      "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "marowak",
-     "minLevel": 40,
-     "maxLevel": 43,
+     "species": "gastly",
+     "minLevel": 18,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "onix",
-     "minLevel": 36,
-     "maxLevel": 45,
+     "species": "haunter",
+     "minLevel": 25,
+     "maxLevel": 30,
      "methods": [
       "walk"
      ]
+    }
+   ]
+  },
+  {
+   "id": "saffron-city",
+   "name": "Saffron City",
+   "order": 340,
+   "encounters": [
+    {
+     "species": "hitmonchan",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
     },
     {
-     "species": "venomoth",
-     "minLevel": 40,
+     "species": "hitmonlee",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "lapras",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-sea-route-19",
+   "name": "Kanto Sea Route 19",
+   "order": 350,
+   "encounters": [
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
      "maxLevel": 40,
      "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-sea-route-20",
+   "name": "Kanto Sea Route 20",
+   "order": 360,
+   "encounters": [
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "seafoam-islands",
+   "name": "Seafoam Islands",
+   "order": 370,
+   "encounters": [
+    {
+     "species": "dewgong",
+     "minLevel": 37,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 29,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 37,
+     "maxLevel": 39,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 15,
+     "maxLevel": 33,
+     "methods": [
+      "super-rod",
+      "walk"
+     ]
+    },
+    {
+     "species": "kingler",
+     "minLevel": 37,
+     "maxLevel": 39,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "krabby",
+     "minLevel": 28,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 28,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "seadra",
+     "minLevel": 37,
+     "maxLevel": 39,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "seel",
+     "minLevel": 28,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 15,
+     "maxLevel": 33,
+     "methods": [
+      "super-rod",
+      "walk"
+     ]
+    },
+    {
+     "species": "slowbro",
+     "minLevel": 37,
+     "maxLevel": 39,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "slowpoke",
+     "minLevel": 28,
+     "maxLevel": 33,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 15,
+     "maxLevel": 33,
+     "methods": [
+      "super-rod",
       "walk"
      ]
     },
     {
      "species": "zubat",
-     "minLevel": 22,
-     "maxLevel": 26,
+     "minLevel": 21,
+     "maxLevel": 21,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cinnabar-island",
+   "name": "Cinnabar Island",
+   "order": 380,
+   "encounters": [
+    {
+     "species": "aerodactyl",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "kabuto",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "omanyte",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pokemon-mansion",
+   "name": "Pokemon Mansion",
+   "order": 390,
+   "encounters": [
+    {
+     "species": "grimer",
+     "minLevel": 30,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "growlithe",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "koffing",
+     "minLevel": 30,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magmar",
+     "minLevel": 34,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "muk",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ponyta",
+     "minLevel": 28,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "weezing",
+     "minLevel": 37,
+     "maxLevel": 42,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-sea-route-21",
+   "name": "Kanto Sea Route 21",
+   "order": 400,
+   "encounters": [
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pidgeotto",
+     "minLevel": 30,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pidgey",
+     "minLevel": 21,
+     "maxLevel": 23,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 21,
+     "maxLevel": 23,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "tangela",
+     "minLevel": 28,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-route-22",
+   "name": "Kanto Route 22",
+   "order": 410,
+   "encounters": [
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "old-rod"
+     ]
+    },
+    {
+     "species": "nidoran-f",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "nidoran-m",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 10,
+     "maxLevel": 15,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "spearow",
+     "minLevel": 3,
+     "maxLevel": 5,
      "methods": [
       "walk"
      ]
@@ -2813,7 +2836,7 @@
   {
    "id": "kanto-route-23",
    "name": "Kanto Route 23",
-   "order": 410,
+   "order": 420,
    "encounters": [
     {
      "species": "arbok",
@@ -2930,103 +2953,80 @@
    ]
   },
   {
-   "id": "pokemon-mansion",
-   "name": "Pokemon Mansion",
-   "order": 420,
-   "encounters": [
-    {
-     "species": "grimer",
-     "minLevel": 30,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "growlithe",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "koffing",
-     "minLevel": 30,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magmar",
-     "minLevel": 34,
-     "maxLevel": 38,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "muk",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ponyta",
-     "minLevel": 28,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "weezing",
-     "minLevel": 37,
-     "maxLevel": 42,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "saffron-city",
-   "name": "Saffron City",
+   "id": "kanto-victory-road-2",
+   "name": "Kanto Victory Road 2",
    "order": 430,
    "encounters": [
     {
-     "species": "hitmonchan",
-     "minLevel": 30,
-     "maxLevel": 30,
+     "species": "geodude",
+     "minLevel": 24,
+     "maxLevel": 26,
      "methods": [
-      "gift"
+      "walk"
      ]
     },
     {
-     "species": "hitmonlee",
-     "minLevel": 30,
-     "maxLevel": 30,
+     "species": "golbat",
+     "minLevel": 40,
+     "maxLevel": 41,
      "methods": [
-      "gift"
+      "walk"
      ]
     },
     {
-     "species": "lapras",
-     "minLevel": 15,
-     "maxLevel": 15,
+     "species": "graveler",
+     "minLevel": 41,
+     "maxLevel": 43,
      "methods": [
-      "gift"
+      "walk"
+     ]
+    },
+    {
+     "species": "machoke",
+     "minLevel": 41,
+     "maxLevel": 45,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machop",
+     "minLevel": 22,
+     "maxLevel": 24,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "marowak",
+     "minLevel": 40,
+     "maxLevel": 43,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "onix",
+     "minLevel": 36,
+     "maxLevel": 45,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "venomoth",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 22,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
      ]
     }
    ]
@@ -3712,5 +3712,15 @@
     }
    ]
   }
- ]
+ ],
+ "bossAreaCutoffs": {
+  "brock": "viridian-forest",
+  "misty": "kanto-route-25",
+  "lt-surge": "digletts-cave",
+  "erika": "celadon-city",
+  "koga": "kanto-route-12",
+  "sabrina": "saffron-city",
+  "blaine": "pokemon-mansion",
+  "giovanni": "kanto-victory-road-2"
+ }
 }

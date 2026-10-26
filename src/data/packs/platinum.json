@@ -21,9 +21,65 @@
  "notes": "Base-game pack. Encounter pools generated from PokéAPI data, merged to location level across sub-areas, encounter methods, and the paired versions (in-game trades and raid/event distributions excluded); area order is estimated from encounter levels and is approximate. First-battle teams for Pokémon Platinum. Gym order differs from D/P: Fantina is 3rd, Maylene 4th, Crasher Wake 5th. Bertha's ace is Rhyperior Lv 55 (some guides mislabel Hippowdon, which is Lv 52 here). Platinum Elite Four first-battle levels verified against the Platinum trainer-data dump and Bulbapedia-derived tables; post-National-Dex rematch teams (Lv 65+) are NOT included.",
  "areas": [
   {
+   "id": "twinleaf-town",
+   "name": "Twinleaf Town",
+   "order": 10,
+   "encounters": [
+    {
+     "species": "goldeen",
+     "minLevel": 15,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "seaking",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
    "id": "sinnoh-route-201",
    "name": "Sinnoh Route 201",
-   "order": 10,
+   "order": 20,
    "encounters": [
     {
      "species": "bidoof",
@@ -103,69 +159,6 @@
      "maxLevel": 5,
      "methods": [
       "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-route-202",
-   "name": "Sinnoh Route 202",
-   "order": 20,
-   "encounters": [
-    {
-     "species": "bidoof",
-     "minLevel": 2,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "growlithe",
-     "minLevel": 2,
-     "maxLevel": 2,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "kricketot",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sentret",
-     "minLevel": 2,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shinx",
-     "minLevel": 3,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "starly",
-     "minLevel": 2,
-     "maxLevel": 4,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "zigzagoon",
-     "minLevel": 3,
-     "maxLevel": 3,
-     "methods": [
-      "walk"
      ]
     }
    ]
@@ -268,74 +261,63 @@
    ]
   },
   {
-   "id": "ravaged-path",
-   "name": "Ravaged Path",
+   "id": "sinnoh-route-202",
+   "name": "Sinnoh Route 202",
    "order": 40,
    "encounters": [
     {
-     "species": "barboach",
-     "minLevel": 10,
-     "maxLevel": 25,
+     "species": "bidoof",
+     "minLevel": 2,
+     "maxLevel": 4,
      "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 4,
-     "maxLevel": 30,
-     "methods": [
-      "surf",
       "walk"
      ]
     },
     {
-     "species": "whiscash",
-     "minLevel": 30,
-     "maxLevel": 55,
+     "species": "growlithe",
+     "minLevel": 2,
+     "maxLevel": 2,
      "methods": [
-      "super-rod"
+      "walk"
      ]
     },
     {
-     "species": "zubat",
+     "species": "kricketot",
      "minLevel": 3,
-     "maxLevel": 30,
+     "maxLevel": 4,
      "methods": [
-      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "sentret",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shinx",
+     "minLevel": 3,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "starly",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 3,
+     "maxLevel": 3,
+     "methods": [
       "walk"
      ]
     }
@@ -638,159 +620,9 @@
    ]
   },
   {
-   "id": "oreburgh-mine",
-   "name": "Oreburgh Mine",
-   "order": 70,
-   "encounters": [
-    {
-     "species": "geodude",
-     "minLevel": 4,
-     "maxLevel": 9,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "onix",
-     "minLevel": 6,
-     "maxLevel": 9,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 5,
-     "maxLevel": 8,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-route-207",
-   "name": "Sinnoh Route 207",
-   "order": 80,
-   "encounters": [
-    {
-     "species": "aipom",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "burmy",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "cherubi",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "combee",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 5,
-     "maxLevel": 7,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "heracross",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "kricketot",
-     "minLevel": 5,
-     "maxLevel": 6,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machop",
-     "minLevel": 5,
-     "maxLevel": 8,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "munchlax",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "phanpy",
-     "minLevel": 5,
-     "maxLevel": 7,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ponyta",
-     "minLevel": 5,
-     "maxLevel": 7,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "stantler",
-     "minLevel": 5,
-     "maxLevel": 7,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "wurmple",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "oreburgh-gate",
    "name": "Oreburgh Gate",
-   "order": 90,
+   "order": 70,
    "encounters": [
     {
      "species": "barboach",
@@ -871,9 +703,177 @@
    ]
   },
   {
-   "id": "valley-windworks",
-   "name": "Valley Windworks",
+   "id": "oreburgh-mine",
+   "name": "Oreburgh Mine",
+   "order": 80,
+   "encounters": [
+    {
+     "species": "geodude",
+     "minLevel": 4,
+     "maxLevel": 9,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "onix",
+     "minLevel": 6,
+     "maxLevel": 9,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 5,
+     "maxLevel": 8,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "oreburgh-city",
+   "name": "Oreburgh City",
+   "order": 90,
+   "encounters": [
+    {
+     "species": "aerodactyl",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "anorith",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "cranidos",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "kabuto",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "lileep",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "omanyte",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "shieldon",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ravaged-path",
+   "name": "Ravaged Path",
    "order": 100,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 4,
+     "maxLevel": 30,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 3,
+     "maxLevel": 30,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "floaroma-meadow",
+   "name": "Floaroma Meadow",
+   "order": 110,
    "encounters": [
     {
      "species": "aipom",
@@ -881,14 +881,6 @@
      "maxLevel": 15,
      "methods": [
       "honey-tree"
-     ]
-    },
-    {
-     "species": "buizel",
-     "minLevel": 9,
-     "maxLevel": 11,
-     "methods": [
-      "walk"
      ]
     },
     {
@@ -916,46 +908,6 @@
      ]
     },
     {
-     "species": "drifloon",
-     "minLevel": 15,
-     "maxLevel": 15,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "electrike",
-     "minLevel": 9,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "gastrodon",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
      "species": "heracross",
      "minLevel": 5,
      "maxLevel": 15,
@@ -964,85 +916,11 @@
      ]
     },
     {
-     "species": "lumineon",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "mareep",
-     "minLevel": 10,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
      "species": "munchlax",
      "minLevel": 5,
      "maxLevel": 15,
      "methods": [
       "honey-tree"
-     ]
-    },
-    {
-     "species": "pachirisu",
-     "minLevel": 9,
-     "maxLevel": 11,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shellder",
-     "minLevel": 20,
-     "maxLevel": 50,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "shellos",
-     "minLevel": 9,
-     "maxLevel": 30,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "shinx",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
      ]
     },
     {
@@ -1058,7 +936,7 @@
   {
    "id": "sinnoh-route-205",
    "name": "Sinnoh Route 205",
-   "order": 110,
+   "order": 120,
    "encounters": [
     {
      "species": "aipom",
@@ -1330,9 +1208,9 @@
    ]
   },
   {
-   "id": "floaroma-meadow",
-   "name": "Floaroma Meadow",
-   "order": 120,
+   "id": "valley-windworks",
+   "name": "Valley Windworks",
+   "order": 130,
    "encounters": [
     {
      "species": "aipom",
@@ -1340,6 +1218,14 @@
      "maxLevel": 15,
      "methods": [
       "honey-tree"
+     ]
+    },
+    {
+     "species": "buizel",
+     "minLevel": 9,
+     "maxLevel": 11,
+     "methods": [
+      "walk"
      ]
     },
     {
@@ -1367,6 +1253,46 @@
      ]
     },
     {
+     "species": "drifloon",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "electrike",
+     "minLevel": 9,
+     "maxLevel": 10,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "gastrodon",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
      "species": "heracross",
      "minLevel": 5,
      "maxLevel": 15,
@@ -1375,11 +1301,85 @@
      ]
     },
     {
+     "species": "lumineon",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "mareep",
+     "minLevel": 10,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
      "species": "munchlax",
      "minLevel": 5,
      "maxLevel": 15,
      "methods": [
       "honey-tree"
+     ]
+    },
+    {
+     "species": "pachirisu",
+     "minLevel": 9,
+     "maxLevel": 11,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 20,
+     "maxLevel": 50,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "shellos",
+     "minLevel": 9,
+     "maxLevel": 30,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "shinx",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
      ]
     },
     {
@@ -1395,7 +1395,7 @@
   {
    "id": "eterna-forest",
    "name": "Eterna Forest",
-   "order": 130,
+   "order": 140,
    "encounters": [
     {
      "species": "aipom",
@@ -1601,9 +1601,104 @@
    ]
   },
   {
-   "id": "sinnoh-route-211",
-   "name": "Sinnoh Route 211",
-   "order": 140,
+   "id": "old-chateau",
+   "name": "Old Chateau",
+   "order": 150,
+   "encounters": [
+    {
+     "species": "gastly",
+     "minLevel": 14,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gengar",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rotom",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eterna-city",
+   "name": "Eterna City",
+   "order": 160,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "togepi",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift-egg"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-206",
+   "name": "Sinnoh Route 206",
+   "order": 170,
    "encounters": [
     {
      "species": "aipom",
@@ -1614,17 +1709,9 @@
      ]
     },
     {
-     "species": "bidoof",
-     "minLevel": 14,
-     "maxLevel": 14,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "bronzor",
-     "minLevel": 14,
-     "maxLevel": 29,
+     "species": "baltoy",
+     "minLevel": 16,
+     "maxLevel": 19,
      "methods": [
       "walk"
      ]
@@ -1646,14 +1733,6 @@
      ]
     },
     {
-     "species": "chingling",
-     "minLevel": 14,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
      "species": "combee",
      "minLevel": 5,
      "maxLevel": 15,
@@ -1662,9 +1741,17 @@
      ]
     },
     {
-     "species": "graveler",
-     "minLevel": 28,
-     "maxLevel": 28,
+     "species": "geodude",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gligar",
+     "minLevel": 16,
+     "maxLevel": 18,
      "methods": [
       "walk"
      ]
@@ -1678,33 +1765,25 @@
      ]
     },
     {
-     "species": "hoothoot",
-     "minLevel": 15,
-     "maxLevel": 15,
+     "species": "kricketune",
+     "minLevel": 17,
+     "maxLevel": 18,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "machoke",
-     "minLevel": 29,
-     "maxLevel": 30,
+     "species": "larvitar",
+     "minLevel": 16,
+     "maxLevel": 16,
      "methods": [
       "walk"
      ]
     },
     {
      "species": "machop",
-     "minLevel": 14,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "meditite",
-     "minLevel": 13,
-     "maxLevel": 29,
+     "minLevel": 17,
+     "maxLevel": 19,
      "methods": [
       "walk"
      ]
@@ -1718,25 +1797,9 @@
      ]
     },
     {
-     "species": "noctowl",
-     "minLevel": 29,
-     "maxLevel": 29,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "teddiursa",
-     "minLevel": 15,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tyrogue",
-     "minLevel": 14,
-     "maxLevel": 16,
+     "species": "ponyta",
+     "minLevel": 16,
+     "maxLevel": 17,
      "methods": [
       "walk"
      ]
@@ -1751,8 +1814,182 @@
     },
     {
      "species": "zubat",
-     "minLevel": 14,
-     "maxLevel": 28,
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wayward-cave",
+   "name": "Wayward Cave",
+   "order": 180,
+   "encounters": [
+    {
+     "species": "bronzor",
+     "minLevel": 18,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 17,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gible",
+     "minLevel": 17,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "onix",
+     "minLevel": 18,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandshrew",
+     "minLevel": 17,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 17,
+     "maxLevel": 19,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-207",
+   "name": "Sinnoh Route 207",
+   "order": 190,
+   "encounters": [
+    {
+     "species": "aipom",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "burmy",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "cherubi",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "combee",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 5,
+     "maxLevel": 7,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "heracross",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "kricketot",
+     "minLevel": 5,
+     "maxLevel": 6,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machop",
+     "minLevel": 5,
+     "maxLevel": 8,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "munchlax",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "phanpy",
+     "minLevel": 5,
+     "maxLevel": 7,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ponyta",
+     "minLevel": 5,
+     "maxLevel": 7,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "stantler",
+     "minLevel": 5,
+     "maxLevel": 7,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "wurmple",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 5,
+     "maxLevel": 5,
      "methods": [
       "walk"
      ]
@@ -1762,7 +1999,7 @@
   {
    "id": "mt-coronet",
    "name": "Mt. Coronet",
-   "order": 150,
+   "order": 200,
    "encounters": [
     {
      "species": "abomasnow",
@@ -2002,135 +2239,9 @@
    ]
   },
   {
-   "id": "old-chateau",
-   "name": "Old Chateau",
-   "order": 160,
-   "encounters": [
-    {
-     "species": "gastly",
-     "minLevel": 14,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gengar",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rotom",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "turnback-cave",
-   "name": "Turnback Cave",
-   "order": 170,
-   "encounters": [
-    {
-     "species": "bronzong",
-     "minLevel": 35,
-     "maxLevel": 45,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "bronzor",
-     "minLevel": 15,
-     "maxLevel": 25,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "chimecho",
-     "minLevel": 28,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "chingling",
-     "minLevel": 16,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dusclops",
-     "minLevel": 16,
-     "maxLevel": 48,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "duskull",
-     "minLevel": 18,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gastly",
-     "minLevel": 15,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 17,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "haunter",
-     "minLevel": 25,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "lunatone",
-     "minLevel": 18,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "solrock",
-     "minLevel": 18,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-route-206",
-   "name": "Sinnoh Route 206",
-   "order": 180,
+   "id": "sinnoh-route-208",
+   "name": "Sinnoh Route 208",
+   "order": 210,
    "encounters": [
     {
      "species": "aipom",
@@ -2141,8 +2252,24 @@
      ]
     },
     {
-     "species": "baltoy",
-     "minLevel": 16,
+     "species": "bibarel",
+     "minLevel": 18,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bidoof",
+     "minLevel": 18,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "budew",
+     "minLevel": 18,
      "maxLevel": 19,
      "methods": [
       "walk"
@@ -2173,19 +2300,35 @@
      ]
     },
     {
-     "species": "geodude",
-     "minLevel": 16,
+     "species": "dunsparce",
+     "minLevel": 18,
      "maxLevel": 18,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "gligar",
-     "minLevel": 16,
-     "maxLevel": 18,
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 25,
      "methods": [
-      "walk"
+      "good-rod"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
      ]
     },
     {
@@ -2197,27 +2340,12 @@
      ]
     },
     {
-     "species": "kricketune",
-     "minLevel": 17,
-     "maxLevel": 18,
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
      "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "larvitar",
-     "minLevel": 16,
-     "maxLevel": 16,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machop",
-     "minLevel": 17,
-     "maxLevel": 19,
-     "methods": [
-      "walk"
+      "good-rod",
+      "old-rod"
      ]
     },
     {
@@ -2229,9 +2357,49 @@
      ]
     },
     {
-     "species": "ponyta",
-     "minLevel": 16,
-     "maxLevel": 17,
+     "species": "psyduck",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "ralts",
+     "minLevel": 17,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "roselia",
+     "minLevel": 19,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "seaking",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "seviper",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "smeargle",
+     "minLevel": 18,
+     "maxLevel": 20,
      "methods": [
       "walk"
      ]
@@ -2245,55 +2413,8 @@
      ]
     },
     {
-     "species": "zubat",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "wayward-cave",
-   "name": "Wayward Cave",
-   "order": 190,
-   "encounters": [
-    {
-     "species": "bronzor",
-     "minLevel": 18,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 17,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gible",
-     "minLevel": 17,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "onix",
-     "minLevel": 18,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sandshrew",
-     "minLevel": 17,
+     "species": "zangoose",
+     "minLevel": 20,
      "maxLevel": 20,
      "methods": [
       "walk"
@@ -2301,7 +2422,7 @@
     },
     {
      "species": "zubat",
-     "minLevel": 17,
+     "minLevel": 19,
      "maxLevel": 19,
      "methods": [
       "walk"
@@ -2310,9 +2431,24 @@
    ]
   },
   {
+   "id": "hearthome-city",
+   "name": "Hearthome City",
+   "order": 220,
+   "encounters": [
+    {
+     "species": "eevee",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
    "id": "sinnoh-route-209",
    "name": "Sinnoh Route 209",
-   "order": 200,
+   "order": 230,
    "encounters": [
     {
      "species": "aipom",
@@ -2510,9 +2646,199 @@
    ]
   },
   {
+   "id": "solaceon-ruins",
+   "name": "Solaceon Ruins",
+   "order": 240,
+   "encounters": [
+    {
+     "species": "unown",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "trophy-garden",
+   "name": "Trophy Garden",
+   "order": 250,
+   "encounters": [
+    {
+     "species": "azurill",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bonsly",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "castform",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "chansey",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "clefairy",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cleffa",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "ditto",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "eevee",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "happiny",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "igglybuff",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "jigglypuff",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "kricketune",
+     "minLevel": 22,
+     "maxLevel": 23,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "marill",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mime-jr",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "minun",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pichu",
+     "minLevel": 21,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pikachu",
+     "minLevel": 22,
+     "maxLevel": 24,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "plusle",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "roselia",
+     "minLevel": 22,
+     "maxLevel": 23,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "staravia",
+     "minLevel": 22,
+     "maxLevel": 24,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "lost-tower",
    "name": "Lost Tower",
-   "order": 210,
+   "order": 260,
    "encounters": [
     {
      "species": "duskull",
@@ -2549,265 +2875,9 @@
    ]
   },
   {
-   "id": "sinnoh-route-208",
-   "name": "Sinnoh Route 208",
-   "order": 220,
-   "encounters": [
-    {
-     "species": "aipom",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "bibarel",
-     "minLevel": 18,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "bidoof",
-     "minLevel": 18,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "budew",
-     "minLevel": 18,
-     "maxLevel": 19,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "burmy",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "cherubi",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "combee",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "dunsparce",
-     "minLevel": 18,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "heracross",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "munchlax",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "ralts",
-     "minLevel": 17,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "roselia",
-     "minLevel": 19,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "seaking",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "seviper",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "smeargle",
-     "minLevel": 18,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "wurmple",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "zangoose",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 19,
-     "maxLevel": 19,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "eterna-city",
-   "name": "Eterna City",
-   "order": 230,
-   "encounters": [
-    {
-     "species": "barboach",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "togepi",
-     "minLevel": 1,
-     "maxLevel": 1,
-     "methods": [
-      "gift-egg"
-     ]
-    },
-    {
-     "species": "whiscash",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
    "id": "sinnoh-route-210",
    "name": "Sinnoh Route 210",
-   "order": 240,
+   "order": 270,
    "encounters": [
     {
      "species": "aipom",
@@ -3088,7 +3158,7 @@
   {
    "id": "sinnoh-route-215",
    "name": "Sinnoh Route 215",
-   "order": 250,
+   "order": 280,
    "encounters": [
     {
      "species": "abra",
@@ -3205,267 +3275,253 @@
    ]
   },
   {
-   "id": "hearthome-city",
-   "name": "Hearthome City",
-   "order": 260,
-   "encounters": [
-    {
-     "species": "eevee",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "oreburgh-city",
-   "name": "Oreburgh City",
-   "order": 270,
-   "encounters": [
-    {
-     "species": "aerodactyl",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "anorith",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "cranidos",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "kabuto",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "lileep",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "omanyte",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "shieldon",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "solaceon-ruins",
-   "name": "Solaceon Ruins",
-   "order": 280,
-   "encounters": [
-    {
-     "species": "unown",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "trophy-garden",
-   "name": "Trophy Garden",
+   "id": "veilstone-city",
+   "name": "Veilstone City",
    "order": 290,
    "encounters": [
     {
-     "species": "azurill",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "porygon",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-214",
+   "name": "Sinnoh Route 214",
+   "order": 300,
+   "encounters": [
+    {
+     "species": "aipom",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "burmy",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "cherubi",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "combee",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 21,
+     "maxLevel": 21,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "bonsly",
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "graveler",
      "minLevel": 22,
-     "maxLevel": 22,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "castform",
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "heracross",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "houndour",
      "minLevel": 22,
-     "maxLevel": 22,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "chansey",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "munchlax",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "poochyena",
+     "minLevel": 23,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "clefairy",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "psyduck",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "rhyhorn",
+     "minLevel": 21,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "cleffa",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "seaking",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "spoink",
+     "minLevel": 21,
+     "maxLevel": 23,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "ditto",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "vulpix",
+     "minLevel": 24,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "eevee",
+     "species": "wurmple",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "zubat",
      "minLevel": 22,
      "maxLevel": 22,
      "methods": [
       "walk"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "valor-lakefront",
+   "name": "Valor Lakefront",
+   "order": 310,
+   "encounters": [
     {
-     "species": "happiny",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "bibarel",
+     "minLevel": 25,
+     "maxLevel": 27,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "igglybuff",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "girafarig",
+     "minLevel": 26,
+     "maxLevel": 28,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "jigglypuff",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "houndour",
+     "minLevel": 27,
+     "maxLevel": 28,
      "methods": [
       "walk"
      ]
     },
     {
      "species": "kricketune",
-     "minLevel": 22,
-     "maxLevel": 23,
+     "minLevel": 26,
+     "maxLevel": 27,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "marill",
-     "minLevel": 22,
-     "maxLevel": 22,
+     "species": "nidorina",
+     "minLevel": 27,
+     "maxLevel": 28,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "meowth",
-     "minLevel": 22,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mime-jr",
-     "minLevel": 22,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "minun",
-     "minLevel": 22,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pichu",
-     "minLevel": 21,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pikachu",
-     "minLevel": 22,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "plusle",
-     "minLevel": 22,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "roselia",
-     "minLevel": 22,
-     "maxLevel": 23,
+     "species": "nidorino",
+     "minLevel": 27,
+     "maxLevel": 28,
      "methods": [
       "walk"
      ]
     },
     {
      "species": "staravia",
-     "minLevel": 22,
-     "maxLevel": 24,
+     "minLevel": 26,
+     "maxLevel": 28,
      "methods": [
       "walk"
      ]
@@ -3473,22 +3529,550 @@
    ]
   },
   {
-   "id": "ruin-maniac-cave",
-   "name": "Ruin Maniac Cave",
-   "order": 300,
+   "id": "lake-valor",
+   "name": "Lake Valor",
+   "order": 320,
    "encounters": [
     {
-     "species": "geodude",
-     "minLevel": 21,
-     "maxLevel": 24,
+     "species": "bibarel",
+     "minLevel": 39,
+     "maxLevel": 41,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "hippopotas",
-     "minLevel": 22,
+     "species": "goldeen",
+     "minLevel": 15,
+     "maxLevel": 20,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 20,
+     "maxLevel": 41,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "lunatone",
+     "minLevel": 40,
+     "maxLevel": 41,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
      "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 20,
+     "maxLevel": 39,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "seaking",
+     "minLevel": 25,
+     "maxLevel": 55,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "solrock",
+     "minLevel": 40,
+     "maxLevel": 41,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "staravia",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "wobbuffet",
+     "minLevel": 38,
+     "maxLevel": 41,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-213",
+   "name": "Sinnoh Route 213",
+   "order": 330,
+   "encounters": [
+    {
+     "species": "aipom",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "buizel",
+     "minLevel": 23,
+     "maxLevel": 25,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "burmy",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "chatot",
+     "minLevel": 23,
+     "maxLevel": 25,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cherubi",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "combee",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "gastrodon",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "heracross",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "munchlax",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "shellos",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "swellow",
+     "minLevel": 25,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "wurmple",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pastoria-city",
+   "name": "Pastoria City",
+   "order": 340,
+   "encounters": [
+    {
+     "species": "gastrodon",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "shellos",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "great-marsh",
+   "name": "Great Marsh",
+   "order": 350,
+   "encounters": [
+    {
+     "species": "arbok",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "barboach",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "bibarel",
+     "minLevel": 26,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "carnivine",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "carvanha",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "croagunk",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "drapion",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "exeggcute",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gulpin",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "hoothoot",
+     "minLevel": 26,
+     "maxLevel": 27,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "kangaskhan",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "kecleon",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "noctowl",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "paras",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "quagsire",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "shroomish",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skorupi",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tangela",
+     "minLevel": 27,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "toxicroak",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tropius",
+     "minLevel": 27,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 20,
+     "maxLevel": 50,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wooper",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "yanma",
+     "minLevel": 26,
+     "maxLevel": 31,
      "methods": [
       "walk"
      ]
@@ -3498,7 +4082,7 @@
   {
    "id": "sinnoh-route-212",
    "name": "Sinnoh Route 212",
-   "order": 310,
+   "order": 360,
    "encounters": [
     {
      "species": "aipom",
@@ -3761,370 +4345,9 @@
    ]
   },
   {
-   "id": "sinnoh-route-214",
-   "name": "Sinnoh Route 214",
-   "order": 320,
-   "encounters": [
-    {
-     "species": "aipom",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "burmy",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "cherubi",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "combee",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 21,
-     "maxLevel": 21,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 22,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "heracross",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "houndour",
-     "minLevel": 22,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "munchlax",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "poochyena",
-     "minLevel": 23,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "rhyhorn",
-     "minLevel": 21,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "seaking",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "spoink",
-     "minLevel": 21,
-     "maxLevel": 23,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 24,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "wurmple",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 22,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "maniac-tunnel",
-   "name": "Maniac Tunnel",
-   "order": 330,
-   "encounters": [
-    {
-     "species": "geodude",
-     "minLevel": 23,
-     "maxLevel": 25,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "hippopotas",
-     "minLevel": 24,
-     "maxLevel": 26,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-route-213",
-   "name": "Sinnoh Route 213",
-   "order": 340,
-   "encounters": [
-    {
-     "species": "aipom",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "buizel",
-     "minLevel": 23,
-     "maxLevel": 25,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "burmy",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "chatot",
-     "minLevel": 23,
-     "maxLevel": 25,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "cherubi",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "combee",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "gastrodon",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "heracross",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "munchlax",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "shellos",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "swellow",
-     "minLevel": 25,
-     "maxLevel": 26,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "wurmple",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    }
-   ]
-  },
-  {
    "id": "canalave-city",
    "name": "Canalave City",
-   "order": 350,
+   "order": 370,
    "encounters": [
     {
      "species": "finneon",
@@ -4202,490 +4425,10 @@
    ]
   },
   {
-   "id": "pastoria-city",
-   "name": "Pastoria City",
-   "order": 360,
-   "encounters": [
-    {
-     "species": "gastrodon",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "shellos",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-pokemon-league",
-   "name": "Sinnoh Pokemon League",
-   "order": 370,
-   "encounters": [
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "luvdisc",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 30,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "veilstone-city",
-   "name": "Veilstone City",
+   "id": "iron-island",
+   "name": "Iron Island",
    "order": 380,
    "encounters": [
-    {
-     "species": "porygon",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "valor-lakefront",
-   "name": "Valor Lakefront",
-   "order": 390,
-   "encounters": [
-    {
-     "species": "bibarel",
-     "minLevel": 25,
-     "maxLevel": 27,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "girafarig",
-     "minLevel": 26,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "houndour",
-     "minLevel": 27,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "kricketune",
-     "minLevel": 26,
-     "maxLevel": 27,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "nidorina",
-     "minLevel": 27,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "nidorino",
-     "minLevel": 27,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "staravia",
-     "minLevel": 26,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "great-marsh",
-   "name": "Great Marsh",
-   "order": 400,
-   "encounters": [
-    {
-     "species": "arbok",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "barboach",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "bibarel",
-     "minLevel": 26,
-     "maxLevel": 28,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "carnivine",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "carvanha",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "croagunk",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "drapion",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "exeggcute",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gulpin",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "hoothoot",
-     "minLevel": 26,
-     "maxLevel": 27,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "kangaskhan",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "kecleon",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "noctowl",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "paras",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "quagsire",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "shroomish",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skorupi",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tangela",
-     "minLevel": 27,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "toxicroak",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tropius",
-     "minLevel": 27,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "whiscash",
-     "minLevel": 20,
-     "maxLevel": 50,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wooper",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "yanma",
-     "minLevel": 26,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "fuego-ironworks",
-   "name": "Fuego Ironworks",
-   "order": 410,
-   "encounters": [
-    {
-     "species": "aipom",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "aron",
-     "minLevel": 30,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "burmy",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "cherubi",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
-    {
-     "species": "combee",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
-     ]
-    },
     {
      "species": "finneon",
      "minLevel": 10,
@@ -4695,19 +4438,26 @@
      ]
     },
     {
-     "species": "floatzel",
-     "minLevel": 29,
-     "maxLevel": 31,
+     "species": "geodude",
+     "minLevel": 30,
+     "maxLevel": 32,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "gastrodon",
-     "minLevel": 20,
-     "maxLevel": 40,
+     "species": "golbat",
+     "minLevel": 30,
+     "maxLevel": 33,
      "methods": [
-      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 30,
+     "maxLevel": 34,
+     "methods": [
       "walk"
      ]
     },
@@ -4717,14 +4467,6 @@
      "maxLevel": 55,
      "methods": [
       "super-rod"
-     ]
-    },
-    {
-     "species": "heracross",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "honey-tree"
      ]
     },
     {
@@ -4745,31 +4487,31 @@
      ]
     },
     {
-     "species": "magmar",
-     "minLevel": 28,
-     "maxLevel": 29,
+     "species": "mawile",
+     "minLevel": 30,
+     "maxLevel": 32,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "magnemite",
-     "minLevel": 28,
-     "maxLevel": 30,
+     "species": "onix",
+     "minLevel": 31,
+     "maxLevel": 33,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "munchlax",
-     "minLevel": 5,
-     "maxLevel": 15,
+     "species": "pelipper",
+     "minLevel": 20,
+     "maxLevel": 40,
      "methods": [
-      "honey-tree"
+      "surf"
      ]
     },
     {
-     "species": "shellder",
+     "species": "qwilfish",
      "minLevel": 20,
      "maxLevel": 50,
      "methods": [
@@ -4777,9 +4519,114 @@
      ]
     },
     {
-     "species": "shellos",
+     "species": "riolu",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift-egg"
+     ]
+    },
+    {
+     "species": "sableye",
+     "minLevel": 30,
+     "maxLevel": 32,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "steelix",
+     "minLevel": 32,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacool",
      "minLevel": 20,
      "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-sea-route-220",
+   "name": "Sinnoh Sea Route 220",
+   "order": 390,
+   "encounters": [
+    {
+     "species": "chinchou",
+     "minLevel": 20,
+     "maxLevel": 50,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 15,
+     "maxLevel": 20,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 25,
+     "maxLevel": 55,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 20,
+     "maxLevel": 40,
      "methods": [
       "surf"
      ]
@@ -4801,11 +4648,11 @@
      ]
     },
     {
-     "species": "wurmple",
-     "minLevel": 5,
-     "maxLevel": 15,
+     "species": "wingull",
+     "minLevel": 20,
+     "maxLevel": 30,
      "methods": [
-      "honey-tree"
+      "surf"
      ]
     }
    ]
@@ -4813,7 +4660,7 @@
   {
    "id": "sinnoh-route-218",
    "name": "Sinnoh Route 218",
-   "order": 420,
+   "order": 400,
    "encounters": [
     {
      "species": "aipom",
@@ -4972,9 +4819,82 @@
    ]
   },
   {
+   "id": "sinnoh-route-219",
+   "name": "Sinnoh Route 219",
+   "order": 410,
+   "encounters": [
+    {
+     "species": "finneon",
+     "minLevel": 15,
+     "maxLevel": 20,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 25,
+     "maxLevel": 55,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
    "id": "sinnoh-route-221",
    "name": "Sinnoh Route 221",
-   "order": 430,
+   "order": 420,
    "encounters": [
     {
      "species": "aipom",
@@ -5157,9 +5077,337 @@
    ]
   },
   {
+   "id": "fuego-ironworks",
+   "name": "Fuego Ironworks",
+   "order": 430,
+   "encounters": [
+    {
+     "species": "aipom",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "aron",
+     "minLevel": 30,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "burmy",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "cherubi",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "combee",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "floatzel",
+     "minLevel": 29,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gastrodon",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "heracross",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "magmar",
+     "minLevel": 28,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magnemite",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "munchlax",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "shellder",
+     "minLevel": 20,
+     "maxLevel": 50,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "shellos",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wurmple",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-211",
+   "name": "Sinnoh Route 211",
+   "order": 440,
+   "encounters": [
+    {
+     "species": "aipom",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "bidoof",
+     "minLevel": 14,
+     "maxLevel": 14,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bronzor",
+     "minLevel": 14,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "burmy",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "cherubi",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "chingling",
+     "minLevel": 14,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "combee",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 28,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "heracross",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "hoothoot",
+     "minLevel": 15,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machoke",
+     "minLevel": 29,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machop",
+     "minLevel": 14,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "meditite",
+     "minLevel": 13,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "munchlax",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "noctowl",
+     "minLevel": 29,
+     "maxLevel": 29,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "teddiursa",
+     "minLevel": 15,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tyrogue",
+     "minLevel": 14,
+     "maxLevel": 16,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "wurmple",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "honey-tree"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 14,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "celestic-town",
    "name": "Celestic Town",
-   "order": 440,
+   "order": 450,
    "encounters": [
     {
      "species": "corphish",
@@ -5229,433 +5477,9 @@
    ]
   },
   {
-   "id": "flower-paradise",
-   "name": "Flower Paradise",
-   "order": 450,
-   "encounters": [
-    {
-     "species": "shaymin",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-route-219",
-   "name": "Sinnoh Route 219",
-   "order": 460,
-   "encounters": [
-    {
-     "species": "finneon",
-     "minLevel": 15,
-     "maxLevel": 20,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 25,
-     "maxLevel": 55,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-sea-route-220",
-   "name": "Sinnoh Sea Route 220",
-   "order": 470,
-   "encounters": [
-    {
-     "species": "chinchou",
-     "minLevel": 20,
-     "maxLevel": 50,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 15,
-     "maxLevel": 20,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 25,
-     "maxLevel": 55,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "twinleaf-town",
-   "name": "Twinleaf Town",
-   "order": 480,
-   "encounters": [
-    {
-     "species": "goldeen",
-     "minLevel": 15,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "seaking",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "iron-island",
-   "name": "Iron Island",
-   "order": 490,
-   "encounters": [
-    {
-     "species": "finneon",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 30,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 30,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "mawile",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "onix",
-     "minLevel": 31,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "qwilfish",
-     "minLevel": 20,
-     "maxLevel": 50,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "riolu",
-     "minLevel": 1,
-     "maxLevel": 1,
-     "methods": [
-      "gift-egg"
-     ]
-    },
-    {
-     "species": "sableye",
-     "minLevel": 30,
-     "maxLevel": 32,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "steelix",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "acuity-lakefront",
-   "name": "Acuity Lakefront",
-   "order": 500,
-   "encounters": [
-    {
-     "species": "sneasel",
-     "minLevel": 33,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "snorunt",
-     "minLevel": 32,
-     "maxLevel": 33,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "snover",
-     "minLevel": 32,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "swinub",
-     "minLevel": 32,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "ursaring",
-     "minLevel": 35,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "sinnoh-route-216",
    "name": "Sinnoh Route 216",
-   "order": 510,
+   "order": 460,
    "encounters": [
     {
      "species": "graveler",
@@ -5718,7 +5542,7 @@
   {
    "id": "sinnoh-route-217",
    "name": "Sinnoh Route 217",
-   "order": 520,
+   "order": 470,
    "encounters": [
     {
      "species": "delibird",
@@ -5779,282 +5603,9 @@
    ]
   },
   {
-   "id": "sinnoh-sea-route-223",
-   "name": "Sinnoh Sea Route 223",
-   "order": 530,
-   "encounters": [
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "mantyke",
-     "minLevel": 30,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 20,
-     "maxLevel": 50,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 15,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 30,
-     "maxLevel": 40,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wailord",
-     "minLevel": 40,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sunyshore-city",
-   "name": "Sunyshore City",
-   "order": 540,
-   "encounters": [
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "staryu",
-     "minLevel": 20,
-     "maxLevel": 50,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 30,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 30,
-     "maxLevel": 50,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 30,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sendoff-spring",
-   "name": "Sendoff Spring",
-   "order": 550,
-   "encounters": [
-    {
-     "species": "bibarel",
-     "minLevel": 37,
-     "maxLevel": 38,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "chingling",
-     "minLevel": 37,
-     "maxLevel": 39,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dusclops",
-     "minLevel": 39,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 38,
-     "maxLevel": 38,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 20,
-     "maxLevel": 40,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 37,
-     "maxLevel": 39,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "lunatone",
-     "minLevel": 39,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "seaking",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "solrock",
-     "minLevel": 39,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "staravia",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "lake-acuity",
    "name": "Lake Acuity",
-   "order": 560,
+   "order": 480,
    "encounters": [
     {
      "species": "bibarel",
@@ -6167,98 +5718,46 @@
    ]
   },
   {
-   "id": "lake-valor",
-   "name": "Lake Valor",
-   "order": 570,
+   "id": "acuity-lakefront",
+   "name": "Acuity Lakefront",
+   "order": 490,
    "encounters": [
     {
-     "species": "bibarel",
-     "minLevel": 39,
-     "maxLevel": 41,
+     "species": "sneasel",
+     "minLevel": 33,
+     "maxLevel": 35,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "goldeen",
-     "minLevel": 15,
-     "maxLevel": 20,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "golduck",
-     "minLevel": 20,
-     "maxLevel": 41,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "lunatone",
-     "minLevel": 40,
-     "maxLevel": 41,
+     "species": "snorunt",
+     "minLevel": 32,
+     "maxLevel": 33,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "psyduck",
-     "minLevel": 20,
-     "maxLevel": 39,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "seaking",
-     "minLevel": 25,
-     "maxLevel": 55,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "solrock",
-     "minLevel": 40,
-     "maxLevel": 41,
+     "species": "snover",
+     "minLevel": 32,
+     "maxLevel": 35,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "staravia",
-     "minLevel": 38,
-     "maxLevel": 40,
+     "species": "swinub",
+     "minLevel": 32,
+     "maxLevel": 34,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "wobbuffet",
-     "minLevel": 38,
-     "maxLevel": 41,
+     "species": "ursaring",
+     "minLevel": 35,
+     "maxLevel": 35,
      "methods": [
       "walk"
      ]
@@ -6268,7 +5767,7 @@
   {
    "id": "sinnoh-route-222",
    "name": "Sinnoh Route 222",
-   "order": 580,
+   "order": 500,
    "encounters": [
     {
      "species": "aipom",
@@ -6460,32 +5959,79 @@
    ]
   },
   {
-   "id": "resort-area",
-   "name": "Resort Area",
-   "order": 590,
+   "id": "sunyshore-city",
+   "name": "Sunyshore City",
+   "order": 510,
    "encounters": [
     {
-     "species": "golduck",
-     "minLevel": 35,
+     "species": "gyarados",
+     "minLevel": 30,
      "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 30,
+     "maxLevel": 50,
      "methods": [
       "surf"
      ]
     },
     {
-     "species": "magikarp",
-     "minLevel": 1,
-     "maxLevel": 100,
+     "species": "remoraid",
+     "minLevel": 10,
+     "maxLevel": 25,
      "methods": [
-      "good-rod",
-      "old-rod",
+      "good-rod"
+     ]
+    },
+    {
+     "species": "staryu",
+     "minLevel": 20,
+     "maxLevel": 50,
+     "methods": [
       "super-rod"
      ]
     },
     {
-     "species": "psyduck",
-     "minLevel": 35,
-     "maxLevel": 45,
+     "species": "tentacool",
+     "minLevel": 30,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 30,
+     "maxLevel": 50,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 30,
+     "maxLevel": 40,
      "methods": [
       "surf"
      ]
@@ -6493,9 +6039,90 @@
    ]
   },
   {
+   "id": "sinnoh-sea-route-223",
+   "name": "Sinnoh Sea Route 223",
+   "order": 520,
+   "encounters": [
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "mantyke",
+     "minLevel": 30,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 20,
+     "maxLevel": 50,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 30,
+     "maxLevel": 50,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 15,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 30,
+     "maxLevel": 50,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 30,
+     "maxLevel": 40,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wailord",
+     "minLevel": 40,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
    "id": "sinnoh-victory-road",
    "name": "Sinnoh Victory Road",
-   "order": 600,
+   "order": 530,
    "encounters": [
     {
      "species": "azumarill",
@@ -6611,6 +6238,889 @@
      "maxLevel": 50,
      "methods": [
       "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-pokemon-league",
+   "name": "Sinnoh Pokemon League",
+   "order": 540,
+   "encounters": [
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "luvdisc",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 30,
+     "maxLevel": 50,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 30,
+     "maxLevel": 50,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 30,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-224",
+   "name": "Sinnoh Route 224",
+   "order": 550,
+   "encounters": [
+    {
+     "species": "beautifly",
+     "minLevel": 52,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bellsprout",
+     "minLevel": 49,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dustox",
+     "minLevel": 52,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "floatzel",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gastrodon",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "gloom",
+     "minLevel": 51,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "luvdisc",
+     "minLevel": 20,
+     "maxLevel": 30,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "natu",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 49,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "roselia",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shuckle",
+     "minLevel": 52,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "weepinbell",
+     "minLevel": 51,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-225",
+   "name": "Sinnoh Route 225",
+   "order": 560,
+   "encounters": [
+    {
+     "species": "banette",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "barboach",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 49,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "machoke",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "makuhita",
+     "minLevel": 48,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mankey",
+     "minLevel": 47,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "primeape",
+     "minLevel": 49,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "psyduck",
+     "minLevel": 35,
+     "maxLevel": 45,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 49,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 47,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "spearow",
+     "minLevel": 47,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-sea-route-226",
+   "name": "Sinnoh Sea Route 226",
+   "order": 570,
+   "encounters": [
+    {
+     "species": "banette",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 49,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "krabby",
+     "minLevel": 48,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machoke",
+     "minLevel": 48,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "mankey",
+     "minLevel": 47,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "primeape",
+     "minLevel": 49,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "raticate",
+     "minLevel": 49,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rattata",
+     "minLevel": 47,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "relicanth",
+     "minLevel": 20,
+     "maxLevel": 50,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "seadra",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 35,
+     "maxLevel": 49,
+     "methods": [
+      "surf",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-227",
+   "name": "Sinnoh Route 227",
+   "order": 580,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "camerupt",
+     "minLevel": 53,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 51,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 51,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 51,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "numel",
+     "minLevel": 51,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 35,
+     "maxLevel": 45,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "rhydon",
+     "minLevel": 54,
+     "maxLevel": 54,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rhyhorn",
+     "minLevel": 52,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skarmory",
+     "minLevel": 53,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "spinda",
+     "minLevel": 53,
+     "maxLevel": 54,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "torkoal",
+     "minLevel": 51,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "weezing",
+     "minLevel": 52,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stark-mountain",
+   "name": "Stark Mountain",
+   "order": 590,
+   "encounters": [
+    {
+     "species": "camerupt",
+     "minLevel": 53,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "fearow",
+     "minLevel": 51,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 51,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "graveler",
+     "minLevel": 51,
+     "maxLevel": 54,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "koffing",
+     "minLevel": 53,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magcargo",
+     "minLevel": 53,
+     "maxLevel": 55,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "numel",
+     "minLevel": 51,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rhydon",
+     "minLevel": 54,
+     "maxLevel": 55,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rhyhorn",
+     "minLevel": 52,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skarmory",
+     "minLevel": 53,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "slugma",
+     "minLevel": 52,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "torkoal",
+     "minLevel": 51,
+     "maxLevel": 53,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "weezing",
+     "minLevel": 51,
+     "maxLevel": 54,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sinnoh-route-228",
+   "name": "Sinnoh Route 228",
+   "order": 600,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 15,
+     "maxLevel": 20,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "beldum",
+     "minLevel": 51,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cacnea",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cacturne",
+     "minLevel": 50,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "diglett",
+     "minLevel": 49,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dugtrio",
+     "minLevel": 50,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 30,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "hippowdon",
+     "minLevel": 50,
+     "maxLevel": 51,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 3,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "poliwag",
+     "minLevel": 35,
+     "maxLevel": 45,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "poliwhirl",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "rhydon",
+     "minLevel": 50,
+     "maxLevel": 52,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sandslash",
+     "minLevel": 49,
+     "maxLevel": 50,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "whiscash",
+     "minLevel": 25,
+     "maxLevel": 55,
+     "methods": [
+      "good-rod",
+      "super-rod"
      ]
     }
    ]
@@ -6937,34 +7447,10 @@
    ]
   },
   {
-   "id": "sinnoh-route-225",
-   "name": "Sinnoh Route 225",
+   "id": "resort-area",
+   "name": "Resort Area",
    "order": 630,
    "encounters": [
-    {
-     "species": "banette",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "barboach",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
     {
      "species": "golduck",
      "minLevel": 35,
@@ -6974,60 +7460,13 @@
      ]
     },
     {
-     "species": "graveler",
-     "minLevel": 49,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "machoke",
-     "minLevel": 48,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
      "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
+     "minLevel": 1,
+     "maxLevel": 100,
      "methods": [
       "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "makuhita",
-     "minLevel": 48,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mankey",
-     "minLevel": 47,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "primeape",
-     "minLevel": 49,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
+      "old-rod",
+      "super-rod"
      ]
     },
     {
@@ -7037,66 +7476,222 @@
      "methods": [
       "surf"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "flower-paradise",
+   "name": "Flower Paradise",
+   "order": 640,
+   "encounters": [
     {
-     "species": "raticate",
-     "minLevel": 49,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 47,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "spearow",
-     "minLevel": 47,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "whiscash",
+     "species": "shaymin",
      "minLevel": 30,
-     "maxLevel": 55,
+     "maxLevel": 30,
      "methods": [
-      "super-rod"
+      "static"
      ]
     }
    ]
   },
   {
-   "id": "sinnoh-sea-route-226",
-   "name": "Sinnoh Sea Route 226",
-   "order": 640,
+   "id": "ruin-maniac-cave",
+   "name": "Ruin Maniac Cave",
+   "order": 650,
    "encounters": [
     {
-     "species": "banette",
-     "minLevel": 48,
-     "maxLevel": 50,
+     "species": "geodude",
+     "minLevel": 21,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "fearow",
-     "minLevel": 48,
-     "maxLevel": 50,
+     "species": "hippopotas",
+     "minLevel": 22,
+     "maxLevel": 25,
      "methods": [
       "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "maniac-tunnel",
+   "name": "Maniac Tunnel",
+   "order": 660,
+   "encounters": [
+    {
+     "species": "geodude",
+     "minLevel": 23,
+     "maxLevel": 25,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "hippopotas",
+     "minLevel": 24,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "turnback-cave",
+   "name": "Turnback Cave",
+   "order": 670,
+   "encounters": [
+    {
+     "species": "bronzong",
+     "minLevel": 35,
+     "maxLevel": 45,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bronzor",
+     "minLevel": 15,
+     "maxLevel": 25,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "chimecho",
+     "minLevel": 28,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "chingling",
+     "minLevel": 16,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dusclops",
+     "minLevel": 16,
+     "maxLevel": 48,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "duskull",
+     "minLevel": 18,
+     "maxLevel": 28,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "gastly",
+     "minLevel": 15,
+     "maxLevel": 17,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 17,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "haunter",
+     "minLevel": 25,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "lunatone",
+     "minLevel": 18,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "solrock",
+     "minLevel": 18,
+     "maxLevel": 47,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sendoff-spring",
+   "name": "Sendoff Spring",
+   "order": 680,
+   "encounters": [
+    {
+     "species": "bibarel",
+     "minLevel": 37,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "chingling",
+     "minLevel": 37,
+     "maxLevel": 39,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dusclops",
+     "minLevel": 39,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "golbat",
+     "minLevel": 38,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 10,
+     "maxLevel": 25,
+     "methods": [
+      "good-rod"
+     ]
+    },
+    {
+     "species": "golduck",
+     "minLevel": 20,
+     "maxLevel": 40,
+     "methods": [
+      "surf"
      ]
     },
     {
      "species": "graveler",
-     "minLevel": 49,
-     "maxLevel": 49,
+     "minLevel": 37,
+     "maxLevel": 39,
      "methods": [
       "walk"
      ]
@@ -7110,25 +7705,9 @@
      ]
     },
     {
-     "species": "horsea",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "krabby",
-     "minLevel": 48,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machoke",
-     "minLevel": 48,
-     "maxLevel": 50,
+     "species": "lunatone",
+     "minLevel": 39,
+     "maxLevel": 40,
      "methods": [
       "walk"
      ]
@@ -7143,55 +7722,7 @@
      ]
     },
     {
-     "species": "mankey",
-     "minLevel": 47,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "primeape",
-     "minLevel": 49,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "raticate",
-     "minLevel": 49,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rattata",
-     "minLevel": 47,
-     "maxLevel": 47,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "relicanth",
-     "minLevel": 20,
-     "maxLevel": 50,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "seadra",
+     "species": "seaking",
      "minLevel": 30,
      "maxLevel": 55,
      "methods": [
@@ -7199,19 +7730,18 @@
      ]
     },
     {
-     "species": "tentacruel",
-     "minLevel": 35,
-     "maxLevel": 55,
+     "species": "solrock",
+     "minLevel": 39,
+     "maxLevel": 40,
      "methods": [
-      "surf"
+      "walk"
      ]
     },
     {
-     "species": "wingull",
-     "minLevel": 35,
-     "maxLevel": 49,
+     "species": "staravia",
+     "minLevel": 38,
+     "maxLevel": 40,
      "methods": [
-      "surf",
       "walk"
      ]
     }
@@ -7220,7 +7750,7 @@
   {
    "id": "snowpoint-temple",
    "name": "Snowpoint Temple",
-   "order": 650,
+   "order": 690,
    "encounters": [
     {
      "species": "golbat",
@@ -7257,284 +7787,9 @@
    ]
   },
   {
-   "id": "sinnoh-route-228",
-   "name": "Sinnoh Route 228",
-   "order": 660,
-   "encounters": [
-    {
-     "species": "barboach",
-     "minLevel": 15,
-     "maxLevel": 20,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "beldum",
-     "minLevel": 51,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "cacnea",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "cacturne",
-     "minLevel": 50,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "diglett",
-     "minLevel": 49,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dugtrio",
-     "minLevel": 50,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "hippowdon",
-     "minLevel": 50,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 35,
-     "maxLevel": 45,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "rhydon",
-     "minLevel": 50,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sandslash",
-     "minLevel": 49,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "whiscash",
-     "minLevel": 25,
-     "maxLevel": 55,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-route-224",
-   "name": "Sinnoh Route 224",
-   "order": 670,
-   "encounters": [
-    {
-     "species": "beautifly",
-     "minLevel": 52,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "bellsprout",
-     "minLevel": 49,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dustox",
-     "minLevel": 52,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "floatzel",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gastrodon",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "gloom",
-     "minLevel": 51,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "luvdisc",
-     "minLevel": 20,
-     "maxLevel": 30,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "natu",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 49,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "surf",
-      "walk"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 10,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "roselia",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shuckle",
-     "minLevel": 52,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "weepinbell",
-     "minLevel": 51,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "newmoon-island",
    "name": "Newmoon Island",
-   "order": 680,
+   "order": 700,
    "encounters": [
     {
      "species": "darkrai",
@@ -7547,256 +7802,16 @@
    ]
   },
   {
-   "id": "sinnoh-route-227",
-   "name": "Sinnoh Route 227",
-   "order": 690,
+   "id": "sinnoh-hall-of-origin-1",
+   "name": "Sinnoh Hall Of Origin 1",
+   "order": 710,
    "encounters": [
     {
-     "species": "barboach",
-     "minLevel": 10,
-     "maxLevel": 25,
+     "species": "arceus",
+     "minLevel": 80,
+     "maxLevel": 80,
      "methods": [
-      "good-rod"
-     ]
-    },
-    {
-     "species": "camerupt",
-     "minLevel": 53,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 51,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 51,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 51,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 3,
-     "maxLevel": 25,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "numel",
-     "minLevel": 51,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "poliwag",
-     "minLevel": 35,
-     "maxLevel": 45,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "poliwhirl",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "rhydon",
-     "minLevel": 54,
-     "maxLevel": 54,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rhyhorn",
-     "minLevel": 52,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skarmory",
-     "minLevel": 53,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "spinda",
-     "minLevel": 53,
-     "maxLevel": 54,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "torkoal",
-     "minLevel": 51,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "weezing",
-     "minLevel": 52,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "whiscash",
-     "minLevel": 30,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "stark-mountain",
-   "name": "Stark Mountain",
-   "order": 700,
-   "encounters": [
-    {
-     "species": "camerupt",
-     "minLevel": 53,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "fearow",
-     "minLevel": 51,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "golbat",
-     "minLevel": 51,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "graveler",
-     "minLevel": 51,
-     "maxLevel": 54,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "koffing",
-     "minLevel": 53,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magcargo",
-     "minLevel": 53,
-     "maxLevel": 55,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "numel",
-     "minLevel": 51,
-     "maxLevel": 51,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rhydon",
-     "minLevel": 54,
-     "maxLevel": 55,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rhyhorn",
-     "minLevel": 52,
-     "maxLevel": 52,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skarmory",
-     "minLevel": 53,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "slugma",
-     "minLevel": 52,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "torkoal",
-     "minLevel": 51,
-     "maxLevel": 53,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "weezing",
-     "minLevel": 51,
-     "maxLevel": 54,
-     "methods": [
-      "walk"
+      "static"
      ]
     }
    ]
@@ -7804,7 +7819,7 @@
   {
    "id": "roaming-sinnoh",
    "name": "Roaming Sinnoh",
-   "order": 710,
+   "order": 720,
    "encounters": [
     {
      "species": "articuno",
@@ -7849,21 +7864,6 @@
      "methods": [
       "roaming-grass",
       "roaming-water"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "sinnoh-hall-of-origin-1",
-   "name": "Sinnoh Hall Of Origin 1",
-   "order": 720,
-   "encounters": [
-    {
-     "species": "arceus",
-     "minLevel": 80,
-     "maxLevel": 80,
-     "methods": [
-      "static"
      ]
     }
    ]
@@ -8351,5 +8351,15 @@
     }
    ]
   }
- ]
+ ],
+ "bossAreaCutoffs": {
+  "roark": "oreburgh-city",
+  "gardenia": "eterna-city",
+  "fantina": "hearthome-city",
+  "maylene": "sinnoh-route-215",
+  "crasher-wake": "pastoria-city",
+  "byron": "canalave-city",
+  "candice": "lake-acuity",
+  "volkner": "sunyshore-city"
+ }
 }

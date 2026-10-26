@@ -37,6 +37,57 @@ describe("shipped game packs", () => {
     expect(pool["rattata"]).toEqual([2, 4]);
   });
 
+  it("every base pack with areas opens with its story start and segments by the story", () => {
+    const segOf = (packId: string, bossId: string) => {
+      const pack = getPack(packId)!;
+      const { segments } = bossSegments(pack, sortedAreas(pack));
+      return segments.find((s) => s.boss.id === bossId)?.areas.map((a) => a.id) ?? [];
+    };
+    const first = (packId: string) => sortedAreas(getPack(packId)!)[0].id;
+    // Hoenn: Petalburg Woods are before Roxanne, not Brawly.
+    expect(first("emerald")).toBe("littleroot-town");
+    expect(segOf("emerald", "roxanne")).toContain("petalburg-woods");
+    expect(segOf("emerald", "roxanne")).toContain("rustboro-city");
+    expect(segOf("emerald", "flannery")).toContain("lavaridge-town");
+    expect(first("ruby-sapphire")).toBe("hoenn-route-101");
+    expect(segOf("ruby-sapphire", "roxanne")).toContain("petalburg-woods");
+    expect(first("omega-ruby-alpha-sapphire")).toBe("hoenn-route-101");
+    expect(segOf("omega-ruby-alpha-sapphire", "oras-roxanne")).toContain("petalburg-woods");
+    // Kanto: Route 1 first, Viridian Forest before Brock, Mt. Moon before Misty.
+    for (const id of ["red-blue", "yellow", "firered-leafgreen", "lets-go"]) {
+      expect(first(id)).toBe("pallet-town");
+    }
+    expect(segOf("red-blue", "brock")).toContain("viridian-forest");
+    expect(segOf("red-blue", "misty")).toContain("mt-moon");
+    expect(segOf("red-blue", "misty")).toContain("kanto-route-25");
+    // Johto: New Bark first, Blackthorn with Clair, Kanto after Johto.
+    for (const id of ["gold-silver", "crystal", "heartgold-soulsilver"]) {
+      expect(first(id)).toBe("new-bark-town");
+      expect(segOf(id, "clair")).toContain("blackthorn-city");
+    }
+    expect(segOf("heartgold-soulsilver", "brock")).toContain("pewter-city");
+    // Sinnoh: Twinleaf first, Eterna Forest with Gardenia, Sunyshore with Volkner.
+    for (const id of ["diamond-pearl", "platinum"]) {
+      expect(first(id)).toBe("twinleaf-town");
+      expect(segOf(id, "gardenia")).toContain("eterna-forest");
+      expect(segOf(id, "volkner")).toContain("sunyshore-city");
+    }
+    expect(segOf("platinum", "fantina")).toContain("hearthome-city");
+    // Unova sequel: Aspertia first, Castelia with Burgh, not at the tail.
+    expect(first("black-2-white-2")).toBe("aspertia-city");
+    expect(segOf("black-2-white-2", "burgh")).toContain("castelia-city");
+    expect(segOf("black-white", "lenora")).toContain("nacrene-city");
+    // Alola: Route 1 first, Verdant Cavern with the first trial.
+    for (const id of ["sun-moon", "ultra-sun-ultra-moon"]) {
+      expect(first(id)).toBe("alola-route-1");
+      expect(segOf(id, "totem-gumshoos")).toContain("verdant-cavern");
+    }
+    // Galar: Postwick first, Turffield with Milo, not last.
+    expect(first("sword-shield")).toBe("postwick");
+    expect(segOf("sword-shield", "milo")).toContain("turffield");
+    expect(segOf("sword-shield", "nessa")).toContain("hulbury");
+  });
+
   it("x-y opens with the Aquacorde starter and segments by the story", () => {
     const pack = getPack("x-y");
     expect(pack).toBeDefined();
