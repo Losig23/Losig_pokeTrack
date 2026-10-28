@@ -66,13 +66,31 @@ export function bossSegments(
     .map((b) => pack.bossAreaCutoffs?.[b.id])
     .map((areaId) => (areaId ? areaIndex.get(areaId) : undefined));
   if (authored.some((i) => i !== undefined)) {
-    const ends: number[] = new Array(pool.length).fill(-1);
-    const anchors: [number, number][] = [[-1, -1], ...authored
+    // League bosses (Elite Four / Champion) only join the segment list
+    // when a pack authors a cutoff for them — e.g. a Champion cutoff to
+    // Victory Road gives the league journey its own segment instead of
+    // dumping it on the last gym. League bosses without a cutoff get an
+    // empty segment (their card still shows in the timeline / Story tab).
+    // Areas after the last segment's cutoff are NOT absorbed by the last
+    // boss: they return as trailing, which the UI renders as
+    // "League & postgame". That fixes the old "29 routes before Juan"
+    // bug, where postgame areas were attributed to the last gym.
+    const leagueWithCutoff = bosses.filter(
+      (b) => LEAGUE_NAME.test(b.name) && pack.bossAreaCutoffs?.[b.id] && areaIndex.has(pack.bossAreaCutoffs[b.id]),
+    );
+    const poolAll = [...pool, ...leagueWithCutoff].sort((a, b) => a.order - b.order);
+    const authoredAll = poolAll
+      .map((b) => pack.bossAreaCutoffs?.[b.id])
+      .map((areaId) => (areaId ? areaIndex.get(areaId) : undefined));
+    const ends: number[] = new Array(poolAll.length).fill(-1);
+    const anchors: [number, number][] = [[-1, -1], ...authoredAll
       .map((idx, i) => [i, idx] as [number, number])
-      .filter(([, idx]) => idx !== undefined), [pool.length, areas.length - 1]];
-    for (let i = 0; i < pool.length; i++) {
-      if (authored[i] !== undefined) {
-        ends[i] = authored[i]!;
+      .filter(([, idx]) => idx !== undefined), [poolAll.length, areas.length - 1]];
+    for (let i = 0; i < poolAll.length; i++) {
+      if (authoredAll[i] !== undefined) {
+        ends[i] = authoredAll[i]!;
+      } else if (LEAGUE_NAME.test(poolAll[i].name)) {
+        ends[i] = i > 0 ? ends[i - 1] : -1;
       } else {
         const prev = [...anchors].reverse().find(([bi]) => bi < i)!;
         const next = anchors.find(([bi]) => bi > i)!;
@@ -82,15 +100,13 @@ export function bossSegments(
       if (i > 0) ends[i] = Math.max(ends[i], ends[i - 1]);
       ends[i] = Math.min(ends[i], areas.length - 1);
     }
-    pool.forEach((boss, i) => {
+    poolAll.forEach((boss, i) => {
       const from = (i === 0 ? -1 : ends[i - 1]) + 1;
       const seg = segmentOf.get(boss.id);
       for (let ai = from; ai <= ends[i]; ai++) seg?.areas.push(areas[ai]);
-      if (i === pool.length - 1) {
-        for (let ai = ends[i] + 1; ai < areas.length; ai++) seg?.areas.push(areas[ai]);
-      }
     });
-    return { segments, trailing: [] };
+    const lastEnd = ends.length > 0 ? ends[ends.length - 1] : -1;
+    return { segments, trailing: areas.slice(lastEnd + 1) };
   }
 
   // A gym's own city can never sit in an earlier segment: you arrive at

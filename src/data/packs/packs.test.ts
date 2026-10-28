@@ -50,14 +50,19 @@ describe("shipped game packs", () => {
     expect(segOf("emerald", "roxanne")).toContain("rustboro-city");
     expect(segOf("emerald", "flannery")).toContain("lavaridge-town");
     // Fallarbor / Route 114 / Meteor Falls are on the way to Lavaridge,
-    // not after it: they belong to Flannery, not Norman. There are no
-    // new areas between Flannery and Norman (you walk back to Petalburg
-    // through areas already visited), so Norman's segment is empty.
+    // not after it: they belong to Flannery, not Norman. In Emerald,
+    // Norman's only new area is Mirage Tower (Go-Goggles + Mach Bike);
+    // in Ruby/Sapphire Norman's segment is empty by design.
     expect(segOf("emerald", "flannery")).toContain("hoenn-route-114");
     expect(segOf("emerald", "flannery")).toContain("meteor-falls");
     expect(segOf("emerald", "flannery")).toContain("jagged-pass");
     expect(segOf("emerald", "norman")).not.toContain("hoenn-route-114");
-    expect(segOf("emerald", "norman")).toEqual([]);
+    expect(segOf("emerald", "norman")).toEqual(["mirage-tower"]);
+    expect(segOf("ruby-sapphire", "norman")).toEqual([]);
+    // Walkthrough audit: Emerald Juan is only 127/128/Sootopolis/Cave/
+    // surf to Sky Pillar, not 29 routes; the rest is League & postgame.
+    expect(segOf("emerald", "juan")).toContain("sky-pillar");
+    expect(segOf("emerald", "juan")).not.toContain("hoenn-battle-frontier");
     expect(segOf("omega-ruby-alpha-sapphire", "oras-flannery")).toContain("fallarbor-town");
     expect(segOf("omega-ruby-alpha-sapphire", "oras-flannery")).toContain("hoenn-route-114");
     expect(first("ruby-sapphire")).toBe("hoenn-route-101");
@@ -97,6 +102,15 @@ describe("shipped game packs", () => {
     expect(first("sword-shield")).toBe("postwick");
     expect(segOf("sword-shield", "milo")).toContain("turffield");
     expect(segOf("sword-shield", "nessa")).toContain("hulbury");
+    // Walkthrough audit, worst first:
+    expect(segOf("black-2-white-2", "drayden")).toContain("undella-town");
+    expect(segOf("black-2-white-2", "marlon")).toContain("humilau-city");
+    expect(segOf("gold-silver", "lt-surge")).toContain("vermilion-city");
+    expect(segOf("gold-silver", "blue")).toContain("pallet-town");
+    expect(segOf("sword-shield", "piers")).toContain("lake-of-outrage");
+    expect(segOf("sword-shield", "raihan")).toEqual([]);
+    expect(segOf("sun-moon", "kahuna-hapu")).toContain("poni-breaker-coast");
+    expect(segOf("sun-moon", "totem-kommo-o")).toEqual(["vast-poni-canyon"]);
   });
 
   it("x-y opens with the Aquacorde starter and segments by the story", () => {
@@ -108,7 +122,7 @@ describe("shipped game packs", () => {
     const segOf = (bossId: string) =>
       segments.find((s) => s.boss.id === bossId)?.areas.map((a) => a.id) ?? [];
     expect(segOf("xy-viola")).toEqual([
-      "aquacorde-town", "kalos-route-2", "santalune-forest", "kalos-route-3",
+      "aquacorde-town", "kalos-route-2", "santalune-forest", "kalos-route-3", "kalos-route-22",
     ]);
     // Lumiose City's encounters happen on the first visit (pre-Grant),
     // even though its gym is badge 5.

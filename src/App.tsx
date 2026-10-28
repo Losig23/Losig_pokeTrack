@@ -334,7 +334,7 @@ function Home({
   );
 }
 
-type Tab = "timeline" | "routes" | "roster" | "prep" | "bosses";
+type Tab = "timeline" | "story" | "routes" | "roster" | "prep" | "bosses";
 
 function RunView({
   run, onChange, onBack, onDelete,
@@ -459,13 +459,14 @@ function RunView({
       )}
 
       <nav className="tabs">
-        {(["timeline", "routes", "roster", "prep", "bosses"] as Tab[]).map((t) => (
+        {(["timeline", "story", "routes", "roster", "prep", "bosses"] as Tab[]).map((t) => (
           <button key={t} className={tab === t ? "tab active" : "tab"} onClick={() => setTab(t)}>
-            {t === "timeline" ? "Timeline" : t === "routes" ? "Routes" : t === "roster" ? "Party & Box" : t === "prep" ? "Boss Prep" : "Bosses"}
+            {t === "timeline" ? "Timeline" : t === "story" ? "Story" : t === "routes" ? "Routes" : t === "roster" ? "Party & Box" : t === "prep" ? "Boss Prep" : "Bosses"}
           </button>
         ))}
       </nav>
 
+      {tab === "story" && <StoryTab run={run} pack={pack} species={species} onToggleBoss={toggleBoss} />}
       {tab === "timeline" && (
         <TimelineTab run={run} pack={pack} species={species} onChange={onChange} onToggleBoss={toggleBoss} />
       )}
@@ -650,6 +651,62 @@ function SpeciesPicker({
 }
 
 type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; nickname: string };
+
+/**
+ * Story: a read-only overview of the whole run's story progression —
+ * every boss in order (gym leaders, Kahunas/trials, Elite Four, Champion,
+ * and post-league bosses like Red/N/Ghetsis), with the areas you can
+ * catch in before each one, and a League & postgame tail at the end.
+ * Unlike Timeline, this is not for logging; unlike Bosses, it shows
+ * bosses in story order with their segments, including league bosses
+ * that get no timeline segment of their own.
+ */
+function StoryTab({
+  run, pack, species, onToggleBoss,
+}: {
+  run: Run;
+  pack: GamePack;
+  species: Record<string, SpeciesData>;
+  onToggleBoss: (bossId: string) => void;
+}) {
+  const { segments, trailing } = bossSegments(pack, sortedAreas(pack));
+  const byBoss = new Map(segments.map((s) => [s.boss.id, s.areas]));
+  return (
+    <section className="panel">
+      <p className="muted">
+        The story in order. Areas listed under a boss are the ones you can catch in before that fight;
+        areas after the last boss are league and postgame.
+      </p>
+      {sortedBosses(pack).map((boss, i) => {
+        const areas = byBoss.get(boss.id) ?? [];
+        const defeated = run.defeatedBossIds.includes(boss.id);
+        return (
+          <div key={boss.id} className="segment">
+            <div className="boss-card-head">
+              <BossPortrait boss={boss} species={species} size={40} />
+              <strong>{i + 1}. {boss.name}</strong>
+              <span className="muted">{boss.location} · Lv cap {boss.levelCap}</span>
+              <button className={`chip ${defeated ? "done" : ""}`} onClick={() => onToggleBoss(boss.id)}>
+                {defeated ? "✓ Defeated" : "Mark defeated"}
+              </button>
+            </div>
+            <p className="muted">
+              {areas.length === 0
+                ? "No new areas before this fight."
+                : `${areas.length} area${areas.length === 1 ? "" : "s"}: ${areas.map((a) => a.name).join(", ")}`}
+            </p>
+          </div>
+        );
+      })}
+      {trailing.length > 0 && (
+        <div className="segment">
+          <h4 className="segment-heading">League &amp; postgame</h4>
+          <p className="muted">{trailing.map((a) => a.name).join(", ")}</p>
+        </div>
+      )}
+    </section>
+  );
+}
 
 function TimelineTab({
   run, pack, species, onChange, onToggleBoss,
@@ -938,7 +995,7 @@ function TimelineTab({
       {segments.length === 0 && packAreas.map(areaRow)}
       {trailing.length > 0 && (
         <div className="segment">
-          <h4 className="segment-heading">After the final boss</h4>
+          <h4 className="segment-heading">League &amp; postgame</h4>
           {trailing.map(areaRow)}
         </div>
       )}

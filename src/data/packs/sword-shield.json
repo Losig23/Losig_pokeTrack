@@ -258,9 +258,24 @@
    ]
   },
   {
+   "id": "wedgehurst",
+   "name": "Wedgehurst",
+   "order": 40,
+   "encounters": [
+    {
+     "species": "slowpoke",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
    "id": "galar-route-2",
    "name": "Galar Route 2",
-   "order": 40,
+   "order": 50,
    "encounters": [
     {
      "species": "arrokuda",
@@ -432,231 +447,9 @@
    ]
   },
   {
-   "id": "wedgehurst",
-   "name": "Wedgehurst",
-   "order": 50,
-   "encounters": [
-    {
-     "species": "slowpoke",
-     "minLevel": 12,
-     "maxLevel": 12,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-mine",
-   "name": "Galar Mine",
-   "order": 60,
-   "encounters": [
-    {
-     "species": "carkol",
-     "minLevel": 18,
-     "maxLevel": 18,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "diglett",
-     "minLevel": 11,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "drilbur",
-     "minLevel": 11,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "roggenrola",
-     "minLevel": 11,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "rolycoly",
-     "minLevel": 11,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "timburr",
-     "minLevel": 11,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "woobat",
-     "minLevel": 11,
-     "maxLevel": 16,
-     "methods": [
-      "overworld",
-      "wanderer"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-route-3",
-   "name": "Galar Route 3",
-   "order": 70,
-   "encounters": [
-    {
-     "species": "cherubi",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "corvisquire",
-     "minLevel": 18,
-     "maxLevel": 18,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "gossifleur",
-     "minLevel": 10,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "growlithe",
-     "minLevel": 10,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "klink",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machop",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mudbray",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pancham",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rolycoly",
-     "minLevel": 10,
-     "maxLevel": 13,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "rookidee",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sizzlipede",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skwovet",
-     "minLevel": 8,
-     "maxLevel": 13,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "stunky",
-     "minLevel": 10,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "trubbish",
-     "minLevel": 10,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "tyrogue",
-     "minLevel": 10,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 10,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "zigzagoon",
-     "minLevel": 10,
-     "maxLevel": 14,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
    "id": "rolling-fields",
    "name": "Rolling Fields",
-   "order": 80,
+   "order": 60,
    "encounters": [
     {
      "species": "baltoy",
@@ -1072,7 +865,7 @@
   {
    "id": "meetup-spot",
    "name": "Meetup Spot",
-   "order": 90,
+   "order": 70,
    "encounters": [
     {
      "species": "eevee",
@@ -1095,7 +888,7 @@
   {
    "id": "dappled-grove",
    "name": "Dappled Grove",
-   "order": 100,
+   "order": 80,
    "encounters": [
     {
      "species": "baltoy",
@@ -1414,7 +1207,7 @@
   {
    "id": "watchtower-ruins",
    "name": "Watchtower Ruins",
-   "order": 110,
+   "order": 90,
    "encounters": [
     {
      "species": "bounsweet",
@@ -1677,7 +1470,7 @@
   {
    "id": "east-lake-axewell",
    "name": "East Lake Axewell",
-   "order": 120,
+   "order": 100,
    "encounters": [
     {
      "species": "baltoy",
@@ -2046,7 +1839,7 @@
   {
    "id": "west-lake-axewell",
    "name": "West Lake Axewell",
-   "order": 130,
+   "order": 110,
    "encounters": [
     {
      "species": "baltoy",
@@ -2445,7 +2238,7 @@
   {
    "id": "south-lake-miloch",
    "name": "South Lake Miloch",
-   "order": 140,
+   "order": 120,
    "encounters": [
     {
      "species": "baltoy",
@@ -2880,7 +2673,7 @@
   {
    "id": "north-lake-miloch",
    "name": "North Lake Miloch",
-   "order": 150,
+   "order": 130,
    "encounters": [
     {
      "species": "baltoy",
@@ -3297,7 +3090,7 @@
   {
    "id": "giants-cap",
    "name": "Giants Cap",
-   "order": 160,
+   "order": 140,
    "encounters": [
     {
      "species": "aegislash",
@@ -3891,7 +3684,7 @@
   {
    "id": "giants-mirror",
    "name": "Giants Mirror",
-   "order": 170,
+   "order": 150,
    "encounters": [
     {
      "species": "abomasnow",
@@ -4602,7 +4395,7 @@
   {
    "id": "bridge-field",
    "name": "Bridge Field",
-   "order": 180,
+   "order": 160,
    "encounters": [
     {
      "species": "baltoy",
@@ -5239,7 +5032,7 @@
   {
    "id": "motostoke-riverbank",
    "name": "Motostoke Riverbank",
-   "order": 190,
+   "order": 170,
    "encounters": [
     {
      "species": "arrokuda",
@@ -5714,7 +5507,7 @@
   {
    "id": "stony-wilderness",
    "name": "Stony Wilderness",
-   "order": 200,
+   "order": 180,
    "encounters": [
     {
      "species": "applin",
@@ -6212,1856 +6005,9 @@
    ]
   },
   {
-   "id": "galar-route-4",
-   "name": "Galar Route 4",
-   "order": 210,
-   "encounters": [
-    {
-     "species": "budew",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "chewtle",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "cutiefly",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "diglett",
-     "minLevel": 17,
-     "maxLevel": 17,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "eevee",
-     "minLevel": 14,
-     "maxLevel": 16,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "electrike",
-     "minLevel": 14,
-     "maxLevel": 16,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "ferroseed",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "joltik",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "meowth",
-     "minLevel": 13,
-     "maxLevel": 16,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "milcery",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pikachu",
-     "minLevel": 14,
-     "maxLevel": 16,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "pumpkaboo",
-     "minLevel": 14,
-     "maxLevel": 16,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "skwovet",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "wooloo",
-     "minLevel": 13,
-     "maxLevel": 15,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "yamper",
-     "minLevel": 14,
-     "maxLevel": 16,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "motostoke-outskirts",
-   "name": "Motostoke Outskirts",
-   "order": 220,
-   "encounters": [
-    {
-     "species": "chewtle",
-     "minLevel": 21,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "croagunk",
-     "minLevel": 21,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "hatenna",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "impidimp",
-     "minLevel": 21,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "koffing",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "noctowl",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "pawniard",
-     "minLevel": 21,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "roggenrola",
-     "minLevel": 21,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "salandit",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "sawk",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "scraggy",
-     "minLevel": 21,
-     "maxLevel": 24,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sudowoodo",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "throh",
-     "minLevel": 22,
-     "maxLevel": 26,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "motostoke",
-   "name": "Motostoke",
-   "order": 230,
-   "encounters": [
-    {
-     "species": "barboach",
-     "minLevel": 7,
-     "maxLevel": 11,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "chewtle",
-     "minLevel": 7,
-     "maxLevel": 11,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "litwick",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 7,
-     "maxLevel": 11,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "sizzlipede",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 24,
-     "maxLevel": 24,
-     "methods": [
-      "wanderer"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "turffield",
-   "name": "Turffield",
-   "order": 240,
-   "encounters": [
-    {
-     "species": "crawdaunt",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-route-5",
-   "name": "Galar Route 5",
-   "order": 250,
-   "encounters": [
-    {
-     "species": "applin",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "chewtle",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "dewpider",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dottler",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "drifloon",
-     "minLevel": 19,
-     "maxLevel": 21,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "eldegoss",
-     "minLevel": 22,
-     "maxLevel": 22,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "espurr",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "farfetchd",
-     "minLevel": 19,
-     "maxLevel": 21,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "lombre",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "minccino",
-     "minLevel": 19,
-     "maxLevel": 21,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "nincada",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "nuzleaf",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skwovet",
-     "minLevel": 16,
-     "maxLevel": 18,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "spritzee",
-     "minLevel": 16,
-     "maxLevel": 21,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "stufful",
-     "minLevel": 19,
-     "maxLevel": 21,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "swirlix",
-     "minLevel": 16,
-     "maxLevel": 21,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "toxel",
-     "minLevel": 1,
-     "maxLevel": 1,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "wobbuffet",
-     "minLevel": 19,
-     "maxLevel": 21,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "hulbury",
-   "name": "Hulbury",
-   "order": 260,
-   "encounters": [
-    {
-     "species": "arrokuda",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "basculin",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "chewtle",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "chinchou",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-route-6",
-   "name": "Galar Route 6",
-   "order": 270,
-   "encounters": [
-    {
-     "species": "arctovish",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "arctozolt",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "axew",
-     "minLevel": 29,
-     "maxLevel": 33,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "dracovish",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "dracozolt",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "drednaw",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "dugtrio",
-     "minLevel": 29,
-     "maxLevel": 33,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "durant",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "duskull",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "greedent",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "hawlucha",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "heatmor",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "helioptile",
-     "minLevel": 29,
-     "maxLevel": 33,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "hippopotas",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "maractus",
-     "minLevel": 29,
-     "maxLevel": 33,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "silicobra",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "skorupi",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "torkoal",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "trapinch",
-     "minLevel": 29,
-     "maxLevel": 33,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "yamask",
-     "minLevel": 29,
-     "maxLevel": 33,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-mine-no-2",
-   "name": "Galar Mine No 2",
-   "order": 280,
-   "encounters": [
-    {
-     "species": "barboach",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "binacle",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "chewtle",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots",
-      "overworld"
-     ]
-    },
-    {
-     "species": "corphish",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "croagunk",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "drednaw",
-     "minLevel": 24,
-     "maxLevel": 24,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "gastrodon",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "noibat",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "scraggy",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "shellos",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "shuckle",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "stunfisk",
-     "minLevel": 25,
-     "maxLevel": 25,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "wimpod",
-     "minLevel": 20,
-     "maxLevel": 24,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-route-7",
-   "name": "Galar Route 7",
-   "order": 290,
-   "encounters": [
-    {
-     "species": "corviknight",
-     "minLevel": 36,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "galvantula",
-     "minLevel": 37,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "greedent",
-     "minLevel": 36,
-     "maxLevel": 40,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "inkay",
-     "minLevel": 37,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "karrablast",
-     "minLevel": 36,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "liepard",
-     "minLevel": 36,
-     "maxLevel": 41,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "meowstic",
-     "minLevel": 36,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "morpeko",
-     "minLevel": 37,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "perrserker",
-     "minLevel": 37,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "seismitoad",
-     "minLevel": 36,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "shelmet",
-     "minLevel": 36,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "thievul",
-     "minLevel": 37,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "toxel",
-     "minLevel": 36,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-route-8",
-   "name": "Galar Route 8",
-   "order": 300,
-   "encounters": [
-    {
-     "species": "boldore",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "bronzong",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "crustle",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "darumaka",
-     "minLevel": 38,
-     "maxLevel": 41,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "delibird",
-     "minLevel": 38,
-     "maxLevel": 41,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "drapion",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dusclops",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "falinks",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk",
-      "wanderer"
-     ]
-    },
-    {
-     "species": "golett",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "gurdurr",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "haunter",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "hippowdon",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "lunatone",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "pawniard",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "rhyhorn",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "rufflet",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "sandaconda",
-     "minLevel": 38,
-     "maxLevel": 40,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sawk",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "sneasel",
-     "minLevel": 38,
-     "maxLevel": 43,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "snom",
-     "minLevel": 38,
-     "maxLevel": 43,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "snorunt",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "snover",
-     "minLevel": 38,
-     "maxLevel": 41,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "solrock",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "throh",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "togedemaru",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "vanillish",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "vullaby",
-     "minLevel": 39,
-     "maxLevel": 41,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "glimwood-tangle",
-   "name": "Glimwood Tangle",
-   "order": 310,
-   "encounters": [
-    {
-     "species": "hattrem",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "impidimp",
-     "minLevel": 31,
-     "maxLevel": 31,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "indeedee",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "morgrem",
-     "minLevel": 34,
-     "maxLevel": 38,
-     "methods": [
-      "overworld",
-      "static"
-     ]
-    },
-    {
-     "species": "oranguru",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "passimian",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "phantump",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "ponyta",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "shiinotic",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "sinistea",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "spritzee",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "swirlix",
-     "minLevel": 34,
-     "maxLevel": 36,
-     "methods": [
-      "overworld"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "axews-eye",
-   "name": "Axews Eye",
-   "order": 320,
-   "encounters": [
-    {
-     "species": "abomasnow",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "axew",
-     "minLevel": 36,
-     "maxLevel": 60,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "baltoy",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "bewear",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "bronzong",
-     "minLevel": 36,
-     "maxLevel": 60,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "charjabug",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "cherubi",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "claydol",
-     "minLevel": 36,
-     "maxLevel": 60,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "cramorant",
-     "minLevel": 65,
-     "maxLevel": 65,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "crawdaunt",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "crustle",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "delibird",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "diggersby",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "drifblim",
-     "minLevel": 36,
-     "maxLevel": 60,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "gloom",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "greedent",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "growlithe",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "gyarados",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "haxorus",
-     "minLevel": 60,
-     "maxLevel": 60,
-     "methods": [
-      "wanderer"
-     ]
-    },
-    {
-     "species": "kingler",
-     "minLevel": 36,
-     "maxLevel": 60,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "klink",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "liepard",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "machoke",
-     "minLevel": 36,
-     "maxLevel": 60,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "manectric",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mudsdale",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "munna",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "roselia",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "seismitoad",
-     "minLevel": 36,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "wanderer"
-     ]
-    },
-    {
-     "species": "snover",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "steenee",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "unfezant",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vanillish",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "vulpix",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "bubbling-spots"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "galar-route-9",
-   "name": "Galar Route 9",
-   "order": 330,
-   "encounters": [
-    {
-     "species": "barbaracle",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "bergmite",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "clobbopus",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "cramorant",
-     "minLevel": 38,
-     "maxLevel": 43,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "dhelmise",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "gastrodon",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "glalie",
-     "minLevel": 55,
-     "maxLevel": 55,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "grapploct",
-     "minLevel": 50,
-     "maxLevel": 50,
-     "methods": [
-      "wanderer-water"
-     ]
-    },
-    {
-     "species": "greedent",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "berry-trees"
-     ]
-    },
-    {
-     "species": "inkay",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "jellicent",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "overworld",
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "kingler",
-     "minLevel": 38,
-     "maxLevel": 42,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "lapras",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "liepard",
-     "minLevel": 40,
-     "maxLevel": 44,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mantine",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "bubbling-spots",
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "mantyke",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "bubbling-spots",
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "mareanie",
-     "minLevel": 40,
-     "maxLevel": 44,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "morpeko",
-     "minLevel": 40,
-     "maxLevel": 44,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "octillery",
-     "minLevel": 38,
-     "maxLevel": 43,
-     "methods": [
-      "bubbling-spots",
-      "overworld",
-      "walk"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "overworld",
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "perrserker",
-     "minLevel": 40,
-     "maxLevel": 44,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pincurchin",
-     "minLevel": 38,
-     "maxLevel": 43,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "pyukumuku",
-     "minLevel": 38,
-     "maxLevel": 44,
-     "methods": [
-      "bubbling-spots",
-      "overworld"
-     ]
-    },
-    {
-     "species": "qwilfish",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "remoraid",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "thievul",
-     "minLevel": 40,
-     "maxLevel": 44,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "toxapex",
-     "minLevel": 39,
-     "maxLevel": 44,
-     "methods": [
-      "overworld"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "bubbling-spots",
-      "overworld-water"
-     ]
-    },
-    {
-     "species": "wailord",
-     "minLevel": 39,
-     "maxLevel": 43,
-     "methods": [
-      "bubbling-spots"
-     ]
-    },
-    {
-     "species": "wishiwashi",
-     "minLevel": 38,
-     "maxLevel": 42,
-     "methods": [
-      "bubbling-spots"
-     ]
-    }
-   ]
-  },
-  {
    "id": "dusty-bowl",
    "name": "Dusty Bowl",
-   "order": 340,
+   "order": 190,
    "encounters": [
     {
      "species": "abomasnow",
@@ -8653,7 +6599,7 @@
   {
    "id": "hammerlocke-hills",
    "name": "Hammerlocke Hills",
-   "order": 350,
+   "order": 200,
    "encounters": [
     {
      "species": "abomasnow",
@@ -9065,7 +7011,7 @@
   {
    "id": "giants-seat",
    "name": "Giants Seat",
-   "order": 360,
+   "order": 210,
    "encounters": [
     {
      "species": "abomasnow",
@@ -9492,136 +7438,110 @@
    ]
   },
   {
-   "id": "galar-route-10",
-   "name": "Galar Route 10",
-   "order": 370,
+   "id": "motostoke-outskirts",
+   "name": "Motostoke Outskirts",
+   "order": 220,
    "encounters": [
     {
-     "species": "abomasnow",
-     "minLevel": 44,
-     "maxLevel": 55,
+     "species": "chewtle",
+     "minLevel": 21,
+     "maxLevel": 24,
      "methods": [
-      "static",
       "walk"
      ]
     },
     {
-     "species": "beartic",
-     "minLevel": 44,
-     "maxLevel": 55,
+     "species": "croagunk",
+     "minLevel": 21,
+     "maxLevel": 24,
      "methods": [
-      "static",
       "walk"
      ]
     },
     {
-     "species": "cubchoo",
-     "minLevel": 45,
-     "maxLevel": 48,
+     "species": "hatenna",
+     "minLevel": 22,
+     "maxLevel": 26,
      "methods": [
       "overworld"
      ]
     },
     {
-     "species": "darumaka",
-     "minLevel": 43,
-     "maxLevel": 46,
+     "species": "impidimp",
+     "minLevel": 21,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "duraludon",
-     "minLevel": 45,
-     "maxLevel": 48,
+     "species": "koffing",
+     "minLevel": 22,
+     "maxLevel": 26,
      "methods": [
       "overworld"
      ]
     },
     {
-     "species": "eiscue",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "glalie",
-     "minLevel": 45,
-     "maxLevel": 48,
+     "species": "noctowl",
+     "minLevel": 22,
+     "maxLevel": 26,
      "methods": [
       "overworld"
      ]
     },
     {
-     "species": "klang",
-     "minLevel": 43,
-     "maxLevel": 49,
+     "species": "pawniard",
+     "minLevel": 21,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "mr-mime",
-     "minLevel": 45,
-     "maxLevel": 48,
+     "species": "roggenrola",
+     "minLevel": 21,
+     "maxLevel": 24,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "salandit",
+     "minLevel": 22,
+     "maxLevel": 26,
      "methods": [
       "overworld"
      ]
     },
     {
-     "species": "rhydon",
-     "minLevel": 43,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sneasel",
-     "minLevel": 45,
-     "maxLevel": 48,
+     "species": "sawk",
+     "minLevel": 22,
+     "maxLevel": 26,
      "methods": [
       "overworld"
      ]
     },
     {
-     "species": "snom",
-     "minLevel": 43,
-     "maxLevel": 49,
+     "species": "scraggy",
+     "minLevel": 21,
+     "maxLevel": 24,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "snover",
-     "minLevel": 45,
-     "maxLevel": 48,
+     "species": "sudowoodo",
+     "minLevel": 22,
+     "maxLevel": 26,
      "methods": [
       "overworld"
      ]
     },
     {
-     "species": "stonjourner",
-     "minLevel": 44,
-     "maxLevel": 46,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vanillish",
-     "minLevel": 43,
-     "maxLevel": 49,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "vanilluxe",
-     "minLevel": 45,
-     "maxLevel": 48,
+     "species": "throh",
+     "minLevel": 22,
+     "maxLevel": 26,
      "methods": [
       "overworld"
      ]
@@ -9629,16 +7549,1944 @@
    ]
   },
   {
-   "id": "galar-battle-tower",
-   "name": "Galar Battle Tower",
-   "order": 380,
+   "id": "motostoke",
+   "name": "Motostoke",
+   "order": 230,
    "encounters": [
     {
-     "species": "type-null",
+     "species": "barboach",
+     "minLevel": 7,
+     "maxLevel": 11,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "chewtle",
+     "minLevel": 7,
+     "maxLevel": 11,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "litwick",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 7,
+     "maxLevel": 11,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "sizzlipede",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 24,
+     "maxLevel": 24,
+     "methods": [
+      "wanderer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-route-3",
+   "name": "Galar Route 3",
+   "order": 240,
+   "encounters": [
+    {
+     "species": "cherubi",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "corvisquire",
+     "minLevel": 18,
+     "maxLevel": 18,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "gossifleur",
+     "minLevel": 10,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "growlithe",
+     "minLevel": 10,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "klink",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machop",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mudbray",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pancham",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rolycoly",
+     "minLevel": 10,
+     "maxLevel": 13,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "rookidee",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sizzlipede",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skwovet",
+     "minLevel": 8,
+     "maxLevel": 13,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "stunky",
+     "minLevel": 10,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "trubbish",
+     "minLevel": 10,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "tyrogue",
+     "minLevel": 10,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 10,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 10,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-mine",
+   "name": "Galar Mine",
+   "order": 250,
+   "encounters": [
+    {
+     "species": "carkol",
+     "minLevel": 18,
+     "maxLevel": 18,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "diglett",
+     "minLevel": 11,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "drilbur",
+     "minLevel": 11,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "roggenrola",
+     "minLevel": 11,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "rolycoly",
+     "minLevel": 11,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "timburr",
+     "minLevel": 11,
+     "maxLevel": 14,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "woobat",
+     "minLevel": 11,
+     "maxLevel": 16,
+     "methods": [
+      "overworld",
+      "wanderer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-route-4",
+   "name": "Galar Route 4",
+   "order": 260,
+   "encounters": [
+    {
+     "species": "budew",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "chewtle",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "cutiefly",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "diglett",
+     "minLevel": 17,
+     "maxLevel": 17,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "eevee",
+     "minLevel": 14,
+     "maxLevel": 16,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "electrike",
+     "minLevel": 14,
+     "maxLevel": 16,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "ferroseed",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "joltik",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "meowth",
+     "minLevel": 13,
+     "maxLevel": 16,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "milcery",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pikachu",
+     "minLevel": 14,
+     "maxLevel": 16,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "pumpkaboo",
+     "minLevel": 14,
+     "maxLevel": 16,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "skwovet",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "wooloo",
+     "minLevel": 13,
+     "maxLevel": 15,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "yamper",
+     "minLevel": 14,
+     "maxLevel": 16,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "turffield",
+   "name": "Turffield",
+   "order": 270,
+   "encounters": [
+    {
+     "species": "crawdaunt",
      "minLevel": 50,
      "maxLevel": 50,
      "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-route-5",
+   "name": "Galar Route 5",
+   "order": 280,
+   "encounters": [
+    {
+     "species": "applin",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "chewtle",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "dewpider",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dottler",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "drifloon",
+     "minLevel": 19,
+     "maxLevel": 21,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "eldegoss",
+     "minLevel": 22,
+     "maxLevel": 22,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "espurr",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "farfetchd",
+     "minLevel": 19,
+     "maxLevel": 21,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "lombre",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "minccino",
+     "minLevel": 19,
+     "maxLevel": 21,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "nincada",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "nuzleaf",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skwovet",
+     "minLevel": 16,
+     "maxLevel": 18,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "spritzee",
+     "minLevel": 16,
+     "maxLevel": 21,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "stufful",
+     "minLevel": 19,
+     "maxLevel": 21,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "swirlix",
+     "minLevel": 16,
+     "maxLevel": 21,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "toxel",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
       "gift"
+     ]
+    },
+    {
+     "species": "wobbuffet",
+     "minLevel": 19,
+     "maxLevel": 21,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hulbury",
+   "name": "Hulbury",
+   "order": 290,
+   "encounters": [
+    {
+     "species": "arrokuda",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "basculin",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "chewtle",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "chinchou",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-mine-no-2",
+   "name": "Galar Mine No 2",
+   "order": 300,
+   "encounters": [
+    {
+     "species": "barboach",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "binacle",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "chewtle",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots",
+      "overworld"
+     ]
+    },
+    {
+     "species": "corphish",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "croagunk",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "drednaw",
+     "minLevel": 24,
+     "maxLevel": 24,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "gastrodon",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "noibat",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "scraggy",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "shellos",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "shuckle",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "stunfisk",
+     "minLevel": 25,
+     "maxLevel": 25,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "wimpod",
+     "minLevel": 20,
+     "maxLevel": 24,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-route-6",
+   "name": "Galar Route 6",
+   "order": 310,
+   "encounters": [
+    {
+     "species": "arctovish",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "arctozolt",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "axew",
+     "minLevel": 29,
+     "maxLevel": 33,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "dracovish",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "dracozolt",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "drednaw",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "dugtrio",
+     "minLevel": 29,
+     "maxLevel": 33,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "durant",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "duskull",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "goldeen",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "greedent",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "hawlucha",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "heatmor",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "helioptile",
+     "minLevel": 29,
+     "maxLevel": 33,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "hippopotas",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "maractus",
+     "minLevel": 29,
+     "maxLevel": 33,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "silicobra",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "skorupi",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "torkoal",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "trapinch",
+     "minLevel": 29,
+     "maxLevel": 33,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "yamask",
+     "minLevel": 29,
+     "maxLevel": 33,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "glimwood-tangle",
+   "name": "Glimwood Tangle",
+   "order": 320,
+   "encounters": [
+    {
+     "species": "hattrem",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "impidimp",
+     "minLevel": 31,
+     "maxLevel": 31,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "indeedee",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "morgrem",
+     "minLevel": 34,
+     "maxLevel": 38,
+     "methods": [
+      "overworld",
+      "static"
+     ]
+    },
+    {
+     "species": "oranguru",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "passimian",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "phantump",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "ponyta",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "shiinotic",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "sinistea",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "spritzee",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "swirlix",
+     "minLevel": 34,
+     "maxLevel": 36,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-route-7",
+   "name": "Galar Route 7",
+   "order": 330,
+   "encounters": [
+    {
+     "species": "corviknight",
+     "minLevel": 36,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "galvantula",
+     "minLevel": 37,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "greedent",
+     "minLevel": 36,
+     "maxLevel": 40,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "inkay",
+     "minLevel": 37,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "karrablast",
+     "minLevel": 36,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "liepard",
+     "minLevel": 36,
+     "maxLevel": 41,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "meowstic",
+     "minLevel": 36,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "morpeko",
+     "minLevel": 37,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "perrserker",
+     "minLevel": 37,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "seismitoad",
+     "minLevel": 36,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "shelmet",
+     "minLevel": 36,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "thievul",
+     "minLevel": 37,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "toxel",
+     "minLevel": 36,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-route-8",
+   "name": "Galar Route 8",
+   "order": 340,
+   "encounters": [
+    {
+     "species": "boldore",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "bronzong",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "crustle",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "darumaka",
+     "minLevel": 38,
+     "maxLevel": 41,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "delibird",
+     "minLevel": 38,
+     "maxLevel": 41,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "drapion",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dusclops",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "falinks",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk",
+      "wanderer"
+     ]
+    },
+    {
+     "species": "golett",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "gurdurr",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "haunter",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "hippowdon",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "lunatone",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "pawniard",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "rhyhorn",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "rufflet",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "sandaconda",
+     "minLevel": 38,
+     "maxLevel": 40,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sawk",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "sneasel",
+     "minLevel": 38,
+     "maxLevel": 43,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "snom",
+     "minLevel": 38,
+     "maxLevel": 43,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "snorunt",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "snover",
+     "minLevel": 38,
+     "maxLevel": 41,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "solrock",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "throh",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "togedemaru",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "vanillish",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "vullaby",
+     "minLevel": 39,
+     "maxLevel": 41,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-route-9",
+   "name": "Galar Route 9",
+   "order": 350,
+   "encounters": [
+    {
+     "species": "barbaracle",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "bergmite",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "clobbopus",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "cramorant",
+     "minLevel": 38,
+     "maxLevel": 43,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "dhelmise",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "gastrodon",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "glalie",
+     "minLevel": 55,
+     "maxLevel": 55,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "grapploct",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "wanderer-water"
+     ]
+    },
+    {
+     "species": "greedent",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "inkay",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "jellicent",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "overworld",
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "kingler",
+     "minLevel": 38,
+     "maxLevel": 42,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "lapras",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "liepard",
+     "minLevel": 40,
+     "maxLevel": 44,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mantine",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "bubbling-spots",
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "mantyke",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "bubbling-spots",
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "mareanie",
+     "minLevel": 40,
+     "maxLevel": 44,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "morpeko",
+     "minLevel": 40,
+     "maxLevel": 44,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 38,
+     "maxLevel": 43,
+     "methods": [
+      "bubbling-spots",
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "overworld",
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "perrserker",
+     "minLevel": 40,
+     "maxLevel": 44,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pincurchin",
+     "minLevel": 38,
+     "maxLevel": 43,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "pyukumuku",
+     "minLevel": 38,
+     "maxLevel": 44,
+     "methods": [
+      "bubbling-spots",
+      "overworld"
+     ]
+    },
+    {
+     "species": "qwilfish",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "remoraid",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "thievul",
+     "minLevel": 40,
+     "maxLevel": 44,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "toxapex",
+     "minLevel": 39,
+     "maxLevel": 44,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "bubbling-spots",
+      "overworld-water"
+     ]
+    },
+    {
+     "species": "wailord",
+     "minLevel": 39,
+     "maxLevel": 43,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 38,
+     "maxLevel": 42,
+     "methods": [
+      "bubbling-spots"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "axews-eye",
+   "name": "Axews Eye",
+   "order": 360,
+   "encounters": [
+    {
+     "species": "abomasnow",
+     "minLevel": 60,
+     "maxLevel": 60,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "axew",
+     "minLevel": 36,
+     "maxLevel": 60,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "baltoy",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "bewear",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "bronzong",
+     "minLevel": 36,
+     "maxLevel": 60,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "charjabug",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "cherubi",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "claydol",
+     "minLevel": 36,
+     "maxLevel": 60,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "cramorant",
+     "minLevel": 65,
+     "maxLevel": 65,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "crawdaunt",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "crustle",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "delibird",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "diggersby",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "drifblim",
+     "minLevel": 36,
+     "maxLevel": 60,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "gloom",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "greedent",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "berry-trees"
+     ]
+    },
+    {
+     "species": "growlithe",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "gyarados",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "haxorus",
+     "minLevel": 60,
+     "maxLevel": 60,
+     "methods": [
+      "wanderer"
+     ]
+    },
+    {
+     "species": "kingler",
+     "minLevel": 36,
+     "maxLevel": 60,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "klink",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "liepard",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "machoke",
+     "minLevel": 36,
+     "maxLevel": 60,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "manectric",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mudsdale",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "munna",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "octillery",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "bubbling-spots"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "roselia",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "seismitoad",
+     "minLevel": 36,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "wanderer"
+     ]
+    },
+    {
+     "species": "snover",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "steenee",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "unfezant",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vanillish",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "vulpix",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "overworld",
+      "walk"
+     ]
+    },
+    {
+     "species": "wishiwashi",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "bubbling-spots"
      ]
     }
    ]
@@ -9646,7 +9494,7 @@
   {
    "id": "lake-of-outrage",
    "name": "Lake Of Outrage",
-   "order": 390,
+   "order": 370,
    "encounters": [
     {
      "species": "abomasnow",
@@ -10517,6 +10365,158 @@
      ]
     }
    ]
+  },
+  {
+   "id": "galar-route-10",
+   "name": "Galar Route 10",
+   "order": 380,
+   "encounters": [
+    {
+     "species": "abomasnow",
+     "minLevel": 44,
+     "maxLevel": 55,
+     "methods": [
+      "static",
+      "walk"
+     ]
+    },
+    {
+     "species": "beartic",
+     "minLevel": 44,
+     "maxLevel": 55,
+     "methods": [
+      "static",
+      "walk"
+     ]
+    },
+    {
+     "species": "cubchoo",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "darumaka",
+     "minLevel": 43,
+     "maxLevel": 46,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "duraludon",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "eiscue",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "glalie",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "klang",
+     "minLevel": 43,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mr-mime",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "rhydon",
+     "minLevel": 43,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sneasel",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "snom",
+     "minLevel": 43,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "snover",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "overworld"
+     ]
+    },
+    {
+     "species": "stonjourner",
+     "minLevel": 44,
+     "maxLevel": 46,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vanillish",
+     "minLevel": 43,
+     "maxLevel": 49,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "vanilluxe",
+     "minLevel": 45,
+     "maxLevel": 48,
+     "methods": [
+      "overworld"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "galar-battle-tower",
+   "name": "Galar Battle Tower",
+   "order": 390,
+   "encounters": [
+    {
+     "species": "type-null",
+     "minLevel": 50,
+     "maxLevel": 50,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
   }
  ],
  "bosses": [
@@ -10981,13 +10981,13 @@
  "bossAreaCutoffs": {
   "milo": "turffield",
   "nessa": "hulbury",
-  "kabu": "galar-route-8",
-  "bea": "galar-route-9",
-  "allister": "galar-route-9",
-  "opal": "giants-seat",
-  "gordie": "galar-route-10",
-  "melony": "galar-route-10",
-  "piers": "galar-battle-tower",
+  "kabu": "galar-mine-no-2",
+  "bea": "galar-route-6",
+  "allister": "galar-route-6",
+  "opal": "glimwood-tangle",
+  "gordie": "galar-route-8",
+  "melony": "galar-route-8",
+  "piers": "lake-of-outrage",
   "raihan": "lake-of-outrage"
  }
 }

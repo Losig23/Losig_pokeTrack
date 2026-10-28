@@ -1673,48 +1673,9 @@
    ]
   },
   {
-   "id": "mistralton-cave",
-   "name": "Mistralton Cave",
-   "order": 230,
-   "encounters": [
-    {
-     "species": "axew",
-     "minLevel": 30,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "boldore",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "drilbur",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "cave-spots"
-     ]
-    },
-    {
-     "species": "woobat",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "unova-route-7",
    "name": "Unova Route 7",
-   "order": 240,
+   "order": 230,
    "encounters": [
     {
      "species": "audino",
@@ -1799,7 +1760,7 @@
   {
    "id": "celestial-tower",
    "name": "Celestial Tower",
-   "order": 250,
+   "order": 240,
    "encounters": [
     {
      "species": "elgyem",
@@ -1820,9 +1781,450 @@
    ]
   },
   {
+   "id": "unova-route-17",
+   "name": "Unova Route 17",
+   "order": 250,
+   "encounters": [
+    {
+     "species": "alomomola",
+     "minLevel": 5,
+     "maxLevel": 20,
+     "methods": [
+      "surf-spots"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "frillish",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "jellicent",
+     "minLevel": 5,
+     "maxLevel": 20,
+     "methods": [
+      "surf-spots"
+     ]
+    },
+    {
+     "species": "kingdra",
+     "minLevel": 45,
+     "maxLevel": 70,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 35,
+     "maxLevel": 70,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "qwilfish",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "seadra",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "super-rod-spots"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "unova-route-18",
+   "name": "Unova Route 18",
+   "order": 260,
+   "encounters": [
+    {
+     "species": "alomomola",
+     "minLevel": 5,
+     "maxLevel": 20,
+     "methods": [
+      "surf-spots"
+     ]
+    },
+    {
+     "species": "audino",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "grass-spots"
+     ]
+    },
+    {
+     "species": "chinchou",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "crustle",
+     "minLevel": 34,
+     "maxLevel": 35,
+     "methods": [
+      "dark-grass"
+     ]
+    },
+    {
+     "species": "dwebble",
+     "minLevel": 30,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "frillish",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "jellicent",
+     "minLevel": 5,
+     "maxLevel": 20,
+     "methods": [
+      "surf-spots"
+     ]
+    },
+    {
+     "species": "kingdra",
+     "minLevel": 45,
+     "maxLevel": 70,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "larvesta",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift-egg"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 35,
+     "maxLevel": 70,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "qwilfish",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "sawk",
+     "minLevel": 29,
+     "maxLevel": 35,
+     "methods": [
+      "dark-grass",
+      "grass-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "scraggy",
+     "minLevel": 28,
+     "maxLevel": 35,
+     "methods": [
+      "dark-grass",
+      "walk"
+     ]
+    },
+    {
+     "species": "seadra",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "throh",
+     "minLevel": 29,
+     "maxLevel": 35,
+     "methods": [
+      "dark-grass",
+      "grass-spots",
+      "walk"
+     ]
+    },
+    {
+     "species": "watchog",
+     "minLevel": 28,
+     "maxLevel": 34,
+     "methods": [
+      "dark-grass",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "p2-laboratory",
+   "name": "P2 Laboratory",
+   "order": 270,
+   "encounters": [
+    {
+     "species": "alomomola",
+     "minLevel": 5,
+     "maxLevel": 20,
+     "methods": [
+      "surf-spots"
+     ]
+    },
+    {
+     "species": "audino",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "grass-spots"
+     ]
+    },
+    {
+     "species": "finneon",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "frillish",
+     "minLevel": 5,
+     "maxLevel": 15,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "herdier",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "horsea",
+     "minLevel": 35,
+     "maxLevel": 55,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "jellicent",
+     "minLevel": 5,
+     "maxLevel": 20,
+     "methods": [
+      "surf-spots"
+     ]
+    },
+    {
+     "species": "kingdra",
+     "minLevel": 45,
+     "maxLevel": 70,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "klink",
+     "minLevel": 29,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "lumineon",
+     "minLevel": 35,
+     "maxLevel": 70,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "qwilfish",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "scraggy",
+     "minLevel": 29,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "seadra",
+     "minLevel": 35,
+     "maxLevel": 60,
+     "methods": [
+      "super-rod-spots"
+     ]
+    },
+    {
+     "species": "stoutland",
+     "minLevel": 31,
+     "maxLevel": 31,
+     "methods": [
+      "grass-spots"
+     ]
+    },
+    {
+     "species": "watchog",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mistralton-cave",
+   "name": "Mistralton Cave",
+   "order": 280,
+   "encounters": [
+    {
+     "species": "axew",
+     "minLevel": 30,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "boldore",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "drilbur",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "cave-spots"
+     ]
+    },
+    {
+     "species": "woobat",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "guidance-chamber",
+   "name": "Guidance Chamber",
+   "order": 290,
+   "encounters": [
+    {
+     "species": "axew",
+     "minLevel": 30,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "boldore",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "drilbur",
+     "minLevel": 28,
+     "maxLevel": 31,
+     "methods": [
+      "cave-spots"
+     ]
+    },
+    {
+     "species": "woobat",
+     "minLevel": 28,
+     "maxLevel": 30,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "twist-mountain",
    "name": "Twist Mountain",
-   "order": 260,
+   "order": 300,
    "encounters": [
     {
      "species": "boldore",
@@ -1877,7 +2279,7 @@
   {
    "id": "icirrus-city",
    "name": "Icirrus City",
-   "order": 270,
+   "order": 310,
    "encounters": [
     {
      "species": "barboach",
@@ -1937,7 +2339,7 @@
   {
    "id": "dragonspiral-tower",
    "name": "Dragonspiral Tower",
-   "order": 280,
+   "order": 320,
    "encounters": [
     {
      "species": "audino",
@@ -2088,7 +2490,7 @@
   {
    "id": "unova-route-8",
    "name": "Unova Route 8",
-   "order": 290,
+   "order": 330,
    "encounters": [
     {
      "species": "barboach",
@@ -2148,7 +2550,7 @@
   {
    "id": "moor-of-icirrus",
    "name": "Moor Of Icirrus",
-   "order": 300,
+   "order": 340,
    "encounters": [
     {
      "species": "barboach",
@@ -2208,7 +2610,7 @@
   {
    "id": "unova-route-9",
    "name": "Unova Route 9",
-   "order": 310,
+   "order": 350,
    "encounters": [
     {
      "species": "audino",
@@ -2309,7 +2711,7 @@
   {
    "id": "unova-route-10",
    "name": "Unova Route 10",
-   "order": 320,
+   "order": 360,
    "encounters": [
     {
      "species": "amoonguss",
@@ -2414,7 +2816,7 @@
   {
    "id": "unova-victory-road",
    "name": "Unova Victory Road",
-   "order": 330,
+   "order": 370,
    "encounters": [
     {
      "species": "basculin",
@@ -2538,7 +2940,7 @@
   {
    "id": "trial-chamber",
    "name": "Trial Chamber",
-   "order": 340,
+   "order": 380,
    "encounters": [
     {
      "species": "boldore",
@@ -2583,48 +2985,9 @@
    ]
   },
   {
-   "id": "guidance-chamber",
-   "name": "Guidance Chamber",
-   "order": 350,
-   "encounters": [
-    {
-     "species": "axew",
-     "minLevel": 30,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "boldore",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "drilbur",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "cave-spots"
-     ]
-    },
-    {
-     "species": "woobat",
-     "minLevel": 28,
-     "maxLevel": 30,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "unova-route-11",
    "name": "Unova Route 11",
-   "order": 360,
+   "order": 390,
    "encounters": [
     {
      "species": "amoonguss",
@@ -2802,7 +3165,7 @@
   {
    "id": "village-bridge",
    "name": "Village Bridge",
-   "order": 370,
+   "order": 400,
    "encounters": [
     {
      "species": "audino",
@@ -2929,7 +3292,7 @@
   {
    "id": "unova-route-12",
    "name": "Unova Route 12",
-   "order": 380,
+   "order": 410,
    "encounters": [
     {
      "species": "audino",
@@ -3082,7 +3445,7 @@
   {
    "id": "unova-route-13",
    "name": "Unova Route 13",
-   "order": 390,
+   "order": 420,
    "encounters": [
     {
      "species": "absol",
@@ -3267,7 +3630,7 @@
   {
    "id": "undella-town",
    "name": "Undella Town",
-   "order": 400,
+   "order": 430,
    "encounters": [
     {
      "species": "cloyster",
@@ -3364,7 +3727,7 @@
   {
    "id": "undella-bay",
    "name": "Undella Bay",
-   "order": 410,
+   "order": 440,
    "encounters": [
     {
      "species": "cloyster",
@@ -3485,7 +3848,7 @@
   {
    "id": "unova-route-14",
    "name": "Unova Route 14",
-   "order": 420,
+   "order": 450,
    "encounters": [
     {
      "species": "altaria",
@@ -3640,7 +4003,7 @@
   {
    "id": "abundant-shrine",
    "name": "Abundant Shrine",
-   "order": 430,
+   "order": 460,
    "encounters": [
     {
      "species": "audino",
@@ -3837,7 +4200,7 @@
   {
    "id": "unova-route-15",
    "name": "Unova Route 15",
-   "order": 440,
+   "order": 470,
    "encounters": [
     {
      "species": "audino",
@@ -3949,7 +4312,7 @@
   {
    "id": "marvelous-bridge",
    "name": "Marvelous Bridge",
-   "order": 450,
+   "order": 480,
    "encounters": [
     {
      "species": "magikarp",
@@ -3965,369 +4328,6 @@
      "maxLevel": 50,
      "methods": [
       "bridge-spots"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "unova-route-17",
-   "name": "Unova Route 17",
-   "order": 460,
-   "encounters": [
-    {
-     "species": "alomomola",
-     "minLevel": 5,
-     "maxLevel": 20,
-     "methods": [
-      "surf-spots"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "frillish",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "jellicent",
-     "minLevel": 5,
-     "maxLevel": 20,
-     "methods": [
-      "surf-spots"
-     ]
-    },
-    {
-     "species": "kingdra",
-     "minLevel": 45,
-     "maxLevel": 70,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 35,
-     "maxLevel": 70,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "qwilfish",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "seadra",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "super-rod-spots"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "unova-route-18",
-   "name": "Unova Route 18",
-   "order": 470,
-   "encounters": [
-    {
-     "species": "alomomola",
-     "minLevel": 5,
-     "maxLevel": 20,
-     "methods": [
-      "surf-spots"
-     ]
-    },
-    {
-     "species": "audino",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "grass-spots"
-     ]
-    },
-    {
-     "species": "chinchou",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "crustle",
-     "minLevel": 34,
-     "maxLevel": 35,
-     "methods": [
-      "dark-grass"
-     ]
-    },
-    {
-     "species": "dwebble",
-     "minLevel": 30,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "frillish",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "jellicent",
-     "minLevel": 5,
-     "maxLevel": 20,
-     "methods": [
-      "surf-spots"
-     ]
-    },
-    {
-     "species": "kingdra",
-     "minLevel": 45,
-     "maxLevel": 70,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "larvesta",
-     "minLevel": 1,
-     "maxLevel": 1,
-     "methods": [
-      "gift-egg"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 35,
-     "maxLevel": 70,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "qwilfish",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "sawk",
-     "minLevel": 29,
-     "maxLevel": 35,
-     "methods": [
-      "dark-grass",
-      "grass-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "scraggy",
-     "minLevel": 28,
-     "maxLevel": 35,
-     "methods": [
-      "dark-grass",
-      "walk"
-     ]
-    },
-    {
-     "species": "seadra",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "throh",
-     "minLevel": 29,
-     "maxLevel": 35,
-     "methods": [
-      "dark-grass",
-      "grass-spots",
-      "walk"
-     ]
-    },
-    {
-     "species": "watchog",
-     "minLevel": 28,
-     "maxLevel": 34,
-     "methods": [
-      "dark-grass",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "p2-laboratory",
-   "name": "P2 Laboratory",
-   "order": 480,
-   "encounters": [
-    {
-     "species": "alomomola",
-     "minLevel": 5,
-     "maxLevel": 20,
-     "methods": [
-      "surf-spots"
-     ]
-    },
-    {
-     "species": "audino",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "grass-spots"
-     ]
-    },
-    {
-     "species": "finneon",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "frillish",
-     "minLevel": 5,
-     "maxLevel": 15,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "herdier",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "horsea",
-     "minLevel": 35,
-     "maxLevel": 55,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "jellicent",
-     "minLevel": 5,
-     "maxLevel": 20,
-     "methods": [
-      "surf-spots"
-     ]
-    },
-    {
-     "species": "kingdra",
-     "minLevel": 45,
-     "maxLevel": 70,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "klink",
-     "minLevel": 29,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "lumineon",
-     "minLevel": 35,
-     "maxLevel": 70,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "qwilfish",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "scraggy",
-     "minLevel": 29,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "seadra",
-     "minLevel": 35,
-     "maxLevel": 60,
-     "methods": [
-      "super-rod-spots"
-     ]
-    },
-    {
-     "species": "stoutland",
-     "minLevel": 31,
-     "maxLevel": 31,
-     "methods": [
-      "grass-spots"
-     ]
-    },
-    {
-     "species": "watchog",
-     "minLevel": 28,
-     "maxLevel": 31,
-     "methods": [
-      "walk"
      ]
     }
    ]
@@ -5254,13 +5254,13 @@
   "chili": "striaton-city",
   "cress": "striaton-city",
   "lenora": "nacrene-city",
-  "burgh": "castelia-city",
+  "burgh": "liberty-garden",
   "elesa": "unova-route-5",
   "clay": "unova-route-6",
-  "skyla": "mistralton-cave",
+  "skyla": "celestial-tower",
   "brycen": "icirrus-city",
   "drayden": "unova-route-9",
   "iris": "unova-route-9",
-  "n": "marvelous-bridge"
+  "n": "trial-chamber"
  }
 }

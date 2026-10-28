@@ -503,36 +503,10 @@
    ]
   },
   {
-   "id": "hoenn-route-117",
-   "name": "Hoenn Route 117",
+   "id": "hoenn-route-106",
+   "name": "Hoenn Route 106",
    "order": 100,
    "encounters": [
-    {
-     "species": "corphish",
-     "minLevel": 10,
-     "maxLevel": 45,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "goldeen",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "illumise",
-     "minLevel": 13,
-     "maxLevel": 14,
-     "methods": [
-      "walk"
-     ]
-    },
     {
      "species": "magikarp",
      "minLevel": 5,
@@ -543,51 +517,159 @@
      ]
     },
     {
-     "species": "marill",
+     "species": "pelipper",
+     "minLevel": 25,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
      "minLevel": 5,
      "maxLevel": 35,
      "methods": [
-      "surf",
-      "walk"
+      "good-rod",
+      "old-rod",
+      "surf"
      ]
     },
     {
-     "species": "oddish",
-     "minLevel": 13,
-     "maxLevel": 13,
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 45,
      "methods": [
-      "walk"
+      "good-rod",
+      "super-rod"
      ]
     },
     {
-     "species": "roselia",
-     "minLevel": 13,
-     "maxLevel": 14,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "surskit",
-     "minLevel": 13,
+     "species": "wingull",
+     "minLevel": 10,
      "maxLevel": 30,
      "methods": [
-      "surf",
-      "walk"
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dewford-town",
+   "name": "Dewford Town",
+   "order": 110,
+   "encounters": [
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 30,
+     "methods": [
+      "good-rod",
+      "old-rod"
      ]
     },
     {
-     "species": "volbeat",
-     "minLevel": 13,
-     "maxLevel": 14,
+     "species": "pelipper",
+     "minLevel": 25,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 45,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 10,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "granite-cave",
+   "name": "Granite Cave",
+   "order": 120,
+   "encounters": [
+    {
+     "species": "abra",
+     "minLevel": 8,
+     "maxLevel": 10,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "zigzagoon",
-     "minLevel": 13,
-     "maxLevel": 14,
+     "species": "aron",
+     "minLevel": 7,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "geodude",
+     "minLevel": 5,
+     "maxLevel": 20,
+     "methods": [
+      "rock-smash",
+      "walk"
+     ]
+    },
+    {
+     "species": "makuhita",
+     "minLevel": 6,
+     "maxLevel": 11,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mawile",
+     "minLevel": 9,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "nosepass",
+     "minLevel": 10,
+     "maxLevel": 20,
+     "methods": [
+      "rock-smash"
+     ]
+    },
+    {
+     "species": "sableye",
+     "minLevel": 9,
+     "maxLevel": 12,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 7,
+     "maxLevel": 11,
      "methods": [
       "walk"
      ]
@@ -595,9 +677,111 @@
    ]
   },
   {
+   "id": "hoenn-route-109",
+   "name": "Hoenn Route 109",
+   "order": 130,
+   "encounters": [
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 30,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 25,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 45,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 10,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "slateport-city",
+   "name": "Slateport City",
+   "order": 140,
+   "encounters": [
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 30,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 25,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 45,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 10,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-110",
    "name": "Hoenn Route 110",
-   "order": 110,
+   "order": 150,
    "encounters": [
     {
      "species": "electrike",
@@ -695,264 +879,12 @@
    ]
   },
   {
-   "id": "slateport-city",
-   "name": "Slateport City",
-   "order": 120,
-   "encounters": [
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 45,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 10,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "hoenn-route-109",
-   "name": "Hoenn Route 109",
-   "order": 130,
-   "encounters": [
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 45,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 10,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "dewford-town",
-   "name": "Dewford Town",
-   "order": 140,
-   "encounters": [
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 45,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 10,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "granite-cave",
-   "name": "Granite Cave",
-   "order": 150,
-   "encounters": [
-    {
-     "species": "abra",
-     "minLevel": 8,
-     "maxLevel": 10,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "aron",
-     "minLevel": 7,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "geodude",
-     "minLevel": 5,
-     "maxLevel": 20,
-     "methods": [
-      "rock-smash",
-      "walk"
-     ]
-    },
-    {
-     "species": "makuhita",
-     "minLevel": 6,
-     "maxLevel": 11,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mawile",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "nosepass",
-     "minLevel": 10,
-     "maxLevel": 20,
-     "methods": [
-      "rock-smash"
-     ]
-    },
-    {
-     "species": "sableye",
-     "minLevel": 9,
-     "maxLevel": 12,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 7,
-     "maxLevel": 11,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "hoenn-route-106",
-   "name": "Hoenn Route 106",
+   "id": "hoenn-route-117",
+   "name": "Hoenn Route 117",
    "order": 160,
    "encounters": [
     {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
+     "species": "corphish",
      "minLevel": 10,
      "maxLevel": 45,
      "methods": [
@@ -961,20 +893,22 @@
      ]
     },
     {
-     "species": "wingull",
-     "minLevel": 10,
+     "species": "goldeen",
+     "minLevel": 5,
      "maxLevel": 30,
      "methods": [
-      "surf"
+      "good-rod",
+      "old-rod"
      ]
-    }
-   ]
-  },
-  {
-   "id": "hoenn-route-107",
-   "name": "Hoenn Route 107",
-   "order": 170,
-   "encounters": [
+    },
+    {
+     "species": "illumise",
+     "minLevel": 13,
+     "maxLevel": 14,
+     "methods": [
+      "walk"
+     ]
+    },
     {
      "species": "magikarp",
      "minLevel": 5,
@@ -985,165 +919,52 @@
      ]
     },
     {
-     "species": "pelipper",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
+     "species": "marill",
      "minLevel": 5,
      "maxLevel": 35,
      "methods": [
-      "good-rod",
-      "old-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 45,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 10,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "hoenn-route-108",
-   "name": "Hoenn Route 108",
-   "order": 180,
-   "encounters": [
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 45,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 10,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "abandoned-ship",
-   "name": "Abandoned Ship",
-   "order": 190,
-   "encounters": [
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "super-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacruel",
-     "minLevel": 20,
-     "maxLevel": 35,
-     "methods": [
-      "super-rod",
-      "surf"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "new-mauville",
-   "name": "New Mauville",
-   "order": 200,
-   "encounters": [
-    {
-     "species": "electrode",
-     "minLevel": 26,
-     "maxLevel": 30,
-     "methods": [
-      "static",
+      "surf",
       "walk"
      ]
     },
     {
-     "species": "magnemite",
-     "minLevel": 22,
-     "maxLevel": 26,
+     "species": "oddish",
+     "minLevel": 13,
+     "maxLevel": 13,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "magneton",
-     "minLevel": 26,
-     "maxLevel": 26,
+     "species": "roselia",
+     "minLevel": 13,
+     "maxLevel": 14,
      "methods": [
       "walk"
      ]
     },
     {
-     "species": "voltorb",
-     "minLevel": 22,
-     "maxLevel": 26,
+     "species": "surskit",
+     "minLevel": 13,
+     "maxLevel": 30,
      "methods": [
-      "static",
+      "surf",
+      "walk"
+     ]
+    },
+    {
+     "species": "volbeat",
+     "minLevel": 13,
+     "maxLevel": 14,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 13,
+     "maxLevel": 14,
+     "methods": [
       "walk"
      ]
     }
@@ -1152,7 +973,7 @@
   {
    "id": "hoenn-route-111",
    "name": "Hoenn Route 111",
-   "order": 210,
+   "order": 170,
    "encounters": [
     {
      "species": "baltoy",
@@ -1242,7 +1063,7 @@
   {
    "id": "fiery-path",
    "name": "Fiery Path",
-   "order": 220,
+   "order": 180,
    "encounters": [
     {
      "species": "grimer",
@@ -1297,7 +1118,7 @@
   {
    "id": "hoenn-route-112",
    "name": "Hoenn Route 112",
-   "order": 230,
+   "order": 190,
    "encounters": [
     {
      "species": "machop",
@@ -1320,7 +1141,7 @@
   {
    "id": "hoenn-route-113",
    "name": "Hoenn Route 113",
-   "order": 240,
+   "order": 200,
    "encounters": [
     {
      "species": "sandshrew",
@@ -1351,7 +1172,7 @@
   {
    "id": "hoenn-route-114",
    "name": "Hoenn Route 114",
-   "order": 250,
+   "order": 210,
    "encounters": [
     {
      "species": "barboach",
@@ -1466,7 +1287,7 @@
   {
    "id": "meteor-falls",
    "name": "Meteor Falls",
-   "order": 260,
+   "order": 220,
    "encounters": [
     {
      "species": "bagon",
@@ -1552,7 +1373,7 @@
   {
    "id": "hoenn-route-115",
    "name": "Hoenn Route 115",
-   "order": 270,
+   "order": 230,
    "encounters": [
     {
      "species": "jigglypuff",
@@ -1636,7 +1457,7 @@
   {
    "id": "jagged-pass",
    "name": "Jagged Pass",
-   "order": 280,
+   "order": 240,
    "encounters": [
     {
      "species": "machop",
@@ -1667,7 +1488,7 @@
   {
    "id": "lavaridge-town",
    "name": "Lavaridge Town",
-   "order": 290,
+   "order": 250,
    "encounters": [
     {
      "species": "wynaut",
@@ -1680,9 +1501,239 @@
    ]
   },
   {
+   "id": "hoenn-route-105",
+   "name": "Hoenn Route 105",
+   "order": 260,
+   "encounters": [
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 30,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 25,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 45,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 10,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-107",
+   "name": "Hoenn Route 107",
+   "order": 270,
+   "encounters": [
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 30,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 25,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 45,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 10,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-108",
+   "name": "Hoenn Route 108",
+   "order": 280,
+   "encounters": [
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 30,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "pelipper",
+     "minLevel": 25,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "wailmer",
+     "minLevel": 10,
+     "maxLevel": 45,
+     "methods": [
+      "good-rod",
+      "super-rod"
+     ]
+    },
+    {
+     "species": "wingull",
+     "minLevel": 10,
+     "maxLevel": 30,
+     "methods": [
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "abandoned-ship",
+   "name": "Abandoned Ship",
+   "order": 290,
+   "encounters": [
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 30,
+     "methods": [
+      "good-rod",
+      "old-rod"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "super-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacruel",
+     "minLevel": 20,
+     "maxLevel": 35,
+     "methods": [
+      "super-rod",
+      "surf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "new-mauville",
+   "name": "New Mauville",
+   "order": 300,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 26,
+     "maxLevel": 30,
+     "methods": [
+      "static",
+      "walk"
+     ]
+    },
+    {
+     "species": "magnemite",
+     "minLevel": 22,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magneton",
+     "minLevel": 26,
+     "maxLevel": 26,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "voltorb",
+     "minLevel": 22,
+     "maxLevel": 26,
+     "methods": [
+      "static",
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-118",
    "name": "Hoenn Route 118",
-   "order": 300,
+   "order": 310,
    "encounters": [
     {
      "species": "carvanha",
@@ -1782,7 +1833,7 @@
   {
    "id": "hoenn-route-119",
    "name": "Hoenn Route 119",
-   "order": 310,
+   "order": 320,
    "encounters": [
     {
      "species": "carvanha",
@@ -1890,7 +1941,7 @@
   {
    "id": "hoenn-route-120",
    "name": "Hoenn Route 120",
-   "order": 320,
+   "order": 330,
    "encounters": [
     {
      "species": "absol",
@@ -1983,7 +2034,7 @@
   {
    "id": "hoenn-route-121",
    "name": "Hoenn Route 121",
-   "order": 330,
+   "order": 340,
    "encounters": [
     {
      "species": "duskull",
@@ -2091,7 +2142,7 @@
   {
    "id": "hoenn-safari-zone",
    "name": "Hoenn Safari Zone",
-   "order": 340,
+   "order": 350,
    "encounters": [
     {
      "species": "dodrio",
@@ -2253,7 +2304,7 @@
   {
    "id": "lilycove-city",
    "name": "Lilycove City",
-   "order": 350,
+   "order": 360,
    "encounters": [
     {
      "species": "magikarp",
@@ -2312,7 +2363,7 @@
   {
    "id": "hoenn-route-122",
    "name": "Hoenn Route 122",
-   "order": 360,
+   "order": 370,
    "encounters": [
     {
      "species": "magikarp",
@@ -2371,7 +2422,7 @@
   {
    "id": "mt-pyre",
    "name": "Mt. Pyre",
-   "order": 370,
+   "order": 380,
    "encounters": [
     {
      "species": "chimecho",
@@ -2426,7 +2477,7 @@
   {
    "id": "hoenn-route-123",
    "name": "Hoenn Route 123",
-   "order": 380,
+   "order": 390,
    "encounters": [
     {
      "species": "duskull",
@@ -2532,9 +2583,39 @@
    ]
   },
   {
+   "id": "team-aqua-hideout",
+   "name": "Team Aqua Hideout",
+   "order": 400,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "team-magma-hideout",
+   "name": "Team Magma Hideout",
+   "order": 410,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-124",
    "name": "Hoenn Route 124",
-   "order": 390,
+   "order": 420,
    "encounters": [
     {
      "species": "chinchou",
@@ -2617,7 +2698,7 @@
   {
    "id": "hoenn-route-125",
    "name": "Hoenn Route 125",
-   "order": 400,
+   "order": 430,
    "encounters": [
     {
      "species": "magikarp",
@@ -2676,7 +2757,7 @@
   {
    "id": "shoal-cave",
    "name": "Shoal Cave",
-   "order": 410,
+   "order": 440,
    "encounters": [
     {
      "species": "golbat",
@@ -2745,7 +2826,7 @@
   {
    "id": "mossdeep-city",
    "name": "Mossdeep City",
-   "order": 420,
+   "order": 450,
    "encounters": [
     {
      "species": "beldum",
@@ -2812,7 +2893,7 @@
   {
    "id": "hoenn-route-127",
    "name": "Hoenn Route 127",
-   "order": 430,
+   "order": 460,
    "encounters": [
     {
      "species": "magikarp",
@@ -2871,7 +2952,7 @@
   {
    "id": "hoenn-route-128",
    "name": "Hoenn Route 128",
-   "order": 440,
+   "order": 470,
    "encounters": [
     {
      "species": "corsola",
@@ -2936,82 +3017,9 @@
    ]
   },
   {
-   "id": "sootopolis-city",
-   "name": "Sootopolis City",
-   "order": 450,
-   "encounters": [
-    {
-     "species": "gyarados",
-     "minLevel": 5,
-     "maxLevel": 45,
-     "methods": [
-      "super-rod"
-     ]
-    },
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "super-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 10,
-     "methods": [
-      "old-rod"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "cave-of-origin",
-   "name": "Cave Of Origin",
-   "order": 460,
-   "encounters": [
-    {
-     "species": "golbat",
-     "minLevel": 33,
-     "maxLevel": 36,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "mawile",
-     "minLevel": 30,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "sableye",
-     "minLevel": 30,
-     "maxLevel": 34,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "zubat",
-     "minLevel": 28,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "seafloor-cavern",
    "name": "Seafloor Cavern",
-   "order": 470,
+   "order": 480,
    "encounters": [
     {
      "species": "golbat",
@@ -3062,9 +3070,82 @@
    ]
   },
   {
+   "id": "sootopolis-city",
+   "name": "Sootopolis City",
+   "order": 490,
+   "encounters": [
+    {
+     "species": "gyarados",
+     "minLevel": 5,
+     "maxLevel": 45,
+     "methods": [
+      "super-rod"
+     ]
+    },
+    {
+     "species": "magikarp",
+     "minLevel": 5,
+     "maxLevel": 35,
+     "methods": [
+      "good-rod",
+      "old-rod",
+      "super-rod",
+      "surf"
+     ]
+    },
+    {
+     "species": "tentacool",
+     "minLevel": 5,
+     "maxLevel": 10,
+     "methods": [
+      "old-rod"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cave-of-origin",
+   "name": "Cave Of Origin",
+   "order": 500,
+   "encounters": [
+    {
+     "species": "golbat",
+     "minLevel": 33,
+     "maxLevel": 36,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "mawile",
+     "minLevel": 30,
+     "maxLevel": 34,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "sableye",
+     "minLevel": 30,
+     "maxLevel": 34,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "zubat",
+     "minLevel": 28,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-129",
    "name": "Hoenn Route 129",
-   "order": 480,
+   "order": 510,
    "encounters": [
     {
      "species": "magikarp",
@@ -3131,7 +3212,7 @@
   {
    "id": "hoenn-route-130",
    "name": "Hoenn Route 130",
-   "order": 490,
+   "order": 520,
    "encounters": [
     {
      "species": "magikarp",
@@ -3198,7 +3279,7 @@
   {
    "id": "pacifidlog-town",
    "name": "Pacifidlog Town",
-   "order": 500,
+   "order": 530,
    "encounters": [
     {
      "species": "magikarp",
@@ -3257,7 +3338,7 @@
   {
    "id": "hoenn-route-131",
    "name": "Hoenn Route 131",
-   "order": 510,
+   "order": 540,
    "encounters": [
     {
      "species": "magikarp",
@@ -3316,7 +3397,7 @@
   {
    "id": "hoenn-route-132",
    "name": "Hoenn Route 132",
-   "order": 520,
+   "order": 550,
    "encounters": [
     {
      "species": "horsea",
@@ -3383,7 +3464,7 @@
   {
    "id": "hoenn-route-133",
    "name": "Hoenn Route 133",
-   "order": 530,
+   "order": 560,
    "encounters": [
     {
      "species": "horsea",
@@ -3450,7 +3531,7 @@
   {
    "id": "hoenn-route-134",
    "name": "Hoenn Route 134",
-   "order": 540,
+   "order": 570,
    "encounters": [
     {
      "species": "horsea",
@@ -3517,7 +3598,7 @@
   {
    "id": "hoenn-route-126",
    "name": "Hoenn Route 126",
-   "order": 550,
+   "order": 580,
    "encounters": [
     {
      "species": "chinchou",
@@ -3600,7 +3681,7 @@
   {
    "id": "ever-grande-city",
    "name": "Ever Grande City",
-   "order": 560,
+   "order": 590,
    "encounters": [
     {
      "species": "corsola",
@@ -3667,7 +3748,7 @@
   {
    "id": "hoenn-victory-road",
    "name": "Hoenn Victory Road",
-   "order": 570,
+   "order": 600,
    "encounters": [
     {
      "species": "aron",
@@ -3822,7 +3903,7 @@
   {
    "id": "sky-pillar",
    "name": "Sky Pillar",
-   "order": 580,
+   "order": 610,
    "encounters": [
     {
      "species": "altaria",
@@ -3883,39 +3964,9 @@
    ]
   },
   {
-   "id": "team-aqua-hideout",
-   "name": "Team Aqua Hideout",
-   "order": 590,
-   "encounters": [
-    {
-     "species": "electrode",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "team-magma-hideout",
-   "name": "Team Magma Hideout",
-   "order": 600,
-   "encounters": [
-    {
-     "species": "electrode",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
    "id": "mirage-island",
    "name": "Mirage Island",
-   "order": 610,
+   "order": 620,
    "encounters": [
     {
      "species": "wynaut",
@@ -3930,7 +3981,7 @@
   {
    "id": "roaming-hoenn",
    "name": "Roaming Hoenn",
-   "order": 620,
+   "order": 630,
    "encounters": [
     {
      "species": "latias",
@@ -3948,57 +3999,6 @@
      "methods": [
       "roaming-grass",
       "roaming-water"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "hoenn-route-105",
-   "name": "Hoenn Route 105",
-   "order": 630,
-   "encounters": [
-    {
-     "species": "magikarp",
-     "minLevel": 5,
-     "maxLevel": 30,
-     "methods": [
-      "good-rod",
-      "old-rod"
-     ]
-    },
-    {
-     "species": "pelipper",
-     "minLevel": 25,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
-     ]
-    },
-    {
-     "species": "tentacool",
-     "minLevel": 5,
-     "maxLevel": 35,
-     "methods": [
-      "good-rod",
-      "old-rod",
-      "surf"
-     ]
-    },
-    {
-     "species": "wailmer",
-     "minLevel": 10,
-     "maxLevel": 45,
-     "methods": [
-      "good-rod",
-      "super-rod"
-     ]
-    },
-    {
-     "species": "wingull",
-     "minLevel": 10,
-     "maxLevel": 30,
-     "methods": [
-      "surf"
      ]
     }
    ]
@@ -4476,11 +4476,12 @@
  "bossAreaCutoffs": {
   "roxanne": "rustboro-city",
   "brawly": "granite-cave",
-  "wattson": "hoenn-route-113",
+  "wattson": "hoenn-route-117",
   "flannery": "lavaridge-town",
   "norman": "lavaridge-town",
   "winona": "lilycove-city",
   "tate-and-liza": "mossdeep-city",
-  "wallace": "sootopolis-city"
+  "wallace": "cave-of-origin",
+  "steven": "hoenn-victory-road"
  }
 }

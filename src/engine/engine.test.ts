@@ -79,11 +79,13 @@ describe("run engine", () => {
       encounters: [{ species: "pidgey", minLevel: 2, maxLevel: 5, methods: ["grass"] }],
     }));
     pack.bossAreaCutoffs = { brock: "a2" };
-    const { segments } = bossSegments(pack, pack.areas);
+    const { segments, trailing } = bossSegments(pack, pack.areas);
     const segOf = (bossId: string) => segments.find((s) => s.boss.id === bossId);
     expect(segOf("brock")?.areas.map((a) => a.id)).toEqual(["a1", "a2"]);
-    // Misty has no cutoff: she takes everything after Brock's boundary.
-    expect(segOf("misty")?.areas.map((a) => a.id)).toEqual(["a3", "a4"]);
+    // Misty has no cutoff: interpolation gives her a3, and a4 is trailing
+    // (league & postgame) instead of being absorbed into her segment.
+    expect(segOf("misty")?.areas.map((a) => a.id)).toEqual(["a3"]);
+    expect(trailing.map((a) => a.id)).toEqual(["a4"]);
   });
 
   it("a gym's city is never segmented before its own gym", () => {

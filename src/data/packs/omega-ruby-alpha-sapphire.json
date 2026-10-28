@@ -318,94 +318,9 @@
    ]
   },
   {
-   "id": "hoenn-route-117",
-   "name": "Hoenn Route 117",
-   "order": 80,
-   "encounters": [
-    {
-     "species": "marill",
-     "minLevel": 7,
-     "maxLevel": 7,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "oddish",
-     "minLevel": 7,
-     "maxLevel": 7,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "roselia",
-     "minLevel": 7,
-     "maxLevel": 7,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "zigzagoon",
-     "minLevel": 7,
-     "maxLevel": 7,
-     "methods": [
-      "horde"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "hoenn-route-110",
-   "name": "Hoenn Route 110",
-   "order": 90,
-   "encounters": [
-    {
-     "species": "magnemite",
-     "minLevel": 6,
-     "maxLevel": 6,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "minun",
-     "minLevel": 6,
-     "maxLevel": 6,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "plusle",
-     "minLevel": 6,
-     "maxLevel": 6,
-     "methods": [
-      "horde"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "slateport-city",
-   "name": "Slateport City",
-   "order": 100,
-   "encounters": [
-    {
-     "species": "pikachu",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
    "id": "granite-cave",
    "name": "Granite Cave",
-   "order": 110,
+   "order": 80,
    "encounters": [
     {
      "species": "aron",
@@ -458,25 +373,101 @@
    ]
   },
   {
-   "id": "new-mauville",
-   "name": "New Mauville",
-   "order": 120,
+   "id": "slateport-city",
+   "name": "Slateport City",
+   "order": 90,
+   "encounters": [
+    {
+     "species": "pikachu",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-110",
+   "name": "Hoenn Route 110",
+   "order": 100,
    "encounters": [
     {
      "species": "magnemite",
-     "minLevel": 12,
-     "maxLevel": 12,
+     "minLevel": 6,
+     "maxLevel": 6,
      "methods": [
       "horde"
      ]
     },
     {
-     "species": "voltorb",
-     "minLevel": 12,
-     "maxLevel": 25,
+     "species": "minun",
+     "minLevel": 6,
+     "maxLevel": 6,
      "methods": [
-      "horde",
-      "static"
+      "horde"
+     ]
+    },
+    {
+     "species": "plusle",
+     "minLevel": 6,
+     "maxLevel": 6,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoenn-route-117",
+   "name": "Hoenn Route 117",
+   "order": 110,
+   "encounters": [
+    {
+     "species": "marill",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "oddish",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "roselia",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "zigzagoon",
+     "minLevel": 7,
+     "maxLevel": 7,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "verdanturf-town",
+   "name": "Verdanturf Town",
+   "order": 120,
+   "encounters": [
+    {
+     "species": "pikachu",
+     "minLevel": 20,
+     "maxLevel": 20,
+     "methods": [
+      "gift"
      ]
     }
    ]
@@ -720,9 +711,33 @@
    ]
   },
   {
+   "id": "new-mauville",
+   "name": "New Mauville",
+   "order": 230,
+   "encounters": [
+    {
+     "species": "magnemite",
+     "minLevel": 12,
+     "maxLevel": 12,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "voltorb",
+     "minLevel": 12,
+     "maxLevel": 25,
+     "methods": [
+      "horde",
+      "static"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-118",
    "name": "Hoenn Route 118",
-   "order": 230,
+   "order": 240,
    "encounters": [
     {
      "species": "electrike",
@@ -751,9 +766,32 @@
    ]
   },
   {
+   "id": "southern-island",
+   "name": "Southern Island",
+   "order": 250,
+   "encounters": [
+    {
+     "species": "latias",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    },
+    {
+     "species": "latios",
+     "minLevel": 30,
+     "maxLevel": 30,
+     "methods": [
+      "gift"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-119",
    "name": "Hoenn Route 119",
-   "order": 240,
+   "order": 260,
    "encounters": [
     {
      "species": "castform",
@@ -784,7 +822,7 @@
   {
    "id": "hoenn-route-120",
    "name": "Hoenn Route 120",
-   "order": 250,
+   "order": 270,
    "encounters": [
     {
      "species": "kecleon",
@@ -814,9 +852,24 @@
    ]
   },
   {
+   "id": "scorched-slab",
+   "name": "Scorched Slab",
+   "order": 280,
+   "encounters": [
+    {
+     "species": "zubat",
+     "minLevel": 14,
+     "maxLevel": 14,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
    "id": "hoenn-route-121",
    "name": "Hoenn Route 121",
-   "order": 260,
+   "order": 290,
    "encounters": [
     {
      "species": "kecleon",
@@ -847,7 +900,7 @@
   {
    "id": "hoenn-safari-zone",
    "name": "Hoenn Safari Zone",
-   "order": 270,
+   "order": 300,
    "encounters": [
     {
      "species": "doduo",
@@ -878,7 +931,7 @@
   {
    "id": "lilycove-city",
    "name": "Lilycove City",
-   "order": 280,
+   "order": 310,
    "encounters": [
     {
      "species": "pikachu",
@@ -893,7 +946,7 @@
   {
    "id": "mt-pyre",
    "name": "Mt. Pyre",
-   "order": 290,
+   "order": 320,
    "encounters": [
     {
      "species": "meditite",
@@ -924,7 +977,7 @@
   {
    "id": "hoenn-route-123",
    "name": "Hoenn Route 123",
-   "order": 300,
+   "order": 330,
    "encounters": [
     {
      "species": "kecleon",
@@ -953,9 +1006,39 @@
    ]
   },
   {
+   "id": "team-aqua-hideout",
+   "name": "Team Aqua Hideout",
+   "order": 340,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "team-magma-hideout",
+   "name": "Team Magma Hideout",
+   "order": 350,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "static"
+     ]
+    }
+   ]
+  },
+  {
    "id": "shoal-cave",
    "name": "Shoal Cave",
-   "order": 310,
+   "order": 360,
    "encounters": [
     {
      "species": "snorunt",
@@ -986,7 +1069,7 @@
   {
    "id": "mossdeep-city",
    "name": "Mossdeep City",
-   "order": 320,
+   "order": 370,
    "encounters": [
     {
      "species": "beldum",
@@ -999,9 +1082,9 @@
    ]
   },
   {
-   "id": "cave-of-origin",
-   "name": "Cave Of Origin",
-   "order": 330,
+   "id": "seafloor-cavern",
+   "name": "Seafloor Cavern",
+   "order": 380,
    "encounters": [
     {
      "species": "zubat",
@@ -1014,9 +1097,9 @@
    ]
   },
   {
-   "id": "seafloor-cavern",
-   "name": "Seafloor Cavern",
-   "order": 340,
+   "id": "cave-of-origin",
+   "name": "Cave Of Origin",
+   "order": 390,
    "encounters": [
     {
      "species": "zubat",
@@ -1031,7 +1114,7 @@
   {
    "id": "hoenn-victory-road",
    "name": "Hoenn Victory Road",
-   "order": 350,
+   "order": 400,
    "encounters": [
     {
      "species": "aron",
@@ -1062,7 +1145,7 @@
   {
    "id": "sky-pillar",
    "name": "Sky Pillar",
-   "order": 360,
+   "order": 410,
    "encounters": [
     {
      "species": "ariados",
@@ -1094,89 +1177,6 @@
      "maxLevel": 23,
      "methods": [
       "horde"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "team-aqua-hideout",
-   "name": "Team Aqua Hideout",
-   "order": 370,
-   "encounters": [
-    {
-     "species": "electrode",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "team-magma-hideout",
-   "name": "Team Magma Hideout",
-   "order": 380,
-   "encounters": [
-    {
-     "species": "electrode",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "static"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "scorched-slab",
-   "name": "Scorched Slab",
-   "order": 390,
-   "encounters": [
-    {
-     "species": "zubat",
-     "minLevel": 14,
-     "maxLevel": 14,
-     "methods": [
-      "horde"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "southern-island",
-   "name": "Southern Island",
-   "order": 400,
-   "encounters": [
-    {
-     "species": "latias",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    },
-    {
-     "species": "latios",
-     "minLevel": 30,
-     "maxLevel": 30,
-     "methods": [
-      "gift"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "verdanturf-town",
-   "name": "Verdanturf Town",
-   "order": 410,
-   "encounters": [
-    {
-     "species": "pikachu",
-     "minLevel": 20,
-     "maxLevel": 20,
-     "methods": [
-      "gift"
      ]
     }
    ]
@@ -2200,11 +2200,12 @@
  "bossAreaCutoffs": {
   "oras-roxanne": "petalburg-woods",
   "oras-brawly": "granite-cave",
-  "oras-wattson": "hoenn-route-113",
+  "oras-wattson": "verdanturf-town",
   "oras-flannery": "lavaridge-town",
   "oras-norman": "lavaridge-town",
   "oras-winona": "lilycove-city",
   "oras-tate-and-liza": "mossdeep-city",
-  "oras-wallace": "cave-of-origin"
+  "oras-wallace": "cave-of-origin",
+  "oras-steven": "hoenn-victory-road"
  }
 }

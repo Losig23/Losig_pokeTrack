@@ -1056,65 +1056,9 @@
    ]
   },
   {
-   "id": "kanto-power-plant",
-   "name": "Kanto Power Plant",
-   "order": 190,
-   "encounters": [
-    {
-     "species": "electrode",
-     "minLevel": 43,
-     "maxLevel": 43,
-     "methods": [
-      "static"
-     ]
-    },
-    {
-     "species": "grimer",
-     "minLevel": 33,
-     "maxLevel": 37,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magnemite",
-     "minLevel": 30,
-     "maxLevel": 35,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "magneton",
-     "minLevel": 33,
-     "maxLevel": 38,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "muk",
-     "minLevel": 33,
-     "maxLevel": 37,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "voltorb",
-     "minLevel": 33,
-     "maxLevel": 40,
-     "methods": [
-      "static",
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
    "id": "rock-tunnel",
    "name": "Rock Tunnel",
-   "order": 200,
+   "order": 190,
    "encounters": [
     {
      "species": "geodude",
@@ -1153,7 +1097,7 @@
   {
    "id": "kanto-route-8",
    "name": "Kanto Route 8",
-   "order": 210,
+   "order": 200,
    "encounters": [
     {
      "species": "abra",
@@ -1208,7 +1152,7 @@
   {
    "id": "kanto-route-7",
    "name": "Kanto Route 7",
-   "order": 220,
+   "order": 210,
    "encounters": [
     {
      "species": "abra",
@@ -1255,7 +1199,7 @@
   {
    "id": "celadon-city",
    "name": "Celadon City",
-   "order": 230,
+   "order": 220,
    "encounters": [
     {
      "species": "abra",
@@ -1343,7 +1287,7 @@
   {
    "id": "kanto-route-16",
    "name": "Kanto Route 16",
-   "order": 240,
+   "order": 230,
    "encounters": [
     {
      "species": "doduo",
@@ -1398,7 +1342,7 @@
   {
    "id": "kanto-route-17",
    "name": "Kanto Route 17",
-   "order": 250,
+   "order": 240,
    "encounters": [
     {
      "species": "dodrio",
@@ -1477,7 +1421,7 @@
   {
    "id": "kanto-route-18",
    "name": "Kanto Route 18",
-   "order": 260,
+   "order": 250,
    "encounters": [
     {
      "species": "doduo",
@@ -1564,7 +1508,7 @@
   {
    "id": "fuchsia-city",
    "name": "Fuchsia City",
-   "order": 270,
+   "order": 260,
    "encounters": [
     {
      "species": "goldeen",
@@ -1604,7 +1548,7 @@
   {
    "id": "kanto-safari-zone",
    "name": "Kanto Safari Zone",
-   "order": 280,
+   "order": 270,
    "encounters": [
     {
      "species": "chansey",
@@ -1780,7 +1724,7 @@
   {
    "id": "kanto-route-15",
    "name": "Kanto Route 15",
-   "order": 290,
+   "order": 280,
    "encounters": [
     {
      "species": "bellsprout",
@@ -1843,7 +1787,7 @@
   {
    "id": "kanto-route-14",
    "name": "Kanto Route 14",
-   "order": 300,
+   "order": 290,
    "encounters": [
     {
      "species": "bellsprout",
@@ -1906,7 +1850,7 @@
   {
    "id": "kanto-route-13",
    "name": "Kanto Route 13",
-   "order": 310,
+   "order": 300,
    "encounters": [
     {
      "species": "bellsprout",
@@ -2033,7 +1977,7 @@
   {
    "id": "kanto-route-12",
    "name": "Kanto Route 12",
-   "order": 320,
+   "order": 310,
    "encounters": [
     {
      "species": "bellsprout",
@@ -2160,7 +2104,7 @@
   {
    "id": "pokemon-tower",
    "name": "Pokemon Tower",
-   "order": 330,
+   "order": 320,
    "encounters": [
     {
      "species": "cubone",
@@ -2191,7 +2135,7 @@
   {
    "id": "saffron-city",
    "name": "Saffron City",
-   "order": 340,
+   "order": 330,
    "encounters": [
     {
      "species": "hitmonchan",
@@ -2222,7 +2166,7 @@
   {
    "id": "kanto-sea-route-19",
    "name": "Kanto Sea Route 19",
-   "order": 350,
+   "order": 340,
    "encounters": [
     {
      "species": "goldeen",
@@ -2278,7 +2222,7 @@
   {
    "id": "kanto-sea-route-20",
    "name": "Kanto Sea Route 20",
-   "order": 360,
+   "order": 350,
    "encounters": [
     {
      "species": "goldeen",
@@ -2334,7 +2278,7 @@
   {
    "id": "seafoam-islands",
    "name": "Seafoam Islands",
-   "order": 370,
+   "order": 360,
    "encounters": [
     {
      "species": "dewgong",
@@ -2448,7 +2392,7 @@
   {
    "id": "cinnabar-island",
    "name": "Cinnabar Island",
-   "order": 380,
+   "order": 370,
    "encounters": [
     {
      "species": "aerodactyl",
@@ -2519,7 +2463,7 @@
   {
    "id": "pokemon-mansion",
    "name": "Pokemon Mansion",
-   "order": 390,
+   "order": 380,
    "encounters": [
     {
      "species": "ditto",
@@ -2566,6 +2510,62 @@
      "minLevel": 34,
      "maxLevel": 43,
      "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kanto-power-plant",
+   "name": "Kanto Power Plant",
+   "order": 390,
+   "encounters": [
+    {
+     "species": "electrode",
+     "minLevel": 43,
+     "maxLevel": 43,
+     "methods": [
+      "static"
+     ]
+    },
+    {
+     "species": "grimer",
+     "minLevel": 33,
+     "maxLevel": 37,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magnemite",
+     "minLevel": 30,
+     "maxLevel": 35,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "magneton",
+     "minLevel": 33,
+     "maxLevel": 38,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "muk",
+     "minLevel": 33,
+     "maxLevel": 37,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "voltorb",
+     "minLevel": 33,
+     "maxLevel": 40,
+     "methods": [
+      "static",
       "walk"
      ]
     }
