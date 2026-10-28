@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import type {
   Area, Boss, CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData, StatKey,
 } from "./engine/types";
@@ -11,6 +11,7 @@ import { teamCoverage } from "./engine/coverage";
 import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
 import { buildPrepReport, type PrepCandidate } from "./engine/prep";
 import { displayName, fetchEvolutions, useMoveTypes, useSpeciesData } from "./data/pokemon";
+import { HOME_THEME, themeForPack, type PackTheme } from "./data/themes";
 import type { EvolutionOption } from "./engine/evolution";
 import { exportRunsJson, parseRunsJson, useRuns } from "./store";
 
@@ -31,8 +32,22 @@ export default function App() {
     window.scrollTo({ top: 0 });
   }, [activeRunId]);
 
+  // One accent family per page, dark mode only: the home page is Lucario
+  // blue on black; a run page takes its game's mascot accent. Overriding
+  // --violet/--blue/--pink keeps every existing accent rule in one family
+  // without touching each component.
+  const theme = activeRun ? themeForPack(activeRun.packId) : HOME_THEME;
   return (
-    <div className="app">
+    <div
+      className="app"
+      style={{
+        "--violet": theme.accent,
+        "--violet-deep": theme.accentDeep,
+        "--blue": theme.accentLight,
+        "--pink": theme.accentLight,
+      } as CSSProperties}
+    >
+      <ThemeSilhouette theme={theme} />
       <header className="topbar">
         <button className="brand" onClick={() => setActiveRunId(null)}>
           Run<span className="accent">Book</span>
@@ -67,6 +82,28 @@ export default function App() {
         Runs are saved in this browser's local storage — export a backup from My runs to keep them safe.
       </footer>
     </div>
+  );
+}
+
+/**
+ * One large, faint silhouette fixed in the bottom-right corner, never
+ * behind text and never interactive. Dark mode only: the artwork is
+ * turned into a white silhouette (brightness 0 + invert) at 7% opacity,
+ * so it reads as a shape on black rather than a coloured poster. The
+ * official artwork URL needs the species id, which useSpeciesData loads
+ * from PokéAPI; until it lands, nothing renders.
+ */
+function ThemeSilhouette({ theme }: { theme: PackTheme }) {
+  const species = useSpeciesData([theme.mascot]);
+  const data = species[theme.mascot];
+  if (!data?.id) return null;
+  return (
+    <img
+      className="theme-silhouette"
+      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`}
+      alt=""
+      aria-hidden="true"
+    />
   );
 }
 

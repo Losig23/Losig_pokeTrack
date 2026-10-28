@@ -19,35 +19,37 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(1100px 500px at 85% -10%, rgba(124, 58, 237, 0.1), transparent 60%),
-    radial-gradient(900px 480px at -10% 0%, rgba(56, 189, 248, 0.06), transparent 55%),
-    radial-gradient(800px 500px at 50% 115%, rgba(244, 114, 182, 0.05), transparent 60%),
-    var(--bg);
+  /* Dark mode only, one subtle accent glow instead of three neon gradients. */
+  background: var(--bg);
   color: var(--text);
+  color-scheme: dark;
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 .app { max-width: 1180px; margin: 0 auto; padding: 0 20px 40px; }
+
+/* Per-game silhouette: a faint white shape in the corner, dark-mode only.
+   It sits above the background but below nothing interactive (pointer-events
+   off, 7% opacity), so text stays readable. */
+.theme-silhouette {
+  position: fixed; right: -50px; bottom: -50px; width: min(520px, 75vw); height: auto;
+  opacity: 0.07; filter: brightness(0) invert(1); pointer-events: none; z-index: 1;
+}
 
 .topbar {
   display: flex; align-items: baseline; gap: 14px;
   padding: 18px 0 14px; border-bottom: 1px solid var(--border-soft); margin-bottom: 20px;
 }
 .brand { background: none; border: none; color: var(--text); font-size: 27px; font-weight: 800; cursor: pointer; padding: 0; letter-spacing: 0.01em; }
-.brand .accent {
-  background: linear-gradient(92deg, var(--violet), var(--blue) 55%, var(--pink));
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.45));
-}
+.brand .accent { color: var(--violet); }
 .tagline { color: var(--muted); font-size: 14px; }
 .footer { color: var(--muted); font-size: 12px; margin-top: 28px; line-height: 1.6; }
 
 .panel {
-  background: linear-gradient(180deg, #0a0a12, #07070c);
+  background: #0a0a12;
   border: 1px solid var(--border);
   border-radius: 14px; padding: 18px; margin-bottom: 18px;
-  box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.04), 0 0 26px rgba(124, 58, 237, 0.05), 0 16px 36px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
 }
 .panel h2, .panel h3 { margin-top: 0; }
 .muted { color: var(--muted); font-size: 13px; }
@@ -55,13 +57,12 @@ body {
 
 button { font: inherit; }
 .primary {
-  background: linear-gradient(90deg, var(--violet-deep), #4f46e5 60%, #2563eb);
-  color: #fff; border: 1px solid #a78bfa; font-weight: 700;
+  background: var(--violet-deep);
+  color: #fff; border: 1px solid var(--violet); font-weight: 700;
   padding: 8px 16px; border-radius: 9px; cursor: pointer;
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  transition: transform 0.12s, box-shadow 0.12s, filter 0.12s;
+  transition: transform 0.12s, filter 0.12s;
 }
-.primary:hover:not(:disabled) { filter: brightness(1.12); box-shadow: 0 0 26px rgba(139, 92, 246, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25); transform: translateY(-1px); }
+.primary:hover:not(:disabled) { filter: brightness(1.15); transform: translateY(-1px); }
 .primary:disabled { opacity: 0.45; cursor: default; box-shadow: none; }
 .ghost {
   background: rgba(168, 85, 247, 0.04); border: 1px solid var(--border); color: var(--text);
@@ -153,7 +154,7 @@ label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color:
 .run-head h2 { margin: 0 0 4px; }
 .run-head-actions { margin-left: auto; display: flex; gap: 8px; }
 .progress { position: relative; background: #10101c; border: 1px solid var(--border-soft); border-radius: 999px; height: 22px; margin-bottom: 18px; overflow: hidden; }
-.progress-bar { background: linear-gradient(90deg, var(--violet), var(--blue), var(--pink)); height: 100%; transition: width 0.3s; box-shadow: 0 0 16px rgba(168, 85, 247, 0.55); }
+.progress-bar { background: var(--violet); height: 100%; transition: width 0.3s; }
 .progress span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85); }
 
 .tabs { display: flex; gap: 8px; margin-bottom: 14px; }
