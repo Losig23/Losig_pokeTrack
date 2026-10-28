@@ -737,9 +737,28 @@ function MapTab({
     <section className="panel">
       <p className="muted">
         Your journey through Hoenn, in story order. Each leg is coloured by the gym it leads to;
-        tap a node for its detail. Schematic map, not to scale — postgame areas aren't on the path yet.
+        tap a node for its detail. Hand-drawn region outline, not the in-game map — postgame areas aren't on the path yet.
       </p>
-      <svg viewBox="0 0 1000 700" width="100%" style={{ background: "#0d0d0d", borderRadius: 8 }}>
+      <svg viewBox="0 0 1000 700" width="100%" style={{ background: "#0a1a26", borderRadius: 8, position: "relative", zIndex: 2 }}>
+        {/* Hand-drawn Hoenn outline (sea + mainland + islands) so the journey
+            reads as a region, not lines on black. Not the in-game map. */}
+        <rect x={0} y={0} width={1000} height={700} fill="#0a1a26" />
+        <polygon
+          points="140,300 170,220 260,160 420,170 560,190 640,240 700,320 730,430 680,480 580,470 480,480 400,520 340,580 260,600 180,560 140,480 140,380"
+          fill="#1e3d2b" stroke="#335c3f" strokeWidth={1.5}
+        />
+        {[
+          { cx: 90, cy: 530, rx: 55, ry: 45 },
+          { cx: 880, cy: 430, rx: 50, ry: 28 },
+          { cx: 880, cy: 375, rx: 45, ry: 28 },
+          { cx: 840, cy: 380, rx: 35, ry: 25 },
+          { cx: 700, cy: 540, rx: 40, ry: 28 },
+          { cx: 400, cy: 500, rx: 35, ry: 25 },
+          { cx: 420, cy: 620, rx: 40, ry: 18 },
+        ].map((e, i) => (
+          <ellipse key={i} cx={e.cx} cy={e.cy} rx={e.rx} ry={e.ry} fill="#1e3d2b" stroke="#335c3f" strokeWidth={1.5} />
+        ))}
+        <circle cx={720} cy={600} r={35} fill="#1e3d2b" stroke="#335c3f" strokeWidth={1.5} />
         {legs.map((leg) => {
           const pts = leg.areas.map((a) => map.areas[a.id]).filter(Boolean);
           const bp = bossPoint(leg.boss, leg);
@@ -763,13 +782,16 @@ function MapTab({
           const color = legOfArea.get(a.id) ?? "#888";
           const isNext = nextArea?.id === a.id;
           const entry = logged(a.id);
+          // Skip the city label where a gym star sits on the same point —
+          // the boss label below names the place instead.
+          const hasBossHere = legs.some((leg) => !map.bosses[leg.boss.id] && leg.areas[leg.areas.length - 1]?.id === a.id);
           return (
             <g key={a.id} onClick={() => setSelected({ kind: "area", area: a })} style={{ cursor: "pointer" }}>
               <circle cx={pt.x} cy={pt.y} r={isNext ? 11 : 8} fill={entry ? color : "#1a1a1a"} stroke={isNext ? "#fff" : color} strokeWidth={2}>
                 <title>{a.name}</title>
               </circle>
-              {isCity(a) && (
-                <text x={pt.x + 12} y={pt.y + 4} fill="#ddd" fontSize={11}>{a.name}</text>
+              {isCity(a) && !hasBossHere && (
+                <text x={pt.x + 12} y={pt.y + 4} fill="#ddd" fontSize={11} style={{ paintOrder: "stroke", stroke: "#0a1a26", strokeWidth: 3 }}>{a.name}</text>
               )}
             </g>
           );
@@ -784,6 +806,7 @@ function MapTab({
                 <title>{leg.boss.name}</title>
               </circle>
               <text x={pt.x} y={pt.y + 4} textAnchor="middle" fill={defeated ? "#000" : "#fff"} fontSize={11} fontWeight="bold">★</text>
+              <text x={pt.x + 18} y={pt.y + 4} fill="#ddd" fontSize={11} style={{ paintOrder: "stroke", stroke: "#0a1a26", strokeWidth: 3 }}>{leg.boss.name}</text>
             </g>
           );
         })}
@@ -837,11 +860,10 @@ function MapTab({
           {selected.bosses.map((sb) => (
             <div key={sb.id}>
               <div className="boss-card-head">
-                <BossPortrait boss={sb} species={species} size={40} />
+                <span aria-hidden="true">◆</span>
                 <strong>{sb.name}</strong>
-                <span className="muted">{sb.location}</span>
+                <span className="muted">{sb.location} · Highest Lv {Math.max(...sb.team.map((m) => m.level))} · Team hidden</span>
               </div>
-              <BossTeamGrid boss={sb} species={species} />
             </div>
           ))}
           <p className="muted">Story bosses don't affect checkpoints or level caps.</p>
@@ -878,7 +900,7 @@ function StoryTab({
       <p className="muted">
         The story in order. Areas listed under a boss are the ones you can catch in before that fight;
         areas after the last boss are league and postgame. Story bosses (rivals, team leaders) don't
-        affect checkpoints or level caps.
+        affect checkpoints or level caps, and their teams are hidden.
       </p>
       {items.map((item) => {
         if (item.story) {
@@ -891,10 +913,10 @@ function StoryTab({
               {item.story.map((sb) => (
                 <div key={sb.id} style={{ marginTop: 8 }}>
                   <div className="boss-card-head">
-                    <BossPortrait boss={sb} species={species} size={40} />
+                    <span aria-hidden="true">◆</span>
                     <strong>{sb.name}</strong>
+                    <span className="muted">Team hidden</span>
                   </div>
-                  <BossTeamGrid boss={sb} species={species} />
                 </div>
               ))}
             </div>
@@ -991,10 +1013,10 @@ function TimelineTab({
       {sg.bosses.map((sb) => (
         <div key={sb.id}>
           <div className="boss-card-head">
-            <BossPortrait boss={sb} species={species} size={40} />
+            <span aria-hidden="true">◆</span>
             <strong>{sb.name}</strong>
+            <span className="muted">Team hidden</span>
           </div>
-          <BossTeamGrid boss={sb} species={species} />
         </div>
       ))}
     </div>
