@@ -11,6 +11,7 @@ import { teamCoverage } from "./engine/coverage";
 import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
 import { buildPrepReport, type PrepCandidate } from "./engine/prep";
 import { displayName, fetchEvolutions, useMoveTypes, useSpeciesData } from "./data/pokemon";
+import { REGION_MAPS, SEGMENT_COLORS } from "./data/maps";
 import { HOME_THEME, themeForPack, type PackTheme } from "./data/themes";
 import type { EvolutionOption } from "./engine/evolution";
 import { exportRunsJson, parseRunsJson, useRuns } from "./store";
@@ -334,7 +335,7 @@ function Home({
   );
 }
 
-type Tab = "timeline" | "story" | "routes" | "roster" | "prep" | "bosses";
+type Tab = "timeline" | "map" | "story" | "routes" | "roster" | "prep" | "bosses";
 
 function RunView({
   run, onChange, onBack, onDelete,
@@ -476,13 +477,14 @@ function RunView({
       )}
 
       <nav className="tabs">
-        {(["timeline", "story", "routes", "roster", "prep", "bosses"] as Tab[]).map((t) => (
+        {(["timeline", ...(REGION_MAPS[pack.id] ? ["map"] : []), "story", "routes", "roster", "prep", "bosses"] as Tab[]).map((t) => (
           <button key={t} className={tab === t ? "tab active" : "tab"} onClick={() => setTab(t)}>
-            {t === "timeline" ? "Timeline" : t === "story" ? "Story" : t === "routes" ? "Routes" : t === "roster" ? "Party & Box" : t === "prep" ? "Boss Prep" : "Bosses"}
+            {t === "timeline" ? "Timeline" : t === "map" ? "Map" : t === "story" ? "Story" : t === "routes" ? "Routes" : t === "roster" ? "Party & Box" : t === "prep" ? "Boss Prep" : "Bosses"}
           </button>
         ))}
       </nav>
 
+      {tab === "map" && <MapTab run={run} pack={pack} species={species} onToggleBoss={toggleBoss} />}
       {tab === "story" && <StoryTab run={run} pack={pack} species={species} onToggleBoss={toggleBoss} />}
       {tab === "timeline" && (
         <TimelineTab run={run} pack={pack} species={species} onChange={onChange} onToggleBoss={toggleBoss} />
@@ -678,6 +680,177 @@ type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; ni
  * bosses in story order with their segments, including league bosses
  * that get no timeline segment of their own.
  */
+/**
+ * Schematic region map (pilot: Emerald only). The journey path runs
+ * through areas in story order, coloured one colour per gym leg; gym
+ * bosses are large rings, story bosses are diamonds, logged areas are
+ * filled, and the next unlogged area gets a white ring. The map is an
+ * overview — logging still happens in the Timeline — so clicking a node
+ * shows its detail below the map. Postgame trailing areas are not on
+ * the path yet. Coordinates are hand-placed approximations, not to scale.
+ */
+function MapTab({
+  run, pack, species, onToggleBoss,
+}: {
+  run: Run;
+  pack: GamePack;
+  species: Record<string, SpeciesData>;
+  onToggleBoss: (bossId: string) => void;
+}) {
+  const map = REGION_MAPS[pack.id];
+  const [selected, setSelected] = useState<
+    | { kind: "area"; area: Area }
+    | { kind: "boss"; boss: Boss }
+    | { kind: "story"; bosses: Boss[] }
+    | null
+  >(null);
+  if (!map) return <section className="panel"><p className="muted">No map for this game yet.</p></section>;
+  const { segments } = bossSegments(pack, sortedAreas(pack));
+  // One path leg per gym checkpoint (variants sharing an order collapse).
+  const legs: { boss: Boss; areas: Area[]; color: string }[] = [];
+  for (const seg of segments) {
+    if (seg.areas.length === 0) continue;
+    const last = legs[legs.length - 1];
+    if (last && last.boss.order === seg.boss.order) last.areas.push(...seg.areas);
+    else legs.push({ boss: seg.boss, areas: [...seg.areas], color: SEGMENT_COLORS[legs.length % SEGMENT_COLORS.length] });
+  }
+  const legOfArea = new Map<string, string>();
+  legs.forEach((leg) => leg.areas.forEach((a) => legOfArea.set(a.id, leg.color)));
+  const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
+  const pathAreas = legs.flatMap((leg) => leg.areas);
+  const nextArea = pathAreas.find((a) => !logged(a.id));
+  const bossPoint = (boss: Boss, leg: { areas: Area[] }) => {
+    if (map.bosses[boss.id]) return map.bosses[boss.id];
+    const last = leg.areas[leg.areas.length - 1];
+    return last ? map.areas[last.id] : undefined;
+  };
+  // Story bosses grouped by their map point (rival variants share one).
+  const storyGroups = new Map<string, Boss[]>();
+  for (const sb of visibleStoryBosses(pack, run.starter)) {
+    const pt = map.story[sb.id];
+    if (!pt) continue;
+    const key = `${pt.x},${pt.y}`;
+    storyGroups.set(key, [...(storyGroups.get(key) ?? []), sb]);
+  }
+  const isCity = (a: Area) => /town|city/i.test(a.name);
+  return (
+    <section className="panel">
+      <p className="muted">
+        Your journey through Hoenn, in story order. Each leg is coloured by the gym it leads to;
+        tap a node for its detail. Schematic map, not to scale — postgame areas aren't on the path yet.
+      </p>
+      <svg viewBox="0 0 1000 700" width="100%" style={{ background: "#0d0d0d", borderRadius: 8 }}>
+        {legs.map((leg) => {
+          const pts = leg.areas.map((a) => map.areas[a.id]).filter(Boolean);
+          const bp = bossPoint(leg.boss, leg);
+          if (bp && (pts.length === 0 || pts[pts.length - 1] !== bp)) pts.push(bp);
+          if (pts.length < 2) return null;
+          return (
+            <polyline
+              key={leg.boss.id}
+              points={pts.map((p) => `${p.x},${p.y}`).join(" ")}
+              fill="none"
+              stroke={leg.color}
+              strokeWidth={3}
+              strokeLinejoin="round"
+              opacity={0.85}
+            />
+          );
+        })}
+        {pathAreas.map((a) => {
+          const pt = map.areas[a.id];
+          if (!pt) return null;
+          const color = legOfArea.get(a.id) ?? "#888";
+          const isNext = nextArea?.id === a.id;
+          const entry = logged(a.id);
+          return (
+            <g key={a.id} onClick={() => setSelected({ kind: "area", area: a })} style={{ cursor: "pointer" }}>
+              <circle cx={pt.x} cy={pt.y} r={isNext ? 11 : 8} fill={entry ? color : "#1a1a1a"} stroke={isNext ? "#fff" : color} strokeWidth={2}>
+                <title>{a.name}</title>
+              </circle>
+              {isCity(a) && (
+                <text x={pt.x + 12} y={pt.y + 4} fill="#ddd" fontSize={11}>{a.name}</text>
+              )}
+            </g>
+          );
+        })}
+        {legs.map((leg) => {
+          const pt = bossPoint(leg.boss, leg);
+          if (!pt) return null;
+          const defeated = run.defeatedBossIds.includes(leg.boss.id);
+          return (
+            <g key={`boss-${leg.boss.id}`} onClick={() => setSelected({ kind: "boss", boss: leg.boss })} style={{ cursor: "pointer" }}>
+              <circle cx={pt.x} cy={pt.y} r={15} fill={defeated ? leg.color : "#000"} stroke={leg.color} strokeWidth={3}>
+                <title>{leg.boss.name}</title>
+              </circle>
+              <text x={pt.x} y={pt.y + 4} textAnchor="middle" fill={defeated ? "#000" : "#fff"} fontSize={11} fontWeight="bold">★</text>
+            </g>
+          );
+        })}
+        {[...storyGroups.entries()].map(([key, bosses]) => {
+          const [x, y] = key.split(",").map(Number);
+          return (
+            <g key={`story-${key}`} onClick={() => setSelected({ kind: "story", bosses })} style={{ cursor: "pointer" }}>
+              <rect x={x - 6} y={y - 6} width={12} height={12} transform={`rotate(45 ${x} ${y})`} fill="#facc15" stroke="#000" strokeWidth={1}>
+                <title>{bosses.map((b) => b.name).join(" / ")}</title>
+              </rect>
+            </g>
+          );
+        })}
+      </svg>
+      <p className="muted">
+        ● filled = logged · ○ hollow = not logged yet · white ring = next area · ★ = gym boss · ◆ = story boss
+        {nextArea ? ` · Next: ${nextArea.name}` : ""}
+      </p>
+      {selected?.kind === "area" && (() => {
+        const entry = logged(selected.area.id);
+        return (
+          <div className="segment">
+            <strong>{selected.area.name}</strong>
+            <p className="muted">
+              {entry
+                ? `Logged: ${entry.species ? displayName(entry.species) : "no catch recorded"} (${entry.outcome})`
+                : "Not logged yet — log it in the Timeline."}
+              {" · "}Catchable here: {[...new Set(selected.area.encounters.map((e) => displayName(e.species)))].join(", ") || "—"}
+            </p>
+          </div>
+        );
+      })()}
+      {selected?.kind === "boss" && (
+        <div className="segment">
+          <div className="boss-card-head">
+            <BossPortrait boss={selected.boss} species={species} size={40} />
+            <strong>{selected.boss.name}</strong>
+            <span className="muted">{selected.boss.location} · Lv cap {selected.boss.levelCap}</span>
+            <button
+              className={`chip ${run.defeatedBossIds.includes(selected.boss.id) ? "done" : ""}`}
+              onClick={() => onToggleBoss(selected.boss.id)}
+            >
+              {run.defeatedBossIds.includes(selected.boss.id) ? "✓ Defeated" : "Mark defeated"}
+            </button>
+          </div>
+          <BossTeamGrid boss={selected.boss} species={species} />
+        </div>
+      )}
+      {selected?.kind === "story" && (
+        <div className="segment">
+          {selected.bosses.map((sb) => (
+            <div key={sb.id}>
+              <div className="boss-card-head">
+                <BossPortrait boss={sb} species={species} size={40} />
+                <strong>{sb.name}</strong>
+                <span className="muted">{sb.location}</span>
+              </div>
+              <BossTeamGrid boss={sb} species={species} />
+            </div>
+          ))}
+          <p className="muted">Story bosses don't affect checkpoints or level caps.</p>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function StoryTab({
   run, pack, species, onToggleBoss,
 }: {
@@ -1033,7 +1206,7 @@ function TimelineTab({
         const loggedCount = g.areas.filter((a) => logged(a.id)).length;
         const nextOrder = gi + 1 < groups.length ? groups[gi + 1].bosses[0].order : Infinity;
         return (
-        <div key={gi}>
+        <div key={gi} style={{ borderLeft: `3px solid ${SEGMENT_COLORS[gi % SEGMENT_COLORS.length]}`, paddingLeft: 12 }}>
         <div className="segment">
           {g.areas.length > 0 && (
             <div className="segment-head">

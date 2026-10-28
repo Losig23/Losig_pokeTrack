@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { PACKS, getPack } from "./index";
 import { sortedAreas, validatePack, visibleStoryBosses } from "../../engine/pack";
+import { REGION_MAPS } from "../maps";
 import { bossSegments } from "../../engine/run";
 
 // Every shipped pack must satisfy the engine's structural rules.
@@ -163,6 +164,27 @@ describe("shipped game packs", () => {
     expect(byId["rival-route-103-treecko"].order).toBeLessThan(10);
     expect(byId["archie-seafloor"].order).toBeGreaterThan(70);
     expect(byId["archie-seafloor"].order).toBeLessThan(80);
+  });
+
+  it("emerald schematic map covers every path area and story boss", () => {
+    const pack = getPack("emerald")!;
+    const map = REGION_MAPS["emerald"];
+    expect(map).toBeDefined();
+    const { segments } = bossSegments(pack, sortedAreas(pack));
+    const pathAreas = segments.flatMap((s) => s.areas);
+    // Every area on the journey path (postgame trailing excluded) has a point.
+    for (const a of pathAreas) expect(map.areas[a.id]).toBeDefined();
+    // Every story boss has a point; gym cities without an area have one too.
+    for (const sb of pack.storyBosses ?? []) expect(map.story[sb.id]).toBeDefined();
+    expect(map.bosses["wattson"]).toBeDefined();
+    expect(map.bosses["winona"]).toBeDefined();
+    // All points sit inside the 1000x700 viewBox.
+    for (const pt of [...Object.values(map.areas), ...Object.values(map.bosses), ...Object.values(map.story)]) {
+      expect(pt.x).toBeGreaterThanOrEqual(0);
+      expect(pt.x).toBeLessThanOrEqual(1000);
+      expect(pt.y).toBeGreaterThanOrEqual(0);
+      expect(pt.y).toBeLessThanOrEqual(700);
+    }
   });
 
   it("x-y opens with the Aquacorde starter and segments by the story", () => {
