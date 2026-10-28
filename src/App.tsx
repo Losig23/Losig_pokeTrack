@@ -484,16 +484,33 @@ const TRAINER_SLUG_ALIASES: Record<string, string> = { lt: "ltsurge", crasher: "
 
 function trainerSlug(name: string): string {
   const cleaned = name
-    .replace(/^(gym leader|elite four|champion|kahuna|island kahuna|trial captain|captain|leader|frontier brain|pokémon trainer|pokemon trainer|trainer|rival|professor|boss)\s+/i, "")
+    .replace(/^(gym leaders?|elite four|champion|kahuna|island kahuna|trial captain|captain|leader|frontier brain|pokémon trainer|pokemon trainer|trainer|rival|professor|boss)\s+/i, "")
     .trim();
+  // Dual leaders fight as one boss: Showdown's sprite set has the pair
+  // under the joined name, not under either twin alone. Without this,
+  // "Gym Leaders Tate & Liza" cleaned to "gym" (the plural title was
+  // not stripped) and fell back to the ace's sprite, Lunatone.
+  if (/&/.test(cleaned)) {
+    const parts = cleaned.split("&").map((p) => p.trim().toLowerCase().replace(/[^a-z]/g, ""));
+    if (parts.length === 2 && parts[0] && parts[1]) return parts.join("and");
+  }
   const first = (cleaned.split(/\s+/)[0] ?? "").toLowerCase().replace(/[^a-z0-9-]/g, "");
   return TRAINER_SLUG_ALIASES[first] ?? first;
 }
 
 function BossPortrait({ boss, species, size }: { boss: Boss; species: Record<string, SpeciesData>; size: number }) {
-  const [failed, setFailed] = useState(false);
-  const slug = trainerSlug(boss.name);
-  if (slug && !failed) {
+  const [failedIdx, setFailedIdx] = useState(0);
+  // Dual leaders: try the joined pair first, then each twin alone, then
+  // the ace. A single failed Showdown URL must not drop straight to the
+  // ace when another portrait candidate exists.
+  const cleaned = boss.name
+    .replace(/^(gym leaders?|elite four|champion|kahuna|island kahuna|trial captain|captain|leader|frontier brain|pokémon trainer|pokemon trainer|trainer|rival|professor|boss)\s+/i, "")
+    .trim();
+  const candidates = /&/.test(cleaned)
+    ? [trainerSlug(boss.name), ...cleaned.split("&").map((p) => p.trim().toLowerCase().replace(/[^a-z]/g, ""))].filter(Boolean)
+    : [trainerSlug(boss.name)].filter(Boolean);
+  const slug = candidates[failedIdx];
+  if (slug) {
     return (
       <img
         className="boss-ace trainer"
@@ -501,7 +518,7 @@ function BossPortrait({ boss, species, size }: { boss: Boss; species: Record<str
         alt={boss.name}
         width={size}
         height={size}
-        onError={() => setFailed(true)}
+        onError={() => setFailedIdx((i) => i + 1)}
       />
     );
   }
