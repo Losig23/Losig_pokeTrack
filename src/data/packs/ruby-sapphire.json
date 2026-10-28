@@ -1349,55 +1349,9 @@
    ]
   },
   {
-   "id": "jagged-pass",
-   "name": "Jagged Pass",
-   "order": 250,
-   "encounters": [
-    {
-     "species": "machop",
-     "minLevel": 18,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "numel",
-     "minLevel": 18,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    },
-    {
-     "species": "spoink",
-     "minLevel": 18,
-     "maxLevel": 22,
-     "methods": [
-      "walk"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "lavaridge-town",
-   "name": "Lavaridge Town",
-   "order": 260,
-   "encounters": [
-    {
-     "species": "wynaut",
-     "minLevel": 5,
-     "maxLevel": 5,
-     "methods": [
-      "gift-egg"
-     ]
-    }
-   ]
-  },
-  {
    "id": "hoenn-route-114",
    "name": "Hoenn Route 114",
-   "order": 270,
+   "order": 250,
    "encounters": [
     {
      "species": "barboach",
@@ -1512,7 +1466,7 @@
   {
    "id": "meteor-falls",
    "name": "Meteor Falls",
-   "order": 280,
+   "order": 260,
    "encounters": [
     {
      "species": "bagon",
@@ -1598,7 +1552,7 @@
   {
    "id": "hoenn-route-115",
    "name": "Hoenn Route 115",
-   "order": 290,
+   "order": 270,
    "encounters": [
     {
      "species": "jigglypuff",
@@ -1675,6 +1629,52 @@
      "methods": [
       "surf",
       "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jagged-pass",
+   "name": "Jagged Pass",
+   "order": 280,
+   "encounters": [
+    {
+     "species": "machop",
+     "minLevel": 18,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "numel",
+     "minLevel": 18,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    },
+    {
+     "species": "spoink",
+     "minLevel": 18,
+     "maxLevel": 22,
+     "methods": [
+      "walk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lavaridge-town",
+   "name": "Lavaridge Town",
+   "order": 290,
+   "encounters": [
+    {
+     "species": "wynaut",
+     "minLevel": 5,
+     "maxLevel": 5,
+     "methods": [
+      "gift-egg"
      ]
     }
    ]
@@ -4478,7 +4478,7 @@
   "brawly": "granite-cave",
   "wattson": "hoenn-route-113",
   "flannery": "lavaridge-town",
-  "norman": "hoenn-route-115",
+  "norman": "lavaridge-town",
   "winona": "lilycove-city",
   "tate-and-liza": "mossdeep-city",
   "wallace": "sootopolis-city"

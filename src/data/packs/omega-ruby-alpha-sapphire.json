@@ -597,63 +597,9 @@
    ]
   },
   {
-   "id": "jagged-pass",
-   "name": "Jagged Pass",
-   "order": 180,
-   "encounters": [
-    {
-     "species": "machop",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "horde"
-     ]
-    },
-    {
-     "species": "spoink",
-     "minLevel": 10,
-     "maxLevel": 10,
-     "methods": [
-      "horde"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "lavaridge-town",
-   "name": "Lavaridge Town",
-   "order": 190,
-   "encounters": [
-    {
-     "species": "kecleon",
-     "minLevel": 40,
-     "maxLevel": 40,
-     "methods": [
-      "devon-scope"
-     ]
-    },
-    {
-     "species": "togepi",
-     "minLevel": 1,
-     "maxLevel": 1,
-     "methods": [
-      "gift-egg"
-     ]
-    },
-    {
-     "species": "wynaut",
-     "minLevel": 1,
-     "maxLevel": 1,
-     "methods": [
-      "gift-egg"
-     ]
-    }
-   ]
-  },
-  {
    "id": "hoenn-route-114",
    "name": "Hoenn Route 114",
-   "order": 200,
+   "order": 180,
    "encounters": [
     {
      "species": "lotad",
@@ -684,7 +630,7 @@
   {
    "id": "meteor-falls",
    "name": "Meteor Falls",
-   "order": 210,
+   "order": 190,
    "encounters": [
     {
      "species": "bagon",
@@ -707,7 +653,7 @@
   {
    "id": "hoenn-route-115",
    "name": "Hoenn Route 115",
-   "order": 220,
+   "order": 200,
    "encounters": [
     {
      "species": "swablu",
@@ -715,6 +661,60 @@
      "maxLevel": 10,
      "methods": [
       "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jagged-pass",
+   "name": "Jagged Pass",
+   "order": 210,
+   "encounters": [
+    {
+     "species": "machop",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "horde"
+     ]
+    },
+    {
+     "species": "spoink",
+     "minLevel": 10,
+     "maxLevel": 10,
+     "methods": [
+      "horde"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lavaridge-town",
+   "name": "Lavaridge Town",
+   "order": 220,
+   "encounters": [
+    {
+     "species": "kecleon",
+     "minLevel": 40,
+     "maxLevel": 40,
+     "methods": [
+      "devon-scope"
+     ]
+    },
+    {
+     "species": "togepi",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift-egg"
+     ]
+    },
+    {
+     "species": "wynaut",
+     "minLevel": 1,
+     "maxLevel": 1,
+     "methods": [
+      "gift-egg"
      ]
     }
    ]
@@ -2202,7 +2202,7 @@
   "oras-brawly": "granite-cave",
   "oras-wattson": "hoenn-route-113",
   "oras-flannery": "lavaridge-town",
-  "oras-norman": "hoenn-route-115",
+  "oras-norman": "lavaridge-town",
   "oras-winona": "lilycove-city",
   "oras-tate-and-liza": "mossdeep-city",
   "oras-wallace": "cave-of-origin"

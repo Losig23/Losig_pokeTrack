@@ -49,6 +49,17 @@ describe("shipped game packs", () => {
     expect(segOf("emerald", "roxanne")).toContain("petalburg-woods");
     expect(segOf("emerald", "roxanne")).toContain("rustboro-city");
     expect(segOf("emerald", "flannery")).toContain("lavaridge-town");
+    // Fallarbor / Route 114 / Meteor Falls are on the way to Lavaridge,
+    // not after it: they belong to Flannery, not Norman. There are no
+    // new areas between Flannery and Norman (you walk back to Petalburg
+    // through areas already visited), so Norman's segment is empty.
+    expect(segOf("emerald", "flannery")).toContain("hoenn-route-114");
+    expect(segOf("emerald", "flannery")).toContain("meteor-falls");
+    expect(segOf("emerald", "flannery")).toContain("jagged-pass");
+    expect(segOf("emerald", "norman")).not.toContain("hoenn-route-114");
+    expect(segOf("emerald", "norman")).toEqual([]);
+    expect(segOf("omega-ruby-alpha-sapphire", "oras-flannery")).toContain("fallarbor-town");
+    expect(segOf("omega-ruby-alpha-sapphire", "oras-flannery")).toContain("hoenn-route-114");
     expect(first("ruby-sapphire")).toBe("hoenn-route-101");
     expect(segOf("ruby-sapphire", "roxanne")).toContain("petalburg-woods");
     expect(first("omega-ruby-alpha-sapphire")).toBe("hoenn-route-101");
