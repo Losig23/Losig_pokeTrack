@@ -3,7 +3,7 @@ import type {
   Area, Boss, CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData, StatKey,
 } from "./engine/types";
 import { PACKS, PLANNED_PACKS, getPack } from "./data/packs";
-import { sortedAreas, sortedBosses, sortedStoryBosses } from "./engine/pack";
+import { sortedAreas, sortedBosses, visibleStoryBosses } from "./engine/pack";
 import {
   bossSegments, bossSlots, checkpoints, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
 } from "./engine/run";
@@ -395,6 +395,23 @@ function RunView({
           )}
         </div>
         <div className="run-head-actions">
+          {(() => {
+            const starters = [...new Set((pack.storyBosses ?? []).map((b) => b.starterChoice).filter(Boolean))] as string[];
+            return starters.length > 0 ? (
+              <label className="muted">
+                Starter{" "}
+                <select
+                  value={run.starter ?? ""}
+                  onChange={(e) => onChange({ ...run, starter: e.target.value || undefined })}
+                >
+                  <option value="">All (show every rival variant)</option>
+                  {starters.map((s) => (
+                    <option key={s} value={s}>{displayName(s)}</option>
+                  ))}
+                </select>
+              </label>
+            ) : null;
+          })()}
           <select
             value={run.status}
             onChange={(e) => onChange({ ...run, status: e.target.value as Run["status"] })}
@@ -676,7 +693,7 @@ function StoryTab({
   // team. Rival variants sharing an order are one fight, so group them.
   type StoryItem = { order: number; gym?: Boss; story?: Boss[] };
   const items: StoryItem[] = sortedBosses(pack).map((boss) => ({ order: boss.order, gym: boss }));
-  for (const sb of sortedStoryBosses(pack)) {
+  for (const sb of visibleStoryBosses(pack, run.starter)) {
     const existing = items.find((it) => it.story && it.order === sb.order);
     if (existing) existing.story!.push(sb);
     else items.push({ order: sb.order, story: [sb] });
@@ -782,6 +799,33 @@ function TimelineTab({
       groups.push({ areas: [...seg.areas], bosses: [seg.boss] });
     }
   }
+
+  // Story bosses as timeline markers: grouped by order (rival variants
+  // and the Mossdeep pair share one), rendered after the gym segment
+  // they follow and before the next one. Display-only, like in Story.
+  const storyGroups: { order: number; bosses: Boss[] }[] = [];
+  for (const sb of visibleStoryBosses(pack, run.starter)) {
+    const last = storyGroups[storyGroups.length - 1];
+    if (last && last.order === sb.order) last.bosses.push(sb);
+    else storyGroups.push({ order: sb.order, bosses: [sb] });
+  }
+  const storyMarker = (sg: { order: number; bosses: Boss[] }) => (
+    <div key={`story-${sg.order}`} className="segment">
+      <div className="segment-head">
+        <span>Story boss · {sg.bosses[0].location}</span>
+        <span className="muted">Highest Lv {Math.max(...sg.bosses.flatMap((b) => b.team.map((m) => m.level)))}</span>
+      </div>
+      {sg.bosses.map((sb) => (
+        <div key={sb.id}>
+          <div className="boss-card-head">
+            <BossPortrait boss={sb} species={species} size={40} />
+            <strong>{sb.name}</strong>
+          </div>
+          <BossTeamGrid boss={sb} species={species} />
+        </div>
+      ))}
+    </div>
+  );
 
   const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
 
@@ -983,11 +1027,14 @@ function TimelineTab({
       ) : nextUndefeated ? (
         <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
       ) : null}
+      {groups.length > 0 && storyGroups.filter((sg) => sg.order < groups[0].bosses[0].order).map(storyMarker)}
       {groups.map((g, gi) => {
         const folded = isFolded(g);
         const loggedCount = g.areas.filter((a) => logged(a.id)).length;
+        const nextOrder = gi + 1 < groups.length ? groups[gi + 1].bosses[0].order : Infinity;
         return (
-        <div key={gi} className="segment">
+        <div key={gi}>
+        <div className="segment">
           {g.areas.length > 0 && (
             <div className="segment-head">
               <button
@@ -1024,8 +1071,11 @@ function TimelineTab({
             </div>
           )}
         </div>
+        {storyGroups.filter((sg) => sg.order > g.bosses[0].order && sg.order < nextOrder).map(storyMarker)}
+        </div>
         );
       })}
+      {groups.length === 0 && storyGroups.map(storyMarker)}
       {segments.length === 0 && packAreas.map(areaRow)}
       {trailing.length > 0 && (
         <div className="segment">

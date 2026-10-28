@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { PACKS, getPack } from "./index";
-import { sortedAreas, validatePack } from "../../engine/pack";
+import { sortedAreas, validatePack, visibleStoryBosses } from "../../engine/pack";
 import { bossSegments } from "../../engine/run";
 
 // Every shipped pack must satisfy the engine's structural rules.
@@ -117,8 +117,19 @@ describe("shipped game packs", () => {
     const pack = getPack("emerald")!;
     const story = pack.storyBosses ?? [];
     // 5 rival fights x 3 starter variants + Tabitha x3, Maxie x3,
-    // Shelly x2, Matt x1, Archie x1. Courtney is not battled in Emerald.
-    expect(story.length).toBe(25);
+    // Shelly x2, Matt x1, Archie x1, Wally x2. Courtney is not battled in Emerald.
+    expect(story.length).toBe(27);
+    // Wally: Mauville Ralts, then the first Victory Road fight only
+    // (post-League rematches scale up and are not story fights).
+    const wally = story.filter((b) => b.id.startsWith("wally"));
+    expect(wally.map((b) => b.order)).toEqual([28, 85]);
+    expect(wally[0].team).toEqual([expect.objectContaining({ species: "ralts", level: 16 })]);
+    expect(wally[1].levelCap).toBe(45);
+    // A run with a starter sees only its rival variants (5) plus the
+    // 12 non-rival story bosses; with no starter, every variant shows.
+    expect(visibleStoryBosses(pack, "treecko").length).toBe(17);
+    expect(visibleStoryBosses(pack, "treecko").filter((b) => b.id.startsWith("rival")).length).toBe(5);
+    expect(visibleStoryBosses(pack).length).toBe(27);
     expect(story.some((b) => b.name.includes("Courtney"))).toBe(false);
     // Rival variants share one order per fight; the Space Center pair
     // shares its order too (one double battle with Steven).

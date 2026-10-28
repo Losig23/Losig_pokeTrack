@@ -196,34 +196,37 @@ PHANTOM_AREAS = {"sun-moon": {"new-mauville"}}  # cross-region leak in PokéAPI 
 # Emerald pilot: rival (5 fights x 3 starters) + Aqua/Magma (Tabitha x3,
 # Maxie x3, Shelly x2, Matt x1, Archie x1). Courtney is NOT battled in
 # Emerald (cameo only), so she is deliberately excluded.
-def _sb(boss_id, name, location, order, team):
-    return {
+def _sb(boss_id, name, location, order, team, starter=None):
+    boss = {
         "id": boss_id, "name": name, "location": location, "order": order,
         "levelCap": max(lv for _, lv in team),
         "team": [{"species": sp, "level": lv, "ability": None, "item": None, "moves": []}
                  for sp, lv in team],
     }
+    if starter:
+        boss["starterChoice"] = starter
+    return boss
 
 STORY_BOSSES = {
     "emerald": [
-        _sb("rival-route-103-treecko", "Rival May/Brendan (you chose Treecko)", "Route 103", 5, [("torchic", 5)]),
-        _sb("rival-route-103-torchic", "Rival May/Brendan (you chose Torchic)", "Route 103", 5, [("mudkip", 5)]),
-        _sb("rival-route-103-mudkip", "Rival May/Brendan (you chose Mudkip)", "Route 103", 5, [("treecko", 5)]),
-        _sb("rival-rustboro-treecko", "Rival May/Brendan (you chose Treecko)", "Rustboro City", 15, [("lotad", 13), ("torchic", 15)]),
-        _sb("rival-rustboro-torchic", "Rival May/Brendan (you chose Torchic)", "Rustboro City", 15, [("slugma", 13), ("mudkip", 15)]),
-        _sb("rival-rustboro-mudkip", "Rival May/Brendan (you chose Mudkip)", "Rustboro City", 15, [("wingull", 13), ("treecko", 15)]),
-        _sb("rival-route-110-treecko", "Rival May/Brendan (you chose Treecko)", "Route 110", 25, [("wingull", 18), ("lombre", 18), ("combusken", 20)]),
-        _sb("rival-route-110-torchic", "Rival May/Brendan (you chose Torchic)", "Route 110", 25, [("lombre", 18), ("slugma", 18), ("marshtomp", 20)]),
-        _sb("rival-route-110-mudkip", "Rival May/Brendan (you chose Mudkip)", "Route 110", 25, [("slugma", 18), ("wingull", 18), ("grovyle", 20)]),
+        _sb("rival-route-103-treecko", "Rival May/Brendan (you chose Treecko)", "Route 103", 5, [("torchic", 5)], starter="treecko"),
+        _sb("rival-route-103-torchic", "Rival May/Brendan (you chose Torchic)", "Route 103", 5, [("mudkip", 5)], starter="torchic"),
+        _sb("rival-route-103-mudkip", "Rival May/Brendan (you chose Mudkip)", "Route 103", 5, [("treecko", 5)], starter="mudkip"),
+        _sb("rival-rustboro-treecko", "Rival May/Brendan (you chose Treecko)", "Rustboro City", 15, [("lotad", 13), ("torchic", 15)], starter="treecko"),
+        _sb("rival-rustboro-torchic", "Rival May/Brendan (you chose Torchic)", "Rustboro City", 15, [("slugma", 13), ("mudkip", 15)], starter="torchic"),
+        _sb("rival-rustboro-mudkip", "Rival May/Brendan (you chose Mudkip)", "Rustboro City", 15, [("wingull", 13), ("treecko", 15)], starter="mudkip"),
+        _sb("rival-route-110-treecko", "Rival May/Brendan (you chose Treecko)", "Route 110", 25, [("wingull", 18), ("lombre", 18), ("combusken", 20)], starter="treecko"),
+        _sb("rival-route-110-torchic", "Rival May/Brendan (you chose Torchic)", "Route 110", 25, [("lombre", 18), ("slugma", 18), ("marshtomp", 20)], starter="torchic"),
+        _sb("rival-route-110-mudkip", "Rival May/Brendan (you chose Mudkip)", "Route 110", 25, [("slugma", 18), ("wingull", 18), ("grovyle", 20)], starter="mudkip"),
         _sb("tabitha-mt-chimney", "Tabitha (Team Magma)", "Mt. Chimney", 35, [("numel", 18), ("poochyena", 20), ("numel", 22), ("zubat", 22)]),
         _sb("maxie-mt-chimney", "Maxie (Team Magma)", "Mt. Chimney", 36, [("mightyena", 24), ("zubat", 24), ("camerupt", 25)]),
         _sb("shelly-weather-institute", "Shelly (Team Aqua)", "Weather Institute", 55, [("carvanha", 28), ("mightyena", 28)]),
-        _sb("rival-route-119-treecko", "Rival May/Brendan (you chose Treecko)", "Route 119", 56, [("lombre", 29), ("wingull", 29), ("combusken", 31)]),
-        _sb("rival-route-119-torchic", "Rival May/Brendan (you chose Torchic)", "Route 119", 56, [("lombre", 29), ("slugma", 29), ("marshtomp", 31)]),
-        _sb("rival-route-119-mudkip", "Rival May/Brendan (you chose Mudkip)", "Route 119", 56, [("slugma", 29), ("wingull", 29), ("grovyle", 31)]),
-        _sb("rival-lilycove-treecko", "Rival May/Brendan (you chose Treecko)", "Lilycove City", 63, [("tropius", 31), ("ludicolo", 32), ("pelipper", 32), ("combusken", 34)]),
-        _sb("rival-lilycove-torchic", "Rival May/Brendan (you chose Torchic)", "Lilycove City", 63, [("tropius", 31), ("ludicolo", 32), ("slugma", 32), ("marshtomp", 34)]),
-        _sb("rival-lilycove-mudkip", "Rival May/Brendan (you chose Mudkip)", "Lilycove City", 63, [("tropius", 31), ("pelipper", 32), ("slugma", 32), ("grovyle", 34)]),
+        _sb("rival-route-119-treecko", "Rival May/Brendan (you chose Treecko)", "Route 119", 56, [("lombre", 29), ("wingull", 29), ("combusken", 31)], starter="treecko"),
+        _sb("rival-route-119-torchic", "Rival May/Brendan (you chose Torchic)", "Route 119", 56, [("lombre", 29), ("slugma", 29), ("marshtomp", 31)], starter="torchic"),
+        _sb("rival-route-119-mudkip", "Rival May/Brendan (you chose Mudkip)", "Route 119", 56, [("slugma", 29), ("wingull", 29), ("grovyle", 31)], starter="mudkip"),
+        _sb("rival-lilycove-treecko", "Rival May/Brendan (you chose Treecko)", "Lilycove City", 63, [("tropius", 31), ("ludicolo", 32), ("pelipper", 32), ("combusken", 34)], starter="treecko"),
+        _sb("rival-lilycove-torchic", "Rival May/Brendan (you chose Torchic)", "Lilycove City", 63, [("tropius", 31), ("ludicolo", 32), ("slugma", 32), ("marshtomp", 34)], starter="torchic"),
+        _sb("rival-lilycove-mudkip", "Rival May/Brendan (you chose Mudkip)", "Lilycove City", 63, [("tropius", 31), ("pelipper", 32), ("slugma", 32), ("grovyle", 34)], starter="mudkip"),
         _sb("tabitha-magma-hideout", "Tabitha (Team Magma)", "Magma Hideout (Mt. Chimney)", 65, [("numel", 26), ("mightyena", 28), ("zubat", 30), ("camerupt", 33)]),
         _sb("maxie-magma-hideout", "Maxie (Team Magma)", "Magma Hideout (Mt. Chimney)", 66, [("mightyena", 37), ("crobat", 38), ("camerupt", 39)]),
         _sb("matt-aqua-hideout", "Matt (Team Aqua)", "Aqua Hideout (Lilycove)", 67, [("mightyena", 34), ("golbat", 34)]),
@@ -231,6 +234,11 @@ STORY_BOSSES = {
         _sb("tabitha-space-center", "Tabitha (Team Magma)", "Mossdeep Space Center (double battle with Steven)", 73, [("camerupt", 36), ("mightyena", 38), ("golbat", 40)]),
         _sb("shelly-seafloor", "Shelly (Team Aqua)", "Seafloor Cavern", 76, [("sharpedo", 37), ("mightyena", 37)]),
         _sb("archie-seafloor", "Archie (Team Aqua)", "Seafloor Cavern", 77, [("mightyena", 41), ("crobat", 41), ("sharpedo", 43)]),
+        # Wally: Mauville (Ralts only) + the first Victory Road fight.
+        # Post-Elite Four rematches scale up (up to Gardevoir 57) and are
+        # deliberately not listed — this is the story fight only.
+        _sb("wally-mauville", "Wally", "Mauville City", 28, [("ralts", 16)]),
+        _sb("wally-victory-road", "Wally", "Victory Road", 85, [("magneton", 41), ("delcatty", 43), ("altaria", 44), ("roselia", 44), ("gardevoir", 45)]),
     ],
 }
 EXCLUDE_METHODS = {
@@ -463,6 +471,8 @@ def main() -> int:
         }
         if pack_id in SEGMENT_CUTOFFS:
             pack["bossAreaCutoffs"] = SEGMENT_CUTOFFS[pack_id]
+        if pack_id in STORY_BOSSES:
+            pack["storyBosses"] = STORY_BOSSES[pack_id]
         if pack_id in STORY_BOSSES:
             pack["storyBosses"] = STORY_BOSSES[pack_id]
         out = OUT_DIR / f"{pack_id}.json"

@@ -4787,7 +4787,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "treecko"
   },
   {
    "id": "rival-route-103-torchic",
@@ -4803,7 +4804,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "torchic"
   },
   {
    "id": "rival-route-103-mudkip",
@@ -4819,7 +4821,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "mudkip"
   },
   {
    "id": "rival-rustboro-treecko",
@@ -4842,7 +4845,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "treecko"
   },
   {
    "id": "rival-rustboro-torchic",
@@ -4865,7 +4869,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "torchic"
   },
   {
    "id": "rival-rustboro-mudkip",
@@ -4888,7 +4893,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "mudkip"
   },
   {
    "id": "rival-route-110-treecko",
@@ -4918,7 +4924,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "treecko"
   },
   {
    "id": "rival-route-110-torchic",
@@ -4948,7 +4955,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "torchic"
   },
   {
    "id": "rival-route-110-mudkip",
@@ -4978,7 +4986,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "mudkip"
   },
   {
    "id": "tabitha-mt-chimney",
@@ -5098,7 +5107,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "treecko"
   },
   {
    "id": "rival-route-119-torchic",
@@ -5128,7 +5138,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "torchic"
   },
   {
    "id": "rival-route-119-mudkip",
@@ -5158,7 +5169,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "mudkip"
   },
   {
    "id": "rival-lilycove-treecko",
@@ -5195,7 +5207,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "treecko"
   },
   {
    "id": "rival-lilycove-torchic",
@@ -5232,7 +5245,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "torchic"
   },
   {
    "id": "rival-lilycove-mudkip",
@@ -5269,7 +5283,8 @@
      "item": null,
      "moves": []
     }
-   ]
+   ],
+   "starterChoice": "mudkip"
   },
   {
    "id": "tabitha-magma-hideout",
@@ -5468,6 +5483,66 @@
     {
      "species": "sharpedo",
      "level": 43,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "wally-mauville",
+   "name": "Wally",
+   "location": "Mauville City",
+   "order": 28,
+   "levelCap": 16,
+   "team": [
+    {
+     "species": "ralts",
+     "level": 16,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "wally-victory-road",
+   "name": "Wally",
+   "location": "Victory Road",
+   "order": 85,
+   "levelCap": 45,
+   "team": [
+    {
+     "species": "magneton",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "delcatty",
+     "level": 43,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "altaria",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roselia",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "gardevoir",
+     "level": 45,
      "ability": null,
      "item": null,
      "moves": []

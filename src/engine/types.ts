@@ -33,6 +33,12 @@ export interface Boss {
   order: number;
   levelCap: number; // level of the boss's ace
   team: BossMon[];
+  /**
+   * Story-boss variants only: the player starter species slug this
+   * variant is for (e.g. a rival fight when you chose Treecko).
+   * A run with `starter` set shows only matching variants.
+   */
+  starterChoice?: string;
 }
 
 export type PackCategory = "base" | "hack" | "fangame";
@@ -112,6 +118,8 @@ export interface Run {
   defeatedBossIds: string[];
   /** Areas the player added themselves (for packs without encounter tables). */
   customAreas?: Area[];
+  /** Starter species slug chosen for this run; filters rival story-boss variants. */
+  starter?: string;
 }
 
 export interface SpeciesData {

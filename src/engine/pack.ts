@@ -52,6 +52,17 @@ export function sortedStoryBosses(pack: GamePack) {
   return [...(pack.storyBosses ?? [])].sort((a, b) => a.order - b.order);
 }
 
+/**
+ * Story bosses visible for a run: when the run has a starter, rival
+ * variants for other starters are hidden (non-variant story bosses
+ * always show). With no starter set, every variant shows.
+ */
+export function visibleStoryBosses(pack: GamePack, starter?: string) {
+  return sortedStoryBosses(pack).filter(
+    (b) => !starter || !b.starterChoice || b.starterChoice === starter,
+  );
+}
+
 /** Bosses sorted in game order. */
 export function sortedBosses(pack: GamePack) {
   return [...pack.bosses].sort((a, b) => a.order - b.order);
