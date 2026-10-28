@@ -4771,5 +4771,708 @@
   "tate-and-liza": "mossdeep-city",
   "juan": "sky-pillar",
   "wallace": "hoenn-victory-road"
- }
+ },
+ "storyBosses": [
+  {
+   "id": "rival-route-103-treecko",
+   "name": "Rival May/Brendan (you chose Treecko)",
+   "location": "Route 103",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "torchic",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-103-torchic",
+   "name": "Rival May/Brendan (you chose Torchic)",
+   "location": "Route 103",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "mudkip",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-103-mudkip",
+   "name": "Rival May/Brendan (you chose Mudkip)",
+   "location": "Route 103",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "treecko",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-rustboro-treecko",
+   "name": "Rival May/Brendan (you chose Treecko)",
+   "location": "Rustboro City",
+   "order": 15,
+   "levelCap": 15,
+   "team": [
+    {
+     "species": "lotad",
+     "level": 13,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "torchic",
+     "level": 15,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-rustboro-torchic",
+   "name": "Rival May/Brendan (you chose Torchic)",
+   "location": "Rustboro City",
+   "order": 15,
+   "levelCap": 15,
+   "team": [
+    {
+     "species": "slugma",
+     "level": 13,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "mudkip",
+     "level": 15,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-rustboro-mudkip",
+   "name": "Rival May/Brendan (you chose Mudkip)",
+   "location": "Rustboro City",
+   "order": 15,
+   "levelCap": 15,
+   "team": [
+    {
+     "species": "wingull",
+     "level": 13,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "treecko",
+     "level": 15,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-110-treecko",
+   "name": "Rival May/Brendan (you chose Treecko)",
+   "location": "Route 110",
+   "order": 25,
+   "levelCap": 20,
+   "team": [
+    {
+     "species": "wingull",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "lombre",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "combusken",
+     "level": 20,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-110-torchic",
+   "name": "Rival May/Brendan (you chose Torchic)",
+   "location": "Route 110",
+   "order": 25,
+   "levelCap": 20,
+   "team": [
+    {
+     "species": "lombre",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "slugma",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "marshtomp",
+     "level": 20,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-110-mudkip",
+   "name": "Rival May/Brendan (you chose Mudkip)",
+   "location": "Route 110",
+   "order": 25,
+   "levelCap": 20,
+   "team": [
+    {
+     "species": "slugma",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "wingull",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "grovyle",
+     "level": 20,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "tabitha-mt-chimney",
+   "name": "Tabitha (Team Magma)",
+   "location": "Mt. Chimney",
+   "order": 35,
+   "levelCap": 22,
+   "team": [
+    {
+     "species": "numel",
+     "level": 18,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "poochyena",
+     "level": 20,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "numel",
+     "level": 22,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "zubat",
+     "level": 22,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "maxie-mt-chimney",
+   "name": "Maxie (Team Magma)",
+   "location": "Mt. Chimney",
+   "order": 36,
+   "levelCap": 25,
+   "team": [
+    {
+     "species": "mightyena",
+     "level": 24,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "zubat",
+     "level": 24,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "camerupt",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "shelly-weather-institute",
+   "name": "Shelly (Team Aqua)",
+   "location": "Weather Institute",
+   "order": 55,
+   "levelCap": 28,
+   "team": [
+    {
+     "species": "carvanha",
+     "level": 28,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "mightyena",
+     "level": 28,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-119-treecko",
+   "name": "Rival May/Brendan (you chose Treecko)",
+   "location": "Route 119",
+   "order": 56,
+   "levelCap": 31,
+   "team": [
+    {
+     "species": "lombre",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "wingull",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "combusken",
+     "level": 31,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-119-torchic",
+   "name": "Rival May/Brendan (you chose Torchic)",
+   "location": "Route 119",
+   "order": 56,
+   "levelCap": 31,
+   "team": [
+    {
+     "species": "lombre",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "slugma",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "marshtomp",
+     "level": 31,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-route-119-mudkip",
+   "name": "Rival May/Brendan (you chose Mudkip)",
+   "location": "Route 119",
+   "order": 56,
+   "levelCap": 31,
+   "team": [
+    {
+     "species": "slugma",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "wingull",
+     "level": 29,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "grovyle",
+     "level": 31,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-lilycove-treecko",
+   "name": "Rival May/Brendan (you chose Treecko)",
+   "location": "Lilycove City",
+   "order": 63,
+   "levelCap": 34,
+   "team": [
+    {
+     "species": "tropius",
+     "level": 31,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "ludicolo",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "pelipper",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "combusken",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-lilycove-torchic",
+   "name": "Rival May/Brendan (you chose Torchic)",
+   "location": "Lilycove City",
+   "order": 63,
+   "levelCap": 34,
+   "team": [
+    {
+     "species": "tropius",
+     "level": 31,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "ludicolo",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "slugma",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "marshtomp",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "rival-lilycove-mudkip",
+   "name": "Rival May/Brendan (you chose Mudkip)",
+   "location": "Lilycove City",
+   "order": 63,
+   "levelCap": 34,
+   "team": [
+    {
+     "species": "tropius",
+     "level": 31,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "pelipper",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "slugma",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "grovyle",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "tabitha-magma-hideout",
+   "name": "Tabitha (Team Magma)",
+   "location": "Magma Hideout (Mt. Chimney)",
+   "order": 65,
+   "levelCap": 33,
+   "team": [
+    {
+     "species": "numel",
+     "level": 26,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "mightyena",
+     "level": 28,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "zubat",
+     "level": 30,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "camerupt",
+     "level": 33,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "maxie-magma-hideout",
+   "name": "Maxie (Team Magma)",
+   "location": "Magma Hideout (Mt. Chimney)",
+   "order": 66,
+   "levelCap": 39,
+   "team": [
+    {
+     "species": "mightyena",
+     "level": 37,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "crobat",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "camerupt",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "matt-aqua-hideout",
+   "name": "Matt (Team Aqua)",
+   "location": "Aqua Hideout (Lilycove)",
+   "order": 67,
+   "levelCap": 34,
+   "team": [
+    {
+     "species": "mightyena",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "golbat",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "maxie-space-center",
+   "name": "Maxie (Team Magma)",
+   "location": "Mossdeep Space Center (double battle with Steven)",
+   "order": 73,
+   "levelCap": 44,
+   "team": [
+    {
+     "species": "mightyena",
+     "level": 42,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "crobat",
+     "level": 43,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "camerupt",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "tabitha-space-center",
+   "name": "Tabitha (Team Magma)",
+   "location": "Mossdeep Space Center (double battle with Steven)",
+   "order": 73,
+   "levelCap": 40,
+   "team": [
+    {
+     "species": "camerupt",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "mightyena",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "golbat",
+     "level": 40,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "shelly-seafloor",
+   "name": "Shelly (Team Aqua)",
+   "location": "Seafloor Cavern",
+   "order": 76,
+   "levelCap": 37,
+   "team": [
+    {
+     "species": "sharpedo",
+     "level": 37,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "mightyena",
+     "level": 37,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "archie-seafloor",
+   "name": "Archie (Team Aqua)",
+   "location": "Seafloor Cavern",
+   "order": 77,
+   "levelCap": 43,
+   "team": [
+    {
+     "species": "mightyena",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "crobat",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "sharpedo",
+     "level": 43,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  }
+ ]
 }

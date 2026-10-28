@@ -3,7 +3,7 @@ import type {
   Area, Boss, CaughtMon, EncounterOutcome, GamePack, MonStatus, Ruleset, Run, SpeciesData, StatKey,
 } from "./engine/types";
 import { PACKS, PLANNED_PACKS, getPack } from "./data/packs";
-import { sortedAreas, sortedBosses } from "./engine/pack";
+import { sortedAreas, sortedBosses, sortedStoryBosses } from "./engine/pack";
 import {
   bossSegments, bossSlots, checkpoints, createRun, currentLevelCap, isDupe, nextBoss, overCapMembers, progressPercent,
 } from "./engine/run";
@@ -353,7 +353,7 @@ function RunView({
   const overCap = run.ruleset === "hardcore" ? overCapMembers(run, pack) : [];
 
   const bossSlugs = useMemo(
-    () => pack.bosses.flatMap((b) => b.team.map((m) => m.species)),
+    () => [...pack.bosses, ...(pack.storyBosses ?? [])].flatMap((b) => b.team.map((m) => m.species)),
     [pack],
   );
   const teamSlugs = useMemo(() => run.team.map((m) => m.species), [run.team]);
@@ -671,20 +671,54 @@ function StoryTab({
 }) {
   const { segments, trailing } = bossSegments(pack, sortedAreas(pack));
   const byBoss = new Map(segments.map((s) => [s.boss.id, s.areas]));
+  // Story bosses interleave with gym bosses by order, but they are NOT
+  // checkpoints: no defeated toggle, no level cap — just the fight and its
+  // team. Rival variants sharing an order are one fight, so group them.
+  type StoryItem = { order: number; gym?: Boss; story?: Boss[] };
+  const items: StoryItem[] = sortedBosses(pack).map((boss) => ({ order: boss.order, gym: boss }));
+  for (const sb of sortedStoryBosses(pack)) {
+    const existing = items.find((it) => it.story && it.order === sb.order);
+    if (existing) existing.story!.push(sb);
+    else items.push({ order: sb.order, story: [sb] });
+  }
+  items.sort((a, b) => a.order - b.order);
+  let gymIndex = 0;
   return (
     <section className="panel">
       <p className="muted">
         The story in order. Areas listed under a boss are the ones you can catch in before that fight;
-        areas after the last boss are league and postgame.
+        areas after the last boss are league and postgame. Story bosses (rivals, team leaders) don't
+        affect checkpoints or level caps.
       </p>
-      {sortedBosses(pack).map((boss, i) => {
+      {items.map((item) => {
+        if (item.story) {
+          return (
+            <div key={`story-${item.order}`} className="segment">
+              <div className="boss-card-head">
+                <strong>Story · {item.story[0].location}</strong>
+                <span className="muted">Highest Lv {Math.max(...item.story.flatMap((b) => b.team.map((m) => m.level)))}</span>
+              </div>
+              {item.story.map((sb) => (
+                <div key={sb.id} style={{ marginTop: 8 }}>
+                  <div className="boss-card-head">
+                    <BossPortrait boss={sb} species={species} size={40} />
+                    <strong>{sb.name}</strong>
+                  </div>
+                  <BossTeamGrid boss={sb} species={species} />
+                </div>
+              ))}
+            </div>
+          );
+        }
+        const boss = item.gym!;
+        gymIndex += 1;
         const areas = byBoss.get(boss.id) ?? [];
         const defeated = run.defeatedBossIds.includes(boss.id);
         return (
           <div key={boss.id} className="segment">
             <div className="boss-card-head">
               <BossPortrait boss={boss} species={species} size={40} />
-              <strong>{i + 1}. {boss.name}</strong>
+              <strong>{gymIndex}. {boss.name}</strong>
               <span className="muted">{boss.location} · Lv cap {boss.levelCap}</span>
               <button className={`chip ${defeated ? "done" : ""}`} onClick={() => onToggleBoss(boss.id)}>
                 {defeated ? "✓ Defeated" : "Mark defeated"}

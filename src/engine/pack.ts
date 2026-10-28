@@ -33,7 +33,23 @@ export function validatePack(pack: GamePack): string[] {
     if (!bossIds.has(bossId)) problems.push(`bossAreaCutoffs: unknown boss id: ${bossId}`);
     if (!areaIds.has(areaId)) problems.push(`bossAreaCutoffs: unknown area id: ${areaId}`);
   }
+
+  // Story bosses are display-only, but their teams must still be sound.
+  const storyIds = new Set<string>();
+  for (const boss of pack.storyBosses ?? []) {
+    if (storyIds.has(boss.id)) problems.push(`duplicate story boss id: ${boss.id}`);
+    storyIds.add(boss.id);
+    if (!boss.team?.length) problems.push(`story boss ${boss.id} has an empty team`);
+    const ace = Math.max(...(boss.team ?? []).map((m) => m.level), 0);
+    if (boss.levelCap !== ace)
+      problems.push(`story boss ${boss.id}: levelCap ${boss.levelCap} does not match ace level ${ace}`);
+  }
   return problems;
+}
+
+/** Story bosses sorted in story order. */
+export function sortedStoryBosses(pack: GamePack) {
+  return [...(pack.storyBosses ?? [])].sort((a, b) => a.order - b.order);
 }
 
 /** Bosses sorted in game order. */

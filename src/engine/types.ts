@@ -58,6 +58,15 @@ export interface GamePack {
    * gym, e.g. Lumiose City in XY).
    */
   bossAreaCutoffs?: Record<string, string>;
+  /**
+   * Story bosses: rivals, team leaders/admins and other non-gym fights.
+   * Display only — they are NOT checkpoints and do NOT set a level cap
+   * (see bossSlots / currentLevelCap, which read bosses only). Their
+   * `order` interleaves with gym bosses' order in the Story tab.
+   * Rival variants sharing an order are one fight whose team depends
+   * on the player's starter choice.
+   */
+  storyBosses?: Boss[];
 }
 
 export type StatKey = "hp" | "attack" | "defense" | "specialAttack" | "specialDefense" | "speed";

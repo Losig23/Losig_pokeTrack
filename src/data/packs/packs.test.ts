@@ -113,6 +113,47 @@ describe("shipped game packs", () => {
     expect(segOf("sun-moon", "totem-kommo-o")).toEqual(["vast-poni-canyon"]);
   });
 
+  it("emerald story bosses: rival + Aqua/Magma, display-only", () => {
+    const pack = getPack("emerald")!;
+    const story = pack.storyBosses ?? [];
+    // 5 rival fights x 3 starter variants + Tabitha x3, Maxie x3,
+    // Shelly x2, Matt x1, Archie x1. Courtney is not battled in Emerald.
+    expect(story.length).toBe(25);
+    expect(story.some((b) => b.name.includes("Courtney"))).toBe(false);
+    // Rival variants share one order per fight; the Space Center pair
+    // shares its order too (one double battle with Steven).
+    const rival110 = story.filter((b) => b.id.startsWith("rival-route-110"));
+    expect(rival110.map((b) => b.order)).toEqual([25, 25, 25]);
+    expect(rival110.find((b) => b.id.endsWith("treecko"))!.team).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ species: "combusken", level: 20 }),
+      ]),
+    );
+    // Story bosses must not leak into checkpoints or level caps:
+    // bossSegments and the gym list are driven by bosses only.
+    const { segments } = bossSegments(pack, sortedAreas(pack));
+    expect(segments.map((s) => s.boss.id)).not.toContain("archie-seafloor");
+    expect(pack.bosses.some((b) => b.id === "archie-seafloor")).toBe(false);
+    // Spot pins: Mt. Chimney leaders, Seafloor leaders, Lilycove rival ace.
+    const byId = Object.fromEntries(story.map((b) => [b.id, b]));
+    expect(byId["maxie-mt-chimney"].levelCap).toBe(25);
+    expect(byId["archie-seafloor"].team).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ species: "sharpedo", level: 43 }),
+      ]),
+    );
+    expect(byId["rival-lilycove-mudkip"].team).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ species: "grovyle", level: 34 }),
+      ]),
+    );
+    // Story order interleaves with gym order (Route 103 before Roxanne,
+    // Seafloor bosses between Tate & Liza and Juan).
+    expect(byId["rival-route-103-treecko"].order).toBeLessThan(10);
+    expect(byId["archie-seafloor"].order).toBeGreaterThan(70);
+    expect(byId["archie-seafloor"].order).toBeLessThan(80);
+  });
+
   it("x-y opens with the Aquacorde starter and segments by the story", () => {
     const pack = getPack("x-y");
     expect(pack).toBeDefined();
