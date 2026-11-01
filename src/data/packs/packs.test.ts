@@ -166,7 +166,7 @@ describe("shipped game packs", () => {
     expect(byId["archie-seafloor"].order).toBeLessThan(80);
   });
 
-  it("emerald schematic map covers every path area and story boss", () => {
+  it("emerald in-game map covers every path area and story boss", () => {
     const pack = getPack("emerald")!;
     const map = REGION_MAPS["emerald"];
     expect(map).toBeDefined();
@@ -178,12 +178,12 @@ describe("shipped game packs", () => {
     for (const sb of pack.storyBosses ?? []) expect(map.story[sb.id]).toBeDefined();
     expect(map.bosses["wattson"]).toBeDefined();
     expect(map.bosses["winona"]).toBeDefined();
-    // All points sit inside the 1000x700 viewBox.
+    // All points sit inside the 1028x636 viewBox (4x the 257x159 map).
     for (const pt of [...Object.values(map.areas), ...Object.values(map.bosses), ...Object.values(map.story)]) {
       expect(pt.x).toBeGreaterThanOrEqual(0);
-      expect(pt.x).toBeLessThanOrEqual(1000);
+      expect(pt.x).toBeLessThanOrEqual(1028);
       expect(pt.y).toBeGreaterThanOrEqual(0);
-      expect(pt.y).toBeLessThanOrEqual(700);
+      expect(pt.y).toBeLessThanOrEqual(636);
     }
   });
 

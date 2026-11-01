@@ -681,13 +681,14 @@ type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; ni
  * that get no timeline segment of their own.
  */
 /**
- * Schematic region map (pilot: Emerald only). The journey path runs
+ * In-game region map (pilot: Emerald only). The journey path runs
  * through areas in story order, coloured one colour per gym leg; gym
  * bosses are large rings, story bosses are diamonds, logged areas are
  * filled, and the next unlogged area gets a white ring. The map is an
  * overview — logging still happens in the Timeline — so clicking a node
  * shows its detail below the map. Postgame trailing areas are not on
- * the path yet. Coordinates are hand-placed approximations, not to scale.
+ * the path yet. Town coordinates were measured from the in-game map
+ * itself; route coordinates sit along the map's yellow routes.
  */
 function MapTab({
   run, pack, species, onToggleBoss,
@@ -736,44 +737,22 @@ function MapTab({
   return (
     <section className="panel">
       <p className="muted">
-        Your journey through Hoenn, in story order. Each leg is coloured by the gym it leads to;
-        tap a node for its detail. Hand-drawn region outline, not the in-game map — postgame areas aren't on the path yet.
+        Your journey through Hoenn, in story order, on the actual in-game map. Each leg is coloured by the gym it leads to;
+        tap a node for its detail. Postgame areas aren't on the path yet.
       </p>
-      <svg viewBox="0 0 1000 700" width="100%" style={{ background: "#0a1a26", borderRadius: 8, position: "relative", zIndex: 2 }}>
-        {/* Hand-drawn Hoenn outline (sea + mainland + islands) so the journey
-            reads as a region, not lines on black. Not the in-game map. */}
-        <rect x={0} y={0} width={1000} height={700} fill="#0a1a26" />
-        <polygon
-          points="140,300 170,220 260,160 420,170 560,190 640,240 700,320 730,430 680,480 580,470 480,480 400,520 340,580 260,600 180,560 140,480 140,380"
-          fill="#1e3d2b" stroke="#335c3f" strokeWidth={1.5}
-        />
-        {[
-          { cx: 90, cy: 530, rx: 55, ry: 45 },
-          { cx: 880, cy: 430, rx: 50, ry: 28 },
-          { cx: 880, cy: 375, rx: 45, ry: 28 },
-          { cx: 840, cy: 380, rx: 35, ry: 25 },
-          { cx: 700, cy: 540, rx: 40, ry: 28 },
-          { cx: 400, cy: 500, rx: 35, ry: 25 },
-          { cx: 420, cy: 620, rx: 40, ry: 18 },
-        ].map((e, i) => (
-          <ellipse key={i} cx={e.cx} cy={e.cy} rx={e.rx} ry={e.ry} fill="#1e3d2b" stroke="#335c3f" strokeWidth={1.5} />
-        ))}
-        <circle cx={720} cy={600} r={35} fill="#1e3d2b" stroke="#335c3f" strokeWidth={1.5} />
+      <svg viewBox="0 0 1028 636" width="100%" style={{ background: "#0a1a26", borderRadius: 8, position: "relative", zIndex: 2 }}>
+        <image href="/hoenn-map.png" x={0} y={0} width={1028} height={636} preserveAspectRatio="none" style={{ imageRendering: "pixelated" }} />
         {legs.map((leg) => {
           const pts = leg.areas.map((a) => map.areas[a.id]).filter(Boolean);
           const bp = bossPoint(leg.boss, leg);
           if (bp && (pts.length === 0 || pts[pts.length - 1] !== bp)) pts.push(bp);
           if (pts.length < 2) return null;
+          const points = pts.map((p) => `${p.x},${p.y}`).join(" ");
           return (
-            <polyline
-              key={leg.boss.id}
-              points={pts.map((p) => `${p.x},${p.y}`).join(" ")}
-              fill="none"
-              stroke={leg.color}
-              strokeWidth={3}
-              strokeLinejoin="round"
-              opacity={0.85}
-            />
+            <g key={leg.boss.id}>
+              <polyline points={points} fill="none" stroke="#000" strokeWidth={8} strokeLinejoin="round" opacity={0.55} />
+              <polyline points={points} fill="none" stroke={leg.color} strokeWidth={3.5} strokeLinejoin="round" opacity={0.95} />
+            </g>
           );
         })}
         {pathAreas.map((a) => {
@@ -791,7 +770,7 @@ function MapTab({
                 <title>{a.name}</title>
               </circle>
               {isCity(a) && !hasBossHere && (
-                <text x={pt.x + 12} y={pt.y + 4} fill="#ddd" fontSize={11} style={{ paintOrder: "stroke", stroke: "#0a1a26", strokeWidth: 3 }}>{a.name}</text>
+                <text x={pt.x + 12} y={pt.y + 4} fill="#111" fontSize={12} fontWeight="bold" style={{ paintOrder: "stroke", stroke: "#fff", strokeWidth: 3 }}>{a.name}</text>
               )}
             </g>
           );
@@ -806,7 +785,7 @@ function MapTab({
                 <title>{leg.boss.name}</title>
               </circle>
               <text x={pt.x} y={pt.y + 4} textAnchor="middle" fill={defeated ? "#000" : "#fff"} fontSize={11} fontWeight="bold">★</text>
-              <text x={pt.x + 18} y={pt.y + 4} fill="#ddd" fontSize={11} style={{ paintOrder: "stroke", stroke: "#0a1a26", strokeWidth: 3 }}>{leg.boss.name}</text>
+              <text x={pt.x + 18} y={pt.y + 4} fill="#111" fontSize={12} fontWeight="bold" style={{ paintOrder: "stroke", stroke: "#fff", strokeWidth: 3 }}>{leg.boss.name}</text>
             </g>
           );
         })}
@@ -824,6 +803,10 @@ function MapTab({
       <p className="muted">
         ● filled = logged · ○ hollow = not logged yet · white ring = next area · ★ = gym boss · ◆ = story boss
         {nextArea ? ` · Next: ${nextArea.name}` : ""}
+      </p>
+      <p className="muted">
+        Hoenn map: screenshot from Pokémon Emerald, © Nintendo / Game Freak / The Pokémon Company,
+        used here under a fair-use claim for this personal, non-commercial run tracker (map via Bulbapedia).
       </p>
       {selected?.kind === "area" && (() => {
         const entry = logged(selected.area.id);
