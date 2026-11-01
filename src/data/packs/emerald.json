@@ -4775,7 +4775,7 @@
  "storyBosses": [
   {
    "id": "rival-route-103-treecko",
-   "name": "Rival May/Brendan (you chose Treecko)",
+   "name": "Rival May/Brendan",
    "location": "Route 103",
    "order": 5,
    "levelCap": 5,
@@ -4792,7 +4792,7 @@
   },
   {
    "id": "rival-route-103-torchic",
-   "name": "Rival May/Brendan (you chose Torchic)",
+   "name": "Rival May/Brendan",
    "location": "Route 103",
    "order": 5,
    "levelCap": 5,
@@ -4809,7 +4809,7 @@
   },
   {
    "id": "rival-route-103-mudkip",
-   "name": "Rival May/Brendan (you chose Mudkip)",
+   "name": "Rival May/Brendan",
    "location": "Route 103",
    "order": 5,
    "levelCap": 5,
@@ -4826,7 +4826,7 @@
   },
   {
    "id": "rival-rustboro-treecko",
-   "name": "Rival May/Brendan (you chose Treecko)",
+   "name": "Rival May/Brendan",
    "location": "Rustboro City",
    "order": 15,
    "levelCap": 15,
@@ -4850,7 +4850,7 @@
   },
   {
    "id": "rival-rustboro-torchic",
-   "name": "Rival May/Brendan (you chose Torchic)",
+   "name": "Rival May/Brendan",
    "location": "Rustboro City",
    "order": 15,
    "levelCap": 15,
@@ -4874,7 +4874,7 @@
   },
   {
    "id": "rival-rustboro-mudkip",
-   "name": "Rival May/Brendan (you chose Mudkip)",
+   "name": "Rival May/Brendan",
    "location": "Rustboro City",
    "order": 15,
    "levelCap": 15,
@@ -4898,7 +4898,7 @@
   },
   {
    "id": "rival-route-110-treecko",
-   "name": "Rival May/Brendan (you chose Treecko)",
+   "name": "Rival May/Brendan",
    "location": "Route 110",
    "order": 25,
    "levelCap": 20,
@@ -4929,7 +4929,7 @@
   },
   {
    "id": "rival-route-110-torchic",
-   "name": "Rival May/Brendan (you chose Torchic)",
+   "name": "Rival May/Brendan",
    "location": "Route 110",
    "order": 25,
    "levelCap": 20,
@@ -4960,7 +4960,7 @@
   },
   {
    "id": "rival-route-110-mudkip",
-   "name": "Rival May/Brendan (you chose Mudkip)",
+   "name": "Rival May/Brendan",
    "location": "Route 110",
    "order": 25,
    "levelCap": 20,
@@ -5081,7 +5081,7 @@
   },
   {
    "id": "rival-route-119-treecko",
-   "name": "Rival May/Brendan (you chose Treecko)",
+   "name": "Rival May/Brendan",
    "location": "Route 119",
    "order": 56,
    "levelCap": 31,
@@ -5112,7 +5112,7 @@
   },
   {
    "id": "rival-route-119-torchic",
-   "name": "Rival May/Brendan (you chose Torchic)",
+   "name": "Rival May/Brendan",
    "location": "Route 119",
    "order": 56,
    "levelCap": 31,
@@ -5143,7 +5143,7 @@
   },
   {
    "id": "rival-route-119-mudkip",
-   "name": "Rival May/Brendan (you chose Mudkip)",
+   "name": "Rival May/Brendan",
    "location": "Route 119",
    "order": 56,
    "levelCap": 31,
@@ -5174,7 +5174,7 @@
   },
   {
    "id": "rival-lilycove-treecko",
-   "name": "Rival May/Brendan (you chose Treecko)",
+   "name": "Rival May/Brendan",
    "location": "Lilycove City",
    "order": 63,
    "levelCap": 34,
@@ -5212,7 +5212,7 @@
   },
   {
    "id": "rival-lilycove-torchic",
-   "name": "Rival May/Brendan (you chose Torchic)",
+   "name": "Rival May/Brendan",
    "location": "Lilycove City",
    "order": 63,
    "levelCap": 34,
@@ -5250,7 +5250,7 @@
   },
   {
    "id": "rival-lilycove-mudkip",
-   "name": "Rival May/Brendan (you chose Mudkip)",
+   "name": "Rival May/Brendan",
    "location": "Lilycove City",
    "order": 63,
    "levelCap": 34,
