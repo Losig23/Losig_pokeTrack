@@ -714,14 +714,16 @@ type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; ni
  * In-game region map (pilot: Emerald only), kept deliberately plain:
  * the default PokéNav map with no markers on it at all — no nodes, no
  * boss stars, no story diamonds, no labels. The only overlay is one
- * clean line showing where you are in your run: at most two route
- * segments around the next unlogged area (the route you just came
- * from and the one you're headed to next), in that leg's colour.
- * It moves as you log routes in the Timeline, which is where all
- * logging and boss marking still happens. Postgame trailing areas
- * aren't on the path yet. Town coordinates were measured from the
- * in-game map itself; route coordinates sit along the map's yellow
- * routes.
+ * clean line: the rest of your current leg, from the last route you
+ * logged in it to the next gym, in that leg's colour. It is driven by
+ * gym progression (last gym beaten → next gym to fight), never by the
+ * first unlogged area — towns carry gift/fossil entries players never
+ * log, so "first unlogged" would pin the line to the start of the
+ * game. It moves as you log routes and beat bosses in the Timeline,
+ * which is where all logging and boss marking still happens.
+ * Postgame trailing areas aren't on the path yet. Town coordinates
+ * were measured from the in-game map itself; route coordinates sit
+ * along the map's yellow routes.
  */
 function MapTab({
   run, pack,
@@ -742,43 +744,55 @@ function MapTab({
     if (last && last.boss.order === seg.boss.order) last.areas.push(...seg.areas);
     else legs.push({ boss: seg.boss, areas: [...seg.areas], color: SEGMENT_COLORS[legs.length % SEGMENT_COLORS.length] });
   }
-  const legOfArea = new Map<string, string>();
-  legs.forEach((leg) => leg.areas.forEach((a) => legOfArea.set(a.id, leg.color)));
   const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
-  const pathAreas = legs.flatMap((leg) => leg.areas);
-  const nextArea = pathAreas.find((a) => !logged(a.id));
-  const nextBoss = sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id));
-  // The highlight: at most two segments around the next unlogged area
-  // (one behind, one ahead), or the final segment once everything is
-  // logged. Straight node-to-node line, no tracing, no markers.
-  const stops = pathAreas
-    .map((a) => ({ area: a, pt: map.areas[a.id] }))
-    .filter((s): s is { area: Area; pt: { x: number; y: number } } => Boolean(s.pt));
-  let highlight: { area: Area; pt: { x: number; y: number } }[] = [];
-  if (stops.length >= 2) {
-    const idx = nextArea ? stops.findIndex((s) => s.area.id === nextArea.id) : stops.length - 1;
-    const at = idx < 0 ? stops.length - 1 : idx;
-    const start = Math.max(0, Math.min(at - 1, stops.length - 2));
-    highlight = stops.slice(start, start + 3);
+  // The highlight is driven by gym progression, NOT by the first
+  // unlogged area: towns like Littleroot carry gift/fossil entries in
+  // the pack data that players never log, so "first unlogged" sticks
+  // at the start of the game forever and the line points backwards.
+  // Current leg = the first leg whose boss (by order, so variant
+  // groups count as one) is still undefeated, else the last leg.
+  // The line runs from the last route you logged in that leg (or the
+  // leg's first area, if you've logged nothing in it yet) through the
+  // rest of the leg to the next gym — one clean straight line, no
+  // tracing, no markers.
+  const legDone = (leg: { boss: Boss }) =>
+    sortedBosses(pack).some((b) => b.order === leg.boss.order && run.defeatedBossIds.includes(b.id));
+  let currentLeg = legs.findIndex((leg) => !legDone(leg));
+  if (currentLeg < 0) currentLeg = legs.length - 1;
+  const leg = legs[currentLeg];
+  const bossPoint = leg && map.bosses[leg.boss.id]
+    ? map.bosses[leg.boss.id]
+    : undefined;
+  let highlight: { x: number; y: number }[] = [];
+  let anchorName = "";
+  if (leg) {
+    const stops = leg.areas
+      .map((a) => ({ area: a, pt: map.areas[a.id] }))
+      .filter((s): s is { area: Area; pt: { x: number; y: number } } => Boolean(s.pt));
+    let start = 0;
+    for (let i = 0; i < stops.length; i++) {
+      if (logged(stops[i].area.id)) start = i;
+    }
+    anchorName = stops[start]?.area.name ?? "";
+    highlight = stops.slice(start).map((s) => s.pt);
+    const last = highlight[highlight.length - 1];
+    if (bossPoint && (!last || last !== bossPoint)) highlight.push(bossPoint);
   }
-  const color = highlight.length > 0 ? (legOfArea.get(highlight[0].area.id) ?? "#f472b6") : "#f472b6";
-  const caption = nextArea
-    ? `Next up: ${nextArea.name}${nextBoss ? ` — on the way to ${nextBoss.name}` : ""}`
-    : nextBoss
-      ? `All routes logged — next up: ${nextBoss.name}`
-      : "Journey complete — every route logged and every boss beaten.";
+  const caption = leg
+    ? `From ${anchorName} toward ${leg.boss.name}`
+    : "No map path for this game yet.";
   return (
     <section className="panel">
       <p className="muted">
-        The plain in-game Hoenn map. The line is where you are in your run — the route you just came from and the
-        one you&apos;re headed to next. Log routes in the Timeline; the line moves as you do.
+        The plain in-game Hoenn map. The line is the rest of your current leg — from the last route you logged
+        to the next gym. Log routes in the Timeline; the line moves as you do.
       </p>
       <svg viewBox="0 0 1028 636" width="100%" style={{ background: "#0a1a26", borderRadius: 8, position: "relative", zIndex: 2 }}>
         <image href="/hoenn-map.png" x={0} y={0} width={1028} height={636} preserveAspectRatio="none" style={{ imageRendering: "pixelated" }} />
-        {highlight.length >= 2 && (
+        {leg && highlight.length >= 2 && (
           <polyline
-            points={highlight.map((s) => `${s.pt.x},${s.pt.y}`).join(" ")}
-            fill="none" stroke={color} strokeWidth={6}
+            points={highlight.map((s) => `${s.x},${s.y}`).join(" ")}
+            fill="none" stroke={leg.color} strokeWidth={6}
             strokeLinecap="round" strokeLinejoin="round" opacity={0.95}
           />
         )}
