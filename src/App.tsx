@@ -12,6 +12,7 @@ import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
 import { buildPrepReport, type PrepCandidate } from "./engine/prep";
 import { displayName, fetchEvolutions, useMoveTypes, useSpeciesData } from "./data/pokemon";
 import { REGION_MAPS, SEGMENT_COLORS } from "./data/maps";
+import { MAP_PATHS } from "./data/mapPaths";
 import { HOME_THEME, themeForPack, type PackTheme } from "./data/themes";
 import type { EvolutionOption } from "./engine/evolution";
 import { exportRunsJson, parseRunsJson, useRuns } from "./store";
@@ -711,14 +712,19 @@ type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; ni
  * that get no timeline segment of their own.
  */
 /**
- * In-game region map (pilot: Emerald only). The journey path runs
- * through areas in story order, coloured one colour per gym leg; gym
- * bosses are large rings, story bosses are diamonds, logged areas are
- * filled, and the next unlogged area gets a white ring. The map is an
- * overview — logging still happens in the Timeline — so clicking a node
- * shows its detail below the map. Postgame trailing areas are not on
- * the path yet. Town coordinates were measured from the in-game map
- * itself; route coordinates sit along the map's yellow routes.
+ * In-game region map (pilot: Emerald only). Each gym leg colours the
+ * actual yellow routes it travels: consecutive nodes joined by a
+ * traced path (scripts/trace_map_paths.py, following the map's yellow
+ * route bands) render as a solid overlay in the leg's colour, while
+ * pairs with no road on the map — surf crossings and backtrack jumps —
+ * render as a thin dashed connector instead of a straight line cutting
+ * across land. Gym bosses are large rings, story bosses are diamonds,
+ * logged areas are filled, and the next unlogged area gets a white
+ * ring. The map is an overview — logging still happens in the Timeline
+ * — so clicking a node shows its detail below the map. Postgame
+ * trailing areas are not on the path yet. Town coordinates were
+ * measured from the in-game map itself; route coordinates sit along
+ * the map's yellow routes.
  */
 function MapTab({
   run, pack, species, onToggleBoss,
@@ -773,15 +779,41 @@ function MapTab({
       <svg viewBox="0 0 1028 636" width="100%" style={{ background: "#0a1a26", borderRadius: 8, position: "relative", zIndex: 2 }}>
         <image href="/hoenn-map.png" x={0} y={0} width={1028} height={636} preserveAspectRatio="none" style={{ imageRendering: "pixelated" }} />
         {legs.map((leg) => {
-          const pts = leg.areas.map((a) => map.areas[a.id]).filter(Boolean);
+          // One subpath per consecutive pair: a traced road overlay
+          // where the map has a yellow route between the nodes, else a
+          // dashed connector (surf / backtrack — no road to overlay).
+          const stops: { id: string; pt: { x: number; y: number } }[] = [];
+          for (const a of leg.areas) {
+            const pt = map.areas[a.id];
+            if (pt) stops.push({ id: a.id, pt });
+          }
           const bp = bossPoint(leg.boss, leg);
-          if (bp && (pts.length === 0 || pts[pts.length - 1] !== bp)) pts.push(bp);
-          if (pts.length < 2) return null;
-          const points = pts.map((p) => `${p.x},${p.y}`).join(" ");
+          if (bp && (stops.length === 0 || stops[stops.length - 1].pt !== bp)) {
+            stops.push({ id: leg.boss.id, pt: bp });
+          }
+          if (stops.length < 2) return null;
           return (
             <g key={leg.boss.id}>
-              <polyline points={points} fill="none" stroke="#000" strokeWidth={8} strokeLinejoin="round" opacity={0.55} />
-              <polyline points={points} fill="none" stroke={leg.color} strokeWidth={3.5} strokeLinejoin="round" opacity={0.95} />
+              {stops.slice(0, -1).map((from, i) => {
+                const to = stops[i + 1];
+                const traced = MAP_PATHS[`${from.id}__${to.id}`];
+                if (traced) {
+                  const points = traced.map(([x, y]) => `${x},${y}`).join(" ");
+                  return (
+                    <g key={`${from.id}-${to.id}`}>
+                      <polyline points={points} fill="none" stroke="#000" strokeWidth={8} strokeLinejoin="round" opacity={0.55} />
+                      <polyline points={points} fill="none" stroke={leg.color} strokeWidth={3.5} strokeLinejoin="round" opacity={0.95} />
+                    </g>
+                  );
+                }
+                return (
+                  <line
+                    key={`${from.id}-${to.id}`}
+                    x1={from.pt.x} y1={from.pt.y} x2={to.pt.x} y2={to.pt.y}
+                    stroke={leg.color} strokeWidth={2} strokeDasharray="6 5" opacity={0.7}
+                  />
+                );
+              })}
             </g>
           );
         })}
@@ -831,7 +863,8 @@ function MapTab({
         })}
       </svg>
       <p className="muted">
-        ● filled = logged · ○ hollow = not logged yet · white ring = next area · ★ = gym boss · ◆ = story boss
+        ● filled = logged · ○ hollow = not logged yet · white ring = next area · ★ = gym boss · ◆ = story boss ·
+        solid line = the leg's colour over the map's own route · dashed = surf or backtrack, no road on the map
         {nextArea ? ` · Next: ${nextArea.name}` : ""}
       </p>
       <p className="muted">

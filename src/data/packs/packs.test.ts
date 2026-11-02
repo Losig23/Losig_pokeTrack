@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { PACKS, getPack } from "./index";
 import { sortedAreas, validatePack, visibleStoryBosses } from "../../engine/pack";
 import { REGION_MAPS } from "../maps";
+import { MAP_PATHS } from "../mapPaths";
 import { bossSegments } from "../../engine/run";
 
 // Every shipped pack must satisfy the engine's structural rules.
@@ -193,6 +194,37 @@ describe("shipped game packs", () => {
     const fallbacks = new Set(["mtchimney", "weatherinstitute", "mauvillecity", "mossdeepspacecenter"]);
     for (const sb of pack.storyBosses ?? []) {
       expect(areaNames.has(norm(sb.location)) || fallbacks.has(norm(sb.location))).toBe(true);
+    }
+  });
+
+  it("emerald traced map paths stay in bounds and touch their nodes", () => {
+    const map = REGION_MAPS["emerald"]!;
+    const pointOf = (id: string) => map.areas[id] ?? map.bosses[id];
+    expect(Object.keys(MAP_PATHS).length).toBeGreaterThan(0);
+    for (const [key, pts] of Object.entries(MAP_PATHS)) {
+      const [from, to] = key.split("__");
+      expect(pts.length).toBeGreaterThanOrEqual(2);
+      for (const [x, y] of pts) {
+        expect(x).toBeGreaterThanOrEqual(0);
+        expect(x).toBeLessThanOrEqual(1028);
+        expect(y).toBeGreaterThanOrEqual(0);
+        expect(y).toBeLessThanOrEqual(636);
+      }
+      // Paths are bookended with their node coords (up to the 257-scale
+      // rounding in the generator, ±4px in the viewBox).
+      const a = pointOf(from);
+      const b = pointOf(to);
+      expect(Math.abs(pts[0][0] - a.x)).toBeLessThanOrEqual(4);
+      expect(Math.abs(pts[0][1] - a.y)).toBeLessThanOrEqual(4);
+      expect(Math.abs(pts[pts.length - 1][0] - b.x)).toBeLessThanOrEqual(4);
+      expect(Math.abs(pts[pts.length - 1][1] - b.y)).toBeLessThanOrEqual(4);
+    }
+    // The all-land opening leg must be fully traced, not dashed.
+    const pack = getPack("emerald")!;
+    const { segments } = bossSegments(pack, sortedAreas(pack));
+    const rox = segments.find((s) => s.boss.id === "roxanne")!;
+    for (let i = 0; i < rox.areas.length - 1; i++) {
+      expect(MAP_PATHS[`${rox.areas[i].id}__${rox.areas[i + 1].id}`]).toBeDefined();
     }
   });
 
