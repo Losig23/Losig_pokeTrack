@@ -12,7 +12,6 @@ import { NATURES, STAT_KEYS, STAT_LABELS, ivRange } from "./engine/iv";
 import { buildPrepReport, type PrepCandidate } from "./engine/prep";
 import { displayName, fetchEvolutions, useMoveTypes, useSpeciesData } from "./data/pokemon";
 import { REGION_MAPS, SEGMENT_COLORS } from "./data/maps";
-import { MAP_PATHS } from "./data/mapPaths";
 import { HOME_THEME, themeForPack, type PackTheme } from "./data/themes";
 import type { EvolutionOption } from "./engine/evolution";
 import { exportRunsJson, parseRunsJson, useRuns } from "./store";
@@ -712,25 +711,20 @@ type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; ni
  * that get no timeline segment of their own.
  */
 /**
- * In-game region map (pilot: Emerald only). Only the leg you're on is
- * highlighted — the stretch from the last gym you beat to the next gym
- * to fight. Its traced roads (scripts/trace_map_paths.py, following
- * the map's yellow route bands, strongly simplified so each run is a
- * straight rectangular segment sitting directly on the route instead
- * of a pixel wiggle) render as a wide rectangular highlight band in
- * the leg's colour, slightly wider than the map's own route bands;
- * other legs fade to a whisper. Pairs with no road on the map — surf
- * crossings and backtrack jumps — render as a thin dashed connector
- * instead of a straight line cutting across land. Gym bosses are large
- * rings, story bosses are diamonds, logged areas are filled, and the
- * next unlogged area gets a white ring. The map is an overview —
- * logging still happens in the Timeline — so clicking a node shows its
- * detail below the map. Postgame trailing areas are not on the path
- * yet. Town coordinates were measured from the in-game map itself;
- * route coordinates sit along the map's yellow routes.
+ * In-game region map (pilot: Emerald only), kept deliberately plain:
+ * the default PokéNav map with no markers on it at all — no nodes, no
+ * boss stars, no story diamonds, no labels. The only overlay is one
+ * clean line showing where you are in your run: at most two route
+ * segments around the next unlogged area (the route you just came
+ * from and the one you're headed to next), in that leg's colour.
+ * It moves as you log routes in the Timeline, which is where all
+ * logging and boss marking still happens. Postgame trailing areas
+ * aren't on the path yet. Town coordinates were measured from the
+ * in-game map itself; route coordinates sit along the map's yellow
+ * routes.
  */
 function MapTab({
-  run, pack, species, onToggleBoss,
+  run, pack,
 }: {
   run: Run;
   pack: GamePack;
@@ -738,12 +732,6 @@ function MapTab({
   onToggleBoss: (bossId: string) => void;
 }) {
   const map = REGION_MAPS[pack.id];
-  const [selected, setSelected] = useState<
-    | { kind: "area"; area: Area }
-    | { kind: "boss"; boss: Boss }
-    | { kind: "story"; bosses: Boss[] }
-    | null
-  >(null);
   if (!map) return <section className="panel"><p className="muted">No map for this game yet.</p></section>;
   const { segments } = bossSegments(pack, sortedAreas(pack));
   // One path leg per gym checkpoint (variants sharing an order collapse).
@@ -759,186 +747,47 @@ function MapTab({
   const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
   const pathAreas = legs.flatMap((leg) => leg.areas);
   const nextArea = pathAreas.find((a) => !logged(a.id));
-  // Only the leg you're on gets the full highlight; the rest stay faint
-  // so the map reads clean. "Current" means the stretch from the last
-  // gym you beat to the next gym to fight: the first leg whose boss
-  // (by order, so variant groups count as one) is still undefeated;
-  // if every boss is beaten, the last leg.
-  const legDone = (leg: { boss: Boss }) =>
-    sortedBosses(pack).some((b) => b.order === leg.boss.order && run.defeatedBossIds.includes(b.id));
-  let currentLeg = legs.findIndex((leg) => !legDone(leg));
-  if (currentLeg < 0) currentLeg = legs.length - 1;
-  const bossPoint = (boss: Boss, leg: { areas: Area[] }) => {
-    if (map.bosses[boss.id]) return map.bosses[boss.id];
-    const last = leg.areas[leg.areas.length - 1];
-    return last ? map.areas[last.id] : undefined;
-  };
-  // Story bosses grouped by their map point (rival variants share one).
-  const storyGroups = new Map<string, Boss[]>();
-  for (const sb of visibleStoryBosses(pack, run.starter)) {
-    const pt = map.story[sb.id];
-    if (!pt) continue;
-    const key = `${pt.x},${pt.y}`;
-    storyGroups.set(key, [...(storyGroups.get(key) ?? []), sb]);
+  const nextBoss = sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id));
+  // The highlight: at most two segments around the next unlogged area
+  // (one behind, one ahead), or the final segment once everything is
+  // logged. Straight node-to-node line, no tracing, no markers.
+  const stops = pathAreas
+    .map((a) => ({ area: a, pt: map.areas[a.id] }))
+    .filter((s): s is { area: Area; pt: { x: number; y: number } } => Boolean(s.pt));
+  let highlight: { area: Area; pt: { x: number; y: number } }[] = [];
+  if (stops.length >= 2) {
+    const idx = nextArea ? stops.findIndex((s) => s.area.id === nextArea.id) : stops.length - 1;
+    const at = idx < 0 ? stops.length - 1 : idx;
+    const start = Math.max(0, Math.min(at - 1, stops.length - 2));
+    highlight = stops.slice(start, start + 3);
   }
-  const isCity = (a: Area) => /town|city/i.test(a.name);
+  const color = highlight.length > 0 ? (legOfArea.get(highlight[0].area.id) ?? "#f472b6") : "#f472b6";
+  const caption = nextArea
+    ? `Next up: ${nextArea.name}${nextBoss ? ` — on the way to ${nextBoss.name}` : ""}`
+    : nextBoss
+      ? `All routes logged — next up: ${nextBoss.name}`
+      : "Journey complete — every route logged and every boss beaten.";
   return (
     <section className="panel">
       <p className="muted">
-        Your journey through Hoenn, in story order, on the actual in-game map. Only the leg you're on is highlighted —
-        the wide band is its route in its colour; other legs stay faint. Tap a node for its detail. Postgame areas aren't on the path yet.
+        The plain in-game Hoenn map. The line is where you are in your run — the route you just came from and the
+        one you&apos;re headed to next. Log routes in the Timeline; the line moves as you do.
       </p>
       <svg viewBox="0 0 1028 636" width="100%" style={{ background: "#0a1a26", borderRadius: 8, position: "relative", zIndex: 2 }}>
         <image href="/hoenn-map.png" x={0} y={0} width={1028} height={636} preserveAspectRatio="none" style={{ imageRendering: "pixelated" }} />
-        {legs.map((leg, li) => {
-          // One subpath per consecutive pair: a traced road overlay
-          // where the map has a yellow route between the nodes, else a
-          // dashed connector (surf / backtrack — no road to overlay).
-          // The current leg's roads get a wide rectangular highlight
-          // band, slightly wider than the map's own yellow route bands
-          // (~32–56px in this viewBox), instead of a thin line; other
-          // legs fade to a whisper so only the leg you're on pops.
-          const isCurrent = li === currentLeg;
-          const stops: { id: string; pt: { x: number; y: number } }[] = [];
-          for (const a of leg.areas) {
-            const pt = map.areas[a.id];
-            if (pt) stops.push({ id: a.id, pt });
-          }
-          const bp = bossPoint(leg.boss, leg);
-          if (bp && (stops.length === 0 || stops[stops.length - 1].pt !== bp)) {
-            stops.push({ id: leg.boss.id, pt: bp });
-          }
-          if (stops.length < 2) return null;
-          return (
-            <g key={leg.boss.id}>
-              {stops.slice(0, -1).map((from, i) => {
-                const to = stops[i + 1];
-                const traced = MAP_PATHS[`${from.id}__${to.id}`];
-                if (traced) {
-                  const points = traced.map(([x, y]) => `${x},${y}`).join(" ");
-                  return isCurrent ? (
-                    <polyline
-                      key={`${from.id}-${to.id}`}
-                      points={points} fill="none" stroke={leg.color} strokeWidth={44}
-                      strokeLinecap="butt" strokeLinejoin="round" opacity={0.85}
-                    />
-                  ) : (
-                    <polyline
-                      key={`${from.id}-${to.id}`}
-                      points={points} fill="none" stroke={leg.color} strokeWidth={3}
-                      strokeLinejoin="round" opacity={0.18}
-                    />
-                  );
-                }
-                return (
-                  <line
-                    key={`${from.id}-${to.id}`}
-                    x1={from.pt.x} y1={from.pt.y} x2={to.pt.x} y2={to.pt.y}
-                    stroke={leg.color} strokeWidth={isCurrent ? 2.5 : 2} strokeDasharray="6 5" opacity={isCurrent ? 0.8 : 0.12}
-                  />
-                );
-              })}
-            </g>
-          );
-        })}
-        {pathAreas.map((a) => {
-          const pt = map.areas[a.id];
-          if (!pt) return null;
-          const color = legOfArea.get(a.id) ?? "#888";
-          const isNext = nextArea?.id === a.id;
-          const entry = logged(a.id);
-          // Skip the city label where a gym star sits on the same point —
-          // the boss label below names the place instead.
-          const hasBossHere = legs.some((leg) => !map.bosses[leg.boss.id] && leg.areas[leg.areas.length - 1]?.id === a.id);
-          return (
-            <g key={a.id} onClick={() => setSelected({ kind: "area", area: a })} style={{ cursor: "pointer" }}>
-              <circle cx={pt.x} cy={pt.y} r={isNext ? 11 : 8} fill={entry ? color : "#1a1a1a"} stroke={isNext ? "#fff" : color} strokeWidth={2}>
-                <title>{a.name}</title>
-              </circle>
-              {isCity(a) && !hasBossHere && (
-                <text x={pt.x + 12} y={pt.y + 4} fill="#111" fontSize={12} fontWeight="bold" style={{ paintOrder: "stroke", stroke: "#fff", strokeWidth: 3 }}>{a.name}</text>
-              )}
-            </g>
-          );
-        })}
-        {legs.map((leg) => {
-          const pt = bossPoint(leg.boss, leg);
-          if (!pt) return null;
-          const defeated = run.defeatedBossIds.includes(leg.boss.id);
-          return (
-            <g key={`boss-${leg.boss.id}`} onClick={() => setSelected({ kind: "boss", boss: leg.boss })} style={{ cursor: "pointer" }}>
-              <circle cx={pt.x} cy={pt.y} r={15} fill={defeated ? leg.color : "#000"} stroke={leg.color} strokeWidth={3}>
-                <title>{leg.boss.name}</title>
-              </circle>
-              <text x={pt.x} y={pt.y + 4} textAnchor="middle" fill={defeated ? "#000" : "#fff"} fontSize={11} fontWeight="bold">★</text>
-              <text x={pt.x + 18} y={pt.y + 4} fill="#111" fontSize={12} fontWeight="bold" style={{ paintOrder: "stroke", stroke: "#fff", strokeWidth: 3 }}>{leg.boss.name}</text>
-            </g>
-          );
-        })}
-        {[...storyGroups.entries()].map(([key, bosses]) => {
-          const [x, y] = key.split(",").map(Number);
-          return (
-            <g key={`story-${key}`} onClick={() => setSelected({ kind: "story", bosses })} style={{ cursor: "pointer" }}>
-              <rect x={x - 6} y={y - 6} width={12} height={12} transform={`rotate(45 ${x} ${y})`} fill="#facc15" stroke="#000" strokeWidth={1}>
-                <title>{bosses.map((b) => b.name).join(" / ")}</title>
-              </rect>
-            </g>
-          );
-        })}
+        {highlight.length >= 2 && (
+          <polyline
+            points={highlight.map((s) => `${s.pt.x},${s.pt.y}`).join(" ")}
+            fill="none" stroke={color} strokeWidth={6}
+            strokeLinecap="round" strokeLinejoin="round" opacity={0.95}
+          />
+        )}
       </svg>
-      <p className="muted">
-        ● filled = logged · ○ hollow = not logged yet · white ring = next area · ★ = gym boss · ◆ = story boss ·
-        wide band = current leg's route · faint line = other legs · dashed = surf or backtrack, no road on the map
-        {nextArea ? ` · Next: ${nextArea.name}` : ""}
-      </p>
+      <p className="muted">{caption}</p>
       <p className="muted">
         Hoenn map: screenshot from Pokémon Emerald, © Nintendo / Game Freak / The Pokémon Company,
         used here under a fair-use claim for this personal, non-commercial run tracker (map via Bulbapedia).
       </p>
-      {selected?.kind === "area" && (() => {
-        const entry = logged(selected.area.id);
-        return (
-          <div className="segment">
-            <strong>{selected.area.name}</strong>
-            <p className="muted">
-              {entry
-                ? `Logged: ${entry.species ? displayName(entry.species) : "no catch recorded"} (${entry.outcome})`
-                : "Not logged yet — log it in the Timeline."}
-              {" · "}Catchable here: {[...new Set(selected.area.encounters.map((e) => displayName(e.species)))].join(", ") || "—"}
-            </p>
-          </div>
-        );
-      })()}
-      {selected?.kind === "boss" && (
-        <div className="segment">
-          <div className="boss-card-head">
-            <BossPortrait boss={selected.boss} species={species} size={40} />
-            <strong>{selected.boss.name}</strong>
-            <span className="muted">{selected.boss.location} · Lv cap {selected.boss.levelCap}</span>
-            <button
-              className={`chip ${run.defeatedBossIds.includes(selected.boss.id) ? "done" : ""}`}
-              onClick={() => onToggleBoss(selected.boss.id)}
-            >
-              {run.defeatedBossIds.includes(selected.boss.id) ? "✓ Defeated" : "Mark defeated"}
-            </button>
-          </div>
-          <BossTeamGrid boss={selected.boss} species={species} />
-        </div>
-      )}
-      {selected?.kind === "story" && (
-        <div className="segment">
-          {selected.bosses.map((sb) => (
-            <StoryBossCard
-              key={sb.id}
-              boss={sb}
-              species={species}
-              defeated={run.defeatedBossIds.includes(sb.id)}
-              onToggleBoss={onToggleBoss}
-            />
-          ))}
-          <p className="muted">Story bosses don't affect checkpoints or level caps.</p>
-        </div>
-      )}
     </section>
   );
 }
