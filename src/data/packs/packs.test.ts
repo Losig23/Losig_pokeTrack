@@ -166,6 +166,20 @@ describe("shipped game packs", () => {
     expect(byId["archie-seafloor"].order).toBeLessThan(80);
   });
 
+  it("emerald winona segment ends at route 119, not lilycove", () => {
+    const pack = getPack("emerald")!;
+    const { segments } = bossSegments(pack, sortedAreas(pack));
+    const winona = segments.find((s) => s.boss.id === "winona")!;
+    const tate = segments.find((s) => s.boss.id === "tate-and-liza")!;
+    // Fortree is fought before Routes 120/121 and Lilycove: those belong
+    // to the Mossdeep leg, not to Winona's.
+    expect(winona.areas.map((a) => a.id)).toContain("hoenn-route-119");
+    expect(winona.areas.map((a) => a.id)).not.toContain("hoenn-route-120");
+    expect(winona.areas.map((a) => a.id)).not.toContain("lilycove-city");
+    expect(tate.areas[0].id).toBe("hoenn-route-120");
+    expect(tate.areas.map((a) => a.id)).toContain("lilycove-city");
+  });
+
   it("emerald in-game map covers every path area and story boss", () => {
     const pack = getPack("emerald")!;
     const map = REGION_MAPS["emerald"];

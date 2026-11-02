@@ -125,18 +125,18 @@ SEGMENT_CUTOFFS = {
     },
     "ruby-sapphire": {
         "roxanne": "rustboro-city", "brawly": "granite-cave", "wattson": "hoenn-route-117",
-        "flannery": "lavaridge-town", "norman": "lavaridge-town", "winona": "lilycove-city",
+        "flannery": "lavaridge-town", "norman": "lavaridge-town", "winona": "hoenn-route-119",
         "tate-and-liza": "mossdeep-city", "wallace": "cave-of-origin", "steven": "hoenn-victory-road",
     },
     "emerald": {
         "roxanne": "rustboro-city", "brawly": "granite-cave", "wattson": "hoenn-route-117",
-        "flannery": "lavaridge-town", "norman": "mirage-tower", "winona": "lilycove-city",
+        "flannery": "lavaridge-town", "norman": "mirage-tower", "winona": "hoenn-route-119",
         "tate-and-liza": "mossdeep-city", "juan": "sky-pillar", "wallace": "hoenn-victory-road",
     },
     "omega-ruby-alpha-sapphire": {
         "oras-roxanne": "petalburg-woods", "oras-brawly": "granite-cave",
         "oras-wattson": "verdanturf-town", "oras-flannery": "lavaridge-town",
-        "oras-norman": "lavaridge-town", "oras-winona": "lilycove-city",
+        "oras-norman": "lavaridge-town", "oras-winona": "hoenn-route-119",
         "oras-tate-and-liza": "mossdeep-city", "oras-wallace": "cave-of-origin", "oras-steven": "hoenn-victory-road",
     },
     "diamond-pearl": {
