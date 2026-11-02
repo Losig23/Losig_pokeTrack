@@ -620,6 +620,36 @@ function BossCard({
 }
 
 /**
+ * Story-boss card: looks like a gym leader's card (portrait, name,
+ * location, Mark defeated) but deliberately has NO level-cap badge and
+ * NO team grid — story bosses don't set caps, and their teams stay
+ * hidden. Marking one defeated only records it in defeatedBossIds;
+ * checkpoints, caps and progress ignore story bosses.
+ */
+function StoryBossCard({
+  boss, species, defeated, onToggleBoss,
+}: {
+  boss: Boss;
+  species: Record<string, SpeciesData>;
+  defeated: boolean;
+  onToggleBoss: (bossId: string) => void;
+}) {
+  return (
+    <div className={`boss-card ${defeated ? "defeated" : ""}`}>
+      <div className="boss-card-head">
+        <BossPortrait boss={boss} species={species} size={44} />
+        <strong>{boss.name}</strong>
+        <span className="muted">{boss.location}</span>
+        <span className="muted">Team hidden</span>
+        <button className={defeated ? "chip done" : "chip"} onClick={() => onToggleBoss(boss.id)}>
+          {defeated ? "Defeated ✓" : "Mark defeated"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/**
  * Picture-first species dropdown: native <select> popups can't render
  * images, so this is a custom menu where each option shows the Pokémon's
  * sprite next to its name.
@@ -841,13 +871,13 @@ function MapTab({
       {selected?.kind === "story" && (
         <div className="segment">
           {selected.bosses.map((sb) => (
-            <div key={sb.id}>
-              <div className="boss-card-head">
-                <span aria-hidden="true">◆</span>
-                <strong>{sb.name}</strong>
-                <span className="muted">{sb.location} · Highest Lv {Math.max(...sb.team.map((m) => m.level))} · Team hidden</span>
-              </div>
-            </div>
+            <StoryBossCard
+              key={sb.id}
+              boss={sb}
+              species={species}
+              defeated={run.defeatedBossIds.includes(sb.id)}
+              onToggleBoss={onToggleBoss}
+            />
           ))}
           <p className="muted">Story bosses don't affect checkpoints or level caps.</p>
         </div>
@@ -883,24 +913,23 @@ function StoryTab({
       <p className="muted">
         The story in order. Areas listed under a boss are the ones you can catch in before that fight;
         areas after the last boss are league and postgame. Story bosses (rivals, team leaders) don't
-        affect checkpoints or level caps, and their teams are hidden.
+        affect checkpoints or level caps, and their teams are hidden. You can still mark them defeated, like gym bosses — with no cap badge.
       </p>
       {items.map((item) => {
         if (item.story) {
           return (
             <div key={`story-${item.order}`} className="segment">
-              <div className="boss-card-head">
-                <strong>Story · {item.story[0].location}</strong>
-                <span className="muted">Highest Lv {Math.max(...item.story.flatMap((b) => b.team.map((m) => m.level)))}</span>
+              <div className="segment-head">
+                <span>◆ Story · {item.story[0].location}</span>
               </div>
               {item.story.map((sb) => (
-                <div key={sb.id} style={{ marginTop: 8 }}>
-                  <div className="boss-card-head">
-                    <span aria-hidden="true">◆</span>
-                    <strong>{sb.name}</strong>
-                    <span className="muted">Team hidden</span>
-                  </div>
-                </div>
+                <StoryBossCard
+                  key={sb.id}
+                  boss={sb}
+                  species={species}
+                  defeated={run.defeatedBossIds.includes(sb.id)}
+                  onToggleBoss={onToggleBoss}
+                />
               ))}
             </div>
           );
@@ -990,17 +1019,16 @@ function TimelineTab({
   const storyMarker = (sg: { order: number; bosses: Boss[] }) => (
     <div key={`story-${sg.order}`} className="segment">
       <div className="segment-head">
-        <span>Story boss · {sg.bosses[0].location}</span>
-        <span className="muted">Highest Lv {Math.max(...sg.bosses.flatMap((b) => b.team.map((m) => m.level)))}</span>
+        <span>◆ Story boss · {sg.bosses[0].location}</span>
       </div>
       {sg.bosses.map((sb) => (
-        <div key={sb.id}>
-          <div className="boss-card-head">
-            <span aria-hidden="true">◆</span>
-            <strong>{sb.name}</strong>
-            <span className="muted">Team hidden</span>
-          </div>
-        </div>
+        <StoryBossCard
+          key={sb.id}
+          boss={sb}
+          species={species}
+          defeated={run.defeatedBossIds.includes(sb.id)}
+          onToggleBoss={onToggleBoss}
+        />
       ))}
     </div>
   );
