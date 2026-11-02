@@ -1233,11 +1233,56 @@ function TimelineTab({
       ) : nextUndefeated ? (
         <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
       ) : null}
-      {groups.length > 0 && storyGroups.filter((sg) => sg.order < groups[0].bosses[0].order).map(storyMarker)}
       {groups.map((g, gi) => {
         const folded = isFolded(g);
         const loggedCount = g.areas.filter((a) => logged(a.id)).length;
-        const nextOrder = gi + 1 < groups.length ? groups[gi + 1].bosses[0].order : Infinity;
+        const prevOrder = gi > 0 ? groups[gi - 1].bosses[0].order : -Infinity;
+        // Story bosses belonging to this leg, interleaved into its route
+        // list: routes you walk before the story fight sit above its card,
+        // routes after it sit below, so you never scroll back up to mark
+        // it defeated. The split point is the area matching the story
+        // boss's location (names normalised: "Hoenn Route 119" and
+        // "Route 119" match, "Team Aqua Hideout" and "Aqua Hideout
+        // (Lilycove)" match); locations with no encounter area fall back
+        // to a hand-set route, or to the top of the leg when the fight
+        // happens before the leg's first route (Rival in Rustboro, the
+        // Mossdeep Space Center double battle).
+        const normName = (s: string) =>
+          s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(hoenn|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+        const STORY_SPLIT_AFTER: Record<string, string | null> = {
+          mtchimney: "hoenn-route-112",
+          weatherinstitute: "hoenn-route-119",
+          mauvillecity: "hoenn-route-110",
+          mossdeepspacecenter: null,
+        };
+        const groupStory = storyGroups
+          .filter((sg) => sg.order > prevOrder && sg.order < g.bosses[0].order)
+          .map((sg) => {
+            const loc = normName(sg.bosses[0].location);
+            let split = 0;
+            if (loc in STORY_SPLIT_AFTER) {
+              const after = STORY_SPLIT_AFTER[loc];
+              const idx = after === null ? -1 : g.areas.findIndex((a) => a.id === after);
+              split = idx >= 0 ? idx + 1 : 0;
+            } else {
+              const idx = g.areas.findIndex((a) => normName(a.name) === loc);
+              split = idx >= 0 ? idx + 1 : 0;
+            }
+            return { sg, split };
+          })
+          .sort((a, b) => a.split - b.split);
+        const interleaved = (() => {
+          const out: React.ReactNode[] = [];
+          let cursor = 0;
+          for (const { sg, split } of groupStory) {
+            const at = Math.max(cursor, split);
+            if (!folded) out.push(...g.areas.slice(cursor, at).map(areaRow));
+            out.push(storyMarker(sg));
+            cursor = at;
+          }
+          if (!folded) out.push(...g.areas.slice(cursor).map(areaRow));
+          return out;
+        })();
         return (
         <div key={gi} style={{ borderLeft: `3px solid ${SEGMENT_COLORS[gi % SEGMENT_COLORS.length]}`, paddingLeft: 12 }}>
         <div className="segment">
@@ -1253,7 +1298,7 @@ function TimelineTab({
               <span className="muted">{loggedCount}/{g.areas.length} logged</span>
             </div>
           )}
-          {!folded && g.areas.map(areaRow)}
+          {interleaved}
           {g.bosses.length === 1 ? (
             <BossCard
               boss={g.bosses[0]}
@@ -1277,11 +1322,12 @@ function TimelineTab({
             </div>
           )}
         </div>
-        {storyGroups.filter((sg) => sg.order > g.bosses[0].order && sg.order < nextOrder).map(storyMarker)}
         </div>
         );
       })}
-      {groups.length === 0 && storyGroups.map(storyMarker)}
+      {groups.length === 0
+        ? storyGroups.map(storyMarker)
+        : storyGroups.filter((sg) => sg.order > groups[groups.length - 1].bosses[0].order).map(storyMarker)}
       {segments.length === 0 && packAreas.map(areaRow)}
       {trailing.length > 0 && (
         <div className="segment">

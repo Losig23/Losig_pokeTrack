@@ -180,6 +180,22 @@ describe("shipped game packs", () => {
     expect(tate.areas.map((a) => a.id)).toContain("lilycove-city");
   });
 
+  it("emerald story boss locations resolve to a timeline split point", () => {
+    // The Timeline interleaves story bosses into a gym leg's route list
+    // at the area matching the boss's location (normalised the same way
+    // the UI does); locations with no encounter area must be in the
+    // UI's hand-set fallback list, otherwise the card lands at the top
+    // of the leg by default and the split is silently wrong.
+    const pack = getPack("emerald")!;
+    const norm = (s: string) =>
+      s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(hoenn|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+    const areaNames = new Set(sortedAreas(pack).map((a) => norm(a.name)));
+    const fallbacks = new Set(["mtchimney", "weatherinstitute", "mauvillecity", "mossdeepspacecenter"]);
+    for (const sb of pack.storyBosses ?? []) {
+      expect(areaNames.has(norm(sb.location)) || fallbacks.has(norm(sb.location))).toBe(true);
+    }
+  });
+
   it("emerald in-game map covers every path area and story boss", () => {
     const pack = getPack("emerald")!;
     const map = REGION_MAPS["emerald"];
