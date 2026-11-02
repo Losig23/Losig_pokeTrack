@@ -713,19 +713,21 @@ type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; ni
  */
 /**
  * In-game region map (pilot: Emerald only). Only the leg you're on is
- * highlighted: its traced roads (scripts/trace_map_paths.py, following
- * the map's yellow route bands) render as a wide rectangular highlight
- * band in the leg's colour, slightly wider than the map's own route
- * bands, instead of a thin line; other legs fade to a whisper. Pairs
- * with no road on the map — surf crossings and backtrack jumps —
- * render as a thin dashed connector instead of a straight line cutting
- * across land. Gym bosses are large rings, story bosses are diamonds,
- * logged areas are filled, and the next unlogged area gets a white
- * ring. The map is an overview — logging still happens in the Timeline
- * — so clicking a node shows its detail below the map. Postgame
- * trailing areas are not on the path yet. Town coordinates were
- * measured from the in-game map itself; route coordinates sit along
- * the map's yellow routes.
+ * highlighted — the stretch from the last gym you beat to the next gym
+ * to fight. Its traced roads (scripts/trace_map_paths.py, following
+ * the map's yellow route bands, strongly simplified so each run is a
+ * straight rectangular segment sitting directly on the route instead
+ * of a pixel wiggle) render as a wide rectangular highlight band in
+ * the leg's colour, slightly wider than the map's own route bands;
+ * other legs fade to a whisper. Pairs with no road on the map — surf
+ * crossings and backtrack jumps — render as a thin dashed connector
+ * instead of a straight line cutting across land. Gym bosses are large
+ * rings, story bosses are diamonds, logged areas are filled, and the
+ * next unlogged area gets a white ring. The map is an overview —
+ * logging still happens in the Timeline — so clicking a node shows its
+ * detail below the map. Postgame trailing areas are not on the path
+ * yet. Town coordinates were measured from the in-game map itself;
+ * route coordinates sit along the map's yellow routes.
  */
 function MapTab({
   run, pack, species, onToggleBoss,
@@ -758,14 +760,13 @@ function MapTab({
   const pathAreas = legs.flatMap((leg) => leg.areas);
   const nextArea = pathAreas.find((a) => !logged(a.id));
   // Only the leg you're on gets the full highlight; the rest stay faint
-  // so the map reads clean. Same "current" rule as the Timeline: the leg
-  // holding the next unlogged area, else the next undefeated boss's leg,
-  // else the last leg.
-  let currentLeg = nextArea ? legs.findIndex((leg) => leg.areas.some((a) => a.id === nextArea.id)) : -1;
-  if (currentLeg < 0) {
-    const nextBoss = sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id));
-    if (nextBoss) currentLeg = legs.findIndex((leg) => leg.boss.order === nextBoss.order);
-  }
+  // so the map reads clean. "Current" means the stretch from the last
+  // gym you beat to the next gym to fight: the first leg whose boss
+  // (by order, so variant groups count as one) is still undefeated;
+  // if every boss is beaten, the last leg.
+  const legDone = (leg: { boss: Boss }) =>
+    sortedBosses(pack).some((b) => b.order === leg.boss.order && run.defeatedBossIds.includes(b.id));
+  let currentLeg = legs.findIndex((leg) => !legDone(leg));
   if (currentLeg < 0) currentLeg = legs.length - 1;
   const bossPoint = (boss: Boss, leg: { areas: Area[] }) => {
     if (map.bosses[boss.id]) return map.bosses[boss.id];
@@ -819,7 +820,7 @@ function MapTab({
                     <polyline
                       key={`${from.id}-${to.id}`}
                       points={points} fill="none" stroke={leg.color} strokeWidth={44}
-                      strokeLinecap="butt" strokeLinejoin="round" opacity={0.55}
+                      strokeLinecap="butt" strokeLinejoin="round" opacity={0.85}
                     />
                   ) : (
                     <polyline
@@ -1290,11 +1291,14 @@ function TimelineTab({
         <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
       ) : null}
       {groups.length > 0 && (() => {
-        // "Current" = the leg holding the next unlogged area; if every
-        // encounter is logged, the leg of the next undefeated boss; if
-        // everything is done, the last leg.
-        let current = nextArea ? groups.findIndex((g) => g.areas.some((a) => a.id === nextArea.id)) : -1;
-        if (current < 0 && nextUndefeated) current = groups.findIndex((g) => g.bosses.some((b) => b.id === nextUndefeated.id));
+        // "Current" = the stretch from the last gym you beat to the next
+        // gym to fight: the first segment whose boss is still
+        // undefeated (a variant group counts as done when any of its
+        // bosses is beaten); if everything is beaten, the last segment.
+        // The button collapses all segments before it, not just up to
+        // the next unlogged route — beating a boss moves you on even
+        // if you haven't logged every route in its leg.
+        let current = groups.findIndex((g) => !g.bosses.some((b) => run.defeatedBossIds.includes(b.id)));
         if (current < 0) current = groups.length - 1;
         const collapseToCurrent = () => {
           const next: Record<string, boolean> = {};

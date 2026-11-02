@@ -202,7 +202,12 @@ def main():
             if straight > 20 and on_yellow < 0.6:
                 dashed.append(f"{fa} -> {tb} (yellow {on_yellow:.2f})")
                 continue
-            simp = simplify(path, 1.5)
+            # Strong simplification: the map's routes are straight
+            # rectangular runs, and the highlight band is 44px wide in
+            # the viewBox (11px at this scale), so corner cuts under
+            # ~5px here stay inside the band. eps 4 keeps real corners
+            # while collapsing BFS pixel wiggle into straight runs.
+            simp = simplify(path, 4.0)
             # Bookend with exact node coords so the line touches its nodes.
             full = [pa] + [p for p in simp if p != pa and p != pb] + [pb]
             out[f"{fa}__{tb}"] = [[x * 4, y * 4] for x, y in full]
