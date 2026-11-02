@@ -712,11 +712,12 @@ type AreaDraft = { species: string; outcome: EncounterOutcome; level: number; ni
  * that get no timeline segment of their own.
  */
 /**
- * In-game region map (pilot: Emerald only). Each gym leg colours the
- * actual yellow routes it travels: consecutive nodes joined by a
- * traced path (scripts/trace_map_paths.py, following the map's yellow
- * route bands) render as a solid overlay in the leg's colour, while
- * pairs with no road on the map — surf crossings and backtrack jumps —
+ * In-game region map (pilot: Emerald only). Only the leg you're on is
+ * highlighted: its traced roads (scripts/trace_map_paths.py, following
+ * the map's yellow route bands) render as a wide rectangular highlight
+ * band in the leg's colour, slightly wider than the map's own route
+ * bands, instead of a thin line; other legs fade to a whisper. Pairs
+ * with no road on the map — surf crossings and backtrack jumps —
  * render as a thin dashed connector instead of a straight line cutting
  * across land. Gym bosses are large rings, story bosses are diamonds,
  * logged areas are filled, and the next unlogged area gets a white
@@ -756,6 +757,16 @@ function MapTab({
   const logged = (areaId: string) => run.encounters.find((e) => e.areaId === areaId);
   const pathAreas = legs.flatMap((leg) => leg.areas);
   const nextArea = pathAreas.find((a) => !logged(a.id));
+  // Only the leg you're on gets the full highlight; the rest stay faint
+  // so the map reads clean. Same "current" rule as the Timeline: the leg
+  // holding the next unlogged area, else the next undefeated boss's leg,
+  // else the last leg.
+  let currentLeg = nextArea ? legs.findIndex((leg) => leg.areas.some((a) => a.id === nextArea.id)) : -1;
+  if (currentLeg < 0) {
+    const nextBoss = sortedBosses(pack).find((b) => !run.defeatedBossIds.includes(b.id));
+    if (nextBoss) currentLeg = legs.findIndex((leg) => leg.boss.order === nextBoss.order);
+  }
+  if (currentLeg < 0) currentLeg = legs.length - 1;
   const bossPoint = (boss: Boss, leg: { areas: Area[] }) => {
     if (map.bosses[boss.id]) return map.bosses[boss.id];
     const last = leg.areas[leg.areas.length - 1];
@@ -773,15 +784,20 @@ function MapTab({
   return (
     <section className="panel">
       <p className="muted">
-        Your journey through Hoenn, in story order, on the actual in-game map. Each leg is coloured by the gym it leads to;
-        tap a node for its detail. Postgame areas aren't on the path yet.
+        Your journey through Hoenn, in story order, on the actual in-game map. Only the leg you're on is highlighted —
+        the wide band is its route in its colour; other legs stay faint. Tap a node for its detail. Postgame areas aren't on the path yet.
       </p>
       <svg viewBox="0 0 1028 636" width="100%" style={{ background: "#0a1a26", borderRadius: 8, position: "relative", zIndex: 2 }}>
         <image href="/hoenn-map.png" x={0} y={0} width={1028} height={636} preserveAspectRatio="none" style={{ imageRendering: "pixelated" }} />
-        {legs.map((leg) => {
+        {legs.map((leg, li) => {
           // One subpath per consecutive pair: a traced road overlay
           // where the map has a yellow route between the nodes, else a
           // dashed connector (surf / backtrack — no road to overlay).
+          // The current leg's roads get a wide rectangular highlight
+          // band, slightly wider than the map's own yellow route bands
+          // (~32–56px in this viewBox), instead of a thin line; other
+          // legs fade to a whisper so only the leg you're on pops.
+          const isCurrent = li === currentLeg;
           const stops: { id: string; pt: { x: number; y: number } }[] = [];
           for (const a of leg.areas) {
             const pt = map.areas[a.id];
@@ -799,18 +815,25 @@ function MapTab({
                 const traced = MAP_PATHS[`${from.id}__${to.id}`];
                 if (traced) {
                   const points = traced.map(([x, y]) => `${x},${y}`).join(" ");
-                  return (
-                    <g key={`${from.id}-${to.id}`}>
-                      <polyline points={points} fill="none" stroke="#000" strokeWidth={8} strokeLinejoin="round" opacity={0.55} />
-                      <polyline points={points} fill="none" stroke={leg.color} strokeWidth={3.5} strokeLinejoin="round" opacity={0.95} />
-                    </g>
+                  return isCurrent ? (
+                    <polyline
+                      key={`${from.id}-${to.id}`}
+                      points={points} fill="none" stroke={leg.color} strokeWidth={44}
+                      strokeLinecap="butt" strokeLinejoin="round" opacity={0.55}
+                    />
+                  ) : (
+                    <polyline
+                      key={`${from.id}-${to.id}`}
+                      points={points} fill="none" stroke={leg.color} strokeWidth={3}
+                      strokeLinejoin="round" opacity={0.18}
+                    />
                   );
                 }
                 return (
                   <line
                     key={`${from.id}-${to.id}`}
                     x1={from.pt.x} y1={from.pt.y} x2={to.pt.x} y2={to.pt.y}
-                    stroke={leg.color} strokeWidth={2} strokeDasharray="6 5" opacity={0.7}
+                    stroke={leg.color} strokeWidth={isCurrent ? 2.5 : 2} strokeDasharray="6 5" opacity={isCurrent ? 0.8 : 0.12}
                   />
                 );
               })}
@@ -864,7 +887,7 @@ function MapTab({
       </svg>
       <p className="muted">
         ● filled = logged · ○ hollow = not logged yet · white ring = next area · ★ = gym boss · ◆ = story boss ·
-        solid line = the leg's colour over the map's own route · dashed = surf or backtrack, no road on the map
+        wide band = current leg's route · faint line = other legs · dashed = surf or backtrack, no road on the map
         {nextArea ? ` · Next: ${nextArea.name}` : ""}
       </p>
       <p className="muted">
@@ -1266,6 +1289,31 @@ function TimelineTab({
       ) : nextUndefeated ? (
         <p className="continue-banner">All encounters logged — next up: <span className="accent">{nextUndefeated.name}</span> →</p>
       ) : null}
+      {groups.length > 0 && (() => {
+        // "Current" = the leg holding the next unlogged area; if every
+        // encounter is logged, the leg of the next undefeated boss; if
+        // everything is done, the last leg.
+        let current = nextArea ? groups.findIndex((g) => g.areas.some((a) => a.id === nextArea.id)) : -1;
+        if (current < 0 && nextUndefeated) current = groups.findIndex((g) => g.bosses.some((b) => b.id === nextUndefeated.id));
+        if (current < 0) current = groups.length - 1;
+        const collapseToCurrent = () => {
+          const next: Record<string, boolean> = {};
+          groups.forEach((g, i) => { if (i < current) next[groupKey(g)] = true; });
+          next[groupKey(groups[current])] = false;
+          setFoldOverride((p) => ({ ...p, ...next }));
+        };
+        const expandAll = () => {
+          const next: Record<string, boolean> = {};
+          groups.forEach((g) => { next[groupKey(g)] = false; });
+          setFoldOverride(next);
+        };
+        return (
+          <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+            <button className="ghost" onClick={collapseToCurrent}>Collapse all before current</button>
+            <button className="ghost" onClick={expandAll}>Expand all</button>
+          </div>
+        );
+      })()}
       {groups.map((g, gi) => {
         const folded = isFolded(g);
         const loggedCount = g.areas.filter((a) => logged(a.id)).length;
