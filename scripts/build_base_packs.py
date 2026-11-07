@@ -192,10 +192,20 @@ PHANTOM_AREAS = {"sun-moon": {"new-mauville"}}  # cross-region leak in PokéAPI 
 # or level caps. `order` interleaves with gym bosses' order in the Story tab.
 # Rival fights are one entry per player starter choice (same order, so the
 # Story tab groups them as variants). Teams are species+level only, from
-# public walkthroughs (StrategyWiki, Thonky, Bulbapedia); no moves/items.
+# public walkthroughs (StrategyWiki, Thonky, Bulbapedia, Serebii); no moves/items.
 # Emerald pilot: rival (5 fights x 3 starters) + Aqua/Magma (Tabitha x3,
 # Maxie x3, Shelly x2, Matt x1, Archie x1). Courtney is NOT battled in
 # Emerald (cameo only), so she is deliberately excluded.
+# Platinum: rival Barry (6 fights x 3 starters) + Galactic (Mars x3,
+# Jupiter x2, Saturn x2, Cyrus x3). Two requested fights do NOT exist as
+# battles in Platinum and are deliberately excluded: Jupiter at Lake
+# Acuity is a cutscene (Barry loses off-screen), and Cyrus at the Spear
+# Pillar never fights (he summons Dialga/Palkia, then Giratina takes him
+# to the Distortion World, where the final battle happens). Post-League
+# rematches are excluded too (Barry's Survival Area fights, Mars/Jupiter
+# at Stark Mountain). Lakes order, verified against walkthroughs: after
+# Byron, Lake Valor (Saturn) then Lake Verity (Mars); after Candice, the
+# Lake Acuity scene, then the Galactic HQ raid (Saturn, then Cyrus).
 def _sb(boss_id, name, location, order, team, starter=None):
     boss = {
         "id": boss_id, "name": name, "location": location, "order": order,
@@ -239,6 +249,52 @@ STORY_BOSSES = {
         # deliberately not listed — this is the story fight only.
         _sb("wally-mauville", "Wally", "Mauville City", 28, [("ralts", 16)]),
         _sb("wally-victory-road", "Wally", "Victory Road", 85, [("magneton", 41), ("delcatty", 43), ("altaria", 44), ("roselia", 44), ("gardevoir", 45)]),
+    ],
+    "platinum": [
+        # Barry picks the starter with the type advantage over the player's,
+        # so each fight has three variants keyed by the PLAYER's starter.
+        # 1st fight: Route 201, right after choosing at Lake Verity.
+        _sb("barry-route-201-turtwig", "Rival Barry", "Route 201", 5, [("chimchar", 5)], starter="turtwig"),
+        _sb("barry-route-201-chimchar", "Rival Barry", "Route 201", 5, [("piplup", 5)], starter="chimchar"),
+        _sb("barry-route-201-piplup", "Rival Barry", "Route 201", 5, [("turtwig", 5)], starter="piplup"),
+        # 2nd fight: Route 203, leaving Jubilife for Oreburgh.
+        _sb("barry-route-203-turtwig", "Rival Barry", "Route 203", 7, [("starly", 7), ("chimchar", 9)], starter="turtwig"),
+        _sb("barry-route-203-chimchar", "Rival Barry", "Route 203", 7, [("starly", 7), ("piplup", 9)], starter="chimchar"),
+        _sb("barry-route-203-piplup", "Rival Barry", "Route 203", 7, [("starly", 7), ("turtwig", 9)], starter="piplup"),
+        _sb("mars-valley-windworks", "Mars (Team Galactic)", "Valley Windworks", 15, [("zubat", 15), ("purugly", 17)]),
+        _sb("jupiter-eterna-building", "Jupiter (Team Galactic)", "Team Galactic Eterna Building", 25, [("zubat", 21), ("skuntank", 23)]),
+        # 3rd fight: Hearthome City east gate, on the way out to Route 209.
+        _sb("barry-hearthome-turtwig", "Rival Barry", "Hearthome City", 35, [("staravia", 25), ("buizel", 23), ("roselia", 23), ("monferno", 27)], starter="turtwig"),
+        _sb("barry-hearthome-chimchar", "Rival Barry", "Hearthome City", 35, [("staravia", 25), ("ponyta", 23), ("roselia", 23), ("prinplup", 27)], starter="chimchar"),
+        _sb("barry-hearthome-piplup", "Rival Barry", "Hearthome City", 35, [("staravia", 25), ("buizel", 23), ("ponyta", 23), ("grotle", 27)], starter="piplup"),
+        # 4th fight: Pastoria City — Barry blocks the gym entrance, so this
+        # is fought BEFORE Gym Leader Wake.
+        _sb("barry-pastoria-turtwig", "Rival Barry", "Pastoria City", 45, [("staravia", 34), ("buizel", 32), ("roselia", 32), ("monferno", 36)], starter="turtwig"),
+        _sb("barry-pastoria-chimchar", "Rival Barry", "Pastoria City", 45, [("staravia", 34), ("ponyta", 32), ("roselia", 32), ("prinplup", 36)], starter="chimchar"),
+        _sb("barry-pastoria-piplup", "Rival Barry", "Pastoria City", 45, [("staravia", 34), ("buizel", 32), ("ponyta", 32), ("grotle", 36)], starter="piplup"),
+        _sb("cyrus-celestic", "Cyrus (Team Galactic)", "Celestic Town", 55, [("sneasel", 34), ("golbat", 34), ("murkrow", 36)]),
+        # 5th fight: Canalave City drawbridge, as you enter the city —
+        # fought BEFORE Gym Leader Byron.
+        _sb("barry-canalave-turtwig", "Rival Barry", "Canalave City", 56, [("staraptor", 36), ("floatzel", 35), ("heracross", 37), ("roserade", 35), ("infernape", 38)], starter="turtwig"),
+        _sb("barry-canalave-chimchar", "Rival Barry", "Canalave City", 56, [("staraptor", 36), ("roserade", 35), ("heracross", 37), ("rapidash", 35), ("empoleon", 38)], starter="chimchar"),
+        _sb("barry-canalave-piplup", "Rival Barry", "Canalave City", 56, [("staraptor", 36), ("floatzel", 35), ("heracross", 37), ("rapidash", 35), ("torterra", 38)], starter="piplup"),
+        # Lakes crisis, after Byron: Lake Valor, then Lake Verity.
+        _sb("saturn-lake-valor", "Saturn (Team Galactic)", "Lake Valor", 65, [("golbat", 38), ("bronzor", 38), ("toxicroak", 40)]),
+        _sb("mars-lake-verity", "Mars (Team Galactic)", "Lake Verity", 66, [("golbat", 38), ("bronzor", 38), ("purugly", 40)]),
+        # After Candice: the Lake Acuity scene (Jupiter, no battle), then
+        # the Galactic HQ raid — Saturn first, Cyrus in his office.
+        _sb("saturn-galactic-hq", "Saturn (Team Galactic)", "Team Galactic HQ", 73, [("golbat", 42), ("bronzor", 42), ("toxicroak", 44)]),
+        _sb("cyrus-galactic-hq", "Cyrus (Team Galactic)", "Team Galactic HQ", 74, [("sneasel", 44), ("crobat", 44), ("honchkrow", 46)]),
+        # Spear Pillar: one double battle, Mars + Jupiter together with
+        # Barry as the player's partner — same order, like Emerald's
+        # Mossdeep Space Center double.
+        _sb("mars-spear-pillar", "Mars (Team Galactic)", "Spear Pillar (double battle with Jupiter; Barry is your partner)", 82, [("bronzor", 44), ("golbat", 44), ("purugly", 46)]),
+        _sb("jupiter-spear-pillar", "Jupiter (Team Galactic)", "Spear Pillar (double battle with Mars; Barry is your partner)", 82, [("bronzor", 44), ("golbat", 44), ("skuntank", 46)]),
+        _sb("cyrus-distortion-world", "Cyrus (Team Galactic)", "Distortion World", 84, [("houndoom", 45), ("honchkrow", 47), ("crobat", 46), ("gyarados", 46), ("weavile", 48)]),
+        # 6th fight: Pokémon League, before the Elite Four.
+        _sb("barry-pokemon-league-turtwig", "Rival Barry", "Pokémon League", 85, [("staraptor", 48), ("heracross", 48), ("snorlax", 49), ("roserade", 47), ("floatzel", 47), ("infernape", 51)], starter="turtwig"),
+        _sb("barry-pokemon-league-chimchar", "Rival Barry", "Pokémon League", 85, [("staraptor", 48), ("heracross", 48), ("snorlax", 49), ("roserade", 47), ("rapidash", 47), ("empoleon", 51)], starter="chimchar"),
+        _sb("barry-pokemon-league-piplup", "Rival Barry", "Pokémon League", 85, [("staraptor", 48), ("heracross", 48), ("snorlax", 49), ("floatzel", 47), ("rapidash", 47), ("torterra", 51)], starter="piplup"),
     ],
 }
 EXCLUDE_METHODS = {

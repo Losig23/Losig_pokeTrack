@@ -1196,12 +1196,18 @@ function TimelineTab({
         // happens before the leg's first route (Rival in Rustboro, the
         // Mossdeep Space Center double battle).
         const normName = (s: string) =>
-          s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(hoenn|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+          s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
         const STORY_SPLIT_AFTER: Record<string, string | null> = {
           mtchimney: "hoenn-route-112",
           weatherinstitute: "hoenn-route-119",
           mauvillecity: "hoenn-route-110",
           mossdeepspacecenter: null,
+          // Platinum: the Eterna Galactic Building fight happens right
+          // after Gardenia (top of Fantina's leg), and the HQ raid right
+          // after Candice (top of Volkner's leg) — neither has an
+          // encounter area of its own.
+          galacticeternabuilding: null,
+          galactichq: null,
         };
         const groupStory = storyGroups
           .filter((sg) => sg.order > prevOrder && sg.order < g.bosses[0].order)

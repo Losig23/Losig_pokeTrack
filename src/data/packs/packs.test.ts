@@ -188,10 +188,51 @@ describe("shipped game packs", () => {
     // of the leg by default and the split is silently wrong.
     const pack = getPack("emerald")!;
     const norm = (s: string) =>
-      s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(hoenn|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+      s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
     const areaNames = new Set(sortedAreas(pack).map((a) => norm(a.name)));
     const fallbacks = new Set(["mtchimney", "weatherinstitute", "mauvillecity", "mossdeepspacecenter"]);
     for (const sb of pack.storyBosses ?? []) {
+      expect(areaNames.has(norm(sb.location)) || fallbacks.has(norm(sb.location))).toBe(true);
+    }
+  });
+
+  it("platinum story bosses: Barry + Galactic, display-only", () => {
+    const pack = getPack("platinum")!;
+    const story = pack.storyBosses ?? [];
+    // 6 Barry fights x 3 starter variants + Mars x3, Jupiter x2,
+    // Saturn x2, Cyrus x3. Jupiter at Lake Acuity is a cutscene (no
+    // battle) and Cyrus at the Spear Pillar never fights, so both are
+    // deliberately absent; post-League rematches are excluded too.
+    expect(story.length).toBe(28);
+    // A run with a starter sees only its Barry variants (6) plus the
+    // 10 non-rival story bosses; with no starter, every variant shows.
+    const withStarter = visibleStoryBosses(pack, "turtwig");
+    expect(withStarter.length).toBe(16);
+    expect(withStarter.filter((b) => b.id.startsWith("barry")).length).toBe(6);
+    expect(visibleStoryBosses(pack).length).toBe(28);
+    // The Spear Pillar double battle (Mars + Jupiter, Barry as partner)
+    // shares one order, like Emerald's Space Center double.
+    const spear = story.filter((b) => b.location.startsWith("Spear Pillar"));
+    expect(spear.map((b) => b.order)).toEqual([82, 82]);
+    // Barry's teams are keyed by the PLAYER's starter (he takes the
+    // type-advantaged one); Canalave is fought before Byron (56 < 60),
+    // Pastoria before Wake (45 < 50).
+    const barry201 = story.filter((b) => b.id.startsWith("barry-route-201"));
+    expect(barry201.find((b) => b.starterChoice === "turtwig")?.team).toEqual([
+      expect.objectContaining({ species: "chimchar", level: 5 }),
+    ]);
+    const canalave = story.find((b) => b.id === "barry-canalave-turtwig")!;
+    expect(canalave.order).toBeLessThan(60);
+    expect(canalave.levelCap).toBe(38);
+    // In-leg story bosses resolve to an area or the UI's hand-set
+    // fallbacks; the post-last-leg ones (Spear Pillar, Distortion
+    // World, Pokémon League) render standalone after the last group,
+    // so no split is needed for them.
+    const norm = (s: string) =>
+      s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+    const areaNames = new Set(sortedAreas(pack).map((a) => norm(a.name)));
+    const fallbacks = new Set(["galacticeternabuilding", "galactichq"]);
+    for (const sb of story.filter((b) => b.order < 80)) {
       expect(areaNames.has(norm(sb.location)) || fallbacks.has(norm(sb.location))).toBe(true);
     }
   });

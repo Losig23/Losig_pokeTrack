@@ -8361,5 +8361,949 @@
   "byron": "canalave-city",
   "candice": "acuity-lakefront",
   "volkner": "sunyshore-city"
- }
+ },
+ "storyBosses": [
+  {
+   "id": "barry-route-201-turtwig",
+   "name": "Rival Barry",
+   "location": "Route 201",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "chimchar",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "turtwig"
+  },
+  {
+   "id": "barry-route-201-chimchar",
+   "name": "Rival Barry",
+   "location": "Route 201",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "piplup",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "chimchar"
+  },
+  {
+   "id": "barry-route-201-piplup",
+   "name": "Rival Barry",
+   "location": "Route 201",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "turtwig",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "piplup"
+  },
+  {
+   "id": "barry-route-203-turtwig",
+   "name": "Rival Barry",
+   "location": "Route 203",
+   "order": 7,
+   "levelCap": 9,
+   "team": [
+    {
+     "species": "starly",
+     "level": 7,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "chimchar",
+     "level": 9,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "turtwig"
+  },
+  {
+   "id": "barry-route-203-chimchar",
+   "name": "Rival Barry",
+   "location": "Route 203",
+   "order": 7,
+   "levelCap": 9,
+   "team": [
+    {
+     "species": "starly",
+     "level": 7,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "piplup",
+     "level": 9,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "chimchar"
+  },
+  {
+   "id": "barry-route-203-piplup",
+   "name": "Rival Barry",
+   "location": "Route 203",
+   "order": 7,
+   "levelCap": 9,
+   "team": [
+    {
+     "species": "starly",
+     "level": 7,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "turtwig",
+     "level": 9,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "piplup"
+  },
+  {
+   "id": "mars-valley-windworks",
+   "name": "Mars (Team Galactic)",
+   "location": "Valley Windworks",
+   "order": 15,
+   "levelCap": 17,
+   "team": [
+    {
+     "species": "zubat",
+     "level": 15,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "purugly",
+     "level": 17,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "jupiter-eterna-building",
+   "name": "Jupiter (Team Galactic)",
+   "location": "Team Galactic Eterna Building",
+   "order": 25,
+   "levelCap": 23,
+   "team": [
+    {
+     "species": "zubat",
+     "level": 21,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "skuntank",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "barry-hearthome-turtwig",
+   "name": "Rival Barry",
+   "location": "Hearthome City",
+   "order": 35,
+   "levelCap": 27,
+   "team": [
+    {
+     "species": "staravia",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "buizel",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roselia",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "monferno",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "turtwig"
+  },
+  {
+   "id": "barry-hearthome-chimchar",
+   "name": "Rival Barry",
+   "location": "Hearthome City",
+   "order": 35,
+   "levelCap": 27,
+   "team": [
+    {
+     "species": "staravia",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "ponyta",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roselia",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "prinplup",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "chimchar"
+  },
+  {
+   "id": "barry-hearthome-piplup",
+   "name": "Rival Barry",
+   "location": "Hearthome City",
+   "order": 35,
+   "levelCap": 27,
+   "team": [
+    {
+     "species": "staravia",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "buizel",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "ponyta",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "grotle",
+     "level": 27,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "piplup"
+  },
+  {
+   "id": "barry-pastoria-turtwig",
+   "name": "Rival Barry",
+   "location": "Pastoria City",
+   "order": 45,
+   "levelCap": 36,
+   "team": [
+    {
+     "species": "staravia",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "buizel",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roselia",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "monferno",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "turtwig"
+  },
+  {
+   "id": "barry-pastoria-chimchar",
+   "name": "Rival Barry",
+   "location": "Pastoria City",
+   "order": 45,
+   "levelCap": 36,
+   "team": [
+    {
+     "species": "staravia",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "ponyta",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roselia",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "prinplup",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "chimchar"
+  },
+  {
+   "id": "barry-pastoria-piplup",
+   "name": "Rival Barry",
+   "location": "Pastoria City",
+   "order": 45,
+   "levelCap": 36,
+   "team": [
+    {
+     "species": "staravia",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "buizel",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "ponyta",
+     "level": 32,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "grotle",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "piplup"
+  },
+  {
+   "id": "cyrus-celestic",
+   "name": "Cyrus (Team Galactic)",
+   "location": "Celestic Town",
+   "order": 55,
+   "levelCap": 36,
+   "team": [
+    {
+     "species": "sneasel",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "golbat",
+     "level": 34,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "murkrow",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "barry-canalave-turtwig",
+   "name": "Rival Barry",
+   "location": "Canalave City",
+   "order": 56,
+   "levelCap": 38,
+   "team": [
+    {
+     "species": "staraptor",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "floatzel",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "heracross",
+     "level": 37,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roserade",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "infernape",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "turtwig"
+  },
+  {
+   "id": "barry-canalave-chimchar",
+   "name": "Rival Barry",
+   "location": "Canalave City",
+   "order": 56,
+   "levelCap": 38,
+   "team": [
+    {
+     "species": "staraptor",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roserade",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "heracross",
+     "level": 37,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "rapidash",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "empoleon",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "chimchar"
+  },
+  {
+   "id": "barry-canalave-piplup",
+   "name": "Rival Barry",
+   "location": "Canalave City",
+   "order": 56,
+   "levelCap": 38,
+   "team": [
+    {
+     "species": "staraptor",
+     "level": 36,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "floatzel",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "heracross",
+     "level": 37,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "rapidash",
+     "level": 35,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "torterra",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "piplup"
+  },
+  {
+   "id": "saturn-lake-valor",
+   "name": "Saturn (Team Galactic)",
+   "location": "Lake Valor",
+   "order": 65,
+   "levelCap": 40,
+   "team": [
+    {
+     "species": "golbat",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bronzor",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "toxicroak",
+     "level": 40,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "mars-lake-verity",
+   "name": "Mars (Team Galactic)",
+   "location": "Lake Verity",
+   "order": 66,
+   "levelCap": 40,
+   "team": [
+    {
+     "species": "golbat",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bronzor",
+     "level": 38,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "purugly",
+     "level": 40,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "saturn-galactic-hq",
+   "name": "Saturn (Team Galactic)",
+   "location": "Team Galactic HQ",
+   "order": 73,
+   "levelCap": 44,
+   "team": [
+    {
+     "species": "golbat",
+     "level": 42,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bronzor",
+     "level": 42,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "toxicroak",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "cyrus-galactic-hq",
+   "name": "Cyrus (Team Galactic)",
+   "location": "Team Galactic HQ",
+   "order": 74,
+   "levelCap": 46,
+   "team": [
+    {
+     "species": "sneasel",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "crobat",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "honchkrow",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "mars-spear-pillar",
+   "name": "Mars (Team Galactic)",
+   "location": "Spear Pillar (double battle with Jupiter; Barry is your partner)",
+   "order": 82,
+   "levelCap": 46,
+   "team": [
+    {
+     "species": "bronzor",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "golbat",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "purugly",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "jupiter-spear-pillar",
+   "name": "Jupiter (Team Galactic)",
+   "location": "Spear Pillar (double battle with Mars; Barry is your partner)",
+   "order": 82,
+   "levelCap": 46,
+   "team": [
+    {
+     "species": "bronzor",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "golbat",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "skuntank",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "cyrus-distortion-world",
+   "name": "Cyrus (Team Galactic)",
+   "location": "Distortion World",
+   "order": 84,
+   "levelCap": 48,
+   "team": [
+    {
+     "species": "houndoom",
+     "level": 45,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "honchkrow",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "crobat",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "gyarados",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "weavile",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "barry-pokemon-league-turtwig",
+   "name": "Rival Barry",
+   "location": "Pokémon League",
+   "order": 85,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "staraptor",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "heracross",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "snorlax",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roserade",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "floatzel",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "infernape",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "turtwig"
+  },
+  {
+   "id": "barry-pokemon-league-chimchar",
+   "name": "Rival Barry",
+   "location": "Pokémon League",
+   "order": 85,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "staraptor",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "heracross",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "snorlax",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "roserade",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "rapidash",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "empoleon",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "chimchar"
+  },
+  {
+   "id": "barry-pokemon-league-piplup",
+   "name": "Rival Barry",
+   "location": "Pokémon League",
+   "order": 85,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "staraptor",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "heracross",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "snorlax",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "floatzel",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "rapidash",
+     "level": 47,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "torterra",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "piplup"
+  }
+ ]
 }
