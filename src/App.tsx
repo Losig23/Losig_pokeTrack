@@ -1476,12 +1476,20 @@ function RosterTab({
     onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, status } : m)) });
   const setLevel = (uid: string, level: number) =>
     onChange({ ...run, team: run.team.map((m) => (m.uid === uid ? { ...m, level } : m)) });
-  const remove = (uid: string) =>
+  // The single choke point for deleting a logged Pokémon — both the
+  // roster card's ✕ and the graveyard's Delete flow through here, so
+  // one confirm covers both. The area's log entry stays; only the
+  // Pokémon (and its link from the log) is removed.
+  const remove = (uid: string) => {
+    const mon = run.team.find((m) => m.uid === uid);
+    const label = mon ? `${mon.nickname || displayName(mon.species)} (Lv ${mon.level})` : "this Pokémon";
+    if (!window.confirm(`Delete ${label} from your roster? The area log stays, but this Pokémon will be gone.`)) return;
     onChange({
       ...run,
       team: run.team.filter((m) => m.uid !== uid),
       encounters: run.encounters.map((e) => (e.monUid === uid ? { ...e, monUid: undefined } : e)),
     });
+  };
 
   const selectedBox = box.find((m) => m.uid === selectedBoxUid) ?? null;
   const selectedGrave = graveyard.find((m) => m.uid === selectedGraveUid) ?? null;
