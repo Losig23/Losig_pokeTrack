@@ -188,7 +188,7 @@ describe("shipped game packs", () => {
     // of the leg by default and the split is silently wrong.
     const pack = getPack("emerald")!;
     const norm = (s: string) =>
-      s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+      s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
     const areaNames = new Set(sortedAreas(pack).map((a) => norm(a.name)));
     const fallbacks = new Set(["mtchimney", "weatherinstitute", "mauvillecity", "mossdeepspacecenter"]);
     for (const sb of pack.storyBosses ?? []) {
@@ -229,9 +229,52 @@ describe("shipped game packs", () => {
     // World, Pokémon League) render standalone after the last group,
     // so no split is needed for them.
     const norm = (s: string) =>
-      s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+      s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
     const areaNames = new Set(sortedAreas(pack).map((a) => norm(a.name)));
     const fallbacks = new Set(["galacticeternabuilding", "galactichq"]);
+    for (const sb of story.filter((b) => b.order < 80)) {
+      expect(areaNames.has(norm(sb.location)) || fallbacks.has(norm(sb.location))).toBe(true);
+    }
+  });
+
+  it("black-2-white-2 story bosses: Hugh + Plasma, display-only", () => {
+    const pack = getPack("black-2-white-2")!;
+    const story = pack.storyBosses ?? [];
+    // 5 Hugh fights x 3 starter variants + Colress x3, Ghetsis x1,
+    // Zinzolin x4, Shadow Triad x4. N is not battled in the main story;
+    // Cheren's PWT semifinal has no separate entry (already a gym boss).
+    expect(story.length).toBe(27);
+    // A run with a starter sees only its Hugh variants (5) plus the
+    // 12 non-rival story bosses; with no starter, every variant shows.
+    const withStarter = visibleStoryBosses(pack, "snivy");
+    expect(withStarter.length).toBe(17);
+    expect(withStarter.filter((b) => b.id.startsWith("hugh")).length).toBe(5);
+    expect(visibleStoryBosses(pack).length).toBe(27);
+    // Hugh takes the type-advantaged starter; his monkey is the type
+    // weak to the player's starter.
+    const hughAspertia = story.filter((b) => b.id.startsWith("hugh-aspertia"));
+    expect(hughAspertia.find((b) => b.starterChoice === "snivy")?.team).toEqual([
+      expect.objectContaining({ species: "tepig", level: 5 }),
+    ]);
+    const hughPwt = story.find((b) => b.id === "hugh-pwt-snivy")!;
+    expect(hughPwt.team).toEqual([
+      expect.objectContaining({ species: "pignite", level: 25 }),
+      expect.objectContaining({ species: "simipour", level: 25 }),
+      expect.objectContaining({ species: "tranquill", level: 25 }),
+    ]);
+    // Ghetsis is the final Plasma fight; the Shadow Triad are three
+    // separate singles on the frigate, not a triple battle.
+    const ghetsis = story.find((b) => b.id === "ghetsis")!;
+    expect(ghetsis.levelCap).toBe(52);
+    expect(story.filter((b) => b.id.startsWith("shadow-frigate")).map((b) => b.order)).toEqual([85, 86, 87]);
+    // In-leg story bosses resolve to an area or the UI's hand-set
+    // fallbacks; the post-last-leg ones (frigate, Giant Chasm, Victory
+    // Road) render standalone after the last group, so no split is
+    // needed for them.
+    const norm = (s: string) =>
+      s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+    const areaNames = new Set(sortedAreas(pack).map((a) => norm(a.name)));
+    const fallbacks = new Set(["pokemonworldtournament", "lacunosatown", "opelucidcity"]);
     for (const sb of story.filter((b) => b.order < 80)) {
       expect(areaNames.has(norm(sb.location)) || fallbacks.has(norm(sb.location))).toBe(true);
     }

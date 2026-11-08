@@ -1195,8 +1195,11 @@ function TimelineTab({
         // to a hand-set route, or to the top of the leg when the fight
         // happens before the leg's first route (Rival in Rustboro, the
         // Mossdeep Space Center double battle).
+        // NFD + strip combining marks so "Pokémon" normalises to
+        // "pokemon" (otherwise the é is dropped and the key never
+        // matches its own fallback).
         const normName = (s: string) =>
-          s.toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
+          s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\(.*?\)/g, "").replace(/^(kanto|johto|hoenn|sinnoh|unova|kalos|alola|galar|paldea|team)\s+/, "").replace(/[^a-z0-9]/g, "");
         const STORY_SPLIT_AFTER: Record<string, string | null> = {
           mtchimney: "hoenn-route-112",
           weatherinstitute: "hoenn-route-119",
@@ -1208,6 +1211,14 @@ function TimelineTab({
           // encounter area of its own.
           galacticeternabuilding: null,
           galactichq: null,
+          // Black 2 / White 2: the Driftveil Tournament happens right
+          // after Clay (top of Skyla's leg); Zinzolin at Lacunosa is
+          // reached from Undella, so it splits after Undella Town;
+          // Opelucid has no encounter area, and its fights come right
+          // after Drayden (top of Marlon's leg).
+          pokemonworldtournament: null,
+          lacunosatown: "undella-town",
+          opelucidcity: null,
         };
         const groupStory = storyGroups
           .filter((sg) => sg.order > prevOrder && sg.order < g.bosses[0].order)

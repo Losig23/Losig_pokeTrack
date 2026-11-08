@@ -206,6 +206,18 @@ PHANTOM_AREAS = {"sun-moon": {"new-mauville"}}  # cross-region leak in PokéAPI 
 # at Stark Mountain). Lakes order, verified against walkthroughs: after
 # Byron, Lake Valor (Saturn) then Lake Verity (Mars); after Candice, the
 # Lake Acuity scene, then the Galactic HQ raid (Saturn, then Cyrus).
+# Black 2 / White 2: rival Hugh (5 fights x 3 starters) + Plasma
+# (Colress x3, Ghetsis x1, Zinzolin x4, Shadow Triad x4). N is NOT
+# battled in the main story (his only fight is post-game, excluded).
+# Cheren's PWT semifinal is deliberately NOT a separate entry — he is
+# already a gym boss, and two of his three tournament mons are only
+# inferred, not directly sourced. Hugh's tag-partner teams (Castelia
+# Sewers, PWT, Lacunosa, Giant Chasm) are fights WITH him, not against
+# him — excluded; the Lv 33/50 "Hugh" teams on some pages are those
+# partner teams, not story fights. Zinzolin's Lacunosa and Route 21
+# fights are tag battles (Hugh as partner); only Zinzolin's own mons
+# are listed, the grunt's are not. The Shadow Triad are three separate
+# single battles, NOT a triple battle.
 def _sb(boss_id, name, location, order, team, starter=None):
     boss = {
         "id": boss_id, "name": name, "location": location, "order": order,
@@ -295,6 +307,54 @@ STORY_BOSSES = {
         _sb("barry-pokemon-league-turtwig", "Rival Barry", "Pokémon League", 85, [("staraptor", 48), ("heracross", 48), ("snorlax", 49), ("roserade", 47), ("floatzel", 47), ("infernape", 51)], starter="turtwig"),
         _sb("barry-pokemon-league-chimchar", "Rival Barry", "Pokémon League", 85, [("staraptor", 48), ("heracross", 48), ("snorlax", 49), ("roserade", 47), ("rapidash", 47), ("empoleon", 51)], starter="chimchar"),
         _sb("barry-pokemon-league-piplup", "Rival Barry", "Pokémon League", 85, [("staraptor", 48), ("heracross", 48), ("snorlax", 49), ("floatzel", 47), ("rapidash", 47), ("torterra", 51)], starter="piplup"),
+    ],
+    "black-2-white-2": [
+        # Hugh picks the starter with the type advantage over the
+        # player's, so each fight has three variants keyed by the
+        # PLAYER's starter. His elemental monkey is the opposite
+        # pattern — the type WEAK to the player's starter.
+        # 1st fight: Aspertia City, right after choosing your starter.
+        _sb("hugh-aspertia-snivy", "Rival Hugh", "Aspertia City", 5, [("tepig", 5)], starter="snivy"),
+        _sb("hugh-aspertia-tepig", "Rival Hugh", "Aspertia City", 5, [("oshawott", 5)], starter="tepig"),
+        _sb("hugh-aspertia-oshawott", "Rival Hugh", "Aspertia City", 5, [("snivy", 5)], starter="oshawott"),
+        # 2nd fight: Floccesy Ranch, before Cheren.
+        _sb("hugh-floccesy-snivy", "Rival Hugh", "Floccesy Ranch", 7, [("tepig", 8)], starter="snivy"),
+        _sb("hugh-floccesy-tepig", "Rival Hugh", "Floccesy Ranch", 7, [("oshawott", 8)], starter="tepig"),
+        _sb("hugh-floccesy-oshawott", "Rival Hugh", "Floccesy Ranch", 7, [("snivy", 8)], starter="oshawott"),
+        _sb("colress-route-4", "Colress (Team Plasma)", "Route 4", 35, [("magnemite", 21), ("klink", 23)]),
+        # 3rd fight: Driftveil Tournament round 1 — Hugh, then Cheren
+        # (semifinal, already a gym boss, no separate entry), then
+        # Colress in the final. 3-Pokémon limit, no EXP.
+        _sb("hugh-pwt-snivy", "Rival Hugh", "Pokémon World Tournament", 55, [("pignite", 25), ("simipour", 25), ("tranquill", 25)], starter="snivy"),
+        _sb("hugh-pwt-tepig", "Rival Hugh", "Pokémon World Tournament", 55, [("dewott", 25), ("simisage", 25), ("tranquill", 25)], starter="tepig"),
+        _sb("hugh-pwt-oshawott", "Rival Hugh", "Pokémon World Tournament", 55, [("servine", 25), ("simisear", 25), ("tranquill", 25)], starter="oshawott"),
+        _sb("colress-pwt", "Colress (Team Plasma)", "Pokémon World Tournament", 57, [("magneton", 25), ("elgyem", 25), ("klink", 25)]),
+        # 4th fight: Undella Town, after Skyla, before Drayden.
+        _sb("hugh-undella-snivy", "Rival Hugh", "Undella Town", 65, [("unfezant", 39), ("simipour", 39), ("emboar", 41)], starter="snivy"),
+        _sb("hugh-undella-tepig", "Rival Hugh", "Undella Town", 65, [("unfezant", 39), ("simisage", 39), ("samurott", 41)], starter="tepig"),
+        _sb("hugh-undella-oshawott", "Rival Hugh", "Undella Town", 65, [("unfezant", 39), ("simisear", 39), ("serperior", 41)], starter="oshawott"),
+        # Tag battle with Hugh as partner; only Zinzolin's own mons listed.
+        _sb("zinzolin-lacunosa", "Zinzolin (Team Plasma)", "Lacunosa Town (tag battle with Hugh)", 66, [("cryogonal", 42), ("sneasel", 44)]),
+        # Opelucid, right after Drayden: Zinzolin on the frozen frigate,
+        # then a Shadow chasing the stolen DNA Splicers.
+        _sb("zinzolin-opelucid", "Zinzolin (Team Plasma)", "Opelucid City", 75, [("cryogonal", 46), ("cryogonal", 46), ("weavile", 48)]),
+        _sb("shadow-opelucid", "Shadow Triad", "Opelucid City", 76, [("pawniard", 46), ("pawniard", 46), ("absol", 48)]),
+        # After Marlon: the frigate returns — Zinzolin at Route 21, then
+        # at the Giant Chasm guarding Kyurem's cell.
+        _sb("zinzolin-frigate-21", "Zinzolin (Team Plasma)", "Plasma Frigate (Route 21, tag battle with Hugh)", 82, [("cryogonal", 48), ("cryogonal", 48), ("weavile", 50)]),
+        _sb("zinzolin-frigate-chasm", "Zinzolin (Team Plasma)", "Plasma Frigate (Giant Chasm)", 83, [("cryogonal", 49), ("cryogonal", 49), ("weavile", 51)]),
+        _sb("colress-frigate", "Colress (Team Plasma)", "Plasma Frigate (Giant Chasm)", 84, [("magneton", 50), ("metang", 50), ("beheeyem", 50), ("magnezone", 50), ("klinklang", 52)]),
+        # The Shadow Triad: three separate single battles on the frigate,
+        # fought one by one (Absol first; Banette vs Accelgor is the
+        # player's choice of order).
+        _sb("shadow-frigate-absol", "Shadow Triad", "Plasma Frigate (Giant Chasm)", 85, [("pawniard", 49), ("pawniard", 49), ("absol", 51)]),
+        _sb("shadow-frigate-banette", "Shadow Triad", "Plasma Frigate (Giant Chasm)", 86, [("pawniard", 49), ("pawniard", 49), ("banette", 51)]),
+        _sb("shadow-frigate-accelgor", "Shadow Triad", "Plasma Frigate (Giant Chasm)", 87, [("pawniard", 49), ("pawniard", 49), ("accelgor", 51)]),
+        _sb("ghetsis", "Ghetsis (Team Plasma)", "Giant Chasm", 88, [("cofagrigus", 50), ("seismitoad", 50), ("eelektross", 50), ("drapion", 50), ("toxicroak", 50), ("hydreigon", 52)]),
+        # 5th fight: Victory Road, after Ghetsis, before the Elite Four.
+        _sb("hugh-victory-road-snivy", "Rival Hugh", "Victory Road", 89, [("unfezant", 55), ("simipour", 55), ("bouffalant", 55), ("emboar", 57)], starter="snivy"),
+        _sb("hugh-victory-road-tepig", "Rival Hugh", "Victory Road", 89, [("unfezant", 55), ("simisage", 55), ("bouffalant", 55), ("samurott", 57)], starter="tepig"),
+        _sb("hugh-victory-road-oshawott", "Rival Hugh", "Victory Road", 89, [("unfezant", 55), ("simisear", 55), ("bouffalant", 55), ("serperior", 57)], starter="oshawott"),
     ],
 }
 EXCLUDE_METHODS = {

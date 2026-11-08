@@ -7585,5 +7585,790 @@
   "skyla": "celestial-tower",
   "drayden": "unova-route-9",
   "marlon": "humilau-city"
- }
+ },
+ "storyBosses": [
+  {
+   "id": "hugh-aspertia-snivy",
+   "name": "Rival Hugh",
+   "location": "Aspertia City",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "tepig",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "snivy"
+  },
+  {
+   "id": "hugh-aspertia-tepig",
+   "name": "Rival Hugh",
+   "location": "Aspertia City",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "oshawott",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "tepig"
+  },
+  {
+   "id": "hugh-aspertia-oshawott",
+   "name": "Rival Hugh",
+   "location": "Aspertia City",
+   "order": 5,
+   "levelCap": 5,
+   "team": [
+    {
+     "species": "snivy",
+     "level": 5,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "oshawott"
+  },
+  {
+   "id": "hugh-floccesy-snivy",
+   "name": "Rival Hugh",
+   "location": "Floccesy Ranch",
+   "order": 7,
+   "levelCap": 8,
+   "team": [
+    {
+     "species": "tepig",
+     "level": 8,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "snivy"
+  },
+  {
+   "id": "hugh-floccesy-tepig",
+   "name": "Rival Hugh",
+   "location": "Floccesy Ranch",
+   "order": 7,
+   "levelCap": 8,
+   "team": [
+    {
+     "species": "oshawott",
+     "level": 8,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "tepig"
+  },
+  {
+   "id": "hugh-floccesy-oshawott",
+   "name": "Rival Hugh",
+   "location": "Floccesy Ranch",
+   "order": 7,
+   "levelCap": 8,
+   "team": [
+    {
+     "species": "snivy",
+     "level": 8,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "oshawott"
+  },
+  {
+   "id": "colress-route-4",
+   "name": "Colress (Team Plasma)",
+   "location": "Route 4",
+   "order": 35,
+   "levelCap": 23,
+   "team": [
+    {
+     "species": "magnemite",
+     "level": 21,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "klink",
+     "level": 23,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "hugh-pwt-snivy",
+   "name": "Rival Hugh",
+   "location": "Pokémon World Tournament",
+   "order": 55,
+   "levelCap": 25,
+   "team": [
+    {
+     "species": "pignite",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simipour",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "tranquill",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "snivy"
+  },
+  {
+   "id": "hugh-pwt-tepig",
+   "name": "Rival Hugh",
+   "location": "Pokémon World Tournament",
+   "order": 55,
+   "levelCap": 25,
+   "team": [
+    {
+     "species": "dewott",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simisage",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "tranquill",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "tepig"
+  },
+  {
+   "id": "hugh-pwt-oshawott",
+   "name": "Rival Hugh",
+   "location": "Pokémon World Tournament",
+   "order": 55,
+   "levelCap": 25,
+   "team": [
+    {
+     "species": "servine",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simisear",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "tranquill",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "oshawott"
+  },
+  {
+   "id": "colress-pwt",
+   "name": "Colress (Team Plasma)",
+   "location": "Pokémon World Tournament",
+   "order": 57,
+   "levelCap": 25,
+   "team": [
+    {
+     "species": "magneton",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "elgyem",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "klink",
+     "level": 25,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "hugh-undella-snivy",
+   "name": "Rival Hugh",
+   "location": "Undella Town",
+   "order": 65,
+   "levelCap": 41,
+   "team": [
+    {
+     "species": "unfezant",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simipour",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "emboar",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "snivy"
+  },
+  {
+   "id": "hugh-undella-tepig",
+   "name": "Rival Hugh",
+   "location": "Undella Town",
+   "order": 65,
+   "levelCap": 41,
+   "team": [
+    {
+     "species": "unfezant",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simisage",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "samurott",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "tepig"
+  },
+  {
+   "id": "hugh-undella-oshawott",
+   "name": "Rival Hugh",
+   "location": "Undella Town",
+   "order": 65,
+   "levelCap": 41,
+   "team": [
+    {
+     "species": "unfezant",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simisear",
+     "level": 39,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "serperior",
+     "level": 41,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "oshawott"
+  },
+  {
+   "id": "zinzolin-lacunosa",
+   "name": "Zinzolin (Team Plasma)",
+   "location": "Lacunosa Town (tag battle with Hugh)",
+   "order": 66,
+   "levelCap": 44,
+   "team": [
+    {
+     "species": "cryogonal",
+     "level": 42,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "sneasel",
+     "level": 44,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "zinzolin-opelucid",
+   "name": "Zinzolin (Team Plasma)",
+   "location": "Opelucid City",
+   "order": 75,
+   "levelCap": 48,
+   "team": [
+    {
+     "species": "cryogonal",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "cryogonal",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "weavile",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "shadow-opelucid",
+   "name": "Shadow Triad",
+   "location": "Opelucid City",
+   "order": 76,
+   "levelCap": 48,
+   "team": [
+    {
+     "species": "pawniard",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "pawniard",
+     "level": 46,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "absol",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "zinzolin-frigate-21",
+   "name": "Zinzolin (Team Plasma)",
+   "location": "Plasma Frigate (Route 21, tag battle with Hugh)",
+   "order": 82,
+   "levelCap": 50,
+   "team": [
+    {
+     "species": "cryogonal",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "cryogonal",
+     "level": 48,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "weavile",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "zinzolin-frigate-chasm",
+   "name": "Zinzolin (Team Plasma)",
+   "location": "Plasma Frigate (Giant Chasm)",
+   "order": 83,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "cryogonal",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "cryogonal",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "weavile",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "colress-frigate",
+   "name": "Colress (Team Plasma)",
+   "location": "Plasma Frigate (Giant Chasm)",
+   "order": 84,
+   "levelCap": 52,
+   "team": [
+    {
+     "species": "magneton",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "metang",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "beheeyem",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "magnezone",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "klinklang",
+     "level": 52,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "shadow-frigate-absol",
+   "name": "Shadow Triad",
+   "location": "Plasma Frigate (Giant Chasm)",
+   "order": 85,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "pawniard",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "pawniard",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "absol",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "shadow-frigate-banette",
+   "name": "Shadow Triad",
+   "location": "Plasma Frigate (Giant Chasm)",
+   "order": 86,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "pawniard",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "pawniard",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "banette",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "shadow-frigate-accelgor",
+   "name": "Shadow Triad",
+   "location": "Plasma Frigate (Giant Chasm)",
+   "order": 87,
+   "levelCap": 51,
+   "team": [
+    {
+     "species": "pawniard",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "pawniard",
+     "level": 49,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "accelgor",
+     "level": 51,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "ghetsis",
+   "name": "Ghetsis (Team Plasma)",
+   "location": "Giant Chasm",
+   "order": 88,
+   "levelCap": 52,
+   "team": [
+    {
+     "species": "cofagrigus",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "seismitoad",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "eelektross",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "drapion",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "toxicroak",
+     "level": 50,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "hydreigon",
+     "level": 52,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ]
+  },
+  {
+   "id": "hugh-victory-road-snivy",
+   "name": "Rival Hugh",
+   "location": "Victory Road",
+   "order": 89,
+   "levelCap": 57,
+   "team": [
+    {
+     "species": "unfezant",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simipour",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bouffalant",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "emboar",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "snivy"
+  },
+  {
+   "id": "hugh-victory-road-tepig",
+   "name": "Rival Hugh",
+   "location": "Victory Road",
+   "order": 89,
+   "levelCap": 57,
+   "team": [
+    {
+     "species": "unfezant",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simisage",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bouffalant",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "samurott",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "tepig"
+  },
+  {
+   "id": "hugh-victory-road-oshawott",
+   "name": "Rival Hugh",
+   "location": "Victory Road",
+   "order": 89,
+   "levelCap": 57,
+   "team": [
+    {
+     "species": "unfezant",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "simisear",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "bouffalant",
+     "level": 55,
+     "ability": null,
+     "item": null,
+     "moves": []
+    },
+    {
+     "species": "serperior",
+     "level": 57,
+     "ability": null,
+     "item": null,
+     "moves": []
+    }
+   ],
+   "starterChoice": "oshawott"
+  }
+ ]
 }
