@@ -627,12 +627,17 @@ function BossCard({
  * checkpoints, caps and progress ignore story bosses.
  */
 function StoryBossCard({
-  boss, species, defeated, onToggleBoss,
+  boss, species, defeated, onToggleBoss, showVariant,
 }: {
   boss: Boss;
   species: Record<string, SpeciesData>;
   defeated: boolean;
   onToggleBoss: (bossId: string) => void;
+  // True when several variants of this fight are on screen at once
+  // (no starter picked): without it, the rival's three cards look
+  // like the same fight repeated — the only difference is the hidden
+  // team, so the card has to say which starter it belongs to.
+  showVariant?: boolean;
 }) {
   return (
     <div className={`boss-card ${defeated ? "defeated" : ""}`}>
@@ -640,6 +645,9 @@ function StoryBossCard({
         <BossPortrait boss={boss} species={species} size={44} />
         <strong>{boss.name}</strong>
         <span className="muted">{boss.location}</span>
+        {showVariant && boss.starterChoice ? (
+          <span className="muted">If you picked {displayName(boss.starterChoice)}</span>
+        ) : null}
         <span className="muted">Team hidden</span>
         <button className={defeated ? "chip done" : "chip"} onClick={() => onToggleBoss(boss.id)}>
           {defeated ? "Defeated ✓" : "Mark defeated"}
@@ -849,6 +857,7 @@ function StoryTab({
                   species={species}
                   defeated={run.defeatedBossIds.includes(sb.id)}
                   onToggleBoss={onToggleBoss}
+                  showVariant={item.story.length > 1}
                 />
               ))}
             </div>
@@ -948,6 +957,7 @@ function TimelineTab({
           species={species}
           defeated={run.defeatedBossIds.includes(sb.id)}
           onToggleBoss={onToggleBoss}
+          showVariant={sg.bosses.length > 1}
         />
       ))}
     </div>
