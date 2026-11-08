@@ -857,7 +857,7 @@ function StoryTab({
                   species={species}
                   defeated={run.defeatedBossIds.includes(sb.id)}
                   onToggleBoss={onToggleBoss}
-                  showVariant={item.story.length > 1}
+                  showVariant={(item.story?.length ?? 0) > 1}
                 />
               ))}
             </div>
